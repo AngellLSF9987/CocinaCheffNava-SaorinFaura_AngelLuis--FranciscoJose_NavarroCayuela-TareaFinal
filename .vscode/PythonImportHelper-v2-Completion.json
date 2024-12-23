@@ -2033,7 +2033,7 @@
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2042,16 +2042,7 @@
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "def allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:",
-        "detail": "routes.productos_routes",
-        "documentation": {}
-    },
-    {
-        "label": "producto_template",
-        "kind": 2,
-        "importPath": "routes.productos_routes",
-        "description": "routes.productos_routes",
-        "peekOfCode": "def producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:",
+        "peekOfCode": "def allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2114,7 +2105,7 @@
         "kind": 5,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "producto = Blueprint(\"producto\", __name__)\n@producto.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():",
+        "peekOfCode": "producto = Blueprint(\"producto\", __name__)\n@producto.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2123,7 +2114,7 @@
         "kind": 5,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()",
+        "peekOfCode": "ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2141,7 +2132,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200\n            return render_template(\"trabajador/trabajador_tabla.html\", trabajadores=trabajadores)\n        else:\n            logger.error(\"ERROR OBTENIENDO TRABAJADORES - GESTIÓN DE TRABAJADORES\"), 404\n            redirect(\"/\")            \n    except Exception as e:",
+        "peekOfCode": "def mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200\n            return render_template(\"trabajador/trabajador_tabla.html\", trabajadores=trabajadores)\n        else:\n            logger.error(\"ERROR OBTENIENDO TRABAJADORES - GESTIÓN DE TRABAJADORES\"), 404\n            render_template(\"index.html\")             \n    except Exception as e:",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },
@@ -2150,7 +2141,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def gestion_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:\n            logger.warning(\"No se encontraron productos\"), 404\n            return redirect(\"/\")\n    except Exception as e:",
+        "peekOfCode": "def gestion_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:\n            logger.warning(\"No se encontraron productos\"), 404\n            return render_template(\"index.html\")\n    except Exception as e:",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },
@@ -2159,7 +2150,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def gestionar_categorias():\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 200\n            return redirect(\"categoria/categoria_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            redirect(\"/\")\n    except Exception as e:",
+        "peekOfCode": "def gestionar_categorias():\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 200\n            return redirect(\"categoria/categoria_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            render_template(\"index.html\")\n    except Exception as e:",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },
@@ -2168,7 +2159,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def gestionar_clientes():\n    try:\n        clientes = clienteDB.obtener_clientes()\n        if clientes:\n            logger.info(\"OBTENIENDO CLIENTES - GESTIÓN DE CLIENTES\"), 200\n            return render_template(\"cliente/cliente_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            redirect(\"/\")\n    except Exception as e:",
+        "peekOfCode": "def gestionar_clientes():\n    try:\n        clientes = clienteDB.obtener_clientes()\n        if clientes:\n            logger.info(\"OBTENIENDO CLIENTES - GESTIÓN DE CLIENTES\"), 200\n            return render_template(\"cliente/cliente_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            render_template(\"index.html\")\n    except Exception as e:",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },

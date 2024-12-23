@@ -15,7 +15,7 @@
               <div class="card-body text-center">
                 <h5 class="card-title">{{ producto.nombre_producto }}</h5>
                 <p class="card-text text-muted">{{ producto.descripcion[:150] }}...</p>
-                <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=['producto.id_producto']) }}" class="btn btn-primary">Detalles</a>
+                <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=producto['id_producto']) }}" class="btn btn-primary">Detalles</a>
               </div>
             </div>
           </div>
