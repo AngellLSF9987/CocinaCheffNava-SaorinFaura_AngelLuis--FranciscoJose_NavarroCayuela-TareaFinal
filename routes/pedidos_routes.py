@@ -41,7 +41,6 @@ def ruta_crear_pedido():
     try:
         if request.method == "POST":
             n_pedido = request.form.get("num_pedido")
-            id_cliente_FK = request.form.get("id_cliente_FK")
             id_carrito_FK = request.form.get("id_carrito_FK")
             fecha_pedido = request.form.get("entrega")
 
@@ -63,7 +62,6 @@ def ruta_crear_pedido():
             # Crear un nuevo pedido con productos asociados
             nuevo_pedido = pedidoDB.crear_pedido_con_productos(
                 n_pedido,
-                id_cliente_FK,
                 id_carrito_FK,
                 productos,
                 fecha_pedido,
@@ -93,16 +91,6 @@ def editar_pedido(id_pedido):
             try:
                 pedido = pedidoDB.obtener_pedido_id(id_pedido)
                 if pedido:
-                    try:
-                        id_cliente = clienteDB.obtener_cliente_id(id_cliente)
-                        logger.info("CLIENTE DEL PEDIDO OBTENIDO POR ID"), 200
-                    except Exception as e:
-                        logger.error(f"Error al OBTENER CLIENTE POR 'ID': {e}"), 404
-                    try:   
-                        id_producto = productoDB.obtener_producto_id(id_producto)
-                        logger.info("PRODUCTO DEL PEDIDO OBTENIDO POR ID"), 200
-                    except Exception as e:
-                        logger.error(f"Error al OBTENER PRODUCTO DEL PEDIDO POR 'ID': {e}"), 404
                     try:   
                         id_carrito = carritoDB.obtener_carritos(id_carrito)
                         logger.info("CARRITO DEL PEDIDO OBTENIDO POR ID"), 200
@@ -136,7 +124,7 @@ def editar_pedido(id_pedido):
             )
             if pedido_actualizado:
                 logger.info("PEDIDO ACTUALIZADO"), 200
-                return render_template("pedido/pedido.html", id_cliente_FK=id_cliente, id_producto_FK=id_producto , id_carrito_FK=id_carrito)
+                return render_template("pedido/pedido.html", id_carrito_FK=id_carrito)
             else:
                 logger.warning("No se pudo ACTUALIZAR EL PEDIDO."), 404
                 return render_template("pedido/pedido.html")                

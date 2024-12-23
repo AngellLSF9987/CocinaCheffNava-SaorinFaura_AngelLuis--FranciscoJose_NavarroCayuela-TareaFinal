@@ -1385,7 +1385,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :param conn: Conexión a la base de datos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"",
+        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1394,7 +1394,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    :param conn: Conexión a la base de datos.\n    :param id_pedido: ID del pedido a buscar.\n    :return: Un diccionario con los datos del pedido o None si no existe.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)",
+        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    :param id_pedido: ID del pedido a buscar.\n    :return: Un diccionario con los datos del pedido o None si no existe.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1403,7 +1403,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Consulta para obtener los pedidos con sus productos\n        query = \"\"\"\n            SELECT p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
+        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1413,15 +1413,6 @@
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
         "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, id_carrito_FK, productos, fecha_pedido):\n    \"\"\"\n    Crea un pedido con varios productos.\n    - productos: Lista de diccionarios con id_producto y cantidad.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Insertar en la tabla Pedidos",
-        "detail": "repositories.rep_pedido",
-        "documentation": {}
-    },
-    {
-        "label": "generar_numero_pedido",
-        "kind": 2,
-        "importPath": "repositories.rep_pedido",
-        "description": "repositories.rep_pedido",
-        "peekOfCode": "def generar_numero_pedido():\n    import random\n    return f\"PED-{random.randint(1000, 9999)}\"  # Número de pedido aleatorio\n# Modificar pedido\ndef actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1439,7 +1430,16 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"DELETE FROM Pedidos WHERE id_pedido = %s\",\n            (id_pedido),\n        )\n        conn.commit()\n    except Error as e:",
+        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"DELETE FROM Pedidos WHERE id_pedido = %s\",\n            (id_pedido,),\n        )\n        conn.commit()\n    except Error as e:",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "generar_numero_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def generar_numero_pedido():\n    import random\n    return f\"PED-{random.randint(1000, 9999)}\"  # Número de pedido aleatorio",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1970,7 +1970,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def ruta_crear_pedido():\n    try:\n        if request.method == \"POST\":\n            n_pedido = request.form.get(\"num_pedido\")\n            id_cliente_FK = request.form.get(\"id_cliente_FK\")\n            id_carrito_FK = request.form.get(\"id_carrito_FK\")\n            fecha_pedido = request.form.get(\"entrega\")\n            # Recoger los productos seleccionados\n            productos = []\n            cantidad_productos = len(request.form.getlist(\"id_producto_FK\"))  # Contamos el número de productos seleccionados",
+        "peekOfCode": "def ruta_crear_pedido():\n    try:\n        if request.method == \"POST\":\n            n_pedido = request.form.get(\"num_pedido\")\n            id_carrito_FK = request.form.get(\"id_carrito_FK\")\n            fecha_pedido = request.form.get(\"entrega\")\n            # Recoger los productos seleccionados\n            productos = []\n            cantidad_productos = len(request.form.getlist(\"id_producto_FK\"))  # Contamos el número de productos seleccionados\n            # Recolectar los productos y sus cantidades",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -1979,7 +1979,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def editar_pedido(id_pedido):\n    try:\n        if request.method == \"GET\":\n            try:\n                pedido = pedidoDB.obtener_pedido_id(id_pedido)\n                if pedido:\n                    try:\n                        id_cliente = clienteDB.obtener_cliente_id(id_cliente)\n                        logger.info(\"CLIENTE DEL PEDIDO OBTENIDO POR ID\"), 200\n                    except Exception as e:",
+        "peekOfCode": "def editar_pedido(id_pedido):\n    try:\n        if request.method == \"GET\":\n            try:\n                pedido = pedidoDB.obtener_pedido_id(id_pedido)\n                if pedido:\n                    try:   \n                        id_carrito = carritoDB.obtener_carritos(id_carrito)\n                        logger.info(\"CARRITO DEL PEDIDO OBTENIDO POR ID\"), 200\n                    except Exception as e:",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
