@@ -19,8 +19,6 @@ def crear_datos():
         insertar_trabajadores(cursor)
         insertar_categorias(cursor)
         insertar_productos(cursor)
-        insertar_carritos(cursor)
-        insertar_pedidos(cursor)
 
         conn.commit()
         print("✅ Datos iniciales insertados correctamente.")
