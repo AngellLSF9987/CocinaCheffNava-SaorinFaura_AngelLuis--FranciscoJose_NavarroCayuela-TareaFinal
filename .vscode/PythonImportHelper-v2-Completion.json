@@ -1255,6 +1255,15 @@
         "documentation": {}
     },
     {
+        "label": "crear_tabla_carrito_productos",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_carrito_productos(cursor):\n    \"\"\"Crea la tabla Carrito_Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Carrito_Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n            \"\"\"\n            CREATE TABLE IF NOT EXISTS carrito_productos (\n                id_carrito_FK INT NOT NULL,\n                id_producto_FK INT NOT NULL,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "kind": 5,
         "importPath": "database.db_setup",

@@ -85,6 +85,7 @@ def crear_tablas():
             crear_tabla_productos,
             crear_tabla_carrito,
             crear_tabla_pedidos,
+            crear_tabla_carrito_productos
         ]
         for funcion in funciones_creacion:
             funcion(cursor)
@@ -276,3 +277,24 @@ def crear_tabla_pedidos(cursor):
         registrar_y_mostrar("Tabla Pedidos creada exitosamente.", nivel="info")
     except Exception as e:
         registrar_y_mostrar(f"Error al crear la tabla Pedidos: {e}", nivel="error")
+        
+def crear_tabla_carrito_productos(cursor):
+    """Crea la tabla Carrito_Productos."""
+    try:
+        mensaje = "Creando tabla Carrito_Productos."
+        registrar_y_mostrar(mensaje, nivel="info")
+        cursor.execute(
+            """
+            CREATE TABLE IF NOT EXISTS carrito_productos (
+                id_carrito_FK INT NOT NULL,
+                id_producto_FK INT NOT NULL,
+                cantidad INT NOT NULL,
+                PRIMARY KEY (id_carrito_FK, id_producto_FK),
+                FOREIGN KEY (id_carrito_FK) REFERENCES Carrito(id_carrito) ON DELETE CASCADE,
+                FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto) ON DELETE CASCADE
+            );
+            """
+        )
+        registrar_y_mostrar("Tabla Carrito_Productos creada exitosamente.", nivel="info")
+    except Exception as e:
+        registrar_y_mostrar(f"Error al crear la tabla Carrito_Productos: {e}", nivel="error")
