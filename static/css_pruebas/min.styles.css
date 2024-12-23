@@ -1,0 +1,195 @@
+/* Asegurarse de que el html y el body ocupen todo el espacio */
+html, body {
+    height: 100%;  /* Asegura que ocupen toda la altura de la ventana */
+    margin: 0;     /* Elimina los márgenes predeterminados del navegador */
+    padding: 0;    /* Elimina el padding predeterminado */
+    box-sizing: border-box;  /* Asegura que el padding y los bordes no afecten el tamaño de los elementos */
+}
+
+/* Body con un layout flexible para asegurar que los elementos se distribuyan correctamente */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* El sidebar izquierdo */
+#sidebar-left {
+    background-color: #0f80f1;  /* Color de fondo para el sidebar */
+    color: aliceblue;
+    padding: 10px;
+    position: sticky;  /* Cambia 'fixed' por 'sticky' para que sea más adaptable */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;  /* Asegura que el sidebar ocupe toda la altura */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Para asegurarse de que el sidebar esté encima del contenido */
+}
+
+/* El contenido principal */
+main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;  /* Para que el contenido no quede debajo del sidebar */
+    flex: 1;  /* Permite que el contenido principal ocupe el espacio disponible */
+}
+
+/* Ajustes para el aside derecho (carrito, publicidad, etc.) */
+#sidebar-right {
+    position: sticky; /* Cambiar a sticky */
+    top: 0;           /* Se pega al borde superior */
+    right: 0;
+    width: 180px;
+    height: 100vh;    /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;       /* Asegura que no quede detrás de otros elementos */
+}
+
+/* Ajustes para los elementos flotantes (carrito, publicidad, etc.) */
+#modal-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#modal-cart.show {
+    display: block;
+}
+
+.carousel-img {
+    max-height: 50%;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.contact-form {
+    background-image: url("../images/fondoformulario1.jpg"); /* Ruta relativa al archivo CSS */
+    background-size: cover; /* Asegura que la imagen cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    padding: 20px; /* Espaciado interno para que el contenido no quede pegado */
+    border-radius: 10px; /* Bordes redondeados para un diseño más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+    color: #866a6a; /* Cambia el color del texto a blanco */
+}
+
+.contact-form p {
+    padding-top: 30px;
+}
+
+.bd-placeholder-img {
+    height: 20%;
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+  }
+
+  .bd-mode-toggle {
+    z-index: 1500;
+  }
+
+  .bd-mode-toggle .dropdown-menu .active .bi {
+    display: block !important;
+  }
+
+
+/* .contact-form #email{
+    padding-top: 10px;
+} */
+/* Ajustes para las vistas móviles */
+@media (max-width: 768px) {
+    #sidebar-left {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    #sidebar-right {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* Ajustes en la barra de navegación para dispositivos pequeños */
+    nav .navbar-collapse {
+        justify-content: flex-end;
+    }
+}

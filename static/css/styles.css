@@ -1,0 +1,116 @@
+/* Asegurarse de que el html y el body ocupen todo el espacio */
+html, body {
+    height: 100%;  /* Asegura que ocupen toda la altura de la ventana */
+    margin: 0;     /* Elimina los márgenes predeterminados del navegador */
+    padding: 0;    /* Elimina el padding predeterminado */
+    box-sizing: border-box;  /* Asegura que el padding y los bordes no afecten el tamaño de los elementos */
+}
+
+/* Body con un layout flexible para asegurar que los elementos se distribuyan correctamente */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+/* El sidebar izquierdo */
+#sidebar-left {
+    background-color: #0f80f1;  /* Color de fondo para el sidebar */
+    color: aliceblue;
+    padding: 10px;
+    position: sticky;  /* Cambia 'fixed' por 'sticky' para que sea más adaptable */
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;  /* Asegura que el sidebar ocupe toda la altura */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;  /* Para asegurarse de que el sidebar esté encima del contenido */
+}
+
+/* El contenido principal */
+main {
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;  /* Para que el contenido no quede debajo del sidebar */
+    flex: 1;  /* Permite que el contenido principal ocupe el espacio disponible */
+}
+
+/* Ajustes para el aside derecho (carrito, publicidad, etc.) */
+#sidebar-right {
+    position: sticky; /* Cambiar a sticky */
+    top: 0;           /* Se pega al borde superior */
+    right: 0;
+    width: 180px;
+    height: 100vh;    /* Asegura que ocupe toda la altura de la pantalla */
+    background-color: #f1f1f1;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1;       /* Asegura que no quede detrás de otros elementos */
+}
+
+/* Ajustes para los elementos flotantes (carrito, publicidad, etc.) */
+#modal-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+#modal-cart.show {
+    display: block;
+}
+
+.carousel-img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.contact-form {
+    background-image: url("../images/fondoformulario1.png"); /* Ruta relativa al archivo CSS */
+    background-size: cover; /* Asegura que la imagen cubra todo el área */
+    background-position: center; /* Centra la imagen */
+    padding: 20px; /* Espaciado interno para que el contenido no quede pegado */
+    border-radius: 10px; /* Bordes redondeados para un diseño más suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra */
+    color: #866a6a; /* Cambia el color del texto a blanco */
+}
+
+.contact-form p {
+    padding-top: 30px;
+}
+
+/* .contact-form #email{
+    padding-top: 10px;
+} */
+/* Ajustes para las vistas móviles */
+@media (max-width: 768px) {
+    #sidebar-left {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    main {
+        margin-left: 0;
+    }
+
+    #sidebar-right {
+        position: static;
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    /* Ajustes en la barra de navegación para dispositivos pequeños */
+    nav .navbar-collapse {
+        justify-content: flex-end;
+    }
+}

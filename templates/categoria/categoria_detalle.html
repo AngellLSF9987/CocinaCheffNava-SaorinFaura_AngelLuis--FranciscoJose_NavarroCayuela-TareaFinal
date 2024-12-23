@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Detalles de la Categoría {% endblock %}
+
+{% block content %}
+<div class="contact-form">
+  <div class="container mt-5">
+    <div class="row featurette">
+      <!-- Detalles del Categoria -->
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">{{ categoria.nombre_categoria }}</h2>
+        <p class="lead">{{ categoria.descripcion }}</p>
+      </div>
+      
+      <!-- Imagen del Categoria -->
+      <div class="col-md-5">
+        {% if categoria.imagen %}
+          <img src="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ categoria.nombre_categoria }}" />
+        {% else %}
+          <p>No hay imagen disponible.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="text-center mt-4">
+      <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-secondary">Volver a la Lista</a>
+      <a href="{{ url_for('categoria.ruta_editar_categoria', id_categoria=id_categoria) }}" class="btn btn-primary">Editar Categoría</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+

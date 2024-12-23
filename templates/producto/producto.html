@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Productos {% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container mt-5">
+      <h1 class="display-6 text-center text-dark mb-4">¡Explora nuestros productos y descubre los sabores que tenemos para ti!</h1>
+
+      <div class="row justify-content-center">
+        {% for producto in productos %}
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=producto['id_producto']) }}"><img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" class="card-img-top img-fluid" alt="{{ producto.nombre_producto }}" style="height: 250px; object-fit: cover;" /></a>
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ producto.nombre_producto }}</h5>
+                <p class="card-text text-muted">{{ producto.descripcion[:150] }}...</p>
+                <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=['producto.id_producto']) }}" class="btn btn-primary">Detalles</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

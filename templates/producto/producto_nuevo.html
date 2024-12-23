@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Cocina con Cheff Nava - Nuevo Producto
+{% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container mt-5">
+      <div class="text-center mb-4">
+        <h1>Agregar Nuevo Producto</h1>
+        <p>¡Complete el siguiente formulario para agregar un nuevo producto a nuestro catálogo! Asegúrese de llenar todos los campos correctamente.</p>
+      </div>
+
+      <!-- Formulario de nuevo producto -->
+      <form action="{{ url_for('producto.ruta_crear_producto') }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirGestionProductos();">
+        <div class="mb-3">
+          <span>Nombre del Producto</span>
+          <label for="nombre" class="form-label" placeholder="Nombre del producto.."></label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Introduce el nombre del producto" required />
+        </div>
+
+        <div class="mb-3">
+          <span>Descripción del Producto</span>
+          <label for="descripcion" class="form-label" placeholder="Descripción del producto.."></label>
+          <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Escribe una descripción del producto" rows="4" required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <span>Precio</span>
+          <label for="precio" class="form-label" placeholder="Precio del producto.."></label>
+          <input type="number" class="form-control" id="precio" name="precio" step="0.01" placeholder="Introduce el precio del producto" required />
+        </div>
+        
+        <div class="mb-3">
+          <span>Imagen</span>
+          <label for="imagen" class="form-label" placeholder="Seleccione una imagen.."></label>
+          <!-- Campo para cargar imagen -->
+          <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required />
+      </div>
+        
+        <!-- Desplegable para seleccionar la categoría -->
+        <div class="mb-3">
+          <span>Categoría</span>
+          <label for="categoria" class="form-label" placeholder="Seleccione la Categoría desde el desplegable.."></label>
+          <select class="form-control" id="categoria" name="id_categoria_FK" required>
+            <option value="" disabled selected>Selecciona una categoría</option>
+            {% for categoria in categorias %}
+              <option value="{{ categoria['id_categoria'] }}">{{ categoria['nombre_categoria'] }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <!-- Botón de enviar -->
+        <div class="d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-danger">Agregar Producto</button>
+        </div>
+        
+        <!-- Botón Volver -->
+        <div class="d-flex justify-content-center mt-2">
+          <a href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-secondary">Volver</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script para redirigir tras la actualización -->
+  <script>
+    function redirigirGestionProductos() {
+      setTimeout(function () {
+        window.location.href = "{{ url_for('trabajador.gestionar_productos') }}";
+      }, 1000);
+      return true; // Permitir que el formulario se envíe
+    }
+  </script>
+{% endblock %}

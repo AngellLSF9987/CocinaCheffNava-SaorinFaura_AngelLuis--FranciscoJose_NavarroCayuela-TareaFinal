@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}
+  Cocina con Cheff Nava - Registro de Usuario
+{% endblock %}
+{% block content %}
+  <div class="contact-form">
+    <div class="container mt-5">
+      <h2>Registrarse</h2>
+      <form action="{{ url_for('auth.register') }}" method="POST" onsubmit="return redirigirLogin();">
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo Electrónico</label>
+          <input type="email" name="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Contraseña</label>
+          <input type="password" name="password" class="form-control" id="password" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Regístrate!</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Script para redirigir tras la actualización -->
+<script>
+  function redirigirLogin() {
+    setTimeout(function () {
+      window.location.href = "{{ url_for('auth.login') }}"
+    }, 1000)
+    return true // Permitir que el formulario se envíe
+  }
+</script>
+{% endblock %}

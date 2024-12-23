@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Editar Pedido{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h2 class="text-center">Editar Pedido #{{ pedido.num_pedido }}</h2>
+
+  <!-- Formulario para editar el pedido -->
+  <form method="POST">
+    <!-- Campo para el número de pedido (solo lectura) -->
+    <div class="mb-3">
+      <label for="num_pedido" class="form-label">Número de Pedido</label>
+      <input type="text" class="form-control" id="num_pedido" name="num_pedido" value="{{ pedido.num_pedido }}" readonly>
+    </div>
+
+    <!-- Campo para el cliente -->
+    <div class="mb-3">
+      <label for="id_cliente_FK" class="form-label">Cliente</label>
+      <select class="form-control" id="id_cliente_FK" name="id_cliente_FK" required>
+        {% for cliente in clientes %}
+          <option value="{{ cliente.id_cliente }}" {% if cliente.id_cliente == pedido.id_cliente_FK %}selected{% endif %}>
+            {{ cliente.nombre_cliente }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Campo para el producto -->
+    <div class="mb-3">
+      <label for="id_producto_FK" class="form-label">Producto</label>
+      <select class="form-control" id="id_producto_FK" name="id_producto_FK" required>
+        {% for producto in productos %}
+          <option value="{{ producto.id_producto }}" {% if producto.id_producto == pedido.id_producto_FK %}selected{% endif %}>
+            {{ producto.nombre_producto }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Campo para el carrito -->
+    <div class="mb-3">
+      <label for="id_carrito_FK" class="form-label">Carrito</label>
+      <select class="form-control" id="id_carrito_FK" name="id_carrito_FK" required>
+        {% for carrito in carritos %}
+          <option value="{{ carrito.id_carrito }}" {% if carrito.id_carrito == pedido.id_carrito_FK %}selected{% endif %}>
+            {{ carrito.precio_carrito }} €
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <!-- Campo para la cantidad -->
+    <div class="mb-3">
+      <label for="cantidad" class="form-label">Cantidad</label>
+      <input type="number" class="form-control" id="cantidad" name="cantidad" value="{{ pedido.cantidad }}" min="1" required>
+    </div>
+
+    <!-- Campo para la fecha de entrega -->
+    <div class="mb-3">
+      <label for="entrega" class="form-label">Fecha de Entrega</label>
+      <input type="date" class="form-control" id="entrega" name="entrega" value="{{ pedido.entrega }}" required>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex justify-content-center mt-4">
+      <button type="submit" class="btn btn-success">Actualizar Pedido</button>
+    </div>
+
+    <div class="d-flex justify-content-center mt-2">
+      <a href="{{ url_for('pedido.mostrar_pedidos') }}" class="btn btn-secondary">Volver a la Lista de Pedidos</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

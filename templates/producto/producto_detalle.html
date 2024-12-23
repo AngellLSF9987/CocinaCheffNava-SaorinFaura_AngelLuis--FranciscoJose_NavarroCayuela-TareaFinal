@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Detalles del Producto {% endblock %}
+
+{% block content %}
+<div class="contact-form">
+  <div class="container mt-5">
+    <div class="row featurette">
+      <!-- Detalles del Producto -->
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">{{ producto.nombre_producto }}</h2>
+        <p class="lead">{{ producto.descripcion }}</p>
+        <p><strong>Precio:</strong> {{ producto.precio }}€</p>
+        <p><strong>Categoría:</strong> {{ producto.nombre_categoria }}</p>
+      </div>
+      
+      <!-- Imagen del Producto -->
+      <div class="col-md-5">
+        {% if producto.imagen %}
+          <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ producto.nombre_producto }}" />
+        {% else %}
+          <p>No hay imagen disponible.</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="text-center mt-4">
+      <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-secondary">Volver a la Lista</a>
+      <a href="{{ url_for('producto.editar_producto', id_producto=id_producto) }}" class="btn btn-primary">Editar Producto</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

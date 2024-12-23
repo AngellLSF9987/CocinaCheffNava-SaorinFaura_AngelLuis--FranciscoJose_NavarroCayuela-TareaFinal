@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Categorías {% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container mt-5">
+      <h1 class="display-6 text-center text-dark mb-4">¡Explora nuestras categorías y descubre los sabores que tenemos para ti!</h1>
+
+      <div class="row justify-content-center">
+        {% for categoria in categorias %}
+          <div class="col-md-4 mb-4">
+            <div class="card shadow-sm">
+              <a href="{{ url_for('categoria.mostrar_categoria_detalle', id_categoria=categoria['id_categoria'])  }}">
+                <img src="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" class="card-img-top img-fluid" alt="{{ categoria.nombre_categoria }}" style="height: 250px; object-fit: cover;" />
+              </a>
+              <div class="card-body text-center">
+                <h5 class="card-title">{{ categoria.nombre_categoria }}</h5>
+                <p class="card-text text-muted">{{ categoria.descripcion[:150] }}...</p>
+                <a href="{{ url_for('categoria.mostrar_categoria_detalle', id_categoria=categoria['id_categoria'])  }}" class="btn btn-primary">Detalles</a>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

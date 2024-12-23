@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contact-form">
+    <div class="container mt-5">
+        <h1 class="display-6 text-center text-dark mb-4">
+            Estás en la Sección de Gestión de Pedidos
+        </h1>
+        
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <a href="{{ url_for('pedido.crear_pedido') }}" class="btn btn-success btn-lg">Añadir Nuevo Pedido</a>
+            </div>
+        </div>
+
+        {% if pedidos %}
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID Pedido</th>
+                    <th scope="col">Número Pedido</th>
+                    <th scope="col">Cliente</th>
+                    <th scope="col">Entrega</th>
+                    <th scope="col">Productos</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pedido in pedidos %}
+                <tr>
+                    <td>{{ pedido.id_pedido }}</td>
+                    <td>{{ pedido.num_pedido }}</td>
+                    <td>{{ pedido.id_cliente }}</td>
+                    <td>{{ pedido.entrega }}</td>
+                    <td>
+                        <ul>
+                            {% for producto in pedido.productos %}
+                            <li>
+                                {{ producto.nombre }} - {{ producto.cantidad }} unidades, {{ producto.precio_carrito }} €
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('pedido.editar_pedido', id_pedido=pedido['id_pedido']) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('pedido.borrar_pedido') }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="id_pedido" value="{{ pedido['id_pedido'] }}">
+                            <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                        </form>
+                        <a href="{{ url_for('pedido.mostrar_pedido_detalle', id_pedido=pedido['id_pedido']) }}" class="btn btn-info btn-sm">Detalles</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-center">No hay pedidos disponibles.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

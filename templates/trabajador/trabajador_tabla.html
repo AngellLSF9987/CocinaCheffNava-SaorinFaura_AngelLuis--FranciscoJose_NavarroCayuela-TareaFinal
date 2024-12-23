@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contact-form">
+    <div class="container mt-5">
+        <h1 class="display-6 text-center text-dark mb-4">
+            Estás en la Sección de Gestión de Trbajadores
+        </h1>
+
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">1º Apellido</th>
+                    <th scope="col">2º Apellido</th>
+                    <th scope="col">Nº DNI</th>
+                    <th scope="col">Teléfono de Contacto</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Nº Dni</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trabajador in trabajadores %}
+                <tr>
+                    <td>{{ trabajador[0] }}</td>
+                    <td>{{ trabajador[1] }}</td>
+                    <td>{{ trabajador[2] }}</td>
+                    <td>{{ trabajador[3] }}</td>
+                    <td>{{ trabajador[4] }}</td>
+                    <td>{{ trabajador[5] }}</td>
+                    <td>{{ trabajador[6] }}</td>
+                    <td>{{ trabajador[7] }}</td>
+                    <td>{{ trabajador[8] }}</td>
+                    <td>
+                        <form action="{{ url_for('trabajador.borrar_trabajador') }}" method="POST" style="display:inline;" onsubmit="return redirigirGestionTrabajadores();">
+                            <input type="hidden" name="id_cliente" name="id_cliente" value="{{ trabajador[0] }}">
+                            <button type="submit" class="btn btn-danger btn-sm" onsubmit="return redirigirGestionTrabajadores();">Borrar</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+  <!-- Script para redirigir tras la actualización -->
+  <script>
+    function redirigirGestionTrabajadores() {
+      setTimeout(function() {
+        window.location.href = "{{ url_for('trabajador.mostrar_trabajadores') }}";
+      }, 1000);
+      return true; // Permitir que el formulario se envíe
+    }
+  </script>
+{% endblock %}

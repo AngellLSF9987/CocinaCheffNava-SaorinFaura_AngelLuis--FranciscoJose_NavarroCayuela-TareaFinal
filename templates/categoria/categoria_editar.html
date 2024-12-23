@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Editar Categoria {% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container">
+      <h2>Actualizar categoria</h2>
+      <form action="/actualizar_categoria/{{ categoria['id_categoria'] }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirCategoria();">
+        <div class="mb-3">
+          <label for="nombre">Nombre de la Categoría:</label>
+          <input type="text" id="nombre" name="nombre" value="{{ categoria['nombre_categoria'] }}" required>
+        </div>
+        <div class="mb-3">
+          <label for="descripcion">Descripción:</label>
+          <textarea id="descripcion" name="descripcion" required>{{ categoria.descripcion }}</textarea>
+        </div>
+        <div class="mb-3">
+          <label for="imagen">Imagen:</label>
+          <input type="search" id="imagen" name="imagen" step="0.01" value="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" required>
+        </div>
+        <!-- Botones alineados en una fila -->
+        <div class="d-flex justify-content-between mt-3">
+          <button type="submit" class="btn btn-access">Actualizar</button>
+          <a href="{{ url_for('categoria.mostrar_categorias') }}" class="btn btn-secondary">Volver</a>
+        </div>        
+      </form>
+    </div>
+  </div>
+
+  <!-- Script para redirigir tras la actualización -->
+  <script>
+    function redirigirCategoria() {
+      setTimeout(function() {
+        window.location.href = "{{ url_for(categoria.mostrar_categorias) }}";
+      }, 1000);
+      return true; // Permitir que el formulario se envíe
+    }
+  </script>
+{% endblock %}

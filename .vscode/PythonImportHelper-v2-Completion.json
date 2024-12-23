@@ -1,0 +1,2256 @@
+[
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "Image",
+        "importPath": "PIL",
+        "description": "PIL",
+        "isExtraImport": true,
+        "detail": "PIL",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "g",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "g",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "mysql.connector",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "mysql.connector",
+        "description": "mysql.connector",
+        "isExtraImport": true,
+        "detail": "mysql.connector",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_cliente",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_cliente_id",
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "isExtraImport": true,
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_trabajador",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_trabajador_id",
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "isExtraImport": true,
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_usuario_id",
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "isExtraImport": true,
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "database.db_setup",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "conexion",
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "isExtraImport": true,
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cliente",
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "isExtraImport": true,
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "config.config",
+        "description": "config.config",
+        "isExtraImport": true,
+        "detail": "config.config",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "importPath": "config.config",
+        "description": "config.config",
+        "isExtraImport": true,
+        "detail": "config.config",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_categoria",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "wraps",
+        "importPath": "functools",
+        "description": "functools",
+        "isExtraImport": true,
+        "detail": "functools",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_carrito",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_pedido",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_producto",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "importPath": "extensions",
+        "description": "extensions",
+        "isExtraImport": true,
+        "detail": "extensions",
+        "documentation": {}
+    },
+    {
+        "label": "db_setup",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "db_record",
+        "importPath": "database",
+        "description": "database",
+        "isExtraImport": true,
+        "detail": "database",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "isExtraImport": true,
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "trabajador",
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "isExtraImport": true,
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "categoria",
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "isExtraImport": true,
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "producto",
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "isExtraImport": true,
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "carrito",
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "isExtraImport": true,
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "pedido",
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "isExtraImport": true,
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "isExtraImport": true,
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "extra",
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "isExtraImport": true,
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "Config",
+        "kind": 6,
+        "importPath": "config.config",
+        "description": "config.config",
+        "peekOfCode": "class Config:\n    \"\"\"Clase de configuración para la aplicación.\"\"\"\n    # Configuración de la base de datos MySQL\n    MYSQL_CONFIG = {\n        \"host\": \"localhost\",\n        \"user\": \"angelpaco\",\n        \"password\": \"angelpaco\",\n        \"database\": \"cocina_db\",\n    }\n    # Otras configuraciones que se puedan necesitar",
+        "detail": "config.config",
+        "documentation": {}
+    },
+    {
+        "label": "optimize_image",
+        "kind": 2,
+        "importPath": "config.image_optimizer",
+        "description": "config.image_optimizer",
+        "peekOfCode": "def optimize_image(image_path, output_path, max_width=800, quality=85):\n    \"\"\"\n    Optimiza una imagen reduciendo su tamaño y calidad.\n    Args:\n        image_path (str): Ruta de la imagen original.\n        output_path (str): Ruta donde se guardará la imagen optimizada.\n        max_width (int, optional): Ancho máximo permitido para la imagen. Por defecto, 800 píxeles.\n        quality (int, optional): Calidad de la imagen optimizada (1-100). Por defecto, 85.\n    \"\"\"\n    try:",
+        "detail": "config.image_optimizer",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "controllers.auth_controller",
+        "description": "controllers.auth_controller",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = setupDB.crear_conexion()\ndef autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol",
+        "detail": "controllers.auth_controller",
+        "documentation": {}
+    },
+    {
+        "label": "autenticar_usuario",
+        "kind": 2,
+        "importPath": "controllers.auth_controller",
+        "description": "controllers.auth_controller",
+        "peekOfCode": "def autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol\n        usuario = g.rep_usuario.autenticar_usuario(email, password, conexion)\n        if usuario:\n            logging.debug(f\"✅ Usuario autenticado: {usuario}\")",
+        "detail": "controllers.auth_controller",
+        "documentation": {}
+    },
+    {
+        "label": "crear_datos",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def crear_datos():\n    \"\"\"\n    Controlador principal para insertar datos iniciales en la base de datos.\n    \"\"\"\n    conn = setupDB.get_db()\n    try:\n        cursor = conn.cursor()\n        insertar_roles(cursor)\n        insertar_usuarios(cursor)\n        insertar_clientes(cursor)",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_roles",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_roles(cursor):\n    datos_roles = [\n        (1, \"cliente\"),\n        (2, \"trabajador\"),\n    ]\n    for id_rol, nombre_rol in datos_roles:\n        cursor.execute(\"SELECT 1 FROM Roles WHERE nombre_rol = %s\", (nombre_rol,))\n        if not cursor.fetchone():\n            cursor.execute(\n                \"INSERT INTO Roles (id_rol, nombre_rol) VALUES (%s, %s);\",",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_usuarios",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_usuarios(cursor):\n    # Insertar usuarios en la tabla Usuarios\n    datos_usuarios = [\n        (\"paco@nava.com\", \"paco123\", 1),\n        (\"angel@saorin.com\", \"angel123\", 1),\n        (\"paco@trabajador.com\", \"paco456\", 2),\n        (\"angel@trabajador.com\", \"angel456\", 2),\n    ]\n    print(f\"Listado Usuarios: {datos_usuarios}\")\n    logger.info(f\"Listado Usuarios: {datos_usuarios}\")",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_clientes",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_clientes(cursor):\n    # Insertar clientes en la tabla Clientes\n    datos_clientes = [\n        (\n            \"Francisco José\",\n            \"Cayuela\",\n            \"Navarro\",\n            \"12345678A\",\n            \"600123456\",\n            \"Calle Luna, 6\",",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_trabajadores",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_trabajadores(cursor):\n    # Insertar trabajadores en la tabla Trabajadores\n    datos_trabajadores = [\n        (\n            \"Paco\",\n            \"Lopez\",\n            \"Garcia\",\n            \"12345678D\",\n            \"620987654\",\n            \"Calle Estrella, 10\",",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_categorias",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_categorias(cursor):\n    # Insertar categorías en la tabla Categorias\n    datos_categorias = [\n        (\"Carnes\", \"Carnes a la parrilla y guisos de carne.\", \"carnes.png\"),\n        (\"Pastas\", \"Platos de pasta italiana y fideos.\", \"pastas.png\"),\n        (\n            \"Comidas de Puchero\",\n            \"Platos tradicionales de puchero.\",\n            \"puchero.png\",\n        ),",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_productos",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_productos(cursor):\n    # Insertar productos en la tabla Productos\n    datos_productos = [\n        # Carnes\n        (\n            \"Entrecot\",\n            \"Entrecot a la parrilla con guarnición de papas.\",\n            15.99,\n            \"entrecot.png\",\n            1,",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "logger = logging.getLogger(__name__)\ndef crear_datos():\n    \"\"\"\n    Controlador principal para insertar datos iniciales en la base de datos.\n    \"\"\"\n    conn = setupDB.get_db()\n    try:\n        cursor = conn.cursor()\n        insertar_roles(cursor)\n        insertar_usuarios(cursor)",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def get_db():\n    \"\"\"Obtiene una conexión a MySQL y la almacena en `g`.\"\"\"\n    if \"db\" not in g:\n        try:\n            db_config = Config.MYSQL_CONFIG\n            if db_config is not None:\n                logger.info(\"Creando conexión a MySQL con la base de datos seleccionada.\")\n                g.db = mysql.connector.connect(**db_config)\n            else:\n                logger.error(\"Configuración de base de datos no encontrada.\")",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "close_db",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def close_db(e=None):\n    \"\"\"Cierra la conexión a la base de datos si existe.\"\"\"\n    db = g.pop(\"db\", None)\n    if db is not None:\n        db.close()\n        logger.info(\"Conexión a MySQL cerrada correctamente\")\ndef registrar_y_mostrar(mensaje, nivel=\"info\"):\n    \"\"\"Registra un mensaje y lo imprime.\"\"\"\n    niveles = {\n        \"info\": logger.info,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "registrar_y_mostrar",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def registrar_y_mostrar(mensaje, nivel=\"info\"):\n    \"\"\"Registra un mensaje y lo imprime.\"\"\"\n    niveles = {\n        \"info\": logger.info,\n        \"warning\": logger.warning,\n        \"error\": logger.error,\n    }\n    print(mensaje)\n    niveles.get(nivel, logger.info)(mensaje)\ndef comprobar_o_crear_base_de_datos():",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "comprobar_o_crear_base_de_datos",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def comprobar_o_crear_base_de_datos():\n    \"\"\"Comprueba si existe la base de datos, si no existe la crea.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    nombre_base_datos = Config.MYSQL_CONFIG.get(\"database\")\n    try:\n        logger.info(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        print(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        # Comprobar si la base de datos existe\n        cursor.execute(\"SHOW DATABASES\")",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tablas",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tablas():\n    \"\"\"Controlador principal que verifica la creación de tablas y datos iniciales.\"\"\"\n    conn = get_db()\n    try:\n        cursor = conn.cursor()\n        funciones_creacion = [\n            crear_tabla_roles,\n            crear_tabla_usuarios,\n            crear_tabla_clientes,\n            crear_tabla_trabajadores,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_roles",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_roles(cursor):\n    \"\"\"Crea la tabla Roles.\"\"\"\n    try:\n        mensaje = \"Creando tabla Roles.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Roles (\n                            id_rol INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_rol VARCHAR(255) UNIQUE NOT NULL",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_usuarios",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_usuarios(cursor):\n    \"\"\"Crea la tabla Usuarios.\"\"\"\n    try:\n        mensaje = \"Creando tabla Usuarios.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Usuarios (\n                            id_usuario INT AUTO_INCREMENT PRIMARY KEY,\n                            email VARCHAR(255) NOT NULL UNIQUE,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_clientes",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_clientes(cursor):\n    \"\"\"Crea la tabla Clientes.\"\"\"\n    try:\n        mensaje = \"Creando tabla Clientes.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Clientes (\n                            id_cliente INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_cliente VARCHAR(255) NOT NULL,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_trabajadores",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_trabajadores(cursor):\n    \"\"\"Crea la tabla Trabajadores.\"\"\"\n    try:\n        mensaje = \"Creando tabla Trabajadores.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Trabajadores (\n                            id_trabajador INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_trabajador VARCHAR(255) NOT NULL,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_categorias",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_categorias(cursor):\n    \"\"\"Crea la tabla Categorias.\"\"\"\n    try:\n        mensaje = \"Creando tabla Categorias.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Categorias (\n                            id_categoria INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_categoria VARCHAR(255),",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_productos",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_productos(cursor):\n    \"\"\"Crea la tabla Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Productos (\n                            id_producto INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_producto TEXT,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_carrito",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_carrito(cursor):\n    \"\"\"Crea la tabla Carrito.\"\"\"\n    try:\n        mensaje = \"Creando tabla Carrito.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")            \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Carrito (\n                            id_carrito INT AUTO_INCREMENT PRIMARY KEY,\n                            cantidad INT NOT NULL,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "crear_tabla_pedidos",
+        "kind": 2,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "def crear_tabla_pedidos(cursor):\n    \"\"\"Crea la tabla Pedidos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Pedidos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\") \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Pedidos (\n                            id_pedido INT AUTO_INCREMENT PRIMARY KEY,\n                            num_pedido INT,",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "peekOfCode": "logger = logging.getLogger(__name__)\ndef get_db():\n    \"\"\"Obtiene una conexión a MySQL y la almacena en `g`.\"\"\"\n    if \"db\" not in g:\n        try:\n            db_config = Config.MYSQL_CONFIG\n            if db_config is not None:\n                logger.info(\"Creando conexión a MySQL con la base de datos seleccionada.\")\n                g.db = mysql.connector.connect(**db_config)\n            else:",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_carritos",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def obtener_carritos():\n    conn = get_db()  # Reutilizamos la conexión gestionada por g\n    cursor = conn.cursor(dictionary=True)  # Usamos dictionary=True para obtener filas como diccionarios (opcional)\n    try:\n        cursor.execute(\"SELECT * FROM Carrito\")\n        carritos = cursor.fetchall()\n        return carritos  # Devolvemos una lista de carritos\n    except Error as e:\n        logger.error(f\"Error al obtener carritos: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_carrito_id",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def obtener_carrito_id(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Carrito WHERE id_carrito = %s\", (id_carrito,))\n        carrito = cursor.fetchone()\n        return carrito  # Si no se encuentra, devolverá None automáticamente\n    except Error as e:\n        logger.error(f\"Error al obtener el carrito con ID {id_carrito}: {e}\")\n        return None  # Indicamos que no se pudo obtener el carrito",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_item_db",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def eliminar_item_db(id_item):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        query = \"DELETE FROM Items WHERE id_item = %s\"\n        cursor.execute(query, (id_item,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se eliminó al menos una fila\n    except Error as e:\n        logger.error(f\"Error al eliminar ítem con ID {id_item}: {e}\")",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_carrito_db",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def borrar_carrito_db(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        query = \"DELETE FROM Carrito WHERE id_carrito = %s\"\n        cursor.execute(query, (id_carrito,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se eliminó el carrito\n    except Error as e:\n        logger.error(f\"Error al borrar el carrito con ID {id_carrito}: {e}\")",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "finalizar_compra_db",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def finalizar_compra_db(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Actualiza el estado del carrito a 'finalizado'\n        query = \"UPDATE Carrito SET estado = 'finalizado' WHERE id_carrito = %s\"\n        cursor.execute(query, (id_carrito,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se actualizó el estado\n    except Error as e:",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_categorias",
+        "kind": 2,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "peekOfCode": "def obtener_categorias():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Categorias\")\n        categorias = cursor.fetchall()\n        return [\n            {\n                \"id_categoria\": categoria[\"id_categoria\"],\n                \"nombre_categoria\": categoria[\"nombre_categoria\"],",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_categoria_id",
+        "kind": 2,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "peekOfCode": "def obtener_categoria_id(id_categoria):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT id_categoria, nombre_categoria, descripcion, imagen \n            FROM Categorias \n            WHERE id_categoria = %s\n            \"\"\",",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "crear_categoria",
+        "kind": 2,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "peekOfCode": "def crear_categoria(nombre_categoria, descripcion, imagen):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Categorias (nombre_categoria, descripcion, imagen) \n            VALUES (%s, %s, %s)\n        \"\"\",\n            (nombre_categoria, descripcion, imagen),",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_categoria",
+        "kind": 2,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "peekOfCode": "def actualizar_categoria(nombre_categoria, descripcion, imagen, id_categoria):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            UPDATE Categorias \n            SET nombre_categoria =  %s, descripcion =  %s, imagen =  %s \n            WHERE id_categoria =  %s\"\"\",\n            (nombre_categoria, descripcion, imagen, id_categoria),",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_categoria",
+        "kind": 2,
+        "importPath": "repositories.rep_categoria",
+        "description": "repositories.rep_categoria",
+        "peekOfCode": "def borrar_categoria(id_categoria):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"DELETE 1 FROM Categorias WHERE id_categoria= %s\", (id_categoria,)\n        )\n        conn.commit()\n    except Error as e:\n        logger.error(f\"Error al BORRAR categoría {e}\")",
+        "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_clientes",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def obtener_clientes():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Clientes\")\n        clientes = cursor.fetchall()\n        return clientes\n    except Error as e:\n        logger.error(f\"Error al obtener clientes: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_cliente_id",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def obtener_cliente_id(id_cliente):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Clientes WHERE id_cliente = %s\", (id_cliente,))\n        cliente = cursor.fetchone()\n        return cliente\n    except Error as e:\n        logger.error(f\"Error al obtener cliente por ID: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_cliente_dni",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def obtener_cliente_dni(dni_cliente):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Clientes WHERE dni_cliente = %s\", (dni_cliente))\n        cliente = cursor.fetchone()\n        return cliente\n    except Error as e:\n        logger.error(f\"Error al obtener cliente por DNI: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_cliente",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def borrar_cliente(id_cliente):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor = conn.cursor()\n        cursor.execute(\"DELETE 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente,))\n        conn.commit()\n    except Error as e:\n        logger.error(f\"Error al BORRAR cliente: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "validar_claves_foraneas",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def validar_claves_foraneas(id_cliente_FK, id_producto_FK, id_carrito_FK):\n    \"\"\"\n    Valida que las claves foráneas existan en las tablas correspondientes.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Validar cliente\n        cursor.execute(\"SELECT 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente_FK,))",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_pedidos",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :param conn: Conexión a la base de datos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_pedido_id",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    :param conn: Conexión a la base de datos.\n    :param id_pedido: ID del pedido a buscar.\n    :return: Un diccionario con los datos del pedido o None si no existe.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_pedido_con_productos",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Consulta para obtener los pedidos con sus productos\n        query = \"\"\"\n            SELECT p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "crear_pedido_con_productos",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, id_carrito_FK, productos, fecha_pedido):\n    \"\"\"\n    Crea un pedido con varios productos.\n    - productos: Lista de diccionarios con id_producto y cantidad.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Insertar en la tabla Pedidos",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "generar_numero_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def generar_numero_pedido():\n    import random\n    return f\"PED-{random.randint(1000, 9999)}\"  # Número de pedido aleatorio\n# Modificar pedido\ndef actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Obtener el valor actual de la cantidad para verificar si ha cambiado",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"DELETE FROM Pedidos WHERE id_pedido = %s\",\n            (id_pedido),\n        )\n        conn.commit()\n    except Error as e:",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_productos",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def obtener_productos():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, \n                c.nombre_categoria \n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_producto_id",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def obtener_producto_id(id_producto):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, \n                c.nombre_categoria AS nombre_categoria\n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "crear_producto",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def crear_producto(nombre, descripcion, precio, imagen, id_categoria_FK):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Productos (nombre_producto, descripcion, precio, imagen, id_categoria_FK) \n            VALUES (%s, %s, %s, %s, %s)\n            \"\"\",\n            (nombre, descripcion, precio, imagen, id_categoria_FK),",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_producto_y_categorias",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def obtener_producto_y_categorias(id_producto, id_categoria_FK, id_categoria):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        producto = obtener_producto_id(conn, id_producto, id_categoria_FK)\n        categorias = categoriaDB.obtener_categorias(conn, id_categoria)\n        return producto, categorias\n    except Error as e:\n        logger.error(f\"Error al obtener producto y categoria: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_producto",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def actualizar_producto(\n    id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el producto y las categorías\n        producto, categorias = obtener_producto_y_categorias(conn, id_producto)\n        # Validar si el id_categoria_FK es válido\n        categoria_ids = [\n            categoria[\"id_categoria\"] for categoria in categorias",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_producto",
+        "kind": 2,
+        "importPath": "repositories.rep_producto",
+        "description": "repositories.rep_producto",
+        "peekOfCode": "def borrar_producto(id):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\"DELETE FROM Productos WHERE id_producto=%s\", (id,))\n        conn.commit()\n    except Error as e:\n        logger.error(f\"Error al borrar: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error\n    finally:",
+        "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_roles",
+        "kind": 2,
+        "importPath": "repositories.rep_rol",
+        "description": "repositories.rep_rol",
+        "peekOfCode": "def obtener_roles():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Roles\")\n        clientes = cursor.fetchall()\n        return clientes\n    except Error as e:\n        logger.error(f\"Error al obtener roles: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_rol",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_rol_por_id",
+        "kind": 2,
+        "importPath": "repositories.rep_rol",
+        "description": "repositories.rep_rol",
+        "peekOfCode": "def obtener_rol_por_id(id_rol):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Roles WHERE id_rol = %s\", (id_rol,))\n        rol = cursor.fetchone()\n        return rol\n    except Error as e:\n        logger.error(f\"Error al obtener rol por ID: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_rol",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_rol_por_nombre",
+        "kind": 2,
+        "importPath": "repositories.rep_rol",
+        "description": "repositories.rep_rol",
+        "peekOfCode": "def obtener_rol_por_nombre(conn, nombre_rol):\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Roles WHERE nombre_rol = %s\", (nombre_rol,))\n        rol = cursor.fetchone()\n        return rol\n    except Error as e:\n        logger.error(f\"Error al obtener rol por NOMBRE: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error\n    finally:",
+        "detail": "repositories.rep_rol",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_trabajadores",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def obtener_trabajadores():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Trabajadores\")\n        clientes = cursor.fetchall()\n        return clientes\n    except Error as e:\n        logger.error(f\"Error al obtener trabajadores: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_trabajador_id",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def obtener_trabajador_id(id_trabajador):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE id_trabajador = %s\", (id_trabajador,)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_trabajador_dni",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def obtener_trabajador_dni(dni_trabajador):\n    conn = get_db()\n    cursor = conn.cursor(dni_trabajador)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE dni_trabajador = %s\", (dni_trabajador)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_usuarios",
+        "kind": 2,
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "peekOfCode": "def obtener_usuarios():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Usuarios\")\n        usuarios = cursor.fetchall()\n        return usuarios  # Devolvemos una lista de usuarios\n    except Error as e:\n        logger.error(f\"Error al obtener usuarios: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_usuario_id",
+        "kind": 2,
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "peekOfCode": "def obtener_usuario_id(id_usuario):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT 1 FROM Usuarios WHERE id_usuario=?\", (id_usuario,))\n        usuario = cursor.fetchone()\n        return usuario\n    except Error as e:\n        logger.error(f\"Error al obtener usuario: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "autenticar_usuario",
+        "kind": 2,
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "peekOfCode": "def autenticar_usuario(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuario u",
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n# Decoradores de autenticación y roles combinados\ndef access_required(role=None):\n    def decorator(f):\n        @wraps(f)\n        def wrapper(*args, **kwargs):\n            if \"user_role\" not in session:\n                flash(\"Por favor, inicia sesión.\", \"warning\")",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "access_required",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def access_required(role=None):\n    def decorator(f):\n        @wraps(f)\n        def wrapper(*args, **kwargs):\n            if \"user_role\" not in session:\n                flash(\"Por favor, inicia sesión.\", \"warning\")\n                return redirect(url_for(\"auth.login\"))\n            if role and session.get(\"user_role\") != role:\n                logger.warning(f\"Acceso denegado. Rol requerido: {role}\")\n                flash(\"No tienes permisos para acceder a esta página.\", \"danger\")",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "role_redirect",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",  # Aquí puedes ajustar según la lógica real\n        \"trabajador\": \"auth.login\",  # Esto también\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"])\ndef login():\n    import controllers.auth_controller as authDB",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def login():\n    import controllers.auth_controller as authDB\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = authDB.autenticar_usuario(email, password, conexion)\n        if usuario:",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "logout",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n@auth.route(\"/register\")\ndef register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"])\ndef reset_password():",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"])\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "reset_password",
+        "kind": 2,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "def reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "kind": 5,
+        "importPath": "routes.auth_routes",
+        "description": "routes.auth_routes",
+        "peekOfCode": "auth = Blueprint(\"auth\", __name__)\n@auth.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n# Decoradores de autenticación y roles combinados\ndef access_required(role=None):\n    def decorator(f):\n        @wraps(f)\n        def wrapper(*args, **kwargs):",
+        "detail": "routes.auth_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@carrito.route(\"/carritos\", methods=[\"GET\"])\ndef listar_carritos():\n    \"\"\"Ruta para listar todos los carritos.\"\"\"\n    try:\n        carritos = carritoDB.obtener_carritos()\n        return jsonify(carritos), 200\n    except Exception as e:",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "listar_carritos",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def listar_carritos():\n    \"\"\"Ruta para listar todos los carritos.\"\"\"\n    try:\n        carritos = carritoDB.obtener_carritos()\n        return jsonify(carritos), 200\n    except Exception as e:\n        logger.error(f\"Error al listar carritos: {e}\")\n        return jsonify({\"error\": \"Error al obtener los carritos\"}), 500\n@carrito.route(\"/carritos/<int:id_carrito>\", methods=[\"GET\", \"POST\"])\ndef carrito_por_id(id_carrito):",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "carrito_por_id",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def carrito_por_id(id_carrito):\n    \"\"\"Ruta para obtener un carrito específico por ID.\"\"\"\n    try:\n        carrito = carritoDB.obtener_carrito_id(id_carrito)\n        if not carrito:\n            return jsonify({\"error\": \"Carrito no encontrado\"}), 404\n        return jsonify(carrito), 200\n    except Exception as e:\n        logger.error(f\"Error al obtener el carrito con ID {id_carrito}: {e}\")\n        return jsonify({\"error\": \"Error al obtener el carrito\"}), 500",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_item",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def eliminar_item():\n    \"\"\"Ruta para eliminar un ítem del carrito.\"\"\"\n    try:\n        id_item = request.form.get(\"id_item\")\n        if not id_item or not id_item.isdigit():\n            return jsonify({\"error\": \"ID del ítem inválido\"}), 400\n        resultado = carritoDB.eliminar_item_db(int(id_item))\n        if resultado:\n            return jsonify({\"mensaje\": \"Ítem eliminado exitosamente\"}), 200\n        else:",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_carrito",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def borrar_carrito():\n    \"\"\"Ruta para borrar un carrito completo.\"\"\"\n    try:\n        id_carrito = request.form.get(\"id_carrito\")\n        if not id_carrito or not id_carrito.isdigit():\n            return jsonify({\"error\": \"ID del carrito inválido\"}), 400\n        resultado = carritoDB.borrar_carrito_db(int(id_carrito))\n        if resultado:\n            return jsonify({\"mensaje\": \"Carrito borrado exitosamente\"}), 200\n        else:",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "finalizar_compra",
+        "kind": 2,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "def finalizar_compra():\n    \"\"\"Ruta para finalizar la compra.\"\"\"\n    try:\n        id_carrito = request.form.get(\"id_carrito\")\n        if not id_carrito or not id_carrito.isdigit():\n            return jsonify({\"error\": \"ID del carrito inválido\"}), 400\n        resultado = carritoDB.finalizar_compra_db(int(id_carrito))\n        if resultado:\n            return jsonify({\"mensaje\": \"Compra finalizada exitosamente\"}), 200\n        else:",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "carrito",
+        "kind": 5,
+        "importPath": "routes.carrito_routes",
+        "description": "routes.carrito_routes",
+        "peekOfCode": "carrito = Blueprint(\"carrito\", __name__)\n# Rutas\n@carrito.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@carrito.route(\"/carritos\", methods=[\"GET\"])\ndef listar_carritos():\n    \"\"\"Ruta para listar todos los carritos.\"\"\"\n    try:",
+        "detail": "routes.carrito_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@categoria.route(\"/categoria_template\")\ndef categoria_template():\n    return render_template(\"categoria/categoria.html\")\n@categoria.route(\"/mostrar_categorias\", methods=[\"GET\"], endpoint=\"mostrar_categorias\")\ndef mostrar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde ADMIN.\"\"\"\n    try:",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "categoria_template",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def categoria_template():\n    return render_template(\"categoria/categoria.html\")\n@categoria.route(\"/mostrar_categorias\", methods=[\"GET\"], endpoint=\"mostrar_categorias\")\ndef mostrar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde ADMIN.\"\"\"\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        logger.info(\"OBTENIENDO LISTADO DE CATEGORÍAS DESDE ADMIN\")\n        return render_template(\"categoria/categoria_tabla.html\", categorias=categorias), 200\n    except Exception as e:",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_categorias",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def mostrar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde ADMIN.\"\"\"\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        logger.info(\"OBTENIENDO LISTADO DE CATEGORÍAS DESDE ADMIN\")\n        return render_template(\"categoria/categoria_tabla.html\", categorias=categorias), 200\n    except Exception as e:\n        logger.error(f\"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}\")\n        return render_template(\"categoria/categoria_tabla.html\", mensaje=\"Error al obtener las categorías\"), 500\n@categoria.route(\"/listar_categorias\", methods=[\"GET\"], endpoint=\"listar_categorias\")",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "listar_categorias",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def listar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde CLIENTE.\"\"\"\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO LISTADO DE CATEGORIAS DESDE AMDIN\"), 200\n            return render_template(\"categoria/categoria.html\", categorias=categorias), 200\n        else:\n            logger.error(f\"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}\"), 404            \n            return render_template(\"index.html\")",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_categoria_detalle",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def mostrar_categoria_detalle(id_categoria):\n    try:\n        categoria = categoriaDB.obtener_categoria_id(id_categoria)\n        if categoria:\n            logger.info(f\"CATEGORÍA DETALLE PARA CLIENTE O ADMIN: {categoria['nombre_categoria']}\")\n            logger.info(f\"Valor de categoria.imagen: {categoria['imagen']}\")\n            return render_template(\n                \"categoria/categoria_detalle.html\",\n                categoria=categoria,\n                id_categoria=id_categoria,  # Pasamos id_categoria explícitamente",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_crear_categoria",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def ruta_crear_categoria():\n    try:\n        # Manejo explícito de GET: mostrar el formulario para crear una categoría\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear una categoría.\")\n            return render_template('categoria/crear_categoria.html')\n        # Manejo de POST: procesar el formulario\n        if request.method == 'POST':\n            logger.info(\"Procesando formulario para crear una categoría...\")\n            # Obtener datos del formulario",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_editar_categoria",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def ruta_editar_categoria(id_categoria):\n    try:\n        if request.method == 'GET':\n            categoria = categoriaDB.obtener_categoria_id(id_categoria)\n            if categoria:\n                logger.info(f\"Mostrando formulario para editar categoría ID {id_categoria}\")\n                return render_template('categoria/editar_categoria.html', categoria=categoria), 200\n            else:\n                logger.warning(f\"Categoría con ID {id_categoria} no encontrada.\")\n                return render_template('categoria/categoria_tabla.html', error=\"Categoría no encontrada.\"), 404",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_borrar_categoria",
+        "kind": 2,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "def ruta_borrar_categoria():\n    try:\n        # Obtener ID de la categoría del formulario\n        id_categoria = request.form.get(\"id_categoria\")\n        if not id_categoria:\n            logger.warning(\"ID de categoría no proporcionado.\")\n            return render_template(\"categoria/categoria_tabla.html\"), 400  # Bad Request\n        # Buscar la categoría en la base de datos\n        categoria = categoriaDB.obtener_categoria_id(id_categoria)\n        if categoria:",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "categoria",
+        "kind": 5,
+        "importPath": "routes.categorias_routes",
+        "description": "routes.categorias_routes",
+        "peekOfCode": "categoria = Blueprint(\"categoria\", __name__)\n@categoria.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@categoria.route(\"/categoria_template\")\ndef categoria_template():\n    return render_template(\"categoria/categoria.html\")\n@categoria.route(\"/mostrar_categorias\", methods=[\"GET\"], endpoint=\"mostrar_categorias\")\ndef mostrar_categorias():",
+        "detail": "routes.categorias_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"])\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        return render_template(\"cliente/cliente.html\", clientes=clientes, editando=False), jsonify(clientes), 200\n    except Exception as e:",
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_clientes",
+        "kind": 2,
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "peekOfCode": "def mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        return render_template(\"cliente/cliente.html\", clientes=clientes, editando=False), jsonify(clientes), 200\n    except Exception as e:\n        logger.error(f\"Error al listar CLIENTES DESDE ADMIN: {e}\")\n        return render_template(\"/\"),jsonify({\"error\": \"Error al obtener los CLIENTES DESDE ADMIN\"}), 500\n@cliente.route(\"/editar_cliente/<int:id_cliente>\", methods=[\"GET\", \"POST\"])\ndef mostrar_cliente(conexion,id_cliente):",
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_cliente",
+        "kind": 2,
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "peekOfCode": "def mostrar_cliente(conexion,id_cliente):\n    \"\"\"Ruta para DETALLE CLIENTE DESDE CLIENTE.\"\"\"\n    try:\n        cliente = clienteDB.obtener_cliente_id(conexion,id_cliente)\n        logger.info(\"REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE\")\n        return render_template(\"/cliente/cliente_editar.html\", cliente=cliente), jsonify(cliente), 200\n    except Exception as e:\n        logger.error(f\"Error REDIRECCIÓN CLIENTE ACTUALIZAR DESDE CLIENTE: {e}\")\n        return render_template(\"index.html\"),jsonify({\"error\": \"Error al obtener los CLIENTES DESDE ADMIN\"}), 500    \n@cliente.route(\"/borrar_cliente\", methods=[\"GET\", \"POST\"])",
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_producto",
+        "kind": 2,
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "peekOfCode": "def borrar_producto():\n    \"\"\"Ruta para BORRAR CLIENTE DESDE ADMIN.\"\"\"\n    try:    \n        id_cliente = request.form.get(\"id_cliente\")\n        clienteDB.borrar_cliente(id_cliente)\n        logger.info(\"CLIENTE BORRADO\")\n        return redirect(\"/mostrar_clientes\"), 200\n    except Exception as e:\n        logger.error(f\"Error al BORRAR CLIENTE DESDE ADMIN: {e}\")\n        return redirect(\"/mostrar_clientes\"), jsonify({\"error\": \"Error al BORRAR CLIENTE DESDE ADMIN\"}), 500",
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cliente",
+        "kind": 5,
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "peekOfCode": "cliente = Blueprint(\"cliente\", __name__)\n@cliente.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"])\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)",
+        "detail": "routes.clientes_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n# Manejo de errores\n@error.errorhandler(404)\ndef page_not_found(e):\n    logger.error(f\"Error interno: {logging.error}\")\n    return render_template(\"error/404.html\"), 404\n@error.errorhandler(403)\ndef forbidden(e):",
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "page_not_found",
+        "kind": 2,
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "peekOfCode": "def page_not_found(e):\n    logger.error(f\"Error interno: {logging.error}\")\n    return render_template(\"error/404.html\"), 404\n@error.errorhandler(403)\ndef forbidden(e):\n    logger.error(f\"Error interno: {logging.error}\")\n    return render_template(\"error/403.html\"), 403\n@error.errorhandler(500)\ndef internal_error(error):\n    logger.error(f\"Error interno: {error}\")",
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "forbidden",
+        "kind": 2,
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "peekOfCode": "def forbidden(e):\n    logger.error(f\"Error interno: {logging.error}\")\n    return render_template(\"error/403.html\"), 403\n@error.errorhandler(500)\ndef internal_error(error):\n    logger.error(f\"Error interno: {error}\")\n    return \"Ocurrió un error en el servidor\", 500",
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "internal_error",
+        "kind": 2,
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "peekOfCode": "def internal_error(error):\n    logger.error(f\"Error interno: {error}\")\n    return \"Ocurrió un error en el servidor\", 500",
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "kind": 5,
+        "importPath": "routes.error_routes",
+        "description": "routes.error_routes",
+        "peekOfCode": "error = Blueprint(\"error\", __name__)\n@error.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n# Manejo de errores\n@error.errorhandler(404)\ndef page_not_found(e):\n    logger.error(f\"Error interno: {logging.error}\")\n    return render_template(\"error/404.html\"), 404",
+        "detail": "routes.error_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n# Ruta de contacto\n@extra.route(\"/contacto\", methods=[\"GET\", \"POST\"])\ndef contacto():\n    if request.method == \"POST\":\n        nombre_cliente = request.form[\"nombre_cliente\"]\n        dni_cliente = request.form[\"dni_cliente\"]\n        email = request.form[\"email\"]",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "contacto",
+        "kind": 2,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "def contacto():\n    if request.method == \"POST\":\n        nombre_cliente = request.form[\"nombre_cliente\"]\n        dni_cliente = request.form[\"dni_cliente\"]\n        email = request.form[\"email\"]\n        asunto = request.form[\"asunto\"]\n        mensaje = request.form[\"mensaje\"]\n        # Procesar los datos (enviar un correo, guardar en base de datos, etc.)\n        flash(\"Gracias por ponerte en contacto. Te responderemos pronto.\", \"success\")\n        return redirect(",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "privacidad",
+        "kind": 2,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "def privacidad():\n    return render_template(\"/privacidad/privacidad.html\")\n@extra.route(\"/terminos\")\ndef terminos():\n    return render_template(\"/privacidad/terminos.html\")\n@extra.route(\"/servicio\")\ndef servicio():\n    return render_template(\"servicios/servicios.html\")",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "terminos",
+        "kind": 2,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "def terminos():\n    return render_template(\"/privacidad/terminos.html\")\n@extra.route(\"/servicio\")\ndef servicio():\n    return render_template(\"servicios/servicios.html\")",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "servicio",
+        "kind": 2,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "def servicio():\n    return render_template(\"servicios/servicios.html\")",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "extra",
+        "kind": 5,
+        "importPath": "routes.extra_routes",
+        "description": "routes.extra_routes",
+        "peekOfCode": "extra = Blueprint(\"extra\", __name__)\n@extra.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n# Ruta de contacto\n@extra.route(\"/contacto\", methods=[\"GET\", \"POST\"])\ndef contacto():\n    if request.method == \"POST\":\n        nombre_cliente = request.form[\"nombre_cliente\"]",
+        "detail": "routes.extra_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/pedido_template\")\ndef pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "pedido_template",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido.html\", pedidos=pedidos)",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_pedidos",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido.html\", pedidos=pedidos)\n        else:\n            logger.warning(\"No se encontraron pedidos en la base de datos.\")\n            return render_template(\"pedido/pedido.html\", pedidos=[]), 404",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_crear_pedido",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def ruta_crear_pedido():\n    try:\n        if request.method == \"POST\":\n            n_pedido = request.form.get(\"num_pedido\")\n            id_cliente_FK = request.form.get(\"id_cliente_FK\")\n            id_carrito_FK = request.form.get(\"id_carrito_FK\")\n            fecha_pedido = request.form.get(\"entrega\")\n            # Recoger los productos seleccionados\n            productos = []\n            cantidad_productos = len(request.form.getlist(\"id_producto_FK\"))  # Contamos el número de productos seleccionados",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "editar_pedido",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def editar_pedido(id_pedido):\n    try:\n        if request.method == \"GET\":\n            try:\n                pedido = pedidoDB.obtener_pedido_id(id_pedido)\n                if pedido:\n                    try:\n                        id_cliente = clienteDB.obtener_cliente_id(id_cliente)\n                        logger.info(\"CLIENTE DEL PEDIDO OBTENIDO POR ID\"), 200\n                    except Exception as e:",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_pedido",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def borrar_pedido():\n    try:\n        id_pedido = request.form.get(\"id_pedido\")\n        pedido = pedidoDB.borrar_pedido(id_pedido)\n        if pedido:\n            logger.info(\"PEDIDO BORRADO\"), jsonify(id_pedido), 200\n            return render_template('pedido/pedido.html')\n        else:\n            logger.warning(\"No se encontraron pedidos para BORRAR en la base de datos.\"), 404\n            return render_template(\"pedido/pedido.html\")                ",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "pedido",
+        "kind": 5,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "pedido = Blueprint(\"pedido\", __name__)\n@pedido.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/pedido_template\")\ndef pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\ndef mostrar_pedidos():",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "allowed_file",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "producto_template",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_productos",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:\n            logger.warning(\"No se encontraron productos\"), 404\n            return render_template(\"index.html\")\n    except Exception as e:",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "listar_productos",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def listar_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto.html', productos=productos)\n        else:\n            logger.warning(\"No se encontraron productos\"), 404\n            return render_template(\"index.html\")\n    except Exception as e:",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_crear_producto",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def ruta_crear_producto():\n    try:\n        # Manejo explícito de GET: renderizar el formulario para crear un producto\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear un producto.\")\n            # Obtener las categorías de la base de datos\n            categorias = categoriaDB.obtener_categorias()\n            # Pasar las categorías al template para mostrarlas en el formulario\n            return render_template('producto/producto_nuevo.html', categorias=categorias)\n        # Manejo de POST: procesar el formulario",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_producto_detalle",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def mostrar_producto_detalle(id_producto):\n    try:\n        producto = productoDB.obtener_producto_id(id_producto)\n        if producto:\n            logger.info(f\"PRODUCTO DETALLE PARA CLIENTE O ADMIN: {producto['nombre_producto']}\")\n            return render_template(\n                \"producto/producto_detalle.html\",\n                producto=producto,\n                id_producto=id_producto,  # Pasamos id_producto explícitamente\n                editando=False",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_editar_producto",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def ruta_editar_producto(id_producto):\n    try:\n        if request.method == \"GET\":\n            # Buscar el producto por su ID\n            producto = productoDB.obtener_producto_id(id_producto)\n            if producto:\n                logger.info(f\"PRODUCTO OBTENIDO POR 'ID': {id_producto}\")\n                return render_template('producto/producto_editar.html', producto=producto)\n            else:\n                logger.warning(f\"Producto con ID {id_producto} no encontrado.\")",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_borrar_producto",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def ruta_borrar_producto():\n    try:\n        if request.method == \"POST\":\n            producto_id = request.form.get(\"id_producto\")\n            producto = productoDB.obtener_producto_id(producto_id)\n            if producto:\n                productoDB.borrar_producto(producto_id)\n                logger.info(f\"PRODUCTO BORRADO: {producto['nombre_producto']}\"), 200\n                return render_template(\"producto/producto_tabla.html\")\n            else:",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "producto",
+        "kind": 5,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "producto = Blueprint(\"producto\", __name__)\n@producto.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\nALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ALLOWED_EXTENSIONS",
+        "kind": 5,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}\ndef allowed_file(filename):\n    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS\n@producto.route(\"/producto_template\")\ndef producto_template():\n    return render_template('producto/producto.html')\n@producto.route(\"/mostrar_productos\", methods=[\"GET\"], endpoint=\"mostrar_productos\")\ndef mostrar_productos():\n    try:\n        productos = productoDB.obtener_productos()",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\")\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200\n            return render_template(\"trabajador/trabajador_tabla.html\", trabajadores=trabajadores)",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_trabajadores",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200\n            return render_template(\"trabajador/trabajador_tabla.html\", trabajadores=trabajadores)\n        else:\n            logger.error(\"ERROR OBTENIENDO TRABAJADORES - GESTIÓN DE TRABAJADORES\"), 404\n            render_template(\"index.html\")             \n    except Exception as e:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestion_productos",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def gestion_productos():\n    try:\n        productos = productoDB.obtener_productos()\n        if productos:\n            logger.info(\"OBTENIENDO PRODUCTOS DESDE ADMIN\"), 200\n            return render_template('producto/producto_tabla.html', productos=productos)\n        else:\n            logger.warning(\"No se encontraron productos\"), 404\n            return render_template(\"index.html\")\n    except Exception as e:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestionar_categorias",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def gestionar_categorias():\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 200\n            return redirect(\"categoria/categoria_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            render_template(\"index.html\")\n    except Exception as e:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "gestionar_clientes",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def gestionar_clientes():\n    try:\n        clientes = clienteDB.obtener_clientes()\n        if clientes:\n            logger.info(\"OBTENIENDO CLIENTES - GESTIÓN DE CLIENTES\"), 200\n            return render_template(\"cliente/cliente_tabla.html\")\n        else:\n            logger.error(\"ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS\"), 404\n            render_template(\"index.html\")\n    except Exception as e:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "trabajador",
+        "kind": 5,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "trabajador = Blueprint(\"trabajador\", __name__)\n@trabajador.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\")\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "validar_telefono",
+        "kind": 2,
+        "importPath": "utils.validaciones",
+        "description": "utils.validaciones",
+        "peekOfCode": "def validar_telefono(telefono):\n    return bool(re.match(r'^[0-9]{9}$', telefono))\n# Validación para el DNI (8 dígitos seguidos de una letra)\ndef validar_dni(dni_cliente):\n    return bool(re.match(r'^[0-9]{8}[A-Za-z]$', dni_cliente))\n# Validación para el DNI (8 dígitos seguidos de una letra)\ndef validar_dni(dni_trabajador):\n    return bool(re.match(r'^[0-9]{8}[A-Za-z]$', dni_trabajador))",
+        "detail": "utils.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_dni",
+        "kind": 2,
+        "importPath": "utils.validaciones",
+        "description": "utils.validaciones",
+        "peekOfCode": "def validar_dni(dni_cliente):\n    return bool(re.match(r'^[0-9]{8}[A-Za-z]$', dni_cliente))\n# Validación para el DNI (8 dígitos seguidos de una letra)\ndef validar_dni(dni_trabajador):\n    return bool(re.match(r'^[0-9]{8}[A-Za-z]$', dni_trabajador))",
+        "detail": "utils.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "validar_dni",
+        "kind": 2,
+        "importPath": "utils.validaciones",
+        "description": "utils.validaciones",
+        "peekOfCode": "def validar_dni(dni_trabajador):\n    return bool(re.match(r'^[0-9]{8}[A-Za-z]$', dni_trabajador))",
+        "detail": "utils.validaciones",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "extensions",
+        "description": "extensions",
+        "peekOfCode": "app = Flask(__name__)",
+        "detail": "extensions",
+        "documentation": {}
+    },
+    {
+        "label": "setup_logger",
+        "kind": 2,
+        "importPath": "logs",
+        "description": "logs",
+        "peekOfCode": "def setup_logger():\n    logging.basicConfig(\n        level=logging.DEBUG,  # Nivel de log\n        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',\n        handlers=[\n            logging.StreamHandler(),  # Mostrar logs en consola\n            logging.FileHandler(\"web_cocina.log\", mode='a', encoding='utf-8')  # Guardar logs en archivo\n        ]\n    )\n    return logging.getLogger(__name__)",
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "kind": 5,
+        "importPath": "logs",
+        "description": "logs",
+        "peekOfCode": "logger = setup_logger()",
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "inicializar_aplicacion",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def inicializar_aplicacion(app):\n    # Inicializar la base de datos y las tablas una sola vez\n     with app.app_context():\n        setupDB.get_db()  # Asegura la conexión inicial\n        setupDB.comprobar_o_crear_base_de_datos()\n        setupDB.crear_tablas()\n        recordDB.crear_datos()\n        setupDB.close_db()  # Cierra la conexión después de la inicialización\n@app.before_request\ndef cargar():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def cargar():\n    # Conectar a la base de datos en cada solicitud\n    setupDB.get_db()\n@app.teardown_appcontext\ndef cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "cerrar_conexion",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))\n        logger.debug(\"Directorio raíz añadido al PYTHONPATH.\")\n        inicializar_aplicacion(app)\n        logger.info(\"Iniciando el servidor Flask en modo debug...\")\n        app.run(debug=True)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "conexion",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "conexion = None\ndef inicializar_aplicacion(app):\n    # Inicializar la base de datos y las tablas una sola vez\n     with app.app_context():\n        setupDB.get_db()  # Asegura la conexión inicial\n        setupDB.comprobar_o_crear_base_de_datos()\n        setupDB.crear_tablas()\n        recordDB.crear_datos()\n        setupDB.close_db()  # Cierra la conexión después de la inicialización\n@app.before_request",
+        "detail": "main",
+        "documentation": {}
+    }
+]

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Cocina con Cheff Nava - Formulario de Contacto
+{% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container mt-5">
+      <!-- Mensaje de bienvenida y cordialidad -->
+      <div class="text-center mb-4">
+        <h1>¡Nos encantaría saber de ti!</h1>
+        <p>Si tienes alguna pregunta, sugerencia o simplemente deseas ponerte en contacto, no dudes en llenar el siguiente formulario. Estamos aquí para ayudarte y responder a tus inquietudes con la mayor rapidez posible. ¡Gracias por confiar en nosotros!</p>
+      </div>
+
+      <!-- Formulario de contacto -->
+      <form method="POST" action="{{ url_for('extra.contacto') }}">
+        <div class="mb-3">
+          <span>NOMBRE Y APELLIDOS</span>
+          <label for="nombre_cliente" class="form-label" placeholder="Indique su nombre y apellidos, por favor.."></label>
+          <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" required />
+        </div>
+        <span id= "email">EMAIL</span>
+        <div class="mb-3">
+          <label for="email" class="form-label" placeholder="Indique su dirección de correo electrónico, por favor.."></label>
+          <input type="email" class="form-control" id="email" name="email" required />
+        </div>
+        <span>ASUNTO DEL EMAIL</span>
+        <div class="mb-3">
+          <label for="asunto" class="form-label" placeholder="Indique brevemente el motivo de su comunicación, por favor.."></label>
+          <input type="text" class="form-control" id="asunto" name="asunto" required />
+        </div>
+        <span>DESCRIPCION DEL EMAIL</span>
+        <div class="mb-3">
+          <label for="mensaje" class="form-label" placeholder="Cuéntenos el motivo de su preocupación, queja o sugerencia, por favor.."></label>
+          <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-danger" style="margin-left: 330px;">Enviar Mensaje</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="contact-form">
+    <div class="container mt-5">
+        <h1 class="display-6 text-center text-dark mb-4">
+            Estás en la Sección de Gestión de Categorías
+        </h1>
+        
+        
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <a href="{{ url_for('categoria.ruta_crear_categoria') }}" class="btn btn-success btn-lg">Añadir Nueva Categoria</a>
+            </div>
+        </div>
+
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Identificador</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Imagen</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for categoria in categorias %}
+                <tr>
+                    <td>{{ categoria.id_categoria }}</td>
+                    <td>{{ categoria.nombre_categoria }}</td>
+                    <td>{{ categoria.descripcion }}</td>
+                    <td>
+                        {% if categoria.imagen %}
+                        <img src="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ categoria.nombre_categoria }}" />
+                        {% else %}
+                            <p>No hay imagen disponible.</p>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ url_for('categoria.ruta_editar_categoria', id_categoria=id_categoria) }}" class="btn btn-warning btn-sm">Editar</a>
+                        <form action="{{ url_for('categoria.ruta_borrar_categoria') }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="id_categoria" value="{{ categoria['id_categoria'] }}">
+                            <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                        </form>
+                        <a href="{{ url_for('categoria.mostrar_categoria_detalle', id_categoria=categoria['id_categoria'])  }}" class="btn btn-info btn-sm">Detalles</a>
+                        <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-primary btn-sm">Volver al listado</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>            
+        </table>
+    </div>
+</div>
+{% endblock %}

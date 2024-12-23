@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Cocina con Cheff Nava - Carrito de Compras {% endblock %}
+
+{% block content %}
+<div class="contact-form">
+    <div class="container mt-5">
+        <h1 class="display-6 text-center text-dark mb-4">
+            Carrito de Compras
+        </h1>
+        
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-success btn-lg">Añadir Productos al Carrito</a>
+            </div>
+        </div>
+
+        <table class="table table-hover table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Producto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio Unitario (€)</th>
+                    <th scope="col">Subtotal (€)</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in carrito %}
+                <tr style="text-align: center;">
+                    <td>{{ item.id_carrito }}</td>
+                    <td>{{ item.nombre_producto }}</td>
+                    <td>{{ item.cantidad }}</td>
+                    <td>{{ item.precio_unitario }}</td>
+                    <td>{{ item.cantidad * item.precio_unitario }}</td>
+                    <td>
+                        <form action="{{ url_for('carrito.borrar_carrito') }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="id_carrito" value="{{ carrito.id_carrito }}">
+                            <button type="submit" class="btn btn-danger btn-lg">Borrar Carrito</button>
+                        </form>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="row mt-4">
+            <div class="col-12 text-end">
+                <h3>Total: 
+                    {% set total = 0 %}
+                    {% for item in carrito %}
+                        {% set total = total + (item.cantidad * item.precio_unitario) %}
+                    {% endfor %}
+                    {{ total }} €
+                </h3>
+                <form action="{{ url_for('carrito.finalizar_compra') }}" method="POST" style="display:inline;">
+                    <input type="hidden" name="id_carrito" value="{{ carrito.id_carrito }}">
+                    <button type="submit" class="btn btn-success btn-lg">Finalizar Compra</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

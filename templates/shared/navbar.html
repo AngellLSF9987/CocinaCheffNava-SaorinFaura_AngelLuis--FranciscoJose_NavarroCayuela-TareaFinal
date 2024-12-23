@@ -1,0 +1,54 @@
+<!-- templates/shared/navbar.html -->
+{% block content %}
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <!-- Logo o nombre del sitio -->
+      <a class="navbar-brand" href="#">Web Cocina</a>
+
+      <!-- Botón para el menú hamburguesa en pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+      <!-- Menú de navegación -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <!-- Enlace de Inicio -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('producto.listar_productos') }}">Productos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('categoria.listar_categorias') }}">Categorías</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Mis Pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <span class="nav-link">Bienvenido a la Cocina del Cheff Nava!</span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-danger">Cerrar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Incluir los scripts de Bootstrap para habilitar el menú hamburguesa -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+{% endblock %}

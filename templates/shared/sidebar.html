@@ -1,0 +1,30 @@
+<!-- sidebar.html (izquierda) -->
+
+{% block content %}
+  <nav class="nav flex-column">
+    <ul>
+      <!-- Ruta ajustada para la lista de productos -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('producto.mostrar_productos') }}">Productos</a>
+      </li>
+
+      <!-- Ruta ajustada para la lista de categorías -->
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('categoria.mostrar_categorias') }}">Categorías</a>
+          </li>
+
+      <!-- Ruta ajustada para la lista de mis pedidos -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Mis Pedidos</a>
+      </li> 
+      
+      <!-- Ruta ajustada para la lista de contacto y servicios -->
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a>
+      </li>
+    </ul>
+  </nav>
+{% endblock %}

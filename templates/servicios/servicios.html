@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Cocina con Cheff Nava - Servicios - Cocina para Llevar
+{% endblock %}
+
+{% block content %}
+  <div class="contact-form">
+    <div class="container py-5">
+      <h1 class="text-center mb-4">Nuestros Servicios</h1>
+      <p class="lead text-center mb-5">En nuestra cocina para llevar, nos especializamos en ofrecer comida deliciosa, rápida y saludable. Conoce nuestros servicios y cómo podemos ayudarte a disfrutar de una experiencia culinaria única.</p>
+
+      <!-- Sección de Servicios Principales -->
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{{ url_for('static', filename='images/domicilio.png') }}" class="card-img-top" alt="Servicio de entregas" />
+            <div class="card-body">
+              <h5 class="card-title">Servicio de Entrega a Domicilio</h5>
+              <p class="card-text">Disfruta de tu comida favorita desde la comodidad de tu hogar. Ofrecemos entregas rápidas y seguras en toda la ciudad.</p>
+              <a href="{{ url_for('extra.contacto') }}" class="btn btn-primary">Solicitar Entrega</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{{ url_for('static', filename='images/catering.png') }}" class="card-img-top" alt="Servicio de catering" />
+            <div class="card-body">
+              <h5 class="card-title">Catering para Eventos</h5>
+              <p class="card-text">¿Tienes un evento? Ofrecemos opciones de catering para todo tipo de celebraciones, desde almuerzos corporativos hasta fiestas privadas.</p>
+              <a href="{{ url_for('extra.contacto') }}" class="btn btn-primary">Más Información</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="{{ url_for('static', filename='images/menu.png') }}" class="card-img-top" alt="Menú del Día" />
+            <div class="card-body">
+              <h5 class="card-title">Menú del Día</h5>
+              <p class="card-text">Cada día preparamos un menú especial con ingredientes frescos y saludables. ¡Perfecto para una comida rápida y deliciosa!</p>
+              <a href="{{ url_for('extra.contacto') }}" class="btn btn-primary">Ver Menú</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección de Preguntas Frecuentes -->
+      <div class="mt-5">
+        <h3 class="text-center mb-4">Preguntas Frecuentes</h3>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqOne"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="true" aria-controls="faqCollapseOne">¿Cómo puedo realizar un pedido?</button></h2>
+            <div id="faqCollapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Puedes realizar tu pedido a través de nuestra página web, llamándonos directamente o usando nuestras aplicaciones móviles.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqTwo"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">¿Puedo personalizar mi pedido?</button></h2>
+            <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Sí, ofrecemos opciones de personalización en muchos de nuestros platos. Puedes indicarnos tus preferencias al realizar el pedido.</div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqThree"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseThree" aria-expanded="false" aria-controls="faqCollapseThree">¿Cuáles son los tiempos de entrega?</button></h2>
+            <div id="faqCollapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Los tiempos de entrega varían dependiendo de tu ubicación, pero generalmente entregamos en un plazo de 30 a 45 minutos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
