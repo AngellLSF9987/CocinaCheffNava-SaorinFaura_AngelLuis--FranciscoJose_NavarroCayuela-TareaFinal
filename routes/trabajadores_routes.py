@@ -23,10 +23,10 @@ def mostrar_trabajadores():
             return render_template("trabajador/trabajador_tabla.html", trabajadores=trabajadores)
         else:
             logger.error("ERROR OBTENIENDO TRABAJADORES - GESTIÓN DE TRABAJADORES"), 404
-            render_template("index.html")             
+            redirect("/")            
     except Exception as e:
         logger.error(f"Error al MOSTRAR TRABAJADORES DESDE ADMIN: {e}"), 500
-        render_template("index.html")       
+        redirect("/")      
       
 
 @trabajador.route("/gestion_productos", methods=["GET"], endpoint="gestion_productos")
@@ -38,10 +38,10 @@ def gestion_productos():
             return render_template('producto/producto_tabla.html', productos=productos)
         else:
             logger.warning("No se encontraron productos"), 404
-            return render_template("index.html")
+            return redirect("/")
     except Exception as e:
         logger.error(f"Error OBTENIENDO PRODUCTOS DESDE ADMIN: {e}"), 500
-        return render_template("index.html") 
+        return redirect("/") 
 
 
 @trabajador.route("/gestionar_categorias", methods=["GET"], endpoint="gestionar_categorias")
@@ -53,10 +53,10 @@ def gestionar_categorias():
             return redirect("categoria/categoria_tabla.html")
         else:
             logger.error("ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS"), 404
-            render_template("index.html")
+            redirect("/")
     except Exception as e:
         logger.error(f"Error OBTENIENDO CATEGORÍAS DESDE ADMIN: {e}"), 500
-        render_template("index.html")        
+        redirect("/")        
 
 
 @trabajador.route("/gestionar_clientes", methods=["GET"], endpoint="gestionar_clientes")
@@ -68,7 +68,7 @@ def gestionar_clientes():
             return render_template("cliente/cliente_tabla.html")
         else:
             logger.error("ERROR OBTENIENDO CATEGORÍAS - GESTIÓN DE CATEGORÍAS"), 404
-            render_template("index.html")
+            redirect("/")
     except Exception as e:
         logger.error(f"Error OBTENIENDO PRDOCUTOS DESDE ADMIN: {e}"), 500
-        render_template("index.html")         
+        redirect("/")         
