@@ -1111,6 +1111,24 @@
         "documentation": {}
     },
     {
+        "label": "insertar_carritos",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_carritos(cursor):\n    # Datos de ejemplo para carritos de compra y productos asociados\n    carritos_prueba = [\n        (1, [(1, 2), (2, 1)]),  # Cliente 1, productos 1 y 2 con cantidades 2 y 1 respectivamente\n        (2, [(3, 5), (4, 3)]),  # Cliente 2, productos 3 y 4 con cantidades 5 y 3 respectivamente\n    ]\n    for id_cliente_FK, productos in carritos_prueba:\n        # Comprobar si ya existe un carrito para este cliente\n        cursor.execute(\"SELECT id_carrito FROM Carrito WHERE id_cliente_FK = %s\", (id_cliente_FK,))\n        carrito_existente = cursor.fetchone()",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_pedidos",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_pedidos(cursor):\n    # Datos de ejemplo para pedidos y productos asociados\n    pedidos_prueba = [\n        (101, 1, 1, [  # Pedido 101, Cliente 1, Carrito 1\n            (1, 2), (2, 1)  # Productos 1 y 2 con cantidades 2 y 1 respectivamente\n        ]),\n        (102, 2, 2, [  # Pedido 102, Cliente 2, Carrito 2\n            (3, 5), (4, 3)  # Productos 3 y 4 con cantidades 5 y 3 respectivamente\n        ]),\n    ]",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
         "label": "logger",
         "kind": 5,
         "importPath": "database.db_record",

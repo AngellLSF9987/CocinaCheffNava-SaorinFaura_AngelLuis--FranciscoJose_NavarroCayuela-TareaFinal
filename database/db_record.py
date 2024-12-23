@@ -19,6 +19,8 @@ def crear_datos():
         insertar_trabajadores(cursor)
         insertar_categorias(cursor)
         insertar_productos(cursor)
+        insertar_carritos(cursor)
+        insertar_pedidos(cursor)
 
         conn.commit()
         print("✅ Datos iniciales insertados correctamente.")
@@ -493,4 +495,91 @@ def insertar_productos(cursor):
             print(f"⚠️ Producto '{nombre_producto}' ya existe, no se insertó.")
             logger.info(f"⚠️ Producto '{nombre_producto}' ya existe, no se insertó.")
             
+def insertar_carritos(cursor):
+    # Datos de ejemplo para carritos de compra y productos asociados
+    carritos_prueba = [
+        (1, [(1, 2), (2, 1)]),  # Cliente 1, productos 1 y 2 con cantidades 2 y 1 respectivamente
+        (2, [(3, 5), (4, 3)]),  # Cliente 2, productos 3 y 4 con cantidades 5 y 3 respectivamente
+    ]
+    
+    for id_cliente_FK, productos in carritos_prueba:
+        # Comprobar si ya existe un carrito para este cliente
+        cursor.execute("SELECT id_carrito FROM Carrito WHERE id_cliente_FK = %s", (id_cliente_FK,))
+        carrito_existente = cursor.fetchone()
+        
+        if not carrito_existente:
+            # Insertar un nuevo carrito para el cliente
+            cursor.execute("INSERT INTO Carrito (id_cliente_FK) VALUES (%s)", (id_cliente_FK,))
+            id_carrito = cursor.lastrowid  # Obtener el ID del carrito recién creado
+            print(f"✔️ Carrito para cliente {id_cliente_FK} insertado.")
+            logger.info(f"✔️ Carrito para cliente {id_cliente_FK} insertado.")
+            
+            # Insertar productos en el carrito
+            for id_producto_FK, cantidad in productos:
+                # Verificar si el producto ya está en el carrito
+                cursor.execute(
+                    "SELECT 1 FROM Carrito_Productos WHERE id_carrito_FK = %s AND id_producto_FK = %s",
+                    (id_carrito, id_producto_FK)
+                )
+                if not cursor.fetchone():
+                    # Si el producto no está, insertamos el producto en el carrito
+                    cursor.execute(
+                        "INSERT INTO Carrito_Productos (id_carrito_FK, id_producto_FK, cantidad) VALUES (%s, %s, %s)",
+                        (id_carrito, id_producto_FK, cantidad)
+                    )
+                    print(f"✔️ Producto {id_producto_FK} añadido al carrito para cliente {id_cliente_FK}.")
+                    logger.info(f"✔️ Producto {id_producto_FK} añadido al carrito para cliente {id_cliente_FK}.")
+                else:
+                    print(f"⚠️ Producto {id_producto_FK} ya está en el carrito.")
+                    logger.info(f"⚠️ Producto {id_producto_FK} ya está en el carrito.")
+        else:
+            print(f"⚠️ El cliente {id_cliente_FK} ya tiene un carrito existente.")
+            logger.info(f"⚠️ El cliente {id_cliente_FK} ya tiene un carrito existente.")
 
+def insertar_pedidos(cursor):
+    # Datos de ejemplo para pedidos y productos asociados
+    pedidos_prueba = [
+        (101, 1, 1, [  # Pedido 101, Cliente 1, Carrito 1
+            (1, 2), (2, 1)  # Productos 1 y 2 con cantidades 2 y 1 respectivamente
+        ]),
+        (102, 2, 2, [  # Pedido 102, Cliente 2, Carrito 2
+            (3, 5), (4, 3)  # Productos 3 y 4 con cantidades 5 y 3 respectivamente
+        ]),
+    ]
+    
+    for num_pedido, id_cliente_FK, id_carrito_FK, productos in pedidos_prueba:
+        # Comprobar si ya existe un pedido con el mismo número
+        cursor.execute("SELECT id_pedido FROM Pedidos WHERE num_pedido = %s", (num_pedido,))
+        pedido_existente = cursor.fetchone()
+        
+        if not pedido_existente:
+            # Insertar un nuevo pedido
+            cursor.execute(
+                "INSERT INTO Pedidos (num_pedido, id_cliente_FK, id_carrito_FK, fecha_pedido) VALUES (%s, %s, %s, NOW())",
+                (num_pedido, id_cliente_FK, id_carrito_FK)
+            )
+            id_pedido = cursor.lastrowid  # Obtener el ID del pedido recién creado
+            print(f"✔️ Pedido {num_pedido} para cliente {id_cliente_FK} insertado.")
+            logger.info(f"✔️ Pedido {num_pedido} para cliente {id_cliente_FK} insertado.")
+            
+            # Insertar productos en el pedido
+            for id_producto_FK, cantidad in productos:
+                # Verificar si el producto está en el carrito
+                cursor.execute(
+                    "SELECT 1 FROM Carrito_Productos WHERE id_carrito_FK = %s AND id_producto_FK = %s",
+                    (id_carrito_FK, id_producto_FK)
+                )
+                if cursor.fetchone():
+                    # Si el producto está en el carrito, lo insertamos en el pedido
+                    cursor.execute(
+                        "INSERT INTO Pedido_Productos (id_pedido_FK, id_producto_FK, cantidad) VALUES (%s, %s, %s)",
+                        (id_pedido, id_producto_FK, cantidad)
+                    )
+                    print(f"✔️ Producto {id_producto_FK} añadido al pedido {num_pedido}.")
+                    logger.info(f"✔️ Producto {id_producto_FK} añadido al pedido {num_pedido}.")
+                else:
+                    print(f"⚠️ Producto {id_producto_FK} no está en el carrito.")
+                    logger.info(f"⚠️ Producto {id_producto_FK} no está en el carrito.")
+        else:
+            print(f"⚠️ El pedido {num_pedido} ya existe.")
+            logger.info(f"⚠️ El pedido {num_pedido} ya existe.")
