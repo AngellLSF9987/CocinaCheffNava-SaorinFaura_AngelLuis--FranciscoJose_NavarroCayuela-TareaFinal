@@ -1772,7 +1772,7 @@
         "kind": 2,
         "importPath": "routes.categorias_routes",
         "description": "routes.categorias_routes",
-        "peekOfCode": "def listar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde CLIENTE.\"\"\"\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO LISTADO DE CATEGORIAS DESDE AMDIN\"), 200\n            return render_template(\"categoria/categoria.html\", categorias=categorias), 200\n        else:\n            logger.error(f\"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}\"), 404            \n            return render_template(\"index.html\")",
+        "peekOfCode": "def listar_categorias():\n    \"\"\"Ruta para listar todas las Categorías desde CLIENTE.\"\"\"\n    try:\n        categorias = categoriaDB.obtener_categorias()\n        if categorias:\n            logger.info(\"OBTENIENDO LISTADO DE CATEGORIAS DESDE AMDIN\"), 200\n            return render_template(\"categoria/categoria.html\", categorias=categorias), 200\n        else:\n            logger.error(f\"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}\"), 404            \n            return redirect(\"/\")",
         "detail": "routes.categorias_routes",
         "documentation": {}
     },
@@ -1799,7 +1799,7 @@
         "kind": 2,
         "importPath": "routes.categorias_routes",
         "description": "routes.categorias_routes",
-        "peekOfCode": "def ruta_editar_categoria(id_categoria):\n    try:\n        if request.method == 'GET':\n            categoria = categoriaDB.obtener_categoria_id(id_categoria)\n            if categoria:\n                logger.info(f\"Mostrando formulario para editar categoría ID {id_categoria}\")\n                return render_template('categoria/editar_categoria.html', categoria=categoria), 200\n            else:\n                logger.warning(f\"Categoría con ID {id_categoria} no encontrada.\")\n                return render_template('categoria/categoria_tabla.html', error=\"Categoría no encontrada.\"), 404",
+        "peekOfCode": "def ruta_editar_categoria(id_categoria):\n    try:\n        if request.method == 'GET':\n            categoria = categoriaDB.obtener_categoria_id(id_categoria)\n            if categoria:\n                logger.info(f\"Mostrando formulario para editar categoría ID {id_categoria}\")\n                return render_template('categoria/categoria_editar.html', categoria=categoria), 200\n            else:\n                logger.warning(f\"Categoría con ID {id_categoria} no encontrada.\")\n                return render_template('categoria/categoria_tabla.html', error=\"Categoría no encontrada.\"), 404",
         "detail": "routes.categorias_routes",
         "documentation": {}
     },

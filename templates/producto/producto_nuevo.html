@@ -68,7 +68,7 @@
   <script>
     function redirigirGestionProductos() {
       setTimeout(function () {
-        window.location.href = "{{ url_for('trabajador.gestionar_productos') }}";
+        window.location.href = "{{ url_for('producto.mostrar_productos') }}";
       }, 1000);
       return true; // Permitir que el formulario se envíe
     }

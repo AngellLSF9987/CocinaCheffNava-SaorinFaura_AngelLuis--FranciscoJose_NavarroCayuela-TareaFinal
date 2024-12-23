@@ -41,10 +41,10 @@ def listar_categorias():
             return render_template("categoria/categoria.html", categorias=categorias), 200
         else:
             logger.error(f"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}"), 404            
-            return render_template("index.html")
+            return redirect("/")
     except Exception as e:
         logger.error(f"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}"), 500
-        return render_template("index.html")
+        return redirect("/")
 
 
 @categoria.route("/mostrar_categoria_detalle/<int:id_categoria>", methods=["GET", "POST"], endpoint="mostrar_categoria_detalle")
@@ -101,7 +101,7 @@ def ruta_crear_categoria():
                     logger.info(f"Imagen guardada correctamente: {ruta_imagen}")
                 except Exception as e:
                     logger.error(f"Error al guardar la imagen: {e}")
-                    return render_template('categoria/crear_categoria.html', error="Error al cargar la imagen.")
+                    return render_template('categoria/categoria_nueva.html', error="Error al cargar la imagen.")
             else:
                 logger.info("No se proporcionó imagen. Campo 'imagen' quedará como NULL.")
 
@@ -109,7 +109,7 @@ def ruta_crear_categoria():
             categoriaDB.crear_categoria(nombre_categoria, descripcion, nombre_imagen)
             logger.info(f"Categoría creada: {nombre_categoria}, {descripcion}, {nombre_imagen}")
 
-            return render_template("categoria/crear_categoria.html", mensaje="Categoría creada exitosamente.")
+            return render_template("categoria/categoria_nueva.html", mensaje="Categoría creada exitosamente.")
 
     except Exception as e:
         logger.error(f"Error al crear categoría: {e}")
@@ -124,7 +124,7 @@ def ruta_editar_categoria(id_categoria):
             categoria = categoriaDB.obtener_categoria_id(id_categoria)
             if categoria:
                 logger.info(f"Mostrando formulario para editar categoría ID {id_categoria}")
-                return render_template('categoria/editar_categoria.html', categoria=categoria), 200
+                return render_template('categoria/categoria_editar.html', categoria=categoria), 200
             else:
                 logger.warning(f"Categoría con ID {id_categoria} no encontrada.")
                 return render_template('categoria/categoria_tabla.html', error="Categoría no encontrada."), 404
