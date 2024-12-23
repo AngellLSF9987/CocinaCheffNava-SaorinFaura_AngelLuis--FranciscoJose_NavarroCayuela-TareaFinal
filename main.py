@@ -58,7 +58,7 @@ def cerrar_conexion(e=None):
     setupDB.close_db(e)
 
     
-@app.route("/")
+@app.route("/", endpoint="index")
 def index():
     return render_template("index.html")
 

@@ -41,7 +41,7 @@ def role_redirect(role):
 
 
 # Ruta de login
-@auth.route("/login", methods=["GET", "POST"])
+@auth.route("/login", methods=["GET", "POST"], endpoint="login")
 def login():
     import controllers.auth_controller as authDB
 
@@ -79,7 +79,7 @@ def login():
 
 
 # Ruta de logout
-@auth.route("/logout")
+@auth.route("/logout", methods=["GET", "POST"], endpoint="logout")
 @access_required()
 def logout():
     session.clear()
@@ -87,13 +87,13 @@ def logout():
     return render_template("/")
 
 
-@auth.route("/register")
+@auth.route("/register", methods=["GET", "POST"], endpoint="register" )
 def register():
     return render_template("auth/register.html")
 
 
 # Ruta de reset password
-@auth.route("/reset_password", methods=["GET", "POST"])
+@auth.route("/reset_password", methods=["GET", "POST"], endpoint="reset_password")
 def reset_password():
     # Lógica para el restablecimiento de la contraseña
     return render_template("auth/reset_password.html")
