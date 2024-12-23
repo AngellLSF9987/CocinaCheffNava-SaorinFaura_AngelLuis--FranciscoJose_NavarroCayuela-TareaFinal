@@ -27,7 +27,7 @@
     <!-- Botones de Navegación -->
     <div class="text-center mt-4">
       <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-secondary">Volver a la Lista</a>
-      <a href="{{ url_for('producto.editar_producto', id_producto=id_producto) }}" class="btn btn-primary">Editar Producto</a>
+      <a href="{{ url_for('producto.ruta_editar_producto', id_producto=producto['id_producto']) }}" class="btn btn-primary">Editar Producto</a>
     </div>
   </div>
 </div>
