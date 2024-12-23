@@ -3020,3 +3020,1384 @@ mysql.connector.errors.DatabaseError: 2003 (HY000): Can't connect to MySQL serve
 2024-12-23 17:44:32,897 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
 2024-12-23 17:44:32,902 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
 2024-12-23 17:44:32,903 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 17:44:32] "GET / HTTP/1.1" 200 -
+2024-12-23 19:06:21,358 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-23 19:06:21,376 - logs - INFO - Blueprints registrados correctamente.
+2024-12-23 19:06:21,378 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-23 19:06:21,378 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:21,602 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-23 19:06:21,611 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-23 19:06:21,612 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-23 19:06:21,614 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-23 19:06:21,615 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-23 19:06:21,617 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-23 19:06:21,617 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-23 19:06:21,619 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-23 19:06:21,620 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-23 19:06:21,622 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-23 19:06:21,623 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-23 19:06:21,625 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-23 19:06:21,626 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-23 19:06:21,629 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-23 19:06:21,630 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-23 19:06:21,632 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-23 19:06:21,633 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-23 19:06:21,636 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-23 19:06:21,637 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-23 19:06:21,639 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-23 19:06:21,640 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-23 19:06:21,641 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:21,642 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:21,736 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-23 19:06:21,738 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-23 19:06:21,739 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-23 19:06:21,743 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-23 19:06:21,746 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-23 19:06:21,748 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-23 19:06:21,749 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-23 19:06:21,751 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-23 19:06:21,755 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-23 19:06:21,758 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-23 19:06:21,760 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-23 19:06:21,764 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-23 19:06:21,767 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-23 19:06:21,768 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-23 19:06:21,777 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-23 19:06:21,779 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-23 19:06:21,782 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-23 19:06:21,785 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-23 19:06:21,787 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-23 19:06:21,789 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-23 19:06:21,791 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-23 19:06:21,792 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-23 19:06:21,794 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-23 19:06:21,797 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-23 19:06:21,799 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-23 19:06:21,801 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-23 19:06:21,803 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-23 19:06:21,805 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-23 19:06:21,809 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-23 19:06:21,811 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-23 19:06:21,816 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-23 19:06:21,818 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-23 19:06:21,820 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-23 19:06:21,822 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-23 19:06:21,824 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-23 19:06:21,826 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-23 19:06:21,829 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-23 19:06:21,833 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-23 19:06:21,835 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-23 19:06:21,837 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-23 19:06:21,838 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-23 19:06:21,840 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-23 19:06:21,842 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-23 19:06:21,843 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-23 19:06:21,844 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-23 19:06:21,846 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-23 19:06:21,847 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-23 19:06:21,849 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-23 19:06:21,850 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-23 19:06:21,852 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-23 19:06:21,853 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-23 19:06:21,854 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-23 19:06:21,856 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-23 19:06:21,860 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-23 19:06:21,861 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-23 19:06:21,862 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-23 19:06:21,863 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:21,863 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-23 19:06:21,929 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-23 19:06:21,929 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-23 19:06:21,932 - werkzeug - INFO -  * Restarting with stat
+2024-12-23 19:06:22,476 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-23 19:06:22,504 - logs - INFO - Blueprints registrados correctamente.
+2024-12-23 19:06:22,506 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-23 19:06:22,507 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:22,671 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-23 19:06:22,675 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-23 19:06:22,677 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-23 19:06:22,680 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-23 19:06:22,681 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-23 19:06:22,684 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-23 19:06:22,685 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-23 19:06:22,688 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-23 19:06:22,689 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-23 19:06:22,694 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-23 19:06:22,696 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-23 19:06:22,698 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-23 19:06:22,699 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-23 19:06:22,701 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-23 19:06:22,704 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-23 19:06:22,708 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-23 19:06:22,709 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-23 19:06:22,713 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-23 19:06:22,714 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-23 19:06:22,718 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-23 19:06:22,720 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-23 19:06:22,721 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:22,722 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:22,729 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-23 19:06:22,732 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-23 19:06:22,735 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-23 19:06:22,738 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-23 19:06:22,740 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-23 19:06:22,743 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-23 19:06:22,746 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-23 19:06:22,747 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-23 19:06:22,751 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-23 19:06:22,755 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-23 19:06:22,756 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-23 19:06:22,759 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-23 19:06:22,763 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-23 19:06:22,765 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-23 19:06:22,769 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-23 19:06:22,771 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-23 19:06:22,772 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-23 19:06:22,774 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-23 19:06:22,776 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-23 19:06:22,777 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-23 19:06:22,779 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-23 19:06:22,783 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-23 19:06:22,785 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-23 19:06:22,786 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-23 19:06:22,788 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-23 19:06:22,790 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-23 19:06:22,791 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-23 19:06:22,793 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-23 19:06:22,795 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-23 19:06:22,798 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-23 19:06:22,800 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-23 19:06:22,801 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-23 19:06:22,803 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-23 19:06:22,804 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-23 19:06:22,805 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-23 19:06:22,807 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-23 19:06:22,808 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-23 19:06:22,809 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-23 19:06:22,811 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-23 19:06:22,812 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-23 19:06:22,815 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-23 19:06:22,817 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-23 19:06:22,818 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-23 19:06:22,819 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-23 19:06:22,821 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-23 19:06:22,822 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-23 19:06:22,824 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-23 19:06:22,825 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-23 19:06:22,826 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-23 19:06:22,827 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-23 19:06:22,829 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-23 19:06:22,832 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-23 19:06:22,834 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-23 19:06:22,835 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-23 19:06:22,836 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-23 19:06:22,837 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-23 19:06:22,838 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:22,838 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-23 19:06:22,869 - werkzeug - WARNING -  * Debugger is active!
+2024-12-23 19:06:22,874 - werkzeug - INFO -  * Debugger PIN: 107-254-932
+2024-12-23 19:06:31,347 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:31,463 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:31,465 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:31] "GET / HTTP/1.1" 200 -
+2024-12-23 19:06:32,014 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,015 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,110 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,114 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,151 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,152 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,173 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,174 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,201 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,226 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,227 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,252 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,253 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,274 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,276 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,322 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,328 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,355 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,356 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,359 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,361 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,364 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,389 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,391 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,442 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,450 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,467 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,467 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,475 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,478 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/ensaladas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,658 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,668 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,679 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,680 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,687 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,688 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/cafes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,769 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,775 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,775 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "GET / HTTP/1.1" 200 -
+2024-12-23 19:06:32,866 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,868 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:06:32,871 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,872 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:06:32,888 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:06:32,889 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:06:32] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,439 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,448 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:10:14,493 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,494 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "GET /producto/listar_productos HTTP/1.1" 200 -
+2024-12-23 19:10:14,564 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,567 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,570 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,571 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,573 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,579 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,581 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,583 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,584 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,585 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,587 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,587 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,588 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,588 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,590 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,591 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,592 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,593 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,593 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,604 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,607 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,609 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,615 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,616 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,626 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,630 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,634 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,636 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,641 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,642 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,658 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,662 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,663 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,667 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,670 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,672 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,685 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,688 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,689 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,690 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,693 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,694 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,700 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,702 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,708 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,717 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,719 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,724 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,728 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,731 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,732 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,736 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,738 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,741 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,742 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,759 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,770 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,771 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,774 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,773 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,772 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,778 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,804 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,806 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,820 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,822 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,836 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,842 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,847 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,849 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,857 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,875 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,876 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,880 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,883 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,893 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,894 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,896 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,898 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,898 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,900 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,909 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,915 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,920 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,949 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,952 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,955 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,956 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,958 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,973 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,974 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,977 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,979 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,977 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,982 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,982 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,985 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:14,989 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:14,992 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:14] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:14,994 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:15,002 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:15] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:15,007 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:15,031 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:15,034 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:15] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:15,047 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:15,048 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:15] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:15,054 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:15,057 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:15] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:15,241 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:15,246 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:15,247 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:15] "GET / HTTP/1.1" 200 -
+2024-12-23 19:10:21,000 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,006 - logs - INFO - Producto obtenido: {'id_producto': 1, 'nombre_producto': 'Entrecot', 'descripcion': 'Entrecot a la parrilla con guarnición de papas.', 'precio': Decimal('15.99'), 'imagen': 'entrecot.png', 'nombre_categoria': 'Carnes'}
+2024-12-23 19:10:21,006 - logs - INFO - PRODUCTO DETALLE PARA CLIENTE O ADMIN: Entrecot
+2024-12-23 19:10:21,039 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,040 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "GET /producto/mostrar_producto_detalle/1 HTTP/1.1" 200 -
+2024-12-23 19:10:21,114 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,116 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,118 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,119 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,121 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,122 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,134 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,136 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,137 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,138 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,138 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,139 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,140 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,141 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,142 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,142 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,143 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,146 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,150 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,163 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,178 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,178 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,179 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,180 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,188 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,192 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,195 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,195 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,198 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,199 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:21,203 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:21,211 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:21,212 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:21] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,583 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,592 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:10:32,597 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,599 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "GET /producto/listar_productos HTTP/1.1" 200 -
+2024-12-23 19:10:32,687 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,694 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,696 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,699 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,701 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,703 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,705 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,710 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,710 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,717 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,722 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,724 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,724 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,729 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,729 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,730 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,730 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,735 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,736 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,738 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,742 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,748 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,752 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,755 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,757 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,765 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,775 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,775 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,782 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,779 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,779 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,776 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,785 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,787 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,794 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,796 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,798 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,800 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,803 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,803 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,806 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,808 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,819 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,822 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,825 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,826 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,828 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,830 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,835 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,837 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,843 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,846 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,846 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,847 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,853 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,860 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,863 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,865 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,867 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,869 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,875 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,877 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,878 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,884 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,889 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,890 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,905 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,912 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,923 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,924 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,925 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,932 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,940 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,943 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,946 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,947 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,960 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,971 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,973 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,974 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,974 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:32,982 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,985 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:32] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:32,989 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,992 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:32,998 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,004 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,000 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:33,006 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,008 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,009 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,011 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:33,014 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,016 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,050 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,061 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,063 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,065 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:33,066 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,066 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,069 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:33,071 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:33,077 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,081 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,087 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,088 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:33,089 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:33,092 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:33] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,879 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,883 - logs - INFO - OBTENIENDO LISTADO DE CATEGORIAS DESDE AMDIN
+2024-12-23 19:10:35,900 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,901 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "GET /categoria/listar_categorias HTTP/1.1" 200 -
+2024-12-23 19:10:35,947 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,950 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,953 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,956 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,957 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,960 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,960 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,962 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,964 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,965 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,967 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,967 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,968 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,969 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,970 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,971 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,974 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,981 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,983 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,986 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,988 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,992 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,994 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,995 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:35,998 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:35,998 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:35] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:35,999 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:36,002 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,009 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,004 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,002 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,032 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/ensaladas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,032 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,039 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:36,041 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/cervezas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,047 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:36,054 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:36,055 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,058 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/vinos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,064 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,065 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,066 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,067 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/cafes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:36,074 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:36,075 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:36] "[36mGET /static/images/categorias/refrescos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,375 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,380 - logs - INFO - Categoría obtenida: {'id_categoria': 11, 'nombre_categoria': 'Aguas, zumos y batidos', 'descripcion': 'Aguas minerales, zumos naturales y batidos.', 'imagen': 'bebidas.png'}
+2024-12-23 19:10:45,380 - logs - INFO - CATEGORÍA DETALLE PARA CLIENTE O ADMIN: Aguas, zumos y batidos
+2024-12-23 19:10:45,382 - logs - INFO - Valor de categoria.imagen: bebidas.png
+2024-12-23 19:10:45,418 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,419 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "GET /categoria/mostrar_categoria_detalle/11 HTTP/1.1" 200 -
+2024-12-23 19:10:45,484 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,490 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,491 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,493 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,499 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,502 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,503 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,505 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,509 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,509 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,510 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,511 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,512 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,513 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,514 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,515 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,516 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,516 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,518 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,529 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,532 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,534 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,536 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:45,537 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,540 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,541 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,542 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,544 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:45,545 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:45,546 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:45] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,694 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,700 - logs - INFO - OBTENIENDO LISTADO DE CATEGORIAS DESDE AMDIN
+2024-12-23 19:10:53,704 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,705 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "GET /categoria/listar_categorias HTTP/1.1" 200 -
+2024-12-23 19:10:53,754 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,756 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,760 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,763 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,765 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,766 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,767 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,770 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,771 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,773 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,774 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,775 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,775 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,777 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,779 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,780 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,780 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,784 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,784 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,787 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,790 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,797 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,798 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,801 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,804 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,808 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,810 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,810 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,813 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,815 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,817 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,818 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,819 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,821 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,829 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/cafes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,831 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,832 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,833 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,843 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:10:53,833 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/ensaladas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,844 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/cervezas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,845 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,850 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/vinos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:10:53,853 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:10:53,855 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:10:53] "[36mGET /static/images/categorias/refrescos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:18,879 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,884 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:11:18,929 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:18,930 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:18] "GET /producto/mostrar_productos HTTP/1.1" 200 -
+2024-12-23 19:11:18,982 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,986 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,987 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,989 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:18,992 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,994 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:18,996 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:18,999 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,000 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,002 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,004 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,005 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,006 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,007 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,008 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,011 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,011 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,013 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,013 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,015 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,019 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,026 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,028 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,031 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,032 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,036 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,037 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,040 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,041 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,042 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,044 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,047 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,048 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,050 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,050 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,054 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,055 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,058 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,059 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,059 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,063 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,067 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,068 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,073 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,079 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,080 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,081 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,085 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,087 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,088 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,088 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,091 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,096 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,097 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,099 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,099 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,100 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,106 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,110 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,113 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,119 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,122 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,128 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,131 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,133 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,134 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,137 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,137 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,139 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,141 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,143 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,145 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,153 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,154 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,156 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,163 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,163 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,174 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,176 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,179 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,186 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,187 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,191 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,198 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,199 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,202 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,203 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,205 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,206 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,207 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,208 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,208 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,209 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,219 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,221 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,224 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,227 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,271 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,283 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:19,284 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,285 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,290 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,292 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:19,301 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:19,303 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:19] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,529 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,534 - logs - INFO - Producto obtenido: {'id_producto': 1, 'nombre_producto': 'Entrecot', 'descripcion': 'Entrecot a la parrilla con guarnición de papas.', 'precio': Decimal('15.99'), 'imagen': 'entrecot.png', 'nombre_categoria': 'Carnes'}
+2024-12-23 19:11:37,535 - logs - INFO - PRODUCTO DETALLE PARA CLIENTE O ADMIN: Entrecot
+2024-12-23 19:11:37,538 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,539 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "GET /producto/mostrar_producto_detalle/1 HTTP/1.1" 200 -
+2024-12-23 19:11:37,585 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,590 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,592 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,593 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,593 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,596 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,596 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,600 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,601 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,601 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,604 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,604 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,605 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,609 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,609 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,609 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,612 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,614 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,617 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,619 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,624 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,627 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:37,633 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,635 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,636 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,638 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,639 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,643 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:37,646 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:37,649 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:37] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,262 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,267 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:11:42,278 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,279 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "GET /producto/mostrar_productos HTTP/1.1" 200 -
+2024-12-23 19:11:42,334 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,338 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,340 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,341 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,343 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,344 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,345 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,349 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,350 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,352 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,353 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,356 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,356 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,357 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,357 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,358 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,359 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,360 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,363 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,366 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,367 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,369 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,369 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,375 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,377 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,381 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,384 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,388 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,393 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,393 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,394 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,394 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,395 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,396 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,396 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,396 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,399 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,402 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,404 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,406 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,411 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,415 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,419 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,424 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,428 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,430 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,430 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,435 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,435 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,437 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,442 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,439 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,438 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,444 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,446 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,447 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,448 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,450 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,457 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,460 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,463 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,470 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,470 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,476 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,480 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,486 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,490 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,495 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,502 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,509 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,510 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,520 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,523 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,529 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,529 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,533 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,534 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,536 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,536 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,539 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,542 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,544 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,548 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,548 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,554 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,556 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,560 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,565 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,567 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,569 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,575 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,578 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,580 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,581 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,594 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,595 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,596 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,603 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,609 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,610 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,611 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,613 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:42,621 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:42,636 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:42,637 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:42] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:11:49,000 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:49,004 - logs - INFO - Producto obtenido: {'id_producto': 1, 'nombre_producto': 'Entrecot', 'descripcion': 'Entrecot a la parrilla con guarnición de papas.', 'precio': Decimal('15.99'), 'imagen': 'entrecot.png', 'nombre_categoria': 'Carnes'}
+2024-12-23 19:11:49,005 - logs - INFO - PRODUCTO OBTENIDO POR 'ID': 1
+2024-12-23 19:11:49,069 - logs - ERROR - Error al ACTUALIZAR PRODUCTO: expected token ',', got 'static'
+2024-12-23 19:11:49,076 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:49,390 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:49] "[35m[1mGET /producto/editar_producto/1 HTTP/1.1[0m" 500 -
+2024-12-23 19:11:49,438 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:49] "GET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2024-12-23 19:11:49,490 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:49] "GET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2024-12-23 19:11:49,569 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:49] "GET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=console.png&s=tT3aqDYDqQhZwvt5P6Ap HTTP/1.1" 200 -
+2024-12-23 19:11:49,717 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:49] "GET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2024-12-23 19:11:52,379 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:11:52,382 - logs - INFO - Producto obtenido: {'id_producto': 1, 'nombre_producto': 'Entrecot', 'descripcion': 'Entrecot a la parrilla con guarnición de papas.', 'precio': Decimal('15.99'), 'imagen': 'entrecot.png', 'nombre_categoria': 'Carnes'}
+2024-12-23 19:11:52,383 - logs - INFO - PRODUCTO OBTENIDO POR 'ID': 1
+2024-12-23 19:11:52,385 - logs - ERROR - Error al ACTUALIZAR PRODUCTO: expected token ',', got 'static'
+2024-12-23 19:11:52,387 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:11:52,429 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:52] "[35m[1mGET /producto/editar_producto/1 HTTP/1.1[0m" 500 -
+2024-12-23 19:11:52,475 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:52] "[36mGET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-23 19:11:52,477 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:52] "[36mGET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-23 19:11:52,492 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:11:52] "[36mGET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=console.png&s=tT3aqDYDqQhZwvt5P6Ap HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,226 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,231 - logs - INFO - Mostrando formulario para crear un producto.
+2024-12-23 19:13:06,249 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,250 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "GET /producto/ruta_crear_producto HTTP/1.1" 200 -
+2024-12-23 19:13:06,305 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,306 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,311 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,314 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,316 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,318 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,318 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,319 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,322 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,323 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,325 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,326 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,327 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,328 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,330 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,331 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,334 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,335 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,347 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,351 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,362 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,362 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,363 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,364 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,383 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,390 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,391 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,394 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,404 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,405 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:13:06,754 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:13:06,763 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:13:06,764 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:13:06] "GET / HTTP/1.1" 200 -
+2024-12-23 19:14:30,005 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,009 - logs - INFO - Procesando formulario para crear un producto...
+2024-12-23 19:14:30,016 - logs - INFO - Imagen guardada correctamente: static/images/productos/tarta_queso.jpg
+2024-12-23 19:14:30,018 - logs - INFO - Categoría obtenida: {'id_categoria': 12, 'nombre_categoria': 'Postres', 'descripcion': 'Dulces y postres caseros.', 'imagen': 'postres.png'}
+2024-12-23 19:14:30,019 - logs - INFO - Ruta de la imagen antes del INSERT: static/images/productos/tarta_queso.jpg
+2024-12-23 19:14:30,019 - logs - INFO - Llamando a crear_producto con: Tarta de Queso, Tarta de Queso, 9.5, tarta_queso.jpg, 12
+2024-12-23 19:14:30,024 - logs - INFO - Producto creado exitosamente.
+2024-12-23 19:14:30,025 - logs - INFO - Producto creado: Tarta de Queso, Tarta de Queso, 9.5, tarta_queso.jpg, 12
+2024-12-23 19:14:30,028 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,029 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "POST /producto/ruta_crear_producto HTTP/1.1" 200 -
+2024-12-23 19:14:30,069 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,071 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,077 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,077 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,078 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,079 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,087 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,089 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,091 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,093 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,096 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,101 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,103 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,109 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,110 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,111 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,112 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,113 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,114 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,115 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,115 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,116 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,117 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,119 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,137 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,143 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,146 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,147 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,149 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,150 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:30,505 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:30,511 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:30,512 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:30] "GET / HTTP/1.1" 200 -
+2024-12-23 19:14:39,424 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,430 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:14:39,436 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,437 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "GET /producto/mostrar_productos HTTP/1.1" 200 -
+2024-12-23 19:14:39,487 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,489 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,490 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,496 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,496 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,497 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,497 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,498 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,498 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,509 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,516 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,517 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,519 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,520 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,523 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,527 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,531 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,535 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,537 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,538 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,539 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,541 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,542 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,543 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,545 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,548 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,553 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,554 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,561 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,563 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,568 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,570 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,573 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,577 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,578 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,581 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,581 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,584 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,585 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,587 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,591 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,599 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,601 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,601 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,603 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,604 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,606 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,610 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,616 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,618 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,619 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,620 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,621 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,622 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,624 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,626 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,627 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,627 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,637 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,637 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,639 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,642 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,643 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,652 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,657 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,661 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,661 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,665 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,665 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,667 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,670 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,674 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,674 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,682 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,693 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,695 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,695 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,697 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,698 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,702 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,705 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,710 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,711 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,719 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,721 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,723 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,725 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,725 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,727 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,736 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,735 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,737 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,729 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,739 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,741 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,753 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,755 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,755 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,758 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,760 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,760 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,764 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,768 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:39,773 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,775 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,776 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,776 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,779 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,780 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:39,793 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:39,794 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:39] "GET /static/images/productos/tarta_queso.jpg HTTP/1.1" 200 -
+2024-12-23 19:14:54,121 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,127 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-23 19:14:54,134 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,135 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "GET /producto/listar_productos HTTP/1.1" 200 -
+2024-12-23 19:14:54,182 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,186 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,189 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,194 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,197 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,200 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,200 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,202 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,202 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,203 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,207 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,212 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,236 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,238 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,242 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,244 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,252 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,254 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,257 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,257 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,259 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,261 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,265 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,266 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,267 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,271 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,272 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,272 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,272 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,272 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,276 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,282 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,292 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,297 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,300 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,302 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,305 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,310 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,311 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,312 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,315 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,316 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,317 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,321 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,322 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,322 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,323 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,324 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,326 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,330 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,333 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,340 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,342 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,343 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,348 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,354 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,354 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,355 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,357 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,357 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,358 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,358 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,359 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,360 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,362 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,364 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,368 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,368 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,373 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,374 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,375 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,379 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,383 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,387 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,389 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,389 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,392 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,394 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,394 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,395 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,396 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,396 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,397 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,398 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,399 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,401 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,403 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,410 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,414 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,416 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,419 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,420 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,424 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,425 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,426 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,430 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,431 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,439 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,440 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,443 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,447 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,452 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,454 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,457 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,461 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,462 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/tarta_queso.jpg HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,465 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:14:54,475 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,486 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-23 19:14:54,502 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:14:54,505 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:14:54] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,113 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,118 - logs - INFO - Producto obtenido: {'id_producto': 27, 'nombre_producto': 'Tarta de Queso', 'descripcion': 'Tarta de Queso', 'precio': Decimal('9.50'), 'imagen': 'tarta_queso.jpg', 'nombre_categoria': 'Postres'}
+2024-12-23 19:15:07,119 - logs - INFO - PRODUCTO DETALLE PARA CLIENTE O ADMIN: Tarta de Queso
+2024-12-23 19:15:07,122 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,123 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "GET /producto/mostrar_producto_detalle/27 HTTP/1.1" 200 -
+2024-12-23 19:15:07,150 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,154 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,156 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,159 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,164 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,167 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,169 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,170 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,172 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,173 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,178 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,178 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,181 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,182 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,187 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,188 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,194 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,197 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,197 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,197 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,203 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,204 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,204 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,210 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:07,211 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,213 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,217 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,220 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,220 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,221 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,223 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/productos/tarta_queso.jpg HTTP/1.1[0m" 304 -
+2024-12-23 19:15:07,224 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:07,228 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:07] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,569 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,582 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,584 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "GET /extra/contacto HTTP/1.1" 200 -
+2024-12-23 19:15:12,634 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,638 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,641 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,646 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,648 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,650 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,652 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,656 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,656 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,657 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,657 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,659 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,662 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,666 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,671 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,674 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,677 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,685 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,685 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,686 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:12,687 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,690 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,692 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,694 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,698 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:12,702 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:12,699 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:12] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,594 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,612 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,613 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "GET /extra/servicio HTTP/1.1" 200 -
+2024-12-23 19:15:16,647 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,653 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,653 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,654 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,656 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,657 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,660 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,664 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,665 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,665 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,667 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,669 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,669 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,672 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,674 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,678 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,684 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,688 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,693 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,694 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,697 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,700 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,701 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,703 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,705 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,706 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,707 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,707 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,708 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,722 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:16,724 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,726 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/domicilio.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,737 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,737 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/catering.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:16,742 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:16,743 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:16] "[36mGET /static/images/menu.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,840 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,848 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,849 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "GET /extra/contacto HTTP/1.1" 200 -
+2024-12-23 19:15:19,886 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,889 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,891 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,894 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,895 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,897 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,899 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,899 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,901 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,902 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,903 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,904 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,905 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,908 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,910 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,913 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,914 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,919 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,924 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:19,925 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,926 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,928 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,930 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,932 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,934 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:19,934 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:19,935 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:19] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,881 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,887 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,888 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "GET / HTTP/1.1" 200 -
+2024-12-23 19:15:23,931 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,935 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,937 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,939 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,941 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,943 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,943 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,947 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,947 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,947 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,948 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,951 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,953 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,958 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,962 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,968 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,969 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,972 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,972 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,973 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,975 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,976 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,978 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,981 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,982 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:23,983 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,985 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,986 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,988 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:23] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:23,988 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-23 19:15:23,990 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:24,001 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:24] "[36mGET /static/images/categorias/ensaladas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:24,003 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:24,004 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-23 19:15:24,004 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:24] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-23 19:15:24,007 - werkzeug - INFO - 127.0.0.1 - - [23/Dec/2024 19:15:24] "[36mGET /static/images/categorias/cafes.png HTTP/1.1[0m" 304 -
