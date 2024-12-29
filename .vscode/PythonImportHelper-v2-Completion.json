@@ -8,14 +8,6 @@
         "documentation": {}
     },
     {
-        "label": "Image",
-        "importPath": "PIL",
-        "description": "PIL",
-        "isExtraImport": true,
-        "detail": "PIL",
-        "documentation": {}
-    },
-    {
         "label": "os",
         "kind": 6,
         "isExtraImport": true,
@@ -337,7 +329,23 @@
         "documentation": {}
     },
     {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -1152,7 +1160,7 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def registrar_y_mostrar(mensaje, nivel=\"info\"):\n    \"\"\"Registra un mensaje y lo imprime.\"\"\"\n    niveles = {\n        \"info\": logger.info,\n        \"warning\": logger.warning,\n        \"error\": logger.error,\n    }\n    print(mensaje)\n    niveles.get(nivel, logger.info)(mensaje)\ndef comprobar_o_crear_base_de_datos():",
+        "peekOfCode": "def registrar_y_mostrar(mensaje, nivel=\"info\"):\n    \"\"\"Registra un mensaje y lo imprime.\"\"\"\n    niveles = {\n        \"info\": logger.info,\n        \"warning\": logger.warning,\n        \"error\": logger.error,\n    }\n    # print(mensaje)\n    niveles.get(nivel, logger.info)(mensaje)\ndef comprobar_o_crear_base_de_datos():",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -1161,7 +1169,7 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def comprobar_o_crear_base_de_datos():\n    \"\"\"Comprueba si existe la base de datos, si no existe la crea.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    nombre_base_datos = Config.MYSQL_CONFIG.get(\"database\")\n    try:\n        logger.info(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        print(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        # Comprobar si la base de datos existe\n        cursor.execute(\"SHOW DATABASES\")",
+        "peekOfCode": "def comprobar_o_crear_base_de_datos():\n    \"\"\"Comprueba si existe la base de datos, si no existe la crea.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    nombre_base_datos = Config.MYSQL_CONFIG.get(\"database\")\n    try:\n        logger.info(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        # print(\"LISTADO de todas las bases de datos MYSQL en phpMyAdmin\")\n        # Comprobar si la base de datos existe\n        cursor.execute(\"SHOW DATABASES\")",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -2088,7 +2096,7 @@
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "def ruta_borrar_producto():\n    try:\n        if request.method == \"POST\":\n            producto_id = request.form.get(\"id_producto\")\n            producto = productoDB.obtener_producto_id(producto_id)\n            if producto:\n                productoDB.borrar_producto(producto_id)\n                logger.info(f\"PRODUCTO BORRADO: {producto['nombre_producto']}\"), 200\n                return render_template(\"producto/producto_tabla.html\")\n            else:",
+        "peekOfCode": "def ruta_borrar_producto():\n    try:\n        if request.method == \"POST\":\n            producto_id = request.form.get(\"id_producto\")\n            producto = productoDB.obtener_producto_id(producto_id)\n            if producto:\n                productoDB.borrar_producto(producto_id)\n                logger.info(f\"PRODUCTO BORRADO: {producto['nombre_producto']}\"), 200\n                return redirect (url_for(\"producto.mostrar_productos\"))\n            else:",
         "detail": "routes.productos_routes",
         "documentation": {}
     },

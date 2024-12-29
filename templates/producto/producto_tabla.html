@@ -47,7 +47,7 @@
                         <a href="{{ url_for('producto.ruta_editar_producto', id_producto=producto['id_producto']) }}" class="btn btn-warning btn-sm">Editar</a>
                         <form action="{{ url_for('producto.ruta_borrar_producto') }}" method="POST" style="display:inline;">
                             <input type="hidden" name="id_producto" value="{{ producto['id_producto'] }}">
-                            <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
+                            <button type="submit" href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-danger btn-sm">Borrar</button>
                         </form>
                         <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=producto['id_producto']) }}" class="btn btn-info btn-sm">Detalles</a>
                         <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-primary btn-sm">Volver al listado</a>

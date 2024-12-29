@@ -40,7 +40,7 @@ def registrar_y_mostrar(mensaje, nivel="info"):
         "warning": logger.warning,
         "error": logger.error,
     }
-    print(mensaje)
+    # print(mensaje)
     niveles.get(nivel, logger.info)(mensaje)
 
 def comprobar_o_crear_base_de_datos():
@@ -50,7 +50,7 @@ def comprobar_o_crear_base_de_datos():
     nombre_base_datos = Config.MYSQL_CONFIG.get("database")
     try:
         logger.info("LISTADO de todas las bases de datos MYSQL en phpMyAdmin")
-        print("LISTADO de todas las bases de datos MYSQL en phpMyAdmin")
+        # print("LISTADO de todas las bases de datos MYSQL en phpMyAdmin")
 
         # Comprobar si la base de datos existe
         cursor.execute("SHOW DATABASES")

@@ -1,5 +1,5 @@
-from PIL import Image
-from flask import Blueprint, render_template, request
+# from PIL import Image
+from flask import Blueprint, redirect, render_template, url_for, request
 from database.db_setup import get_db
 from logs import logger
 import repositories.rep_producto as productoDB
@@ -92,14 +92,14 @@ def ruta_crear_producto():
 
             # Validar datos
             if not (nombre and descripcion and precio and id_categoria_FK):
-                logger.error("Faltan campos requeridos.")
-                return render_template('producto/producto_nuevo.html', error="Todos los campos son obligatorios.")
+                logger.error("Faltan campos requeridos.", error="Todos los campos son obligatorios."), 404
+                return redirect (url_for("producto.mostrar_productos"))
 
             try:
                 precio = float(precio)
             except ValueError:
-                logger.error("Precio inválido.")
-                return render_template('producto/producto_nuevo.html', error="El precio debe ser un número.")
+                logger.error("Precio inválido.", error="El precio debe ser un número."), 400
+                
 
             # Guardar la imagen
             ruta_imagen = None  # Por defecto es None
@@ -111,24 +111,26 @@ def ruta_crear_producto():
                     imagen.save(ruta_imagen)
                     logger.info(f"Imagen guardada correctamente: {ruta_imagen}")
                 except Exception as e:
-                    logger.error(f"Error al guardar la imagen: {e}")
-                    return render_template('producto/producto_nuevo.html', error="Error al cargar la imagen.")
+                    logger.error(f"Error al guardar la imagen: {e}", error="Error al cargar la imagen."), 400
+                    return redirect (url_for("producto.mostrar_productos"))
             else:
                 logger.info("No se proporcionó imagen. Campo 'imagen' quedará como NULL.")
 
 
             # Validar categoría
             if not categoriaDB.obtener_categoria_id(id_categoria_FK):
-                logger.error(f"Categoría ID {id_categoria_FK} no válida.")
-                return render_template('producto/producto_nuevo.html', error="Categoría no válida.")
+                logger.error(f"Categoría ID {id_categoria_FK} no válida.", error="Categoría no válida."), 400
+                return redirect (url_for("producto.mostrar_productos"))
 
             logger.info(f"Ruta de la imagen antes del INSERT: {ruta_imagen}")
             logger.info(f"Llamando a crear_producto con: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}")
             # Insertar el producto
             productoDB.crear_producto(nombre, descripcion, precio, nombre_imagen, id_categoria_FK)
-            logger.info(f"Producto creado: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}")
+            logger.info(f"Producto creado: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}"), 200
 
-            return render_template("producto/producto.html", mensaje="Producto creado exitosamente.")
+            # return render_template("producto/producto.html", mensaje="Producto creado exitosamente.")
+            return redirect (url_for("producto.mostrar_productos"))
+        
 
     except Exception as e:
         logger.error(f"Error en la ruta: {e}")
@@ -158,8 +160,8 @@ def ruta_editar_producto(id_producto):
 
             # Validar que los campos obligatorios estén presentes
             if not all([nombre_producto, id_categoria_FK, precio]):
-                logger.warning("Datos incompletos para actualizar el producto.")
-                return render_template("producto/producto_editar.html", error="Faltan datos obligatorios"), 400
+                logger.warning("Datos incompletos para actualizar el producto.", error="Faltan datos obligatorios"), 400
+                return redirect (url_for("producto.mostrar_productos"))
             
             # Actualizar el producto en la base de datos
             producto_actualizado = productoDB.actualizar_producto(
@@ -172,11 +174,11 @@ def ruta_editar_producto(id_producto):
             )
             
             if producto_actualizado:
-                logger.info(f"PRODUCTO ACTUALIZADO: {producto_actualizado['nombre_producto']}")
-                return render_template("producto/producto_tabla.html", success="Producto actualizado exitosamente"), 200
+                logger.info(f"PRODUCTO ACTUALIZADO: {producto_actualizado['nombre_producto']}", success="Producto actualizado exitosamente"), 200
+                return redirect (url_for("producto.mostrar_productos"))
             else:
-                logger.error(f"Error al actualizar el producto con ID {id_producto}.")
-                return render_template("error/404.html"), 404
+                logger.error(f"Error al actualizar el producto con ID {id_producto}.", error="Producto no actualizado"), 404
+                return render_template("error/404.html")
 
     except Exception as e:
         logger.error(f"Error al ACTUALIZAR PRODUCTO: {e}")
@@ -192,10 +194,10 @@ def ruta_borrar_producto():
             if producto:
                 productoDB.borrar_producto(producto_id)
                 logger.info(f"PRODUCTO BORRADO: {producto['nombre_producto']}"), 200
-                return render_template("producto/producto_tabla.html")
+                return redirect (url_for("producto.mostrar_productos"))
             else:
                 logger.warning(f"Producto con ID {producto_id} no encontrado."), 404
-                return render_template("producto/producto_tabla.html")
+                return redirect (url_for("producto.mostrar_productos"))
     except Exception as e:
         logger.error(f"Error al BORRAR PRODUCTO: {e}"), 500
-        return render_template("producto/producto_tabla.html")
+        return redirect (url_for("producto.mostrar_productos"))

@@ -21,11 +21,11 @@ def crear_datos():
         insertar_productos(cursor)
 
         conn.commit()
-        print("✅ Datos iniciales insertados correctamente.")
+        # print("✅ Datos iniciales insertados correctamente.")
         logger.info("✅ Datos iniciales insertados correctamente.")
     except Exception as e:
         conn.rollback()
-        print(f"❌ Error al insertar datos iniciales: {e}")
+        # print(f"❌ Error al insertar datos iniciales: {e}")
         logger.error(f"❌ Error al insertar datos iniciales: {e}")
     finally:
         # The above code is calling the `setupDBclose_db()` function in Python. This function is
@@ -46,10 +46,10 @@ def insertar_roles(cursor):
                 "INSERT INTO Roles (id_rol, nombre_rol) VALUES (%s, %s);",
                 (id_rol, nombre_rol),
             )
-            print(f"✔️ Rol '{nombre_rol}' insertado.")            
+            # print(f"✔️ Rol '{nombre_rol}' insertado.")            
             logger.info(f"✔️ Rol '{nombre_rol}' insertado.")
         else:
-            print(f"⚠️ Rol '{nombre_rol}' ya existe.")            
+            # print(f"⚠️ Rol '{nombre_rol}' ya existe.")            
             logger.info(f"⚠️ Rol '{nombre_rol}' ya existe.")
 
 
@@ -72,10 +72,10 @@ def insertar_usuarios(cursor):
                 """INSERT INTO Usuarios (email, contraseña, id_rol_FK) VALUES (%s, %s, %s);""",
                 (email, contraseña, id_rol_FK),
             )
-            print(f"✔️ Usuario {email} insertado.")
+            # print(f"✔️ Usuario {email} insertado.")
             logger.info(f"✔️ Usuario {email} insertado.")
         else:
-            print(f"⚠️ Usuario {email} ya existe, no se insertó.")
+            # print(f"⚠️ Usuario {email} ya existe, no se insertó.")
             logger.info(f"⚠️ Usuario {email} ya existe, no se insertó.")
 
 
@@ -101,7 +101,7 @@ def insertar_clientes(cursor):
             "angel@saorin.com",
         ),
     ]
-    print(f"Listado Clientes: {datos_clientes}")
+    # print(f"Listado Clientes: {datos_clientes}")
     logger.info(f"Listado roles: {datos_clientes}")
     for (
         nombre_cliente,
@@ -133,13 +133,13 @@ def insertar_clientes(cursor):
                         id_usuario,
                     ),
                 )
-                print(f"✔️ Cliente {nombre_cliente} insertado.")
+                # print(f"✔️ Cliente {nombre_cliente} insertado.")
                 logger.info(f"✔️ Cliente {nombre_cliente} insertado.")
             else:
-                print(f"⚠️ Cliente {email} ya existe.")
+                # print(f"⚠️ Cliente {email} ya existe.")
                 logger.info(f"⚠️ Cliente {email} ya existe.")
         else:
-            print(f"⚠️ Usuario {email} no encontrado para el cliente.")
+            # print(f"⚠️ Usuario {email} no encontrado para el cliente.")
             logger.info(f"⚠️ Usuario {email} no encontrado para el cliente.")
 
 
@@ -197,13 +197,13 @@ def insertar_trabajadores(cursor):
                         id_usuario,
                     ),
                 )
-                print(f"✔️ Trabajador {nombre_trabajador} insertado.")
+                # print(f"✔️ Trabajador {nombre_trabajador} insertado.")
                 logger.info(f"✔️ Trabajador {nombre_trabajador} insertado.")
             else:
-                print(f"⚠️ Trabajador {email} ya existe.")
+                # print(f"⚠️ Trabajador {email} ya existe.")
                 logger.info(f"⚠️ Trabajador {email} ya existe.")
         else:
-            print(f"⚠️ Usuario {email} no encontrado para el trabajador.")
+            # print(f"⚠️ Usuario {email} no encontrado para el trabajador.")
             logger.warning(f"⚠️ Usuario {email} no encontrado para el trabajador.")
 
 
@@ -244,7 +244,7 @@ def insertar_categorias(cursor):
         ("Postres", "Dulces y postres caseros.", "postres.png"),
         ("Cafés", "Cafés calientes y fríos.", "cafes.png"),
     ]
-    print(f"Listado Categorías: {datos_categorias}")
+    # print(f"Listado Categorías: {datos_categorias}")
     logger.info(f"Listado Categorías: {datos_categorias}")
 
     for nombre_categoria, descripcion, imagen in datos_categorias:
@@ -258,10 +258,10 @@ def insertar_categorias(cursor):
                         VALUES (%s, %s, %s);""",
                 (nombre_categoria, descripcion, imagen),
             )
-            print(f"✔️ Categoría '{nombre_categoria}' insertada.")
+            # print(f"✔️ Categoría '{nombre_categoria}' insertada.")
             logger.info(f"✔️ Categoría '{nombre_categoria}' insertada.")
         else:
-            print(f"⚠️ Categoría '{nombre_categoria}' ya existe, no se insertó.")
+            # print(f"⚠️ Categoría '{nombre_categoria}' ya existe, no se insertó.")
             logger.warning(
                 f"⚠️ Categoría '{nombre_categoria}' ya existe, no se insertó."
             )
@@ -467,7 +467,7 @@ def insertar_productos(cursor):
             13,
         ),
     ]
-    print(f"Listado Productos: {datos_productos}")
+    # print(f"Listado Productos: {datos_productos}")
     logger.info(f"Listado roles: {datos_productos}")
 
     for (
@@ -487,10 +487,10 @@ def insertar_productos(cursor):
                         VALUES (%s, %s, %s, %s, %s);""",
                 (nombre_producto, descripcion, precio, imagen, id_categoria_FK),
             )
-            print(f"✔️ Producto '{nombre_producto}' insertado.")
+            # print(f"✔️ Producto '{nombre_producto}' insertado.")
             logger.info(f"✔️ Producto '{nombre_producto}' insertado.")
         else:
-            print(f"⚠️ Producto '{nombre_producto}' ya existe, no se insertó.")
+            # print(f"⚠️ Producto '{nombre_producto}' ya existe, no se insertó.")
             logger.info(f"⚠️ Producto '{nombre_producto}' ya existe, no se insertó.")
             
 def insertar_carritos(cursor):
@@ -509,7 +509,7 @@ def insertar_carritos(cursor):
             # Insertar un nuevo carrito para el cliente
             cursor.execute("INSERT INTO Carrito (id_cliente_FK) VALUES (%s)", (id_cliente_FK,))
             id_carrito = cursor.lastrowid  # Obtener el ID del carrito recién creado
-            print(f"✔️ Carrito para cliente {id_cliente_FK} insertado.")
+            # print(f"✔️ Carrito para cliente {id_cliente_FK} insertado.")
             logger.info(f"✔️ Carrito para cliente {id_cliente_FK} insertado.")
             
             # Insertar productos en el carrito
@@ -525,13 +525,13 @@ def insertar_carritos(cursor):
                         "INSERT INTO Carrito_Productos (id_carrito_FK, id_producto_FK, cantidad) VALUES (%s, %s, %s)",
                         (id_carrito, id_producto_FK, cantidad)
                     )
-                    print(f"✔️ Producto {id_producto_FK} añadido al carrito para cliente {id_cliente_FK}.")
+                    # print(f"✔️ Producto {id_producto_FK} añadido al carrito para cliente {id_cliente_FK}.")
                     logger.info(f"✔️ Producto {id_producto_FK} añadido al carrito para cliente {id_cliente_FK}.")
                 else:
-                    print(f"⚠️ Producto {id_producto_FK} ya está en el carrito.")
+                    # print(f"⚠️ Producto {id_producto_FK} ya está en el carrito.")
                     logger.info(f"⚠️ Producto {id_producto_FK} ya está en el carrito.")
         else:
-            print(f"⚠️ El cliente {id_cliente_FK} ya tiene un carrito existente.")
+            # print(f"⚠️ El cliente {id_cliente_FK} ya tiene un carrito existente.")
             logger.info(f"⚠️ El cliente {id_cliente_FK} ya tiene un carrito existente.")
 
 def insertar_pedidos(cursor):
@@ -557,7 +557,7 @@ def insertar_pedidos(cursor):
                 (num_pedido, id_cliente_FK, id_carrito_FK)
             )
             id_pedido = cursor.lastrowid  # Obtener el ID del pedido recién creado
-            print(f"✔️ Pedido {num_pedido} para cliente {id_cliente_FK} insertado.")
+            # print(f"✔️ Pedido {num_pedido} para cliente {id_cliente_FK} insertado.")
             logger.info(f"✔️ Pedido {num_pedido} para cliente {id_cliente_FK} insertado.")
             
             # Insertar productos en el pedido
@@ -573,11 +573,11 @@ def insertar_pedidos(cursor):
                         "INSERT INTO Pedido_Productos (id_pedido_FK, id_producto_FK, cantidad) VALUES (%s, %s, %s)",
                         (id_pedido, id_producto_FK, cantidad)
                     )
-                    print(f"✔️ Producto {id_producto_FK} añadido al pedido {num_pedido}.")
+                    # print(f"✔️ Producto {id_producto_FK} añadido al pedido {num_pedido}.")
                     logger.info(f"✔️ Producto {id_producto_FK} añadido al pedido {num_pedido}.")
                 else:
-                    print(f"⚠️ Producto {id_producto_FK} no está en el carrito.")
+                    # print(f"⚠️ Producto {id_producto_FK} no está en el carrito.")
                     logger.info(f"⚠️ Producto {id_producto_FK} no está en el carrito.")
         else:
-            print(f"⚠️ El pedido {num_pedido} ya existe.")
+            # print(f"⚠️ El pedido {num_pedido} ya existe.")
             logger.info(f"⚠️ El pedido {num_pedido} ya existe.")

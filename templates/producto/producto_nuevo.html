@@ -13,7 +13,7 @@
       </div>
 
       <!-- Formulario de nuevo producto -->
-      <form action="{{ url_for('producto.ruta_crear_producto') }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirGestionProductos();">
+      <form action="{{ url_for('producto.ruta_crear_producto') }}" enctype="multipart/form-data" method="post">
         <div class="mb-3">
           <span>Nombre del Producto</span>
           <label for="nombre" class="form-label" placeholder="Nombre del producto.."></label>
@@ -53,7 +53,7 @@
 
         <!-- Botón de enviar -->
         <div class="d-flex justify-content-center mt-4">
-          <button type="submit" class="btn btn-danger">Agregar Producto</button>
+          <button type="submit" class="btn btn-danger" href="{{ url_for('producto.mostrar_productos') }}">Agregar Producto</button>
         </div>
         
         <!-- Botón Volver -->
@@ -63,14 +63,4 @@
       </form>
     </div>
   </div>
-
-  <!-- Script para redirigir tras la actualización -->
-  <script>
-    function redirigirGestionProductos() {
-      setTimeout(function () {
-        window.location.href = "{{ url_for('producto.mostrar_productos') }}";
-      }, 1000);
-      return true; // Permitir que el formulario se envíe
-    }
-  </script>
 {% endblock %}
