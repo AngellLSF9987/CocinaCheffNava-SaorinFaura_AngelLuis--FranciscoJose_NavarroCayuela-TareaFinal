@@ -1,0 +1,1162 @@
+2024-12-25 17:49:36,600 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 17:49:36,609 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 17:49:36,609 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 17:49:36,610 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:49:36,617 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 17:49:36,618 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 17:49:36,618 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 17:49:36,619 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 17:49:36,619 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 17:49:36,619 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 17:49:36,619 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 17:49:36,620 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 17:49:36,620 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 17:49:36,621 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 17:49:36,621 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 17:49:36,621 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 17:49:36,622 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 17:49:36,622 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 17:49:36,622 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 17:49:36,623 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 17:49:36,623 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 17:49:36,624 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 17:49:36,624 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 17:49:36,624 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 17:49:36,625 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 17:49:36,625 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:49:36,625 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:49:36,644 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 17:49:36,645 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 17:49:36,645 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 17:49:36,648 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 17:49:36,648 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 17:49:36,649 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 17:49:36,649 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 17:49:36,649 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 17:49:36,651 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 17:49:36,651 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 17:49:36,652 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 17:49:36,653 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 17:49:36,654 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 17:49:36,654 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 17:49:36,659 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 17:49:36,660 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 17:49:36,661 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 17:49:36,662 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 17:49:36,662 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 17:49:36,663 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 17:49:36,663 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 17:49:36,664 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 17:49:36,664 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 17:49:36,664 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 17:49:36,665 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 17:49:36,665 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 17:49:36,666 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 17:49:36,666 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 17:49:36,668 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 17:49:36,668 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 17:49:36,669 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 17:49:36,669 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 17:49:36,670 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 17:49:36,670 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 17:49:36,670 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 17:49:36,671 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 17:49:36,672 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 17:49:36,672 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 17:49:36,673 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 17:49:36,673 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 17:49:36,673 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 17:49:36,674 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 17:49:36,674 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 17:49:36,675 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 17:49:36,675 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 17:49:36,675 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 17:49:36,676 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 17:49:36,676 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 17:49:36,677 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 17:49:36,677 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 17:49:36,678 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 17:49:36,678 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 17:49:36,679 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 17:49:36,679 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 17:49:36,680 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 17:49:36,680 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 17:49:36,680 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:49:36,681 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 17:49:36,703 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-12-25 17:49:36,704 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-12-25 17:49:36,705 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 17:49:36,992 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 17:49:37,001 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 17:49:37,002 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 17:49:37,002 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:49:37,009 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 17:49:37,010 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 17:49:37,011 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 17:49:37,011 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 17:49:37,011 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 17:49:37,012 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 17:49:37,012 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 17:49:37,012 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 17:49:37,012 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 17:49:37,013 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 17:49:37,013 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 17:49:37,013 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 17:49:37,014 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 17:49:37,014 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 17:49:37,014 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 17:49:37,015 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 17:49:37,015 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 17:49:37,016 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 17:49:37,016 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 17:49:37,017 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 17:49:37,017 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 17:49:37,018 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:49:37,018 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:49:37,021 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 17:49:37,021 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 17:49:37,022 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 17:49:37,022 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 17:49:37,023 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 17:49:37,023 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 17:49:37,024 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 17:49:37,024 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 17:49:37,024 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 17:49:37,025 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 17:49:37,025 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 17:49:37,026 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 17:49:37,027 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 17:49:37,028 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 17:49:37,029 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 17:49:37,029 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 17:49:37,030 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 17:49:37,031 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 17:49:37,031 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 17:49:37,032 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 17:49:37,032 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 17:49:37,033 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 17:49:37,033 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 17:49:37,034 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 17:49:37,034 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 17:49:37,035 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 17:49:37,035 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 17:49:37,036 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 17:49:37,037 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 17:49:37,037 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 17:49:37,038 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 17:49:37,038 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 17:49:37,039 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 17:49:37,039 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 17:49:37,039 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 17:49:37,040 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 17:49:37,040 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 17:49:37,041 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 17:49:37,041 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 17:49:37,042 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 17:49:37,043 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 17:49:37,043 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 17:49:37,044 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 17:49:37,044 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 17:49:37,045 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 17:49:37,045 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 17:49:37,046 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 17:49:37,046 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 17:49:37,047 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 17:49:37,047 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 17:49:37,048 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 17:49:37,048 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 17:49:37,049 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 17:49:37,049 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 17:49:37,049 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 17:49:37,050 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 17:49:37,050 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:49:37,050 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 17:49:37,067 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 17:49:37,071 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 17:51:28,695 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,857 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:28,858 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:28] "GET / HTTP/1.1" 200 -
+2024-12-25 17:51:28,893 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,896 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,915 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,916 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,968 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:28,969 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:28] "GET /static/css/error.styles.css HTTP/1.1" 200 -
+2024-12-25 17:51:28,969 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:28,969 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:28] "GET /static/css/styles.css HTTP/1.1" 200 -
+2024-12-25 17:51:28,978 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:28,986 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:28,987 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:28] "GET /static/images/categorias/carnes.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,003 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,009 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,009 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,010 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/pastas.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,010 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/puchero.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,016 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,017 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/pizzas.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,091 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,097 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,109 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,109 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/arroces.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,114 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,114 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,115 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/asados.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,125 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,125 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/postres.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,632 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,632 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,637 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,638 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,639 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET / HTTP/1.1" 200 -
+2024-12-25 17:51:29,651 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,651 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/fondoformulario1.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,656 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,657 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/ensaladas.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,674 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,686 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:29,692 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,693 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/bebidas.png HTTP/1.1" 200 -
+2024-12-25 17:51:29,706 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:29,706 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:29] "GET /static/images/categorias/cafes.png HTTP/1.1" 200 -
+2024-12-25 17:51:58,877 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,879 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,879 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "GET / HTTP/1.1" 200 -
+2024-12-25 17:51:58,898 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,898 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,900 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,901 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,902 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,904 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,908 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,909 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,910 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,910 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,910 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,910 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,910 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,911 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,911 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,911 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,912 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,915 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,916 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,919 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,922 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,923 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,923 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,924 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,928 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,929 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,931 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,932 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,934 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,935 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,935 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,935 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,936 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/ensaladas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,936 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/bebidas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,937 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,938 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/categorias/cafes.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:58,945 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:58,950 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:58,951 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:58] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-25 17:51:59,051 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:51:59,060 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:51:59,061 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:51:59] "GET /static/images/favicon.ico HTTP/1.1" 200 -
+2024-12-25 17:52:09,326 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,330 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-25 17:52:09,344 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,344 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /producto/mostrar_productos HTTP/1.1" 200 -
+2024-12-25 17:52:09,368 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,370 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,370 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,371 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,371 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,372 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,374 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,375 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,377 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,377 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,378 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,378 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,379 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,379 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,379 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,379 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,379 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,380 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,380 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,384 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,387 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,387 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,388 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,388 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,389 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,390 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,393 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,394 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,394 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,394 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,395 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,399 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,403 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,403 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,403 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,403 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,403 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/spagueti_carbonara.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,403 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/ternera_salsa.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,403 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/albondigas.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,404 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/entrecot.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,410 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,411 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,412 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/lasana_verduras.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,415 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,422 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,423 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:09,438 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,439 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,440 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/cocido.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,450 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,450 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,457 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,460 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,462 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,462 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,463 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/lentejas.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,468 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,468 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,469 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/4quesos.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,469 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/margarita.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,474 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,474 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,475 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/paella_marisco.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,476 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/risotto.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,480 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,481 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,481 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/pollo_asado.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,500 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,500 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/costillas.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,506 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,510 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,512 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,519 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,523 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,533 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,533 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/ensalada_cesar.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,537 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,538 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,538 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,538 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,538 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/vino_tinto.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,539 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/ensalada_med.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,540 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/cerveza_lager.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,540 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/cerveza_ipa.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,550 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,565 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,569 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,571 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,573 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,574 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,575 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/vino_blanco.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,578 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,585 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,586 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/fanta_limon.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,589 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,589 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,590 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,590 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,591 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/tarta_manzana.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,593 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/batido_fresa.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,594 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/aguapet.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,594 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/coca_cola.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,599 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,613 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,615 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:09,616 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,616 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/flan.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,628 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,628 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:09,628 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/cafe_solo.png HTTP/1.1" 200 -
+2024-12-25 17:52:09,628 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:09] "GET /static/images/productos/cafe_leche.png HTTP/1.1" 200 -
+2024-12-25 17:52:11,024 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,026 - logs - INFO - Mostrando formulario para crear un producto.
+2024-12-25 17:52:11,047 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,047 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "GET /producto/ruta_crear_producto HTTP/1.1" 200 -
+2024-12-25 17:52:11,066 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,067 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,068 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,069 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,070 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,071 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,072 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,073 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,073 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,074 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,074 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,075 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,076 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,076 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,077 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,078 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,078 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,079 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,079 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,080 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,080 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,084 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,085 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:11,086 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,086 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,086 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,087 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,087 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:11,093 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:11,094 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:11] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,144 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,146 - logs - INFO - OBTENIENDO PRODUCTOS DESDE ADMIN
+2024-12-25 17:52:14,149 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,150 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "GET /producto/mostrar_productos HTTP/1.1" 200 -
+2024-12-25 17:52:14,175 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,176 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,177 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,177 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,179 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,181 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,182 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,182 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,182 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,183 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,183 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/css/error.styles.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,183 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/pastas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,185 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,186 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,187 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/puchero.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,187 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,187 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/carnes.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,189 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,189 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/pizzas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,190 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,192 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,193 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,197 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,201 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,201 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,202 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,203 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/arroces.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,203 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,203 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,203 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/entrecot.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,203 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,204 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/postres.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,204 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/categorias/asados.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,205 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/albondigas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,205 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,207 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,207 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/ternera_salsa.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,209 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,213 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,218 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,221 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,224 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,225 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,226 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,226 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/spagueti_carbonara.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,227 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/lasana_verduras.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,227 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,228 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,229 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/fondoformulario1.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,230 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,230 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/cocido.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,230 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,231 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/lentejas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,232 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/margarita.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,239 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,242 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,242 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,243 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,244 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,245 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,248 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,249 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/4quesos.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,249 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,250 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,251 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/paella_marisco.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,251 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,251 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,251 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/pollo_asado.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,252 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,253 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,253 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/costillas.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,254 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/risotto.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,255 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/ensalada_cesar.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,259 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,263 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,268 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,272 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,272 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,273 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,274 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/ensalada_med.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,275 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,275 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,275 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/cerveza_ipa.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,276 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/cerveza_lager.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,278 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,284 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,285 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,286 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,286 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/vino_tinto.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,286 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/coca_cola.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,288 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,288 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/vino_blanco.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,289 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,291 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,293 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/fanta_limon.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,294 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,295 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,300 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,308 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,309 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:14,310 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/batido_fresa.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,310 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,311 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,311 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/aguapet.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,312 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/tarta_manzana.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,313 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,317 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,318 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:14,318 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/flan.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,319 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/cafe_solo.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:14,320 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:14] "[36mGET /static/images/productos/cafe_leche.png HTTP/1.1[0m" 304 -
+2024-12-25 17:52:15,840 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 17:52:15,843 - logs - INFO - Producto obtenido: {'id_producto': 1, 'nombre_producto': 'Entrecot', 'descripcion': 'Entrecot a la parrilla con guarnición de papas.', 'precio': Decimal('15.99'), 'imagen': 'entrecot.png', 'nombre_categoria': 'Carnes'}
+2024-12-25 17:52:15,843 - logs - INFO - PRODUCTO OBTENIDO POR 'ID': 1
+2024-12-25 17:52:15,860 - logs - ERROR - Error al ACTUALIZAR PRODUCTO: expected token ',', got 'static'
+2024-12-25 17:52:15,870 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 17:52:15,887 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:15] "[35m[1mGET /producto/editar_producto/1 HTTP/1.1[0m" 500 -
+2024-12-25 17:52:15,908 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:15] "[36mGET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+2024-12-25 17:52:15,926 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:15] "[36mGET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+2024-12-25 17:52:15,939 - werkzeug - INFO - 127.0.0.1 - - [25/Dec/2024 17:52:15] "GET /producto/editar_producto/1?__debugger__=yes&cmd=resource&f=console.png&s=SIjn358Dv43RxVmpdpIL HTTP/1.1" 200 -
+2024-12-25 18:17:31,513 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:31,554 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:31,824 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:31,833 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:31,833 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:31,834 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:31,841 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:31,842 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:31,843 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:31,843 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:31,843 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:31,844 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:31,844 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:31,844 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:31,844 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:31,845 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:31,845 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:31,845 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:31,846 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:31,846 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:31,846 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:31,846 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:31,847 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:31,847 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:31,847 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:31,848 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:31,848 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:31,848 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:31,848 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:31,850 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:31,851 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:31,851 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:31,851 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:31,852 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:31,852 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:31,853 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:31,853 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:31,853 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:31,854 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:31,854 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:31,855 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:31,855 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:31,856 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:31,856 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:31,857 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:31,857 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:31,857 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:31,858 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:31,858 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:31,859 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:31,859 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:31,859 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:31,860 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:31,860 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:31,860 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:31,861 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:31,861 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:31,862 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:31,862 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:31,863 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:31,863 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:31,863 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:31,864 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:31,864 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:31,865 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:31,865 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:31,865 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:31,866 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:31,866 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:31,867 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:31,867 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:31,867 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:31,868 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:31,868 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:31,869 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:31,869 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:31,869 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:31,870 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:31,870 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:31,870 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:31,871 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:31,872 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:31,872 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:31,872 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:31,873 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:31,873 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:31,873 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:31,887 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:31,891 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:17:34,943 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:34,982 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:35,238 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:35,247 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:35,248 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:35,248 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:35,254 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:35,255 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:35,256 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:35,256 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:35,256 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:35,256 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:35,257 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:35,257 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:35,257 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:35,257 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:35,258 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:35,258 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:35,258 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:35,259 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:35,259 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:35,259 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:35,260 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:35,260 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:35,260 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:35,260 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:35,261 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:35,261 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:35,261 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:35,263 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:35,264 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:35,264 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:35,264 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:35,265 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:35,265 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:35,265 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:35,266 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:35,266 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:35,267 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:35,267 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:35,268 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:35,268 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:35,268 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:35,269 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:35,270 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:35,270 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:35,270 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:35,271 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:35,271 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:35,271 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:35,272 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:35,272 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:35,272 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:35,273 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:35,273 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:35,273 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:35,274 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:35,274 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:35,275 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:35,275 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:35,276 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:35,277 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:35,278 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:35,278 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:35,279 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:35,279 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:35,280 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:35,280 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:35,280 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:35,281 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:35,281 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:35,281 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:35,282 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:35,282 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:35,283 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:35,283 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:35,284 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:35,284 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:35,284 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:35,285 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:35,285 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:35,286 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:35,286 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:35,286 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:35,287 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:35,287 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:35,287 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:35,300 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:35,304 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:17:43,406 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:43,442 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:43,691 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:43,699 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:43,700 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:43,700 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:43,707 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:43,708 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:43,708 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:43,709 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:43,709 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:43,709 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:43,709 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:43,710 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:43,710 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:43,710 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:43,711 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:43,711 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:43,711 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:43,712 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:43,712 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:43,712 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:43,712 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:43,713 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:43,713 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:43,713 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:43,714 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:43,714 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:43,714 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:43,716 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:43,716 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:43,716 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:43,717 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:43,717 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:43,717 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:43,718 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:43,718 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:43,719 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:43,719 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:43,719 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:43,720 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:43,721 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:43,721 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:43,721 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:43,722 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:43,722 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:43,723 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:43,723 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:43,723 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:43,724 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:43,724 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:43,724 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:43,725 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:43,725 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:43,726 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:43,726 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:43,727 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:43,727 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:43,728 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:43,728 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:43,728 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:43,729 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:43,729 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:43,729 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:43,730 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:43,730 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:43,731 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:43,731 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:43,731 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:43,732 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:43,732 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:43,733 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:43,733 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:43,733 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:43,734 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:43,734 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:43,734 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:43,735 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:43,735 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:43,735 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:43,736 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:43,736 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:43,737 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:43,737 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:43,737 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:43,738 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:43,738 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:43,751 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:43,755 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:17:44,791 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:44,845 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:45,095 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:45,104 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:45,104 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:45,104 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:45,111 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:45,112 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:45,112 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:45,113 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:45,113 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:45,113 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:45,113 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:45,114 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:45,114 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:45,114 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:45,114 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:45,114 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:45,115 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:45,115 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:45,115 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:45,115 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:45,116 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:45,116 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:45,116 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:45,117 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:45,117 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:45,117 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:45,118 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:45,119 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:45,119 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:45,120 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:45,120 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:45,120 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:45,121 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:45,121 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:45,121 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:45,122 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:45,123 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:45,123 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:45,123 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:45,124 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:45,124 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:45,125 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:45,125 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:45,125 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:45,126 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:45,126 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:45,126 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:45,127 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:45,127 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:45,128 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:45,128 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:45,129 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:45,129 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:45,129 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:45,130 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:45,130 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:45,131 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:45,131 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:45,132 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:45,132 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:45,132 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:45,133 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:45,133 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:45,134 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:45,134 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:45,134 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:45,135 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:45,135 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:45,135 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:45,136 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:45,136 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:45,137 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:45,137 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:45,137 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:45,138 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:45,138 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:45,138 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:45,139 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:45,139 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:45,140 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:45,140 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:45,140 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:45,141 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:45,141 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:45,141 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:45,154 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:45,158 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:17:46,192 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:46,226 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:46,467 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:46,477 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:46,478 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:46,478 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:46,484 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:46,485 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:46,486 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:46,486 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:46,487 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:46,487 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:46,487 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:46,487 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:46,488 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:46,488 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:46,488 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:46,489 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:46,489 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:46,489 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:46,489 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:46,490 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:46,490 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:46,490 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:46,491 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:46,491 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:46,491 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:46,491 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:46,492 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:46,493 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:46,494 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:46,494 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:46,494 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:46,495 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:46,495 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:46,496 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:46,496 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:46,497 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:46,497 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:46,497 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:46,498 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:46,499 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:46,499 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:46,500 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:46,500 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:46,501 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:46,501 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:46,502 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:46,502 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:46,502 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:46,503 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:46,503 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:46,504 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:46,504 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:46,505 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:46,505 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:46,505 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:46,506 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:46,506 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:46,507 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:46,507 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:46,507 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:46,508 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:46,508 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:46,509 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:46,509 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:46,509 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:46,510 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:46,510 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:46,511 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:46,511 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:46,512 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:46,512 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:46,513 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:46,513 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:46,513 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:46,514 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:46,514 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:46,515 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:46,515 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:46,516 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:46,516 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:46,516 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:46,517 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:46,517 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:46,517 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:46,518 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:46,531 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:46,535 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:17:49,590 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:17:49,627 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:17:49,892 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:17:49,901 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:17:49,901 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:17:49,902 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:49,908 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:17:49,909 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:17:49,910 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:17:49,910 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:17:49,910 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:17:49,911 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:17:49,911 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:17:49,911 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:17:49,911 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:17:49,912 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:17:49,912 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:17:49,912 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:17:49,912 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:17:49,913 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:17:49,913 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:17:49,913 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:17:49,914 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:17:49,914 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:17:49,914 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:17:49,914 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:17:49,915 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:17:49,915 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:49,915 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:17:49,917 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:17:49,917 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:17:49,917 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:17:49,918 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:17:49,918 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:17:49,918 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:49,919 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:17:49,919 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:17:49,920 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:17:49,920 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:17:49,920 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:17:49,921 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:17:49,922 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:17:49,922 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:17:49,922 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:17:49,923 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:17:49,923 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:17:49,924 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:17:49,924 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:17:49,924 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:17:49,925 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:17:49,925 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:17:49,926 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:17:49,926 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:17:49,926 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:17:49,927 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:17:49,927 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:17:49,927 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:17:49,928 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:17:49,928 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:17:49,929 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:17:49,929 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:17:49,929 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:17:49,930 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:17:49,930 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:17:49,930 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:17:49,931 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:17:49,931 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:17:49,932 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:17:49,932 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:17:49,932 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:17:49,933 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:17:49,933 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:17:49,933 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:17:49,934 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:17:49,934 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:17:49,935 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:17:49,935 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:17:49,935 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:49,936 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:17:49,936 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:17:49,937 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:17:49,937 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:17:49,937 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:17:49,938 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:17:49,938 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:17:49,938 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:17:49,939 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:17:49,951 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:17:49,956 - werkzeug - INFO -  * Debugger PIN: 710-986-125
+2024-12-25 18:20:35,609 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alsao\\OneDrive\\Escritorio\\CocinaCheffNava-SaorinFaura_AngelLuis--FranciscoJose_NavarroCayuela-TareaFinal\\routes\\productos_routes.py', reloading
+2024-12-25 18:20:35,645 - werkzeug - INFO -  * Restarting with stat
+2024-12-25 18:20:35,900 - logs - INFO - Configuración de Flask cargada correctamente.
+2024-12-25 18:20:35,909 - logs - INFO - Blueprints registrados correctamente.
+2024-12-25 18:20:35,910 - logs - DEBUG - Directorio raíz añadido al PYTHONPATH.
+2024-12-25 18:20:35,910 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:20:35,917 - database.db_setup - INFO - LISTADO de todas las bases de datos MYSQL en phpMyAdmin
+2024-12-25 18:20:35,918 - database.db_setup - INFO - La base de datos 'cocina_db' ya existe.
+2024-12-25 18:20:35,919 - database.db_setup - INFO - Creando tabla Roles.
+2024-12-25 18:20:35,919 - database.db_setup - INFO - Tabla Roles creada exitosamente.
+2024-12-25 18:20:35,919 - database.db_setup - INFO - Creando tabla Usuarios.
+2024-12-25 18:20:35,920 - database.db_setup - INFO - Tabla Usuarios creada exitosamente.
+2024-12-25 18:20:35,920 - database.db_setup - INFO - Creando tabla Clientes.
+2024-12-25 18:20:35,920 - database.db_setup - INFO - Tabla Clientes creada exitosamente.
+2024-12-25 18:20:35,920 - database.db_setup - INFO - Creando tabla Trabajadores.
+2024-12-25 18:20:35,921 - database.db_setup - INFO - Tabla Trabajadores creada exitosamente.
+2024-12-25 18:20:35,921 - database.db_setup - INFO - Creando tabla Categorias.
+2024-12-25 18:20:35,921 - database.db_setup - INFO - Tabla Categorias creada exitosamente.
+2024-12-25 18:20:35,921 - database.db_setup - INFO - Creando tabla Productos.
+2024-12-25 18:20:35,922 - database.db_setup - INFO - Tabla Productos creada exitosamente.
+2024-12-25 18:20:35,922 - database.db_setup - INFO - Creando tabla Carrito.
+2024-12-25 18:20:35,922 - database.db_setup - INFO - Tabla Carrito creada exitosamente.
+2024-12-25 18:20:35,923 - database.db_setup - INFO - Creando tabla Pedidos.
+2024-12-25 18:20:35,923 - database.db_setup - INFO - Tabla Pedidos creada exitosamente.
+2024-12-25 18:20:35,923 - database.db_setup - INFO - Creando tabla Carrito_Productos.
+2024-12-25 18:20:35,924 - database.db_setup - INFO - Tabla Carrito_Productos creada exitosamente.
+2024-12-25 18:20:35,924 - database.db_setup - INFO - ✅ Tablas y datos iniciales procesados correctamente.
+2024-12-25 18:20:35,924 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:20:35,924 - database.db_setup - INFO - Creando conexión a MySQL con la base de datos seleccionada.
+2024-12-25 18:20:35,926 - database.db_record - INFO - ⚠️ Rol 'cliente' ya existe.
+2024-12-25 18:20:35,926 - database.db_record - INFO - ⚠️ Rol 'trabajador' ya existe.
+2024-12-25 18:20:35,926 - database.db_record - INFO - Listado Usuarios: [('paco@nava.com', 'paco123', 1), ('angel@saorin.com', 'angel123', 1), ('paco@trabajador.com', 'paco456', 2), ('angel@trabajador.com', 'angel456', 2)]
+2024-12-25 18:20:35,927 - database.db_record - INFO - ⚠️ Usuario paco@nava.com ya existe, no se insertó.
+2024-12-25 18:20:35,927 - database.db_record - INFO - ⚠️ Usuario angel@saorin.com ya existe, no se insertó.
+2024-12-25 18:20:35,927 - database.db_record - INFO - ⚠️ Usuario paco@trabajador.com ya existe, no se insertó.
+2024-12-25 18:20:35,928 - database.db_record - INFO - ⚠️ Usuario angel@trabajador.com ya existe, no se insertó.
+2024-12-25 18:20:35,928 - database.db_record - INFO - Listado roles: [('Francisco José', 'Cayuela', 'Navarro', '12345678A', '600123456', 'Calle Luna, 6', 'paco@nava.com'), ('Angel Luis', 'Saorin', 'Faura', '12345678C', '610654321', 'Calle Sol, 8', 'angel@saorin.com')]
+2024-12-25 18:20:35,929 - database.db_record - INFO - ⚠️ Cliente paco@nava.com ya existe.
+2024-12-25 18:20:35,929 - database.db_record - INFO - ⚠️ Cliente angel@saorin.com ya existe.
+2024-12-25 18:20:35,929 - database.db_record - INFO - Listado Trabajadores: [('Paco', 'Lopez', 'Garcia', '12345678D', '620987654', 'Calle Estrella, 10', 'paco@trabajador.com'), ('Angel', 'Martinez', 'Perez', '12345678F', '630456789', 'Calle Cometa, 12', 'angel@trabajador.com')]
+2024-12-25 18:20:35,930 - database.db_record - INFO - ⚠️ Trabajador paco@trabajador.com ya existe.
+2024-12-25 18:20:35,931 - database.db_record - INFO - ⚠️ Trabajador angel@trabajador.com ya existe.
+2024-12-25 18:20:35,931 - database.db_record - INFO - Listado Categorías: [('Carnes', 'Carnes a la parrilla y guisos de carne.', 'carnes.png'), ('Pastas', 'Platos de pasta italiana y fideos.', 'pastas.png'), ('Comidas de Puchero', 'Platos tradicionales de puchero.', 'puchero.png'), ('Pizzas', 'Pizzas artesanales con ingredientes frescos.', 'pizzas.png'), ('Arroces', 'Platos de arroz como paellas y risottos.', 'arroces.png'), ('Asados', 'Carnes y vegetales asados al horno.', 'asados.png'), ('Ensaladas', 'Ensaladas frescas y saludables.', 'ensaladas.png'), ('Cervezas', 'Cervezas nacionales e internacionales.', 'cervezas.png'), ('Vinos', 'Selección de vinos tintos, blancos y rosados.', 'vinos.png'), ('Refrescos con Gas y Sin Gas', 'Refrescos variados con y sin gas.', 'refrescos.png'), ('Aguas, zumos y batidos', 'Aguas minerales, zumos naturales y batidos.', 'bebidas.png'), ('Postres', 'Dulces y postres caseros.', 'postres.png'), ('Cafés', 'Cafés calientes y fríos.', 'cafes.png')]
+2024-12-25 18:20:35,932 - database.db_record - WARNING - ⚠️ Categoría 'Carnes' ya existe, no se insertó.
+2024-12-25 18:20:35,932 - database.db_record - WARNING - ⚠️ Categoría 'Pastas' ya existe, no se insertó.
+2024-12-25 18:20:35,933 - database.db_record - WARNING - ⚠️ Categoría 'Comidas de Puchero' ya existe, no se insertó.
+2024-12-25 18:20:35,933 - database.db_record - WARNING - ⚠️ Categoría 'Pizzas' ya existe, no se insertó.
+2024-12-25 18:20:35,933 - database.db_record - WARNING - ⚠️ Categoría 'Arroces' ya existe, no se insertó.
+2024-12-25 18:20:35,934 - database.db_record - WARNING - ⚠️ Categoría 'Asados' ya existe, no se insertó.
+2024-12-25 18:20:35,934 - database.db_record - WARNING - ⚠️ Categoría 'Ensaladas' ya existe, no se insertó.
+2024-12-25 18:20:35,934 - database.db_record - WARNING - ⚠️ Categoría 'Cervezas' ya existe, no se insertó.
+2024-12-25 18:20:35,935 - database.db_record - WARNING - ⚠️ Categoría 'Vinos' ya existe, no se insertó.
+2024-12-25 18:20:35,935 - database.db_record - WARNING - ⚠️ Categoría 'Refrescos con Gas y Sin Gas' ya existe, no se insertó.
+2024-12-25 18:20:35,936 - database.db_record - WARNING - ⚠️ Categoría 'Aguas, zumos y batidos' ya existe, no se insertó.
+2024-12-25 18:20:35,936 - database.db_record - WARNING - ⚠️ Categoría 'Postres' ya existe, no se insertó.
+2024-12-25 18:20:35,936 - database.db_record - WARNING - ⚠️ Categoría 'Cafés' ya existe, no se insertó.
+2024-12-25 18:20:35,937 - database.db_record - INFO - Listado roles: [('Entrecot', 'Entrecot a la parrilla con guarnición de papas.', 15.99, 'entrecot.png', 1), ('Albóndigas en Salsa', 'Albóndigas de carne en salsa casera.', 9.5, 'albondigas.png', 1), ('Espaguetis Carbonara', 'Espaguetis con salsa carbonara casera.', 8.99, 'spagueti_carbonara.png', 2), ('Lasaña de Verduras', 'Lasaña vegetariana con capas de verduras frescas.', 9.75, 'lasana_verduras.png', 2), ('Cocido Madrileño', 'Cocido con garbanzos, carne y verduras.', 12.5, 'cocido.png', 3), ('Lentejas con Chorizo', 'Lentejas guisadas con chorizo.', 10.0, 'lentejas.png', 3), ('Pizza Margarita', 'Pizza clásica con tomate, queso y albahaca.', 7.99, 'margarita.png', 4), ('Pizza 4 Quesos', 'Pizza con mezcla de cuatro quesos italianos.', 9.5, '4quesos.png', 4), ('Paella de Marisco', 'Paella de mariscos recién preparada.', 13.99, 'paella_marisco.png', 5), ('Risotto de Setas', 'Risotto cremoso con setas variadas.', 11.5, 'risotto.png', 5), ('Pollo Asado', 'Pollo asado al horno con especias.', 12.0, 'pollo_asado.png', 6), ('Costillas BBQ', 'Costillas al horno con salsa barbacoa.', 14.0, 'costillas.png', 6), ('Ensalada César', 'Ensalada con pollo, crutones y aderezo César.', 7.5, 'ensalada_cesar.png', 7), ('Ensalada Mediterránea', 'Ensalada fresca con aceitunas, queso feta y tomate.', 6.99, 'ensalada_med.png', 7), ('Cerveza Lager', 'Botella de cerveza lager 330ml.', 2.5, 'cerveza_lager.png', 8), ('Cerveza IPA', 'Botella de cerveza IPA artesanal 330ml.', 3.0, 'cerveza_ipa.png', 8), ('Vino Tinto', 'Copa de vino tinto de la casa.', 3.5, 'vino_tinto.png', 9), ('Vino Blanco', 'Copa de vino blanco fresco.', 3.5, 'vino_blanco.png', 9), ('Coca-Cola', 'Refresco de cola original 330ml.', 1.8, 'coca_cola.png', 10), ('Limonada', 'Refresco de limón natural sin gas.', 1.5, 'fanta_limon.png', 10), ('Agua Mineral', 'Botella de agua mineral 500ml.', 1.2, 'aguapet.png', 11), ('Agua Mineral', 'Botella de agua mineral 1l.', 1.2, 'agualitro.png', 11), ('Batido de Fresa', 'Batido natural de fresa con leche.', 2.5, 'batido_fresa.png', 11), ('Tarta de Manzana', 'Tarta de manzana casera con canela.', 4.5, 'tarta_manzana.png', 12), ('Flan Casero', 'Flan de huevo hecho en casa.', 3.5, 'flan.png', 12), ('Café Solo', 'Café espresso recién hecho.', 1.5, 'cafe_solo.png', 13), ('Café con Leche', 'Café con leche espumosa.', 1.8, 'cafe_leche.png', 13)]
+2024-12-25 18:20:35,937 - database.db_record - INFO - ⚠️ Producto 'Entrecot' ya existe, no se insertó.
+2024-12-25 18:20:35,938 - database.db_record - INFO - ⚠️ Producto 'Albóndigas en Salsa' ya existe, no se insertó.
+2024-12-25 18:20:35,938 - database.db_record - INFO - ⚠️ Producto 'Espaguetis Carbonara' ya existe, no se insertó.
+2024-12-25 18:20:35,938 - database.db_record - INFO - ⚠️ Producto 'Lasaña de Verduras' ya existe, no se insertó.
+2024-12-25 18:20:35,939 - database.db_record - INFO - ⚠️ Producto 'Cocido Madrileño' ya existe, no se insertó.
+2024-12-25 18:20:35,939 - database.db_record - INFO - ⚠️ Producto 'Lentejas con Chorizo' ya existe, no se insertó.
+2024-12-25 18:20:35,940 - database.db_record - INFO - ⚠️ Producto 'Pizza Margarita' ya existe, no se insertó.
+2024-12-25 18:20:35,940 - database.db_record - INFO - ⚠️ Producto 'Pizza 4 Quesos' ya existe, no se insertó.
+2024-12-25 18:20:35,940 - database.db_record - INFO - ⚠️ Producto 'Paella de Marisco' ya existe, no se insertó.
+2024-12-25 18:20:35,941 - database.db_record - INFO - ⚠️ Producto 'Risotto de Setas' ya existe, no se insertó.
+2024-12-25 18:20:35,941 - database.db_record - INFO - ⚠️ Producto 'Pollo Asado' ya existe, no se insertó.
+2024-12-25 18:20:35,941 - database.db_record - INFO - ⚠️ Producto 'Costillas BBQ' ya existe, no se insertó.
+2024-12-25 18:20:35,942 - database.db_record - INFO - ⚠️ Producto 'Ensalada César' ya existe, no se insertó.
+2024-12-25 18:20:35,942 - database.db_record - INFO - ⚠️ Producto 'Ensalada Mediterránea' ya existe, no se insertó.
+2024-12-25 18:20:35,943 - database.db_record - INFO - ⚠️ Producto 'Cerveza Lager' ya existe, no se insertó.
+2024-12-25 18:20:35,943 - database.db_record - INFO - ⚠️ Producto 'Cerveza IPA' ya existe, no se insertó.
+2024-12-25 18:20:35,943 - database.db_record - INFO - ⚠️ Producto 'Vino Tinto' ya existe, no se insertó.
+2024-12-25 18:20:35,944 - database.db_record - INFO - ⚠️ Producto 'Vino Blanco' ya existe, no se insertó.
+2024-12-25 18:20:35,944 - database.db_record - INFO - ⚠️ Producto 'Coca-Cola' ya existe, no se insertó.
+2024-12-25 18:20:35,944 - database.db_record - INFO - ⚠️ Producto 'Limonada' ya existe, no se insertó.
+2024-12-25 18:20:35,945 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:20:35,945 - database.db_record - INFO - ⚠️ Producto 'Agua Mineral' ya existe, no se insertó.
+2024-12-25 18:20:35,946 - database.db_record - INFO - ⚠️ Producto 'Batido de Fresa' ya existe, no se insertó.
+2024-12-25 18:20:35,946 - database.db_record - INFO - ⚠️ Producto 'Tarta de Manzana' ya existe, no se insertó.
+2024-12-25 18:20:35,946 - database.db_record - INFO - ⚠️ Producto 'Flan Casero' ya existe, no se insertó.
+2024-12-25 18:20:35,947 - database.db_record - INFO - ⚠️ Producto 'Café Solo' ya existe, no se insertó.
+2024-12-25 18:20:35,947 - database.db_record - INFO - ⚠️ Producto 'Café con Leche' ya existe, no se insertó.
+2024-12-25 18:20:35,948 - database.db_record - INFO - ✅ Datos iniciales insertados correctamente.
+2024-12-25 18:20:35,948 - database.db_setup - INFO - Conexión a MySQL cerrada correctamente
+2024-12-25 18:20:35,948 - logs - INFO - Iniciando el servidor Flask en modo debug...
+2024-12-25 18:20:35,961 - werkzeug - WARNING -  * Debugger is active!
+2024-12-25 18:20:35,966 - werkzeug - INFO -  * Debugger PIN: 710-986-125

@@ -1,5 +1,5 @@
 from PIL import Image
-from flask import Blueprint, render_template, request, jsonify
+from flask import Blueprint, render_template, request
 from database.db_setup import get_db
 from logs import logger
 import repositories.rep_producto as productoDB
@@ -47,6 +47,25 @@ def listar_productos():
         logger.error(f"Error OBTENIENDO PRODUCTOS DESDE ADMIN: {e}"), 500
         return render_template("index.html")
   
+@producto.route("/mostrar_producto_detalle/<int:id_producto>", methods=["GET", "POST"], endpoint="mostrar_producto_detalle")
+def mostrar_producto_detalle(id_producto):
+    try:
+        producto = productoDB.obtener_producto_id(id_producto)
+        if producto:
+            logger.info(f"PRODUCTO DETALLE PARA CLIENTE O ADMIN: {producto['nombre_producto']}")
+            return render_template(
+                "producto/producto_detalle.html",
+                producto=producto,
+                id_producto=id_producto,  # Pasamos id_producto explícitamente
+                editando=False
+            ), 200
+        else:
+            logger.warning(f"No se encontró el producto con ID {id_producto}")
+            return render_template("index.html", mensaje="Producto no encontrado"), 404
+    except Exception as e:
+        logger.error(f"Error OBTENIENDO DETALLE PRODUCTO con ID {id_producto}: {e}")
+        return render_template("index.html", mensaje="Error al obtener los detalles del producto"), 500
+    
 @producto.route('/ruta_crear_producto', methods=['GET', 'POST'], endpoint="ruta_crear_producto")
 def ruta_crear_producto():
     try:
@@ -116,26 +135,6 @@ def ruta_crear_producto():
         return render_template('producto/producto_nuevo.html', error="Error al procesar el formulario.")
 
 
-@producto.route("/mostrar_producto_detalle/<int:id_producto>", methods=["GET", "POST"], endpoint="mostrar_producto_detalle")
-def mostrar_producto_detalle(id_producto):
-    try:
-        producto = productoDB.obtener_producto_id(id_producto)
-        if producto:
-            logger.info(f"PRODUCTO DETALLE PARA CLIENTE O ADMIN: {producto['nombre_producto']}")
-            return render_template(
-                "producto/producto_detalle.html",
-                producto=producto,
-                id_producto=id_producto,  # Pasamos id_producto explícitamente
-                editando=False
-            ), 200
-        else:
-            logger.warning(f"No se encontró el producto con ID {id_producto}")
-            return render_template("index.html", mensaje="Producto no encontrado"), 404
-    except Exception as e:
-        logger.error(f"Error OBTENIENDO DETALLE PRODUCTO con ID {id_producto}: {e}")
-        return render_template("index.html", mensaje="Error al obtener los detalles del producto"), 500
-      
-
 @producto.route("/editar_producto/<int:id_producto>", methods=["GET", "POST"], endpoint="ruta_editar_producto")
 def ruta_editar_producto(id_producto):
     try:
@@ -183,7 +182,7 @@ def ruta_editar_producto(id_producto):
         logger.error(f"Error al ACTUALIZAR PRODUCTO: {e}")
         return render_template("error/500.html"), 500
 
-            
+
 @producto.route("/borrar_producto", methods=["GET", "POST"], endpoint="ruta_borrar_producto")
 def ruta_borrar_producto():
     try:

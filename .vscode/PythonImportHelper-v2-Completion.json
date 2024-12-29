@@ -353,14 +353,6 @@
         "documentation": {}
     },
     {
-        "label": "jsonify",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "Blueprint",
         "importPath": "flask",
         "description": "flask",
@@ -1628,7 +1620,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",  # Aquí puedes ajustar según la lógica real\n        \"trabajador\": \"auth.login\",  # Esto también\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"])\ndef login():\n    import controllers.auth_controller as authDB",
+        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",  # Aquí puedes ajustar según la lógica real\n        \"trabajador\": \"auth.login\",  # Esto también\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"], endpoint=\"login\")\ndef login():\n    import controllers.auth_controller as authDB",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1646,7 +1638,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n@auth.route(\"/register\")\ndef register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"])\ndef reset_password():",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n@auth.route(\"/register\", methods=[\"GET\", \"POST\"], endpoint=\"register\" )\ndef register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1655,7 +1647,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"])\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -2065,20 +2057,20 @@
         "documentation": {}
     },
     {
-        "label": "ruta_crear_producto",
-        "kind": 2,
-        "importPath": "routes.productos_routes",
-        "description": "routes.productos_routes",
-        "peekOfCode": "def ruta_crear_producto():\n    try:\n        # Manejo explícito de GET: renderizar el formulario para crear un producto\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear un producto.\")\n            # Obtener las categorías de la base de datos\n            categorias = categoriaDB.obtener_categorias()\n            # Pasar las categorías al template para mostrarlas en el formulario\n            return render_template('producto/producto_nuevo.html', categorias=categorias)\n        # Manejo de POST: procesar el formulario",
-        "detail": "routes.productos_routes",
-        "documentation": {}
-    },
-    {
         "label": "mostrar_producto_detalle",
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
         "peekOfCode": "def mostrar_producto_detalle(id_producto):\n    try:\n        producto = productoDB.obtener_producto_id(id_producto)\n        if producto:\n            logger.info(f\"PRODUCTO DETALLE PARA CLIENTE O ADMIN: {producto['nombre_producto']}\")\n            return render_template(\n                \"producto/producto_detalle.html\",\n                producto=producto,\n                id_producto=id_producto,  # Pasamos id_producto explícitamente\n                editando=False",
+        "detail": "routes.productos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "ruta_crear_producto",
+        "kind": 2,
+        "importPath": "routes.productos_routes",
+        "description": "routes.productos_routes",
+        "peekOfCode": "def ruta_crear_producto():\n    try:\n        # Manejo explícito de GET: renderizar el formulario para crear un producto\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear un producto.\")\n            # Obtener las categorías de la base de datos\n            categorias = categoriaDB.obtener_categorias()\n            # Pasar las categorías al template para mostrarlas en el formulario\n            return render_template('producto/producto_nuevo.html', categorias=categorias)\n        # Manejo de POST: procesar el formulario",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2240,7 +2232,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def cargar():\n    # Conectar a la base de datos en cada solicitud\n    setupDB.get_db()\n@app.teardown_appcontext\ndef cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")",
+        "peekOfCode": "def cargar():\n    # Conectar a la base de datos en cada solicitud\n    setupDB.get_db()\n@app.teardown_appcontext\ndef cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    return render_template(\"index.html\")",
         "detail": "main",
         "documentation": {}
     },
@@ -2249,7 +2241,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\")\ndef index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))",
+        "peekOfCode": "def cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))",
         "detail": "main",
         "documentation": {}
     },
