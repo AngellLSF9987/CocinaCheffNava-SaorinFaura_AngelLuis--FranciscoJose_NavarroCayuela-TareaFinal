@@ -54,11 +54,11 @@ def cliente_detalle(id_cliente):
 
 @cliente.route("/editar_cliente/<int:id_cliente>", methods=["GET", "POST"], endpoint="editar_perfil")
 @access_required('cliente')
-def mostrar_cliente(conexion,id_cliente):
+def mostrar_cliente(id_cliente):
     """Ruta para DETALLE CLIENTE DESDE CLIENTE."""
     try:
         if request.method == "GET":
-            cliente = clienteDB.obtener_cliente_id(conexion,id_cliente)
+            cliente = clienteDB.obtener_cliente_id(id_cliente)
             if cliente:
                 logger.info("REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE"), 200
                 return render_template("/cliente/cliente_editar.html", cliente=cliente)

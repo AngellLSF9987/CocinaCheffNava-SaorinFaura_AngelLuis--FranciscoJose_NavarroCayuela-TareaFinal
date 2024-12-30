@@ -18,8 +18,8 @@
                     <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Inicio</a>
                 </li>
 
-                <!-- Opciones según el rol del usuario -->
                 {% set user_role = session.get('user_role') %}
+
                 {% if user_role == 'cliente' %}
                     <!-- Opciones para Clientes -->
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('producto.listar_productos') }}">Productos</a></li>
@@ -27,6 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.privacidad') }}">Privacidad</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cliente.perfil', id_cliente=session.get('id_cliente')) }}">Mi Perfil</a></li>
                 {% elif user_role == 'trabajador' %}
                     <!-- Opciones para Trabajadores -->
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('producto.mostrar_productos') }}">Gestión de Productos</a></li>
@@ -42,6 +43,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.privacidad') }}">Privacidad</a></li>
                 {% endif %}
+                
             </ul>
 
             <!-- Menú de autenticación -->
@@ -51,7 +53,6 @@
                     <li class="nav-item">
                         <span class="nav-link">Bienvenido, {{ session.get('user_email', 'Usuario') }}</span>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cliente.perfil') }}">Mi Perfil</a></li>
                     <li class="nav-item">
                         <a class="nav-link text-danger" href="{{ url_for('auth.logout') }}">Cerrar Sesión</a>
                     </li>

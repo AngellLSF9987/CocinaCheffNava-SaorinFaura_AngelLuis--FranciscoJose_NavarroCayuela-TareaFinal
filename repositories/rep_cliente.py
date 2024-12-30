@@ -1,8 +1,7 @@
 from copy import Error
 from database.db_setup import get_db
 from logs import logger
-import repositories.rep_usuario
-from repositories.rep_usuario import obtener_usuario_id
+import repositories.rep_usuario as usuarioDB
 
 
 
@@ -34,6 +33,20 @@ def obtener_cliente_id(id_cliente):
         return []  # Devolvemos una lista vacía en caso de error
     finally:
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error    
+
+# Obtener Cliente por id_usuario
+def obtener_cliente_por_id_usuario(id_usuario):
+    conn = get_db()
+    cursor = conn.cursor(dictionary=True)
+    try:
+        cursor.execute("SELECT * FROM Clientes WHERE id_usuario_FK = %s", (id_usuario,))
+        cliente = cursor.fetchone()
+        return cliente
+    except Error as e:
+        logger.error(f"Error al obtener cliente: {e}")
+        return None  # Devolvemos None si no se encuentra el cliente
+    finally:
+        cursor.close()
 
 # Mostrar cliente por DNI
 def obtener_cliente_dni(dni_cliente):
@@ -79,7 +92,7 @@ def actualizar_cliente(
     conn = get_db()
     try:
         # Obtener el cliente y verificar si el id_usuario_FK es válido
-        usuario = obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario
+        usuario = usuarioDB.obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario
         if not usuario:
             raise ValueError(f"El id_usuario_FK {id_usuario_FK} no es válido")
 

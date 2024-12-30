@@ -869,7 +869,7 @@
         "documentation": {}
     },
     {
-        "label": "obtener_usuario_id",
+        "label": "crear_usuario",
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
         "isExtraImport": true,
@@ -877,7 +877,7 @@
         "documentation": {}
     },
     {
-        "label": "crear_usuario",
+        "label": "obtener_rol_usuario_logueado",
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
         "isExtraImport": true,
@@ -891,6 +891,24 @@
         "importPath": "repositories.rep_categoria",
         "description": "repositories.rep_categoria",
         "detail": "repositories.rep_categoria",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_cliente",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_trabajador",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
     {
@@ -959,15 +977,6 @@
         "documentation": {}
     },
     {
-        "label": "repositories.rep_cliente",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "repositories.rep_cliente",
-        "description": "repositories.rep_cliente",
-        "detail": "repositories.rep_cliente",
-        "documentation": {}
-    },
-    {
         "label": "repositories.rep_pedido",
         "kind": 6,
         "isExtraImport": true,
@@ -983,15 +992,6 @@
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
         "detail": "repositories.rep_producto",
-        "documentation": {}
-    },
-    {
-        "label": "repositories.rep_trabajador",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "repositories.rep_trabajador",
-        "description": "repositories.rep_trabajador",
-        "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
     {
@@ -1460,6 +1460,15 @@
         "documentation": {}
     },
     {
+        "label": "obtener_cliente_por_id_usuario",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def obtener_cliente_por_id_usuario(id_usuario):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Clientes WHERE id_usuario_FK = %s\", (id_usuario,))\n        cliente = cursor.fetchone()\n        return cliente\n    except Error as e:\n        logger.error(f\"Error al obtener cliente: {e}\")\n        return None  # Devolvemos None si no se encuentra el cliente",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
         "label": "obtener_cliente_dni",
         "kind": 2,
         "importPath": "repositories.rep_cliente",
@@ -1482,7 +1491,7 @@
         "kind": 2,
         "importPath": "repositories.rep_cliente",
         "description": "repositories.rep_cliente",
-        "peekOfCode": "def actualizar_cliente(\n    id_cliente, nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el cliente y verificar si el id_usuario_FK es válido\n        usuario = obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario\n        if not usuario:\n            raise ValueError(f\"El id_usuario_FK {id_usuario_FK} no es válido\")\n        # Realizar la actualización",
+        "peekOfCode": "def actualizar_cliente(\n    id_cliente, nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el cliente y verificar si el id_usuario_FK es válido\n        usuario = usuarioDB.obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario\n        if not usuario:\n            raise ValueError(f\"El id_usuario_FK {id_usuario_FK} no es válido\")\n        # Realizar la actualización",
         "detail": "repositories.rep_cliente",
         "documentation": {}
     },
@@ -1667,6 +1676,15 @@
         "documentation": {}
     },
     {
+        "label": "obtener_trabajador_por_id_usuario",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def obtener_trabajador_por_id_usuario(id_usuario):\n    conn = setupDB.get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Trabajadores WHERE id_usuario_FK = %s\", (id_usuario,))\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:\n        logger.error(f\"Error al obtener trabajador: {e}\")\n        return None  # Devolvemos None si no se encuentra el trabajador",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
         "label": "obtener_trabajador_dni",
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
@@ -1725,7 +1743,7 @@
         "kind": 2,
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
-        "peekOfCode": "def obtener_rol_usuario_logueado(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuarios u",
+        "peekOfCode": "def obtener_rol_usuario_logueado(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuarios u\n                JOIN Roles r ON u.id_rol_FK = r.id_rol",
         "detail": "repositories.rep_usuario",
         "documentation": {}
     },
@@ -1752,7 +1770,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",\n        \"trabajador\": \"auth.login\",\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"], endpoint=\"login\")\ndef login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado",
+        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",\n        \"trabajador\": \"auth.login\",\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"], endpoint=\"login\")\ndef login():\n    if request.method == \"POST\":",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1761,7 +1779,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password)\n        if usuario:",
+        "peekOfCode": "def login():\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password)\n        if usuario:\n            try:",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1770,7 +1788,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")\n# # Decoradores de autenticación y roles combinados",
+        "peekOfCode": "def logout():\n    session.pop('user_role', None)  # Eliminar el rol de la sesión    \n    session.pop('user_email', None)  # Eliminar el email cliente o trabajador de la sesión\n    session.pop('id_usuario', None)  # Eliminar el usuario de la sesión    \n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1779,7 +1797,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")\n# # Decoradores de autenticación y roles combinados\n# def access_required(role=None):\n#     def decorator(f):\n#         @wraps(f)\n#         def wrapper(*args, **kwargs):\n#             if \"user_role\" not in session:\n#                 flash(\"Por favor, inicia sesión.\", \"warning\")",
+        "peekOfCode": "def reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1968,7 +1986,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def mostrar_cliente(conexion,id_cliente):\n    \"\"\"Ruta para DETALLE CLIENTE DESDE CLIENTE.\"\"\"\n    try:\n        if request.method == \"GET\":\n            cliente = clienteDB.obtener_cliente_id(conexion,id_cliente)\n            if cliente:\n                logger.info(\"REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE\"), 200\n                return render_template(\"/cliente/cliente_editar.html\", cliente=cliente)\n            else:\n                logger.warning(f\"Cliente con ID {id_cliente} no encontrado.\")",
+        "peekOfCode": "def mostrar_cliente(id_cliente):\n    \"\"\"Ruta para DETALLE CLIENTE DESDE CLIENTE.\"\"\"\n    try:\n        if request.method == \"GET\":\n            cliente = clienteDB.obtener_cliente_id(id_cliente)\n            if cliente:\n                logger.info(\"REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE\"), 200\n                return render_template(\"/cliente/cliente_editar.html\", cliente=cliente)\n            else:\n                logger.warning(f\"Cliente con ID {id_cliente} no encontrado.\")",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },

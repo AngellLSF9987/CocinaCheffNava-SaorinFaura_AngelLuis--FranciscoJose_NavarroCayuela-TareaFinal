@@ -34,6 +34,20 @@ def obtener_trabajador_id(id_trabajador):
     finally:
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error       
 
+# Obtener Trabajador por id_usuario
+def obtener_trabajador_por_id_usuario(id_usuario):
+    conn = setupDB.get_db()
+    cursor = conn.cursor(dictionary=True)
+    try:
+        cursor.execute("SELECT * FROM Trabajadores WHERE id_usuario_FK = %s", (id_usuario,))
+        trabajador = cursor.fetchone()
+        return trabajador
+    except Error as e:
+        logger.error(f"Error al obtener trabajador: {e}")
+        return None  # Devolvemos None si no se encuentra el trabajador
+    finally:
+        cursor.close()
+
 # Mostrar trabajadores por DNI
 def obtener_trabajador_dni(dni_trabajador):
     conn = setupDB.get_db()
