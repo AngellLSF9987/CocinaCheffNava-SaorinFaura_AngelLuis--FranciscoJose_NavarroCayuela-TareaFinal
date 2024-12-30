@@ -869,14 +869,6 @@
         "documentation": {}
     },
     {
-        "label": "crear_usuario",
-        "importPath": "repositories.rep_usuario",
-        "description": "repositories.rep_usuario",
-        "isExtraImport": true,
-        "detail": "repositories.rep_usuario",
-        "documentation": {}
-    },
-    {
         "label": "obtener_rol_usuario_logueado",
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
@@ -1698,7 +1690,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):\n    conn = setupDB.get_db()\n    cursor = conn.cursor()\n    try:\n        # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)\n        id_usuario = crear_usuario(email, rol_trabajador)\n        if not id_usuario:\n            raise ValueError(\"No se pudo crear el usuario para el trabajador.\")\n        # Luego, insertamos al trabajador y asociamos el id_usuario_FK\n        cursor.execute(",
+        "peekOfCode": "def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):\n    conn = setupDB.get_db()\n    cursor = conn.cursor()\n    try:\n        # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)\n        id_usuario = usuarioDB.crear_usuario(email, rol_trabajador)\n        if not id_usuario:\n            raise ValueError(\"No se pudo crear el usuario para el trabajador.\")\n        # Luego, insertamos al trabajador y asociamos el id_usuario_FK\n        cursor.execute(",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },

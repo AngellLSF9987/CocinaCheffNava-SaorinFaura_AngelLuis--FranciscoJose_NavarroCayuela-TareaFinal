@@ -1,7 +1,7 @@
 from copy import Error
 import database.db_setup as setupDB
 from logs import logger
-from repositories.rep_usuario import crear_usuario
+import repositories.rep_usuario as usuarioDB
 
 
 # Mostrar trabajadores
@@ -69,7 +69,7 @@ def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, te
     cursor = conn.cursor()
     try:
         # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)
-        id_usuario = crear_usuario(email, rol_trabajador)
+        id_usuario = usuarioDB.crear_usuario(email, rol_trabajador)
 
         if not id_usuario:
             raise ValueError("No se pudo crear el usuario para el trabajador.")
