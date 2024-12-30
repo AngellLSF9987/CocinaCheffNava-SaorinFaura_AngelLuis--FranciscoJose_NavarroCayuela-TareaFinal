@@ -475,6 +475,14 @@
         "documentation": {}
     },
     {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "redirect",
         "importPath": "flask",
         "description": "flask",
@@ -484,6 +492,14 @@
     },
     {
         "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -675,6 +691,14 @@
         "documentation": {}
     },
     {
+        "label": "flash",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "render_template",
         "importPath": "flask",
         "description": "flask",
@@ -684,6 +708,22 @@
     },
     {
         "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -903,11 +943,27 @@
         "documentation": {}
     },
     {
+        "label": "obtener_cliente_por_id_usuario",
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "isExtraImport": true,
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
         "label": "repositories.rep_trabajador",
         "kind": 6,
         "isExtraImport": true,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_trabajador_por_id_usuario",
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "isExtraImport": true,
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1977,7 +2033,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def cliente_detalle(id_cliente):\n    try:\n        # Obtén el cliente desde el repositorio utilizando el método obtener_cliente_id()\n        cliente = clienteDB.obtener_cliente_id(id_cliente)\n        if cliente:\n            logger.info(f\"CLIENTE DETALLE PARA CLIENTE: {cliente['nombre_cliente']}\")\n            return render_template(\n                \"cliente/cliente_detalle.html\",\n                cliente=cliente,\n                id_cliente=id_cliente,  # id_cliente explícitamente",
+        "peekOfCode": "def cliente_detalle(id_cliente):\n    if session.get(\"cliente\") and session[\"cliente\"][\"id_cliente\"] == id_cliente:\n        cliente = clienteDB.obtener_cliente_id(id_cliente)\n        if cliente:\n            return render_template(\"cliente/cliente_detalle.html\", cliente=cliente, id_cliente=id_cliente)\n    flash(\"No tienes acceso a este perfil.\", \"warning\")\n    return redirect(url_for(\"index\"))\n@cliente.route(\"/editar_cliente/<int:id_cliente>\", methods=[\"GET\", \"POST\"], endpoint=\"editar_perfil\")\n@access_required('cliente')\ndef mostrar_cliente(id_cliente):",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -2275,6 +2331,15 @@
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
         "peekOfCode": "def mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200\n            return render_template(\"trabajador/trabajador_tabla.html\", trabajadores=trabajadores)\n        else:\n            logger.error(\"ERROR OBTENIENDO TRABAJADORES - GESTIÓN DE TRABAJADORES\"), 404\n            render_template(\"index.html\")             \n    except Exception as e:",
+        "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "trabajador_detalle",
+        "kind": 2,
+        "importPath": "routes.trabajadores_routes",
+        "description": "routes.trabajadores_routes",
+        "peekOfCode": "def trabajador_detalle(id_trabajador):\n    if session.get(\"trabajador\") and session[\"trabajador\"][\"id_trabajador\"] == id_trabajador:\n        trabajador = trabajadorDB.obtener_trabajador_id(id_trabajador)  # Asume que tienes una función similar en tu capa de datos\n        if trabajador:\n            return render_template(\"trabajador/trabajador_detalle.html\", trabajador=trabajador, id_trabajador=id_trabajador)\n    flash(\"No tienes acceso a este perfil.\", \"warning\")\n    return redirect(url_for(\"index\"))\n@trabajador.route(\"/gestion_productos\", methods=[\"GET\"], endpoint=\"gestion_productos\")\n@access_required\ndef gestion_productos():",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },

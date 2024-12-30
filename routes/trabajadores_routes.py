@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, redirect
+from flask import Blueprint, flash, render_template, redirect, session, url_for
 from database.db_setup import get_db
 from logs import logger
 import repositories.rep_trabajador as trabajadorDB
@@ -30,6 +30,17 @@ def mostrar_trabajadores():
         logger.error(f"Error al MOSTRAR TRABAJADORES DESDE ADMIN: {e}"), 500
         render_template("index.html")       
       
+# Ruta para el detalle del trabajador
+@trabajador.route('/trabajador_detalle/<int:id_trabajador>', methods=["GET", "POST"], endpoint="perfil_trabajador")
+@access_required('trabajador')
+def trabajador_detalle(id_trabajador):
+    if session.get("trabajador") and session["trabajador"]["id_trabajador"] == id_trabajador:
+        trabajador = trabajadorDB.obtener_trabajador_id(id_trabajador)  # Asume que tienes una función similar en tu capa de datos
+        if trabajador:
+            return render_template("trabajador/trabajador_detalle.html", trabajador=trabajador, id_trabajador=id_trabajador)
+    flash("No tienes acceso a este perfil.", "warning")
+    return redirect(url_for("index"))
+
 
 @trabajador.route("/gestion_productos", methods=["GET"], endpoint="gestion_productos")
 @access_required

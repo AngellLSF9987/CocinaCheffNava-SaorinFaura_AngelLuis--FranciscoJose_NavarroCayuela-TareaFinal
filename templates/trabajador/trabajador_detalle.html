@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Cocina con Cheff Nava - Perfil del Trabajador{% endblock %}
+
+{% block content %}
+<div class="contact-form">
+  <div class="container mt-5">
+    <div class="row featurette">
+      <!-- Detalles del Trabajador -->
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">{{ trabajador.nombre }} {{ trabajador.apellido1 }} {{ trabajador.apellido2 }}</h2>
+        <p><strong>DNI:</strong> {{ trabajador.dni }}</p>
+        <p><strong>Teléfono:</strong> {{ trabajador.telefono }}</p>
+        <p><strong>Dirección:</strong> {{ trabajador.direccion }}</p>
+        <p><strong>Email:</strong> {{ trabajador.email }}</p>
+      </div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="text-center mt-4">
+      <a href="{{ url_for('index') }}" class="btn btn-secondary">Inicio</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

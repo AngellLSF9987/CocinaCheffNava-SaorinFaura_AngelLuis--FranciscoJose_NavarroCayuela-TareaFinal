@@ -1,5 +1,5 @@
 from copy import error
-from flask import Blueprint, redirect, render_template, url_for, request
+from flask import Blueprint, flash, redirect, render_template, session, url_for, request
 from database.db_setup import get_db
 from logs import logger
 import repositories.rep_cliente as clienteDB
@@ -31,27 +31,14 @@ def mostrar_clientes():
 
 # Ruta para el detalle del cliente
 @cliente.route('/cliente_detalle/<int:id_cliente>', methods=["GET", "POST"], endpoint="perfil_cliente")
-@access_required('cliente')  # Asegura que el usuario tenga el rol cliente
+@access_required('cliente')
 def cliente_detalle(id_cliente):
-    try:
-        # Obtén el cliente desde el repositorio utilizando el método obtener_cliente_id()
+    if session.get("cliente") and session["cliente"]["id_cliente"] == id_cliente:
         cliente = clienteDB.obtener_cliente_id(id_cliente)
-        
         if cliente:
-            logger.info(f"CLIENTE DETALLE PARA CLIENTE: {cliente['nombre_cliente']}")
-            return render_template(
-                "cliente/cliente_detalle.html",
-                cliente=cliente,
-                id_cliente=id_cliente,  # id_cliente explícitamente
-                editando=False
-            ), 200
-        else:
-            logger.warning(f"No se encontró el cliente con ID {id_cliente}")
-            return render_template("index.html", mensaje="Cliente no encontrado"), 404
-    except Exception as e:
-        logger.error(f"Error OBTENIENDO DETALLE CLIENTE con ID {id_cliente}: {e}")
-        return render_template("index.html", mensaje="Error al obtener los detalles del cliente"), 500
-
+            return render_template("cliente/cliente_detalle.html", cliente=cliente, id_cliente=id_cliente)
+    flash("No tienes acceso a este perfil.", "warning")
+    return redirect(url_for("index"))
 
 
 @cliente.route("/editar_cliente/<int:id_cliente>", methods=["GET", "POST"], endpoint="editar_perfil")
