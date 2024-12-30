@@ -1835,7 +1835,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def login():\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password)\n        if usuario:\n            try:",
+        "peekOfCode": "def login():\n    if request.method == \"POST\":\n        email = request.form.get(\"email\", \"\").strip()\n        password = request.form.get(\"password\", \"\").strip()\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password)\n        if usuario:\n            try:",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1844,7 +1844,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.pop('user_role', None)  # Eliminar el rol de la sesión    \n    session.pop('user_email', None)  # Eliminar el email cliente o trabajador de la sesión\n    session.pop('id_usuario', None)  # Eliminar el usuario de la sesión    \n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():",
+        "peekOfCode": "def logout():\n    session.clear()  # Elimina todos los datos de la sesión\n    flash(\"Has cerrado sesión exitosamente.\", \"success\")\n    return redirect(url_for(\"auth.login\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },

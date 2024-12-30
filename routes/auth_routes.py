@@ -47,8 +47,8 @@ def role_redirect(role):
 @auth.route("/login", methods=["GET", "POST"], endpoint="login")
 def login():
     if request.method == "POST":
-        email = request.form.get("email")
-        password = request.form.get("password")
+        email = request.form.get("email", "").strip()
+        password = request.form.get("password", "").strip()
 
         if not email or not password:
             flash("Ingresa tu correo y contraseña.", "warning")
@@ -62,58 +62,48 @@ def login():
 
                 if not nombre_rol:
                     flash("Error al obtener el rol del usuario.", "danger")
-                    logger.error(f"Error al obtener 'nombre_rol' para el usuario: {email}")
                     return redirect(url_for("auth.login"))
 
                 # Guardar información básica en la sesión
+                session.clear()  # Limpiar sesión anterior
                 session["user_role"] = nombre_rol
                 session["user_email"] = email
                 session["id_usuario"] = id_usuario
-                logger.info(f"Usuario autenticado con rol: {nombre_rol}")
 
-                # Verificar si el usuario es cliente o trabajador
+                # Verificar rol y agregar datos específicos
                 if nombre_rol == "cliente":
                     cliente = obtener_cliente_por_id_usuario(id_usuario)
                     if cliente:
-                        session["id_cliente"] = cliente.get("id_cliente")  # Guardar ID del cliente
-                        logger.info(f"Cliente autenticado: {cliente['nombre_cliente']}")
+                        session["id_cliente"] = cliente.get("id_cliente")
                     else:
                         flash("No se encontró información del cliente.", "warning")
-                        logger.warning(f"No se encontró cliente para el usuario con ID {id_usuario}")
                         return redirect(url_for("auth.login"))
 
                 elif nombre_rol == "trabajador":
                     trabajador = obtener_trabajador_por_id_usuario(id_usuario)
                     if trabajador:
-                        session["id_trabajador"] = trabajador.get("id_trabajador")  # Guardar ID del trabajador
-                        logger.info(f"Trabajador autenticado: {trabajador['nombre_trabajador']}")
+                        session["id_trabajador"] = trabajador.get("id_trabajador")
                     else:
                         flash("No se encontró información del trabajador.", "warning")
-                        logger.warning(f"No se encontró trabajador para el usuario con ID {id_usuario}")
                         return redirect(url_for("auth.login"))
 
-                # Redirigir según el rol del usuario
+                # Redirigir al índice
                 return redirect(url_for("index"))
+
             except Exception as e:
                 flash("Hubo un error al procesar tu solicitud.", "danger")
-                logger.error(f"Error inesperado al procesar el login para {email}: {e}")
                 return redirect(url_for("auth.login"))
         else:
             flash("Credenciales incorrectas.", "danger")
-            logger.warning(f"Inicio fallido: {email}")
     return render_template("auth/login.html")
 
 
 # Ruta de logout
-@auth.route("/logout", methods=["GET", "POST"], endpoint="logout")
-@access_required()
+@auth.route("/logout", methods=["GET"], endpoint="logout")
 def logout():
-    session.pop('user_role', None)  # Eliminar el rol de la sesión    
-    session.pop('user_email', None)  # Eliminar el email cliente o trabajador de la sesión
-    session.pop('id_usuario', None)  # Eliminar el usuario de la sesión    
-    session.clear()
-    flash("Has cerrado sesión.", "info")
-    return redirect(url_for("index"))
+    session.clear()  # Elimina todos los datos de la sesión
+    flash("Has cerrado sesión exitosamente.", "success")
+    return redirect(url_for("auth.login"))
 
 
 # Ruta de reset password
