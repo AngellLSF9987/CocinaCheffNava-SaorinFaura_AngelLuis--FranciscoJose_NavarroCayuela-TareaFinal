@@ -4,6 +4,7 @@ from database.db_setup import get_db
 from logs import logger
 import repositories.rep_producto as productoDB
 import repositories.rep_categoria as categoriaDB
+from routes.auth_routes import access_required
 
 # Blueprint
 producto = Blueprint("producto", __name__)
@@ -20,6 +21,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @producto.route("/mostrar_productos", methods=["GET"], endpoint="mostrar_productos")
+@access_required('trabajador')
 def mostrar_productos():
     try:
         productos = productoDB.obtener_productos()
@@ -56,7 +58,7 @@ def mostrar_producto_detalle(id_producto):
             return render_template(
                 "producto/producto_detalle.html",
                 producto=producto,
-                id_producto=id_producto,  # Pasamos id_producto explícitamente
+                id_producto=id_producto,  # id_producto explícitamente
                 editando=False
             ), 200
         else:
@@ -67,6 +69,7 @@ def mostrar_producto_detalle(id_producto):
         return render_template("index.html", mensaje="Error al obtener los detalles del producto"), 500
     
 @producto.route('/ruta_crear_producto', methods=['GET', 'POST'], endpoint="ruta_crear_producto")
+@access_required('trabajador')
 def ruta_crear_producto():
     try:
         # Manejo explícito de GET: renderizar el formulario para crear un producto
@@ -136,8 +139,8 @@ def ruta_crear_producto():
         logger.error(f"Error en la ruta: {e}")
         return render_template('producto/producto_nuevo.html', error="Error al procesar el formulario.")
 
-
 @producto.route("/editar_producto/<int:id_producto>", methods=["GET", "POST"], endpoint="ruta_editar_producto")
+@access_required('trabajador')
 def ruta_editar_producto(id_producto):
     try:
         if request.method == "GET":
@@ -180,9 +183,8 @@ def ruta_editar_producto(id_producto):
         logger.error(f"Error al ACTUALIZAR PRODUCTO: {e}")
         return render_template("error/500.html"), 500
 
-
-
 @producto.route("/borrar_producto", methods=["GET", "POST"], endpoint="ruta_borrar_producto")
+@access_required('trabajador')
 def ruta_borrar_producto():
     try:
         if request.method == "POST":

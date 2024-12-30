@@ -5,6 +5,7 @@ import repositories.rep_trabajador as trabajadorDB
 import repositories.rep_producto as productoDB
 import repositories.rep_cliente as clienteDB
 import repositories.rep_categoria as categoriaDB
+from routes.auth_routes import access_required
 
 # Blueprint
 trabajador = Blueprint("trabajador", __name__)
@@ -15,6 +16,7 @@ def cargar():
     conexion = get_db()
 
 @trabajador.route("/mostrar_trabajadores")
+@access_required
 def mostrar_trabajadores():
     try:
         trabajadores = trabajadorDB.obtener_trabajadores()
@@ -30,6 +32,7 @@ def mostrar_trabajadores():
       
 
 @trabajador.route("/gestion_productos", methods=["GET"], endpoint="gestion_productos")
+@access_required
 def gestion_productos():
     try:
         productos = productoDB.obtener_productos()
@@ -45,6 +48,7 @@ def gestion_productos():
 
 
 @trabajador.route("/gestionar_categorias", methods=["GET"], endpoint="gestionar_categorias")
+@access_required
 def gestionar_categorias():
     try:
         categorias = categoriaDB.obtener_categorias()
@@ -60,6 +64,7 @@ def gestionar_categorias():
 
 
 @trabajador.route("/gestionar_clientes", methods=["GET"], endpoint="gestionar_clientes")
+@access_required
 def gestionar_clientes():
     try:
         clientes = clienteDB.obtener_clientes()

@@ -5,6 +5,7 @@ import repositories.rep_cliente as clienteDB
 import repositories.rep_pedido as pedidoDB
 import repositories.rep_producto as productoDB
 from logs import logger
+from routes.auth_routes import access_required
 
 # Blueprint
 pedido = Blueprint("pedido", __name__)
@@ -20,6 +21,7 @@ def pedido_template():
     return render_template('pedido/pedido.html')
 
 @pedido.route("/mostrar_pedidos", methods=["GET"], endpoint="mostrar_pedidos")
+@access_required
 def mostrar_pedidos():
     try:
         # Obtener todos los pedidos con sus productos
@@ -84,6 +86,7 @@ def ruta_crear_pedido():
         return render_template('pedido/pedido.html', error="Error al crear el pedido.")
 
 @pedido.route("/ruta_editar_pedido/<int:id_pedido>", methods=["GET", "POST"], endpoint="ruta_editar_pedido")
+@access_required
 def editar_pedido(id_pedido):
 
     try:
@@ -134,6 +137,7 @@ def editar_pedido(id_pedido):
 
 
 @pedido.route("/ruta_borrar_pedido", methods=["GET", "POST"], endpoint="ruta_borrar_pedido")
+@access_required
 def borrar_pedido():
     try:
         id_pedido = request.form.get("id_pedido")

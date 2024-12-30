@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, redirect, request, url_for, jsonif
 from database.db_setup import get_db
 import repositories.rep_categoria as categoriaDB
 from logs import logger
+from routes.auth_routes import access_required
 
 
 # Blueprint
@@ -20,6 +21,7 @@ def categoria_template():
 
 
 @categoria.route("/mostrar_categorias", methods=["GET"], endpoint="mostrar_categorias")
+@access_required('trabajador')
 def mostrar_categorias():
     """Ruta para listar todas las Categorías desde ADMIN."""
     try:
@@ -29,7 +31,6 @@ def mostrar_categorias():
     except Exception as e:
         logger.error(f"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}")
         return render_template("categoria/categoria_tabla.html", mensaje="Error al obtener las categorías"), 500
-
 
 @categoria.route("/listar_categorias", methods=["GET"], endpoint="listar_categorias")
 def listar_categorias():
@@ -45,7 +46,6 @@ def listar_categorias():
     except Exception as e:
         logger.error(f"Error al MOSTRAR CATEGORÍAS DESDE ADMIN: {e}"), 500
         return redirect("/")
-
 
 @categoria.route("/mostrar_categoria_detalle/<int:id_categoria>", methods=["GET", "POST"], endpoint="mostrar_categoria_detalle")
 def mostrar_categoria_detalle(id_categoria):
@@ -67,8 +67,8 @@ def mostrar_categoria_detalle(id_categoria):
         logger.error(f"Error al MOSTRAR CATEGORÍA DETALLE PARA CLIENTE O ADMIN con ID {id_categoria}: {e}")
         return render_template("categoria/categoria_tabla.html", mensaje="Error al obtener los detalles de la categoría"), 500
 
-
 @categoria.route('/ruta_crear_categoria', methods=['GET', 'POST'], endpoint="ruta_crear_categoria")
+@access_required('trabajador')
 def ruta_crear_categoria():
     try:
         # Manejo explícito de GET: mostrar el formulario para crear una categoría
@@ -115,9 +115,8 @@ def ruta_crear_categoria():
         logger.error(f"Error al crear categoría: {e}")
         return render_template('error/500.html', mensaje="Error al crear la categoría")
 
-
-
 @categoria.route('/ruta_editar_categoria/<int:id_categoria>', methods=['GET', 'POST'], endpoint="ruta_editar_categoria")
+@access_required('trabajador')
 def ruta_editar_categoria(id_categoria):
     try:
         if request.method == 'GET':
@@ -154,6 +153,7 @@ def ruta_editar_categoria(id_categoria):
         return render_template('categoria/categoria_tabla.html', error="Ocurrió un error inesperado.")
 
 @categoria.route("/ruta_borrar_categoria", methods=["POST"], endpoint="ruta_borrar_categoria")
+@access_required('trabajador')
 def ruta_borrar_categoria():
     try:
         # Obtener ID de la categoría del formulario
