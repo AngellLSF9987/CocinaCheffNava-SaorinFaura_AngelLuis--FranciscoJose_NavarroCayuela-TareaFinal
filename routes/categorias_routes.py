@@ -74,7 +74,7 @@ def ruta_crear_categoria():
         # Manejo explícito de GET: mostrar el formulario para crear una categoría
         if request.method == 'GET':
             logger.info("Mostrando formulario para crear una categoría.")
-            return render_template('categoria/crear_categoria.html')
+            return render_template('categoria/categoria_nueva.html')
 
         # Manejo de POST: procesar el formulario
         if request.method == 'POST':
@@ -87,29 +87,29 @@ def ruta_crear_categoria():
 
             # Validar datos
             if not (nombre_categoria and descripcion):
-                logger.error("Faltan campos requeridos.")
-                return render_template('categoria/crear_categoria.html', error="Todos los campos son obligatorios.")
+                logger.error("Faltan campos requeridos.", error="Todos los campos son obligatorios.")
+                return render_template('categoria/categoria_nueva.html', error="Todos los campos son obligatorios.")
 
             # Guardar la imagen
-            nombre_imagen = None  # Por defecto es None (si no se sube imagen)
+            ruta_imagen = None  # Por defecto es None
             if imagen and imagen.filename != '':
                 try:
                     # Guardamos solo el nombre del archivo, no la ruta completa
-                    nombre_imagen = imagen.filename  # Esto extrae solo el nombre del archivo
-                    ruta_imagen = f"static/images/categorias/{nombre_imagen}"  # Ruta completa para guardar en el servidor
+                    nombre_imagen = imagen.filename  # Esto extrae el nombre del archivo
+                    ruta_imagen = f"static/images/categorias/{nombre_imagen}"
                     imagen.save(ruta_imagen)
                     logger.info(f"Imagen guardada correctamente: {ruta_imagen}")
                 except Exception as e:
-                    logger.error(f"Error al guardar la imagen: {e}")
-                    return render_template('categoria/categoria_nueva.html', error="Error al cargar la imagen.")
+                    logger.error(f"Error al guardar la imagen: {e}", error="Error al cargar la imagen.")
+                    return redirect(url_for("categoria.mostrar_categorias"))
             else:
                 logger.info("No se proporcionó imagen. Campo 'imagen' quedará como NULL.")
 
             # Insertar la categoría en la base de datos
-            categoriaDB.crear_categoria(nombre_categoria, descripcion, nombre_imagen)
-            logger.info(f"Categoría creada: {nombre_categoria}, {descripcion}, {nombre_imagen}")
+            categoriaDB.crear_categoria(nombre_categoria, descripcion, ruta_imagen)
+            logger.info(f"Categoría creada: {nombre_categoria}, {descripcion}, {ruta_imagen}")
 
-            return render_template("categoria/categoria_nueva.html", mensaje="Categoría creada exitosamente.")
+            return redirect(url_for("categoria.mostrar_categorias"))
 
     except Exception as e:
         logger.error(f"Error al crear categoría: {e}")
@@ -139,7 +139,7 @@ def ruta_editar_categoria(id_categoria):
                 id_categoria, 
                 nombre_categoria, 
                 descripcion, 
-                imagen.filename if imagen else None
+                imagen,
             )
             if categoria_actualizada:
                 logger.info(f"Categoría actualizada: {categoria_actualizada['nombre_categoria']}")

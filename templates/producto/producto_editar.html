@@ -3,25 +3,34 @@
 {% block title %}Cocina con Cheff Nava - Editar Producto {% endblock %}
 
 {% block content %}
-  <div class="contact-form">
+<div class="contact-form">
+  <div class="form-container">
     <div class="container">
       <h2>Actualizar Producto</h2>
       <form action="{{ url_for('producto.ruta_editar_producto', id_producto=producto['id_producto']) }}" enctype="multipart/form-data" method="post">
-        <div class="mb-3">
+        
+        <!-- Nombre del Producto -->
+        <div class="form-group mb-3">
           <label for="nombre">Nombre del Producto:</label>
-          <input type="text" id="nombre" name="nombre" value="{{ producto['nombre_producto'] }}" required>
+          <input type="text" id="nombre" name="nombre" value="{{ producto['nombre_producto'] }}" class="form-control" required>
         </div>
-        <div class="mb-3">
+
+        <!-- Descripción del Producto -->
+        <div class="form-group mb-3">
           <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" value="{{ producto['descripcion'] }}"required></textarea>
+          <textarea id="descripcion" name="descripcion" class="form-control" required>{{ producto['descripcion'] }}</textarea>
         </div>
-        <div class="mb-3">
+
+        <!-- Precio del Producto -->
+        <div class="form-group mb-3">
           <label for="precio">Precio:</label>
-          <input type="number" id="precio" name="precio" step="0.01" value="{{ producto['precio'] }}" required>
+          <input type="number" id="precio" name="precio" step="0.01" value="{{ producto['precio'] }}" class="form-control" required>
         </div>
-        <div class="mb-3">
+
+        <!-- Selección de Categoría -->
+        <div class="form-group mb-3">
           <label for="categoria">Categoría:</label>
-          <select id="categoria" name="id_categoria_FK" required>
+          <select id="categoria" name="id_categoria_FK" class="form-control" required>
               {% for categoria in categorias %}
               <option value="{{ categoria['id_categoria'] }}" {% if categoria['id_categoria'] == producto['id_categoria_FK'] %}selected{% endif %}>
                 {{ categoria['nombre_categoria'] }}
@@ -29,19 +38,32 @@
               {% endfor %}
           </select>
         </div>
-        <div class="mb-3">
+
+        <!-- Imagen del Producto -->
+        <div class="form-group mb-3">
           <label for="imagen">Imagen:</label>
-          <input type="file" id="imagen" name="imagen" required>
+          <input type="file" id="imagen" name="imagen" class="form-control">
+          
           {% if producto.imagen %}
-            <p>Imagen actual: <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" alt="Imagen del producto" width="150"></p>
+            <div class="current-image mt-2">
+              <p>Imagen actual:</p>
+              <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" alt="Imagen del producto" width="150">
+            </div>
           {% endif %}
-        </div>            
-        <!-- Botones alineados en una fila -->
-        <div class="d-flex justify-content-between mt-3">
-          <button type="submit" class="btn btn-access">Actualizar</button>
-          <a href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-secondary">Volver</a>
-        </div>        
+        </div> 
+
+        <!-- Botón de enviar -->
+        <div class="d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-danger" href="{{ url_for('producto.mostrar_productos') }}">Agregar Producto</button>
+        </div>
+        
+        <!-- Botón Volver -->
+        <div class="d-flex justify-content-center mt-2">
+          <a href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-primary btn-sm">Tabla Productos</a>
+          <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-secondary btn-sm">Vista Clientes</a>
+        </div>
       </form>
     </div>
   </div>
+</div>
 {% endblock %}

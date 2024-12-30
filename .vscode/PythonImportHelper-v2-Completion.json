@@ -1979,7 +1979,7 @@
         "kind": 2,
         "importPath": "routes.categorias_routes",
         "description": "routes.categorias_routes",
-        "peekOfCode": "def ruta_crear_categoria():\n    try:\n        # Manejo explícito de GET: mostrar el formulario para crear una categoría\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear una categoría.\")\n            return render_template('categoria/crear_categoria.html')\n        # Manejo de POST: procesar el formulario\n        if request.method == 'POST':\n            logger.info(\"Procesando formulario para crear una categoría...\")\n            # Obtener datos del formulario",
+        "peekOfCode": "def ruta_crear_categoria():\n    try:\n        # Manejo explícito de GET: mostrar el formulario para crear una categoría\n        if request.method == 'GET':\n            logger.info(\"Mostrando formulario para crear una categoría.\")\n            return render_template('categoria/categoria_nueva.html')\n        # Manejo de POST: procesar el formulario\n        if request.method == 'POST':\n            logger.info(\"Procesando formulario para crear una categoría...\")\n            # Obtener datos del formulario",
         "detail": "routes.categorias_routes",
         "documentation": {}
     },
@@ -2033,7 +2033,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def cliente_detalle(id_cliente):\n    if session.get(\"cliente\") and session[\"cliente\"][\"id_cliente\"] == id_cliente:\n        cliente = clienteDB.obtener_cliente_id(id_cliente)\n        if cliente:\n            return render_template(\"cliente/cliente_detalle.html\", cliente=cliente, id_cliente=id_cliente)\n    flash(\"No tienes acceso a este perfil.\", \"warning\")\n    return redirect(url_for(\"index\"))\n@cliente.route(\"/editar_cliente/<int:id_cliente>\", methods=[\"GET\", \"POST\"], endpoint=\"editar_perfil\")\n@access_required('cliente')\ndef mostrar_cliente(id_cliente):",
+        "peekOfCode": "def cliente_detalle(id_cliente):\n    if session.get(\"cliente\") and session[\"cliente\"][\"id_cliente\"] == id_cliente:\n        cliente = clienteDB.obtener_cliente_id(id_cliente)\n        if cliente:\n            return render_template(\"cliente/cliente_detalle.html\", cliente=cliente, id_cliente=id_cliente)\n    else:\n        flash(\"No tienes acceso a este perfil.\", \"warning\")\n        return redirect(url_for(\"index\"))\n@cliente.route(\"/editar_cliente/<int:id_cliente>\", methods=[\"GET\", \"POST\"], endpoint=\"editar_perfil\")\n@access_required('cliente')",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -2285,7 +2285,7 @@
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "def ruta_editar_producto(id_producto):\n    try:\n        if request.method == \"GET\":\n            producto = productoDB.obtener_producto_id(id_producto)\n            if producto:\n                logger.info(f\"PRODUCTO OBTENIDO POR 'ID': {id_producto}\")\n                return render_template('producto/producto_editar.html', producto=producto)\n            else:\n                logger.warning(f\"Producto con ID {id_producto} no encontrado.\")\n                return render_template(\"error/404.html\"), 404",
+        "peekOfCode": "def ruta_editar_producto(id_producto):\n    try:\n        if request.method == \"GET\":\n            producto = productoDB.obtener_producto_id(id_producto)\n            categorias = categoriaDB.obtener_categorias()\n            if producto:\n                logger.info(f\"PRODUCTO OBTENIDO POR 'ID': {id_producto}\")\n                return render_template('producto/producto_editar.html', producto=producto, categorias=categorias)\n            else:\n                logger.warning(f\"Producto con ID {id_producto} no encontrado.\")",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2339,7 +2339,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def trabajador_detalle(id_trabajador):\n    if session.get(\"trabajador\") and session[\"trabajador\"][\"id_trabajador\"] == id_trabajador:\n        trabajador = trabajadorDB.obtener_trabajador_id(id_trabajador)  # Asume que tienes una función similar en tu capa de datos\n        if trabajador:\n            return render_template(\"trabajador/trabajador_detalle.html\", trabajador=trabajador, id_trabajador=id_trabajador)\n    flash(\"No tienes acceso a este perfil.\", \"warning\")\n    return redirect(url_for(\"index\"))\n@trabajador.route(\"/gestion_productos\", methods=[\"GET\"], endpoint=\"gestion_productos\")\n@access_required\ndef gestion_productos():",
+        "peekOfCode": "def trabajador_detalle(id_trabajador):\n    if session.get(\"trabajador\") and session[\"trabajador\"][\"id_trabajador\"] == id_trabajador:\n        trabajador = trabajadorDB.obtener_trabajador_id(id_trabajador)  # Asume que tienes una función similar en tu capa de datos\n        if trabajador:\n            return render_template(\"trabajador/trabajador_detalle.html\", trabajador=trabajador, id_trabajador=id_trabajador)\n    else:\n        flash(\"No tienes acceso a este perfil.\", \"warning\")\n        return redirect(url_for(\"index\"))\n@trabajador.route(\"/gestion_productos\", methods=[\"GET\"], endpoint=\"gestion_productos\")\n@access_required",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },

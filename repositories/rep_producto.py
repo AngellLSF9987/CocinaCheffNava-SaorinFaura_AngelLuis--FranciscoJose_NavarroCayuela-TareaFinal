@@ -131,12 +131,12 @@ def actualizar_producto(
             WHERE id_producto = %s
             """,
             (
+                id_producto,
                 nombre_producto,
                 descripcion,
                 precio,
                 imagen,
                 id_categoria_FK,
-                id_producto,
             ),
         )
         conn.commit()
@@ -164,44 +164,3 @@ def borrar_producto(id):
         return []  # Devolvemos una lista vacía en caso de error
     finally:
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error
-
-
-# Modificar producto
-# def actualizar_producto(
-#     id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK
-# ):
-#     conn = get_db()
-#     try:
-#         # Obtener el producto y las categorías
-#         producto, categorias = obtener_producto_y_categorias(conn, id_producto)
-
-#         # Validar si el id_categoria_FK es válido
-#         categoria_ids = [
-#             categoria["id_categoria"] for categoria in categorias
-#         ]  # Suponiendo que 'id_categoria' es la clave del ID de cada categoría
-#         if id_categoria_FK not in categoria_ids:
-#             raise ValueError(f"El id_categoria_FK {id_categoria_FK} no es válido")
-
-#         # Realizar la actualización
-#         cursor = conn.cursor(dictionary=True)
-#         cursor.execute(
-#             """
-#             UPDATE Productos 
-#             SET nombre_producto = %s, descripcion = %s, precio = %s, imagen = %s, id_categoria_FK = %s
-#             WHERE id_producto = %s
-#             """,
-#             (
-#                 nombre_producto,
-#                 descripcion,
-#                 precio,
-#                 imagen,
-#                 id_categoria_FK,
-#                 id_producto,
-#             ),  # Suponiendo que 'id_producto' es la clave del producto
-#         )
-#         conn.commit()
-#     except Error as e:
-#         logger.error(f"Error al actualizar producto y categoria: {e}")
-#         return []  # Devolvemos una lista vacía en caso de error
-#     finally:
-#         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error

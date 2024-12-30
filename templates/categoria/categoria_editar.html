@@ -3,38 +3,50 @@
 {% block title %}Cocina con Cheff Nava - Editar Categoria {% endblock %}
 
 {% block content %}
-  <div class="contact-form">
+<div class="contact-form">
+  <div class="form-container">
     <div class="container">
-      <h2>Actualizar categoria</h2>
-      <form action="/actualizar_categoria/{{ categoria['id_categoria'] }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirCategoria();">
-        <div class="mb-3">
-          <label for="nombre">Nombre de la Categoría:</label>
-          <input type="text" id="nombre" name="nombre" value="{{ categoria['nombre_categoria'] }}" required>
+      <h2>Actualizar Categoría</h2>
+      <form action="/actualizar_categoria/{{ categoria['id_categoria'] }}" enctype="multipart/form-data" method="post">
+        
+        <!-- Nombre de la Categoría -->
+        <div class="form-group mb-3">
+          <label for="nombre_categoria">Nombre de la Categoría:</label>
+          <input type="text" id="nombre_categoria" name="nombre_categoria" value="{{ categoria['nombre_categoria'] }}" class="form-control" required>
         </div>
-        <div class="mb-3">
+
+        <!-- Descripción de la Categoría -->
+        <div class="form-group mb-3">
           <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" required>{{ categoria.descripcion }}</textarea>
+          <textarea id="descripcion" name="descripcion" class="form-control" required>{{ categoria.descripcion }}</textarea>
         </div>
-        <div class="mb-3">
+
+        <!-- Imagen de la Categoría -->
+        <div class="form-group mb-3">
           <label for="imagen">Imagen:</label>
-          <input type="search" id="imagen" name="imagen" step="0.01" value="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" required>
+          <input type="file" id="imagen" name="imagen" class="form-control">
+          
+          {% if categoria.imagen %}
+            <div class="current-image mt-2">
+              <p>Imagen actual:</p>
+              <img src="{{ url_for('static', filename='images/categorias/' + categoria.imagen) }}" alt="Imagen de la categoría" width="150">
+            </div>
+          {% endif %}
+        </div> 
+
+        <!-- Botón de enviar -->
+        <div class="d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-danger" href="{{ url_for('categoria.mostrar_categorias') }}">Actualizar</button>
         </div>
-        <!-- Botones alineados en una fila -->
-        <div class="d-flex justify-content-between mt-3">
-          <button type="submit" class="btn btn-access">Actualizar</button>
-          <a href="{{ url_for('categoria.mostrar_categorias') }}" class="btn btn-secondary">Volver</a>
-        </div>        
+        
+        <!-- Botón Volver -->
+        <div class="d-flex justify-content-center mt-2">
+          <a href="{{ url_for('categoria.mostrar_categorias') }}" class="btn btn-primary btn-sm">Tabla Categorías</a>
+          <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-secondary btn-sm">Vista Clientes</a>
+        </div>
+
       </form>
     </div>
   </div>
-
-  <!-- Script para redirigir tras la actualización -->
-  <script>
-    function redirigirCategoria() {
-      setTimeout(function() {
-        window.location.href = "{{ url_for(categoria.mostrar_categorias) }}";
-      }, 1000);
-      return true; // Permitir que el formulario se envíe
-    }
-  </script>
+</div>
 {% endblock %}

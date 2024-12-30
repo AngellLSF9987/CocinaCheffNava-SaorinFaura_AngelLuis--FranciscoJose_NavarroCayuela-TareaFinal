@@ -131,7 +131,6 @@ def ruta_crear_producto():
             productoDB.crear_producto(nombre, descripcion, precio, nombre_imagen, id_categoria_FK)
             logger.info(f"Producto creado: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}"), 200
 
-            # return render_template("producto/producto.html", mensaje="Producto creado exitosamente.")
             return redirect (url_for("producto.mostrar_productos"))
         
 
@@ -145,24 +144,30 @@ def ruta_editar_producto(id_producto):
     try:
         if request.method == "GET":
             producto = productoDB.obtener_producto_id(id_producto)
+            categorias = categoriaDB.obtener_categorias()
             if producto:
                 logger.info(f"PRODUCTO OBTENIDO POR 'ID': {id_producto}")
-                return render_template('producto/producto_editar.html', producto=producto)
+                return render_template('producto/producto_editar.html', producto=producto, categorias=categorias)
             else:
                 logger.warning(f"Producto con ID {id_producto} no encontrado.")
                 return render_template("error/404.html"), 404
 
         elif request.method == "POST":
             nombre_producto = request.form.get("nombre_producto")
-            id_categoria_FK = request.form.get("id_categoria_FK")
             descripcion = request.form.get("descripcion")
             precio = request.form.get("precio")
             imagen = request.form.get("imagen")
+            id_categoria_FK = request.form.get("id_categoria_FK")            
 
             if not all([nombre_producto, id_categoria_FK, precio]):
                 logger.warning("Datos incompletos para actualizar el producto.", extra={"error": "Faltan datos obligatorios"})
                 return redirect(url_for("producto.mostrar_productos")), 400
 
+            # Validar categoría
+            if not categoriaDB.obtener_categoria_id(id_categoria_FK):
+                logger.error(f"Categoría ID {id_categoria_FK} no válida.", error="Categoría no válida."), 400
+                return redirect (url_for("producto.mostrar_productos"))
+            
             producto_actualizado = productoDB.actualizar_producto(
                 id_producto,
                 nombre_producto,

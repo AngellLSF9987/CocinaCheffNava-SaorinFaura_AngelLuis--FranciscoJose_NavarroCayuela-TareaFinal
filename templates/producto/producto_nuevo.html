@@ -8,7 +8,7 @@
   <div class="contact-form">
     <div class="container mt-5">
       <div class="text-center mb-4">
-        <h1>Agregar Nuevo Producto</h1>
+        <h2>Agregar Nuevo Producto</h2>
         <p>¡Complete el siguiente formulario para agregar un nuevo producto a nuestro catálogo! Asegúrese de llenar todos los campos correctamente.</p>
       </div>
 
@@ -37,7 +37,7 @@
           <label for="imagen" class="form-label" placeholder="Seleccione una imagen.."></label>
           <!-- Campo para cargar imagen -->
           <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required />
-      </div>
+        </div>
         
         <!-- Desplegable para seleccionar la categoría -->
         <div class="mb-3">
@@ -58,7 +58,8 @@
         
         <!-- Botón Volver -->
         <div class="d-flex justify-content-center mt-2">
-          <a href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-secondary">Volver</a>
+          <a href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-primary btn-sm">Tabla Productos</a>
+          <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-secondary btn-sm">Vista Clientes</a>
         </div>
       </form>
     </div>

@@ -38,8 +38,9 @@ def trabajador_detalle(id_trabajador):
         trabajador = trabajadorDB.obtener_trabajador_id(id_trabajador)  # Asume que tienes una función similar en tu capa de datos
         if trabajador:
             return render_template("trabajador/trabajador_detalle.html", trabajador=trabajador, id_trabajador=id_trabajador)
-    flash("No tienes acceso a este perfil.", "warning")
-    return redirect(url_for("index"))
+    else:
+        flash("No tienes acceso a este perfil.", "warning")
+        return redirect(url_for("index"))
 
 
 @trabajador.route("/gestion_productos", methods=["GET"], endpoint="gestion_productos")

@@ -4,13 +4,13 @@
 <div class="contact-form">
     <div class="container mt-5">
         <h1 class="display-6 text-center text-dark mb-4">
-            Estás en la Sección de Gestión de Categorías
+            Sección de Gestión de Categorías
         </h1>
         
         
         <div class="row mb-4">
             <div class="col-12 text-center">
-                <a href="{{ url_for('categoria.ruta_crear_categoria') }}" class="btn btn-success btn-lg">Añadir Nueva Categoria</a>
+                <a href="{{ url_for('categoria.ruta_crear_categoria') }}" class="btn btn-lg btn-danger">Añadir Nueva Categoria</a>
             </div>
         </div>
 
@@ -38,14 +38,19 @@
                         {% endif %}
                     </td>
                     <td>
-                        <a href="{{ url_for('categoria.ruta_editar_categoria', id_categoria=categoria['id_categoria']) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ url_for('categoria.ruta_borrar_categoria') }}" method="POST" style="display:inline;">
-                            <input type="hidden" name="id_categoria" value="{{ categoria['id_categoria'] }}">
-                            <button type="submit" class="btn btn-danger btn-sm">Borrar</button>
-                        </form>
-                        <a href="{{ url_for('categoria.mostrar_categoria_detalle', id_categoria=categoria['id_categoria'])  }}" class="btn btn-info btn-sm">Detalles</a>
-                        <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-primary btn-sm">Volver al listado</a>
-                    </td>
+                        <div class="d-flex flex-column justify-content-center align-items-stretch">
+                          <a href="{{ url_for('categoria.ruta_editar_categoria', id_categoria=categoria.id_categoria) }}" class="btn btn-warning mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem;">Editar</a>
+                          
+                          <form action="{{ url_for('categoria.ruta_borrar_categoria') }}" method="POST">
+                            <input type="hidden" name="id_categoria" value="{{ categoria.id_categoria }}" />
+                            <button type="submit" class="btn btn-danger mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .75rem;">Eliminar</button>
+                          </form>
+                          
+                          <a href="{{ url_for('categoria.mostrar_categoria_detalle', id_categoria=categoria.id_categoria) }}" class="btn btn-info mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem; color: white;">Detalles</a>
+                          
+                          <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-primary mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem;">Vista Clientes</a>
+                        </div>
+                      </td>
                 </tr>
                 {% endfor %}
             </tbody>            

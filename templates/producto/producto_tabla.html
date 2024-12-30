@@ -1,61 +1,66 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Cocina con Cheff Nava - Listado de Productos {% endblock %}
+{% block title %}
+  Cocina con Cheff Nava - Listado de Productos
+{% endblock %}
 
 {% block content %}
-<div class="contact-form">
+  <div class="contact-form">
     <div class="container mt-5">
-        <h1 class="display-6 text-center text-dark mb-4">
-            Estás en la Sección de Gestión de Productos
-        </h1>
-        
-        
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <a href="{{ url_for('producto.ruta_crear_producto') }}" class="btn btn-success btn-lg">Añadir Nuevo Producto</a>
-            </div>
-        </div>
+      <h1 class="display-6 text-center text-dark mb-4">Sección de Gestión de Productos</h1>
 
-        <table class="table table-hover table-bordered">
-            <thead class="table-dark">
-                <tr>
-                    <th scope="col">Identificador</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripción</th>
-                    <th scope="col">Precio (€)</th>
-                    <th scope="col">Imagen</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for producto in productos %}
-                <tr style="text-align: center;">
-                    <td>{{ producto.id_producto }}</td>
-                    <td>{{ producto.nombre_producto }}</td>
-                    <td>{{ producto.descripcion }}</td>
-                    <td>{{ producto.precio }}</td>
-                    <td>
-                        {% if producto.imagen %}
-                        <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ producto.nombre_producto }}" />
-                        {% else %}
-                            <p>No hay imagen disponible.</p>
-                        {% endif %}
-                    </td>
-                    <td>{{ producto.nombre_categoria }}</td>
-                    <td>
-                        <a href="{{ url_for('producto.ruta_editar_producto', id_producto=producto['id_producto']) }}" class="btn btn-warning btn-sm">Editar</a>
-                        <form action="{{ url_for('producto.ruta_borrar_producto') }}" method="POST" style="display:inline;">
-                            <input type="hidden" name="id_producto" value="{{ producto['id_producto'] }}">
-                            <button type="submit" href="{{ url_for('producto.mostrar_productos') }}" class="btn btn-danger btn-sm">Borrar</button>
-                        </form>
-                        <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=producto['id_producto']) }}" class="btn btn-info btn-sm">Detalles</a>
-                        <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-primary btn-sm">Volver al listado</a>
-                    </td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+      <div class="row mb-4">
+        <div class="col-12 text-center">
+          <a href="{{ url_for('producto.ruta_crear_producto') }}" class="btn btn-danger btn-lg">Añadir Nuevo Producto</a>
+        </div>
+      </div>
+
+      <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Identificador</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Precio (€)</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Categoria</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for producto in productos %}
+            <tr style="text-align: center;">
+              <td>{{ producto.id_producto }}</td>
+              <td>{{ producto.nombre_producto }}</td>
+              <td>{{ producto.descripcion }}</td>
+              <td>{{ producto.precio }}</td>
+              <td>
+                {% if producto.imagen %}
+                  <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ producto.nombre_producto }}" />
+                {% else %}
+                  <p>No hay imagen disponible.</p>
+                {% endif %}
+              </td>
+              <td>{{ producto.nombre_categoria }}</td>
+              <td>
+                <div class="d-flex flex-column justify-content-center align-items-stretch">
+                  <a href="{{ url_for('producto.ruta_editar_producto', id_producto=producto.id_producto) }}" class="btn btn-warning mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem;">Editar</a>
+                  
+                  <form action="{{ url_for('producto.ruta_borrar_producto') }}" method="POST">
+                    <input type="hidden" name="id_producto" value="{{ producto.id_producto }}" />
+                    <button type="submit" class="btn btn-danger mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .9rem; --bs-btn-font-size: .75rem;">Eliminar</button>
+                  </form>
+                  
+                  <a href="{{ url_for('producto.mostrar_producto_detalle', id_producto=producto.id_producto) }}" class="btn btn-info mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem; color: white">Detalles</a>
+                  
+                  <a href="{{ url_for('producto.listar_productos') }}" class="btn btn-primary mb-1" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .2rem; --bs-btn-font-size: .75rem;">Vista Clientes</a>
+                </div>
+              </td>
+              
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
 {% endblock %}

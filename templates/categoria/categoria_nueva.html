@@ -1,42 +1,49 @@
 {% extends 'base.html' %}
 
-{% block title %}Cocina con Cheff Nava - Nuevo categoria{% endblock %}
+{% block title %}
+  Cocina con Cheff Nava - Nueva Categoría
+{% endblock %}
 
 {% block content %}
   <div class="contact-form">
-    <div class="container">
-      <h2>Agregar Nuevo categoria</h2>
-      <form action="{{ url_for('categoria.ruta_crear_categoria') }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirGestionCategorias();">
+    <div class="container mt-5">
+      <div class="text-center mb-4">
+        <h2>Agregar Nueva Categoría</h2>
+        <p>¡Complete el siguiente formulario para agregar una nueva categoría a nuestro catálogo! Asegúrese de llenar todos los campos correctamente.</p>
+      </div>
+
+      <!-- Formulario de nueva categoría -->
+      <form action="{{ url_for('categoria.ruta_crear_categoria') }}" enctype="multipart/form-data" method="post">
         <div class="mb-3">
-          <label for="nombre">Nombre de la Categoria:</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Introduce el nombre del categoria" required>
+          <span>Nombre de la Categoría</span>
+          <label for="nombre_categoria" class="form-label" placeholder="Nombre de la categoría.."></label>
+          <input type="text" class="form-control" id="nombre_categoria" name="nombre_categoria" placeholder="Introduce el nombre de la categoría" required />
         </div>
+
         <div class="mb-3">
-          <label for="descripcion">Descripción:</label>
-          <textarea id="descripcion" name="descripcion" placeholder="Escribe una descripción del categoria" required></textarea>
+          <span>Descripción de la Categoría</span>
+          <label for="descripcion" class="form-label" placeholder="Descripción de la categoría.."></label>
+          <textarea class="form-control" id="descripcion" name="descripcion" placeholder="Escribe una descripción de la categoría" rows="4" required></textarea>
         </div>
+
         <div class="mb-3">
-          <span>Imagen</span>
+          <span>Imagen de la Categoría</span>
           <label for="imagen" class="form-label" placeholder="Seleccione una imagen.."></label>
           <!-- Campo para cargar imagen -->
           <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*" required />
         </div>
-        <!-- Botones alineados en una fila -->
-        <div class="d-flex justify-content-between mt-3">
-          <button type="submit" class="btn btn-access">Agregar</button>
-          <a href="{{ url_for('categoria.mostrar_categorias') }}" class="btn btn-secondary">Volver</a>
-        </div>        
+
+        <!-- Botón de enviar -->
+        <div class="d-flex justify-content-center mt-4">
+          <button type="submit" class="btn btn-danger" href="{{ url_for('categoria.mostrar_categorias') }}">Agregar Categoría</button>
+        </div>
+        
+        <!-- Botón Volver -->
+        <div class="d-flex justify-content-center mt-2">
+          <a href="{{ url_for('categoria.mostrar_categorias') }}" class="btn btn-primary btn-sm">Tabla Categorías</a>
+          <a href="{{ url_for('categoria.listar_categorias') }}" class="btn btn-secondary btn-sm">Vista Clientes</a>
+        </div>
       </form>
     </div>
   </div>
-
-  <!-- Script para redirigir tras la actualización -->
-  <script>
-    function redirigirGestionCategorias() {
-      setTimeout(function() {
-        window.location.href = "{{ url_for('categoria.mostrar_categorias') }}";
-      }, 1000);
-      return true; // Permitir que el formulario se envíe
-    }
-  </script>
 {% endblock %}

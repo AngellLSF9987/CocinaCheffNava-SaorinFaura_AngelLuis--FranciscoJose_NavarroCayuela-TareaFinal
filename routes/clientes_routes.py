@@ -37,8 +37,9 @@ def cliente_detalle(id_cliente):
         cliente = clienteDB.obtener_cliente_id(id_cliente)
         if cliente:
             return render_template("cliente/cliente_detalle.html", cliente=cliente, id_cliente=id_cliente)
-    flash("No tienes acceso a este perfil.", "warning")
-    return redirect(url_for("index"))
+    else:
+        flash("No tienes acceso a este perfil.", "warning")
+        return redirect(url_for("index"))
 
 
 @cliente.route("/editar_cliente/<int:id_cliente>", methods=["GET", "POST"], endpoint="editar_perfil")
