@@ -747,6 +747,14 @@
         "documentation": {}
     },
     {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "mysql.connector",
         "kind": 6,
         "isExtraImport": true,
@@ -1969,7 +1977,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def cliente_detalle(id_cliente):\n    try:\n        # Obtén el ID del cliente desde el repositorio utilizando el método obtener_cliente_id()\n        cliente = clienteDB.obtener_cliente_id(id_cliente)  # Asume que este método devuelve el ID del cliente autenticado\n        if cliente:\n            logger.info(f\"CLIENTE DETALLE PARA CLIENTE: {cliente['nombre_cliente']}\")\n            return render_template(\n                \"cliente/cliente_detalle.html\",\n                cliente=cliente,\n                id_cliente=id_cliente,  # id_cliente explícitamente",
+        "peekOfCode": "def cliente_detalle(id_cliente):\n    try:\n        # Obtén el cliente desde el repositorio utilizando el método obtener_cliente_id()\n        cliente = clienteDB.obtener_cliente_id(id_cliente)\n        if cliente:\n            logger.info(f\"CLIENTE DETALLE PARA CLIENTE: {cliente['nombre_cliente']}\")\n            return render_template(\n                \"cliente/cliente_detalle.html\",\n                cliente=cliente,\n                id_cliente=id_cliente,  # id_cliente explícitamente",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -2401,7 +2409,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def cargar():\n    # Conectar a la base de datos en cada solicitud\n    setupDB.get_db()\n@app.teardown_appcontext\ndef cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    return render_template(\"index.html\")",
+        "peekOfCode": "def cargar():\n    # Conectar a la base de datos en cada solicitud\n    setupDB.get_db()\n@app.teardown_appcontext\ndef cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    cliente = session.get('cliente')  # Obtener el cliente de la sesión",
         "detail": "main",
         "documentation": {}
     },
@@ -2410,7 +2418,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))",
+        "peekOfCode": "def cerrar_conexion(e=None):\n    # Cerrar la conexión después de cada solicitud\n    setupDB.close_db(e)\n@app.route(\"/\", endpoint=\"index\")\ndef index():\n    cliente = session.get('cliente')  # Obtener el cliente de la sesión\n    trabajador = session.get('trabajador')  # Obtener el trabajador de la sesión\n    return render_template(\"index.html\", cliente=cliente, trabajador=trabajador)\nif __name__ == \"__main__\":\n    try:",
         "detail": "main",
         "documentation": {}
     },
@@ -2419,7 +2427,7 @@
         "kind": 2,
         "importPath": "main",
         "description": "main",
-        "peekOfCode": "def index():\n    return render_template(\"index.html\")\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))\n        logger.debug(\"Directorio raíz añadido al PYTHONPATH.\")\n        inicializar_aplicacion(app)\n        logger.info(\"Iniciando el servidor Flask en modo debug...\")\n        app.run(debug=True)",
+        "peekOfCode": "def index():\n    cliente = session.get('cliente')  # Obtener el cliente de la sesión\n    trabajador = session.get('trabajador')  # Obtener el trabajador de la sesión\n    return render_template(\"index.html\", cliente=cliente, trabajador=trabajador)\nif __name__ == \"__main__\":\n    try:\n        # Agregar el directorio raíz al PYTHONPATH (soluciona posibles problemas de importación)\n        sys.path.append(os.path.dirname(os.path.abspath(__file__)))\n        logger.debug(\"Directorio raíz añadido al PYTHONPATH.\")\n        inicializar_aplicacion(app)",
         "detail": "main",
         "documentation": {}
     },

@@ -27,7 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('extra.privacidad') }}">Privacidad</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cliente.perfil', id_cliente=session.get('id_cliente')) }}">Mi Perfil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('cliente.perfil_cliente', id_cliente=cliente['id_cliente']) }}">Mi Perfil</a></li>
                 {% elif user_role == 'trabajador' %}
                     <!-- Opciones para Trabajadores -->
                     <li class="nav-item"><a class="nav-link" href="{{ url_for('producto.mostrar_productos') }}">Gestión de Productos</a></li>

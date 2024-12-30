@@ -30,12 +30,13 @@ def mostrar_clientes():
         return redirect(url_for("index"))
 
 # Ruta para el detalle del cliente
-@cliente.route('/cliente_detalle/<int:id_cliente>', methods = ["GET", "POST"], endpoint ="perfil")
+@cliente.route('/cliente_detalle/<int:id_cliente>', methods=["GET", "POST"], endpoint="perfil_cliente")
 @access_required('cliente')  # Asegura que el usuario tenga el rol cliente
 def cliente_detalle(id_cliente):
     try:
-        # Obtén el ID del cliente desde el repositorio utilizando el método obtener_cliente_id()
-        cliente = clienteDB.obtener_cliente_id(id_cliente)  # Asume que este método devuelve el ID del cliente autenticado
+        # Obtén el cliente desde el repositorio utilizando el método obtener_cliente_id()
+        cliente = clienteDB.obtener_cliente_id(id_cliente)
+        
         if cliente:
             logger.info(f"CLIENTE DETALLE PARA CLIENTE: {cliente['nombre_cliente']}")
             return render_template(
@@ -50,6 +51,7 @@ def cliente_detalle(id_cliente):
     except Exception as e:
         logger.error(f"Error OBTENIENDO DETALLE CLIENTE con ID {id_cliente}: {e}")
         return render_template("index.html", mensaje="Error al obtener los detalles del cliente"), 500
+
 
 
 @cliente.route("/editar_cliente/<int:id_cliente>", methods=["GET", "POST"], endpoint="editar_perfil")

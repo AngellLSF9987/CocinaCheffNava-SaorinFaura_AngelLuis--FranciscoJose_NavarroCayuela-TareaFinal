@@ -91,14 +91,14 @@ def obtener_rol_usuario_logueado(email, password):
                 # Si es cliente, asignamos el rol correspondiente
                 if cliente:
                     usuario["rol"] = "cliente"
-                    usuario["nombre_rol"] = "Cliente"
+                    usuario["nombre_rol"] = "cliente"
                 # Si es trabajador, asignamos el rol correspondiente
                 elif trabajador:
                     usuario["rol"] = "trabajador"
-                    usuario["nombre_rol"] = "Trabajador"
+                    usuario["nombre_rol"] = "trabajador"
                 else:
                     usuario["rol"] = "desconocido"
-                    usuario["nombre_rol"] = "Desconocido"
+                    usuario["nombre_rol"] = "desconocido"
 
                 return {
                     "id_usuario": usuario["id_usuario"],

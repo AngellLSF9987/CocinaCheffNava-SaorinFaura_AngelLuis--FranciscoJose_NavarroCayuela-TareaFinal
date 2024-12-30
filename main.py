@@ -3,7 +3,7 @@
 import os
 import sys
 from extensions import app
-from flask import render_template
+from flask import render_template, session
 from database import db_setup as setupDB
 from database import db_record as recordDB
 from routes.auth_routes import auth
@@ -63,7 +63,11 @@ def cerrar_conexion(e=None):
     
 @app.route("/", endpoint="index")
 def index():
-    return render_template("index.html")
+    cliente = session.get('cliente')  # Obtener el cliente de la sesión
+    trabajador = session.get('trabajador')  # Obtener el trabajador de la sesión
+    return render_template("index.html", cliente=cliente, trabajador=trabajador)
+
+
 
 if __name__ == "__main__":
     try:
