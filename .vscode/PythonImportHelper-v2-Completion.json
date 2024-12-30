@@ -1721,7 +1721,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password, conexion)\n        if usuario:",
+        "peekOfCode": "def login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password)\n        if usuario:",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1730,7 +1730,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")\n# # Decoradores de autenticación y roles combinados",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1739,7 +1739,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")\n# # Decoradores de autenticación y roles combinados\n# def access_required(role=None):\n#     def decorator(f):\n#         @wraps(f)\n#         def wrapper(*args, **kwargs):\n#             if \"user_role\" not in session:\n#                 flash(\"Por favor, inicia sesión.\", \"warning\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
