@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+
 {% block title %}
   Cocina con Cheff Nava - Registro de Usuario
 {% endblock %}
+
 {% block content %}
   <div class="contact-form">
     <div class="container mt-5">
@@ -11,17 +13,72 @@
           <label for="email" class="form-label">Correo Electrónico</label>
           <input type="email" name="email" class="form-control" id="email" required />
         </div>
+
         <div class="mb-3">
           <label for="password" class="form-label">Contraseña</label>
           <input type="password" name="password" class="form-control" id="password" required />
         </div>
+
+        {% if es_trabajador %}
+        <!-- Campos específicos para Trabajadores -->
+        <div class="mb-3">
+          <label for="nombre_trabajador" class="form-label">Nombre del Trabajador</label>
+          <input type="text" name="nombre_trabajador" class="form-control" id="nombre_trabajador" required />
+        </div>
+        <div class="mb-3">
+          <label for="apellido1_trabajador" class="form-label">Primer Apellido</label>
+          <input type="text" name="apellido1_trabajador" class="form-control" id="apellido1_trabajador" required />
+        </div>
+        <div class="mb-3">
+          <label for="apellido2_trabajador" class="form-label">Segundo Apellido</label>
+          <input type="text" name="apellido2_trabajador" class="form-control" id="apellido2_trabajador" required />
+        </div>
+        <div class="mb-3">
+          <label for="dni_trabajador" class="form-label">DNI</label>
+          <input type="text" name="dni_trabajador" class="form-control" id="dni_trabajador" required />
+        </div>
+        <div class="mb-3">
+          <label for="telefono_trabajador" class="form-label">Teléfono</label>
+          <input type="text" name="telefono_trabajador" class="form-control" id="telefono_trabajador" required />
+        </div>
+        <div class="mb-3">
+          <label for="direccion_trabajador" class="form-label">Dirección</label>
+          <input type="text" name="direccion_trabajador" class="form-control" id="direccion_trabajador" required />
+        </div>
+        {% else %}
+        <!-- Campos específicos para Clientes -->
+        <div class="mb-3">
+          <label for="nombre_cliente" class="form-label">Nombre del Cliente</label>
+          <input type="text" name="nombre_cliente" class="form-control" id="nombre_cliente" required />
+        </div>
+        <div class="mb-3">
+          <label for="apellido1_cliente" class="form-label">Primer Apellido</label>
+          <input type="text" name="apellido1_cliente" class="form-control" id="apellido1_cliente" required />
+        </div>
+        <div class="mb-3">
+          <label for="apellido2_cliente" class="form-label">Segundo Apellido</label>
+          <input type="text" name="apellido2_cliente" class="form-control" id="apellido2_cliente" required />
+        </div>
+        <div class="mb-3">
+          <label for="dni_cliente" class="form-label">DNI</label>
+          <input type="text" name="dni_cliente" class="form-control" id="dni_cliente" required />
+        </div>
+        <div class="mb-3">
+          <label for="telefono_cliente" class="form-label">Teléfono</label>
+          <input type="text" name="telefono_cliente" class="form-control" id="telefono_cliente" required />
+        </div>
+        <div class="mb-3">
+          <label for="direccion_cliente" class="form-label">Dirección</label>
+          <input type="text" name="direccion_cliente" class="form-control" id="direccion_cliente" required />
+        </div>
+        {% endif %}
+
         <button type="submit" class="btn btn-primary">Regístrate!</button>
       </form>
     </div>
   </div>
 {% endblock %}
 
-<!-- Script para redirigir tras la actualización -->
 <script>
   function redirigirLogin() {
     setTimeout(function () {
@@ -30,4 +87,3 @@
     return true // Permitir que el formulario se envíe
   }
 </script>
-{% endblock %}

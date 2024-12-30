@@ -7,6 +7,7 @@ from flask import render_template
 from database import db_setup as setupDB
 from database import db_record as recordDB
 from routes.auth_routes import auth
+from routes.usuario_routes import usuario
 from routes.clientes_routes import cliente
 from routes.trabajadores_routes import trabajador
 from routes.categorias_routes import categoria
@@ -19,12 +20,14 @@ from routes.extra_routes import extra
 from config.config import Config
 from logs import logger
 
+
 # Cargar configuración
 app.config.from_object(Config)
 logger.info("Configuración de Flask cargada correctamente.")
 
 # Registrar blueprints
 app.register_blueprint(auth, url_prefix="/auth")
+app.register_blueprint(usuario, url_prefix="/usuario")
 app.register_blueprint(cliente, url_prefix="/cliente")
 app.register_blueprint(trabajador, url_prefix="/trabajador")
 app.register_blueprint(categoria, url_prefix="/categoria")

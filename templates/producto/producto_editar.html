@@ -6,7 +6,7 @@
   <div class="contact-form">
     <div class="container">
       <h2>Actualizar Producto</h2>
-      <form action="/ruta_editar_producto/{{ producto['id_producto'] }}" enctype="multipart/form-data" method="post" onsubmit="return redirigirProducto();">
+      <form action="{{ url_for('producto.ruta_editar_producto', id_producto=producto['id_producto']) }}" enctype="multipart/form-data" method="post">
         <div class="mb-3">
           <label for="nombre">Nombre del Producto:</label>
           <input type="text" id="nombre" name="nombre" value="{{ producto['nombre_producto'] }}" required>
@@ -23,16 +23,19 @@
           <label for="categoria">Categoría:</label>
           <select id="categoria" name="id_categoria_FK" required>
               {% for categoria in categorias %}
-              <option value="{{ categoria['id_categoria] }}" {% if categoria[0] = producto.id_categoria_FK %}selected{% endif %}>
-                  {{ categoria[1] }}
-              </option>
+              <option value="{{ categoria['id_categoria'] }}" {% if categoria['id_categoria'] == producto['id_categoria_FK'] %}selected{% endif %}>
+                {{ categoria['nombre_categoria'] }}
+              </option>            
               {% endfor %}
           </select>
         </div>
         <div class="mb-3">
           <label for="imagen">Imagen:</label>
-          <input type="file" id="imagen" name="imagen" value="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" required>
-        </div>        
+          <input type="file" id="imagen" name="imagen" required>
+          {% if producto.imagen %}
+            <p>Imagen actual: <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" alt="Imagen del producto" width="150"></p>
+          {% endif %}
+        </div>            
         <!-- Botones alineados en una fila -->
         <div class="d-flex justify-content-between mt-3">
           <button type="submit" class="btn btn-access">Actualizar</button>
@@ -41,14 +44,4 @@
       </form>
     </div>
   </div>
-
-  <!-- Script para redirigir tras la actualización -->
-  <script>
-    function redirigirProducto() {
-      setTimeout(function() {
-        window.location.href = "{{ url_for(producto.mostrar_productos) }}";
-      }, 1000);
-      return true; // Permitir que el formulario se envíe
-    }
-  </script>
 {% endblock %}

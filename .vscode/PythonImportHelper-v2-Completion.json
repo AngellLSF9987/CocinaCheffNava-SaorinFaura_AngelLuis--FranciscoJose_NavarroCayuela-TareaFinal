@@ -169,14 +169,6 @@
         "documentation": {}
     },
     {
-        "label": "render_template",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
         "label": "redirect",
         "importPath": "flask",
         "description": "flask",
@@ -185,7 +177,7 @@
         "documentation": {}
     },
     {
-        "label": "request",
+        "label": "render_template",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -193,7 +185,15 @@
         "documentation": {}
     },
     {
-        "label": "jsonify",
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -385,6 +385,46 @@
         "documentation": {}
     },
     {
+        "label": "Blueprint",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "url_for",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -452,6 +492,15 @@
         "documentation": {}
     },
     {
+        "label": "repositories.rep_usuario",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
         "label": "obtener_usuario_id",
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
@@ -465,6 +514,14 @@
         "isExtraImport": true,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -782,11 +839,11 @@
         "documentation": {}
     },
     {
-        "label": "Config",
-        "importPath": "config.config",
-        "description": "config.config",
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
         "isExtraImport": true,
-        "detail": "config.config",
+        "detail": "logs",
         "documentation": {}
     },
     {
@@ -798,11 +855,11 @@
         "documentation": {}
     },
     {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
+        "label": "Config",
+        "importPath": "config.config",
+        "description": "config.config",
         "isExtraImport": true,
-        "detail": "copy",
+        "detail": "config.config",
         "documentation": {}
     },
     {
@@ -859,6 +916,47 @@
         "description": "copy",
         "isExtraImport": true,
         "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "rep_usuario",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "rep_usuario",
+        "description": "rep_usuario",
+        "detail": "rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "crear_usuario",
+        "importPath": "rep_usuario",
+        "description": "rep_usuario",
+        "isExtraImport": true,
+        "detail": "rep_usuario",
         "documentation": {}
     },
     {
@@ -956,6 +1054,14 @@
         "documentation": {}
     },
     {
+        "label": "usuario",
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "isExtraImport": true,
+        "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
         "label": "trabajador",
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
@@ -1034,7 +1140,7 @@
         "kind": 2,
         "importPath": "controllers.auth_controller",
         "description": "controllers.auth_controller",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = setupDB.crear_conexion()\ndef autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = setupDB.get_db()\ndef autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol",
         "detail": "controllers.auth_controller",
         "documentation": {}
     },
@@ -1390,6 +1496,24 @@
         "documentation": {}
     },
     {
+        "label": "crear_cliente",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def crear_cliente(nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK=None):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        sql = \"\"\"\n        INSERT INTO Clientes (\n            nombre_cliente, apellido1, apellido2, dni_cliente, \n            telefono, direccion, email, id_usuario_FK\n        ) \n        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_cliente",
+        "kind": 2,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "peekOfCode": "def actualizar_cliente(\n    id_cliente, nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el cliente y verificar si el id_usuario_FK es válido\n        usuario = usuarioDB.obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario\n        if not usuario:\n            raise ValueError(f\"El id_usuario_FK {id_usuario_FK} no es válido\")\n        # Realizar la actualización",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
         "label": "borrar_cliente",
         "kind": 2,
         "importPath": "repositories.rep_cliente",
@@ -1502,7 +1626,7 @@
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def obtener_producto_y_categorias(id_producto, id_categoria_FK, id_categoria):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        producto = obtener_producto_id(conn, id_producto, id_categoria_FK)\n        categorias = categoriaDB.obtener_categorias(conn, id_categoria)\n        return producto, categorias\n    except Error as e:\n        logger.error(f\"Error al obtener producto y categoria: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "peekOfCode": "def obtener_producto_y_categorias(conn, id_producto):\n    \"\"\"\n    Obtiene un producto específico y todas las categorías disponibles.\n    \"\"\"\n    try:\n        # Obtener el producto por ID\n        producto = obtener_producto_id(conn, id_producto)\n        if not producto:\n            raise ValueError(f\"El producto con ID {id_producto} no existe\")\n        # Obtener todas las categorías",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },
@@ -1511,7 +1635,7 @@
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def actualizar_producto(\n    id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el producto y las categorías\n        producto, categorias = obtener_producto_y_categorias(conn, id_producto)\n        # Validar si el id_categoria_FK es válido\n        categoria_ids = [\n            categoria[\"id_categoria\"] for categoria in categorias",
+        "peekOfCode": "def actualizar_producto(\n    id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el producto y las categorías\n        categorias = obtener_producto_y_categorias(conn, id_producto)\n        # Validar si el id_categoria_FK es válido\n        categoria_ids = [categoria.get(\"id_categoria\") for categoria in categorias if \"id_categoria\" in categoria]\n        if id_categoria_FK not in categoria_ids:",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },
@@ -1579,6 +1703,24 @@
         "documentation": {}
     },
     {
+        "label": "crear_trabajador",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)\n        id_usuario = crear_usuario(email, rol_trabajador)\n        if not id_usuario:\n            raise ValueError(\"No se pudo crear el usuario para el trabajador.\")\n        # Luego, insertamos al trabajador y asociamos el id_usuario_FK\n        cursor.execute(",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_trabajador",
+        "kind": 2,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "peekOfCode": "def actualizar_trabajador(id_trabajador, nombre_trabajador=None, apellido1=None, apellido2=None, dni_trabajador=None, telefono=None, direccion=None, email=None, id_usuario_FK=None):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Construimos dinámicamente la consulta de actualización\n        campos = []\n        valores = []\n        if nombre_trabajador:\n            campos.append(\"nombre_trabajador = %s\")\n            valores.append(nombre_trabajador)",
+        "detail": "repositories.rep_trabajador",
+        "documentation": {}
+    },
+    {
         "label": "obtener_usuarios",
         "kind": 2,
         "importPath": "repositories.rep_usuario",
@@ -1597,11 +1739,20 @@
         "documentation": {}
     },
     {
-        "label": "autenticar_usuario",
+        "label": "crear_usuario",
         "kind": 2,
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
-        "peekOfCode": "def autenticar_usuario(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuario u",
+        "peekOfCode": "def crear_usuario(email, contraseña, rol=\"Cliente\"):\n    \"\"\"Crea un usuario con el rol especificado, por defecto 'Cliente'.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Insertamos el usuario con el rol especificado\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Usuarios (email, contraseña, id_rol_FK) \n            VALUES (%s, %s, (SELECT id_rol FROM Roles WHERE nombre_rol = %s))",
+        "detail": "repositories.rep_usuario",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_rol_usuario_logueado",
+        "kind": 2,
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
+        "peekOfCode": "def obtener_rol_usuario_logueado(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuario u",
         "detail": "repositories.rep_usuario",
         "documentation": {}
     },
@@ -1628,7 +1779,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",  # Aquí puedes ajustar según la lógica real\n        \"trabajador\": \"auth.login\",  # Esto también\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"], endpoint=\"login\")\ndef login():\n    import controllers.auth_controller as authDB",
+        "peekOfCode": "def role_redirect(role):\n    role_map = {\n        \"cliente\": \"auth.login\",\n        \"trabajador\": \"auth.login\",\n    }\n    return role_map.get(role, \"auth.login\")\n# Ruta de login\n@auth.route(\"/login\", methods=[\"GET\", \"POST\"], endpoint=\"login\")\ndef login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1637,7 +1788,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def login():\n    import controllers.auth_controller as authDB\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = authDB.autenticar_usuario(email, password, conexion)\n        if usuario:",
+        "peekOfCode": "def login():\n    from repositories.rep_usuario import obtener_rol_usuario_logueado\n    if request.method == \"POST\":\n        email = request.form.get(\"email\")\n        password = request.form.get(\"password\")\n        if not email or not password:\n            flash(\"Ingresa tu correo y contraseña.\", \"warning\")\n            return render_template(\"auth/login.html\")\n        usuario = obtener_rol_usuario_logueado(email, password, conexion)\n        if usuario:",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1646,16 +1797,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n@auth.route(\"/register\", methods=[\"GET\", \"POST\"], endpoint=\"register\" )\ndef register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():",
-        "detail": "routes.auth_routes",
-        "documentation": {}
-    },
-    {
-        "label": "register",
-        "kind": 2,
-        "importPath": "routes.auth_routes",
-        "description": "routes.auth_routes",
-        "peekOfCode": "def register():\n    return render_template(\"auth/register.html\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -1826,7 +1968,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"])\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        return render_template(\"cliente/cliente.html\", clientes=clientes, editando=False), jsonify(clientes), 200\n    except Exception as e:",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"], endpoint=\"mostrar_clientes\")\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        if clientes:\n            logger.info(\"OBTENIENDO CLIENTES DESDE ADMIN\"), 200",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -1835,7 +1977,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        return render_template(\"cliente/cliente.html\", clientes=clientes, editando=False), jsonify(clientes), 200\n    except Exception as e:\n        logger.error(f\"Error al listar CLIENTES DESDE ADMIN: {e}\")\n        return render_template(\"/\"),jsonify({\"error\": \"Error al obtener los CLIENTES DESDE ADMIN\"}), 500\n@cliente.route(\"/editar_cliente/<int:id_cliente>\", methods=[\"GET\", \"POST\"])\ndef mostrar_cliente(conexion,id_cliente):",
+        "peekOfCode": "def mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)\n        if clientes:\n            logger.info(\"OBTENIENDO CLIENTES DESDE ADMIN\"), 200\n            return render_template(\"cliente/cliente_tabla.html\", clientes=clientes)\n        else:\n            logger.warning(\"No se encontraron clientes\"), 404\n            return redirect(url_for(\"index\"))            ",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -1844,7 +1986,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def mostrar_cliente(conexion,id_cliente):\n    \"\"\"Ruta para DETALLE CLIENTE DESDE CLIENTE.\"\"\"\n    try:\n        cliente = clienteDB.obtener_cliente_id(conexion,id_cliente)\n        logger.info(\"REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE\")\n        return render_template(\"/cliente/cliente_editar.html\", cliente=cliente), jsonify(cliente), 200\n    except Exception as e:\n        logger.error(f\"Error REDIRECCIÓN CLIENTE ACTUALIZAR DESDE CLIENTE: {e}\")\n        return render_template(\"index.html\"),jsonify({\"error\": \"Error al obtener los CLIENTES DESDE ADMIN\"}), 500    \n@cliente.route(\"/borrar_cliente\", methods=[\"GET\", \"POST\"])",
+        "peekOfCode": "def mostrar_cliente(conexion,id_cliente):\n    \"\"\"Ruta para DETALLE CLIENTE DESDE CLIENTE.\"\"\"\n    try:\n        if request.method == \"GET\":\n            cliente = clienteDB.obtener_cliente_id(conexion,id_cliente)\n            if cliente:\n                logger.info(\"REDIRECIONANDO A CLIENTE ACTUALIZAR DESDE CLIENTE\"), 200\n                return render_template(\"/cliente/cliente_editar.html\", cliente=cliente)\n            else:\n                logger.warning(f\"Cliente con ID {id_cliente} no encontrado.\")",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -1853,7 +1995,7 @@
         "kind": 2,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "def borrar_producto():\n    \"\"\"Ruta para BORRAR CLIENTE DESDE ADMIN.\"\"\"\n    try:    \n        id_cliente = request.form.get(\"id_cliente\")\n        clienteDB.borrar_cliente(id_cliente)\n        logger.info(\"CLIENTE BORRADO\")\n        return redirect(\"/mostrar_clientes\"), 200\n    except Exception as e:\n        logger.error(f\"Error al BORRAR CLIENTE DESDE ADMIN: {e}\")\n        return redirect(\"/mostrar_clientes\"), jsonify({\"error\": \"Error al BORRAR CLIENTE DESDE ADMIN\"}), 500",
+        "peekOfCode": "def borrar_producto():\n    \"\"\"Ruta para BORRAR CLIENTE DESDE ADMIN.\"\"\"\n    try:\n        if request.method == \"POST\":\n            id_cliente = request.form.get(\"id_cliente\")\n            cliente = clienteDB.obtener_cliente_id(id_cliente)\n            if cliente:\n                clienteDB.borrar_cliente(id_cliente)\n                logger.info(\"CLIENTE BORRADO\"), 200\n                return redirect(url_for(\"mostrar_clientes\"))",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -1862,7 +2004,7 @@
         "kind": 5,
         "importPath": "routes.clientes_routes",
         "description": "routes.clientes_routes",
-        "peekOfCode": "cliente = Blueprint(\"cliente\", __name__)\n@cliente.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"])\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)",
+        "peekOfCode": "cliente = Blueprint(\"cliente\", __name__)\n@cliente.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@cliente.route(\"/mostrar_clientes\", methods=[\"GET\"], endpoint=\"mostrar_clientes\")\ndef mostrar_clientes():\n    \"\"\"Ruta para listar todos los CLIENTES DESDE ADMIN.\"\"\"\n    try:\n        clientes = clienteDB.obtener_clientes(conexion)",
         "detail": "routes.clientes_routes",
         "documentation": {}
     },
@@ -2087,7 +2229,7 @@
         "kind": 2,
         "importPath": "routes.productos_routes",
         "description": "routes.productos_routes",
-        "peekOfCode": "def ruta_editar_producto(id_producto):\n    try:\n        if request.method == \"GET\":\n            # Buscar el producto por su ID\n            producto = productoDB.obtener_producto_id(id_producto)\n            if producto:\n                logger.info(f\"PRODUCTO OBTENIDO POR 'ID': {id_producto}\")\n                return render_template('producto/producto_editar.html', producto=producto)\n            else:\n                logger.warning(f\"Producto con ID {id_producto} no encontrado.\")",
+        "peekOfCode": "def ruta_editar_producto(id_producto):\n    try:\n        if request.method == \"GET\":\n            producto = productoDB.obtener_producto_id(id_producto)\n            if producto:\n                logger.info(f\"PRODUCTO OBTENIDO POR 'ID': {id_producto}\")\n                return render_template('producto/producto_editar.html', producto=producto)\n            else:\n                logger.warning(f\"Producto con ID {id_producto} no encontrado.\")\n                return render_template(\"error/404.html\"), 404",
         "detail": "routes.productos_routes",
         "documentation": {}
     },
@@ -2170,6 +2312,33 @@
         "description": "routes.trabajadores_routes",
         "peekOfCode": "trabajador = Blueprint(\"trabajador\", __name__)\n@trabajador.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\")\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:",
         "detail": "routes.trabajadores_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cargar",
+        "kind": 2,
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol",
+        "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
+        "label": "alta_usuarios",
+        "kind": 2,
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "peekOfCode": "def alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol\n            es_trabajador = rol_usuario == \"Trabajador\"\n            logger.info(\"Mostrando formulario altas usuarios.\")\n            return render_template('auth/register.html', es_trabajador=es_trabajador), 200\n        if request.method == \"POST\":",
+        "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
+        "label": "usuario",
+        "kind": 5,
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "peekOfCode": "usuario = Blueprint(\"usuario\", __name__)\n@usuario.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":",
+        "detail": "routes.usuario_routes",
         "documentation": {}
     },
     {

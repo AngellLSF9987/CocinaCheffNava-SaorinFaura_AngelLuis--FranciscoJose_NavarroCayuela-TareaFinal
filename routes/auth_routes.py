@@ -34,8 +34,8 @@ def access_required(role=None):
 # Mapeo de roles para redirecciones
 def role_redirect(role):
     role_map = {
-        "cliente": "auth.login",  # Aquí puedes ajustar según la lógica real
-        "trabajador": "auth.login",  # Esto también
+        "cliente": "auth.login",
+        "trabajador": "auth.login",
     }
     return role_map.get(role, "auth.login")
 
@@ -43,7 +43,7 @@ def role_redirect(role):
 # Ruta de login
 @auth.route("/login", methods=["GET", "POST"], endpoint="login")
 def login():
-    import controllers.auth_controller as authDB
+    from repositories.rep_usuario import obtener_rol_usuario_logueado
 
     if request.method == "POST":
         email = request.form.get("email")
@@ -53,7 +53,7 @@ def login():
             flash("Ingresa tu correo y contraseña.", "warning")
             return render_template("auth/login.html")
 
-        usuario = authDB.autenticar_usuario(email, password, conexion)
+        usuario = obtener_rol_usuario_logueado(email, password, conexion)
         if usuario:
             try:
                 nombre_rol = usuario.get("rol")
@@ -85,11 +85,6 @@ def logout():
     session.clear()
     flash("Has cerrado sesión.", "info")
     return render_template("/")
-
-
-@auth.route("/register", methods=["GET", "POST"], endpoint="register" )
-def register():
-    return render_template("auth/register.html")
 
 
 # Ruta de reset password

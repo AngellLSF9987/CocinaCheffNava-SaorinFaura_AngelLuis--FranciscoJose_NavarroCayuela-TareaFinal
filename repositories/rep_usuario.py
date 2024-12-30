@@ -34,7 +34,35 @@ def obtener_usuario_id(id_usuario):
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error    
 
 
-def autenticar_usuario(email, password):
+def crear_usuario(email, contraseña, rol="Cliente"):
+    """Crea un usuario con el rol especificado, por defecto 'Cliente'."""
+    conn = get_db()
+    cursor = conn.cursor()
+    
+    try:
+        # Insertamos el usuario con el rol especificado
+        cursor.execute(
+            """
+            INSERT INTO Usuarios (email, contraseña, id_rol_FK) 
+            VALUES (%s, %s, (SELECT id_rol FROM Roles WHERE nombre_rol = %s))
+            """,
+            (email, contraseña, rol)
+        )
+        conn.commit()
+        
+        # Obtener el id del último usuario insertado
+        cursor.execute("SELECT LAST_INSERT_ID()")
+        id_usuario = cursor.fetchone()[0]
+        
+        return id_usuario  # Retorna el id_usuario recién creado
+    except Exception as e:
+        conn.rollback()
+        raise Exception(f"Error al crear usuario: {e}")
+    finally:
+        cursor.close()
+
+
+def obtener_rol_usuario_logueado(email, password):
     """Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas."""
     conn = get_db()
     cursor = conn.cursor(dictionary=True)

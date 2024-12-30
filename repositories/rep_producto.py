@@ -89,33 +89,36 @@ def crear_producto(nombre, descripcion, precio, imagen, id_categoria_FK):
 
 
 # Modificar producto con categorías
-def obtener_producto_y_categorias(id_producto, id_categoria_FK, id_categoria):
-    conn = get_db()
-    cursor = conn.cursor(dictionary=True)
+def obtener_producto_y_categorias(conn, id_producto):
+    """
+    Obtiene un producto específico y todas las categorías disponibles.
+    """
     try:
-        producto = obtener_producto_id(conn, id_producto, id_categoria_FK)
-        categorias = categoriaDB.obtener_categorias(conn, id_categoria)
+        # Obtener el producto por ID
+        producto = obtener_producto_id(conn, id_producto)
+        if not producto:
+            raise ValueError(f"El producto con ID {id_producto} no existe")
+
+        # Obtener todas las categorías
+        categorias = categoriaDB.obtener_categorias(conn)
+        if not categorias:
+            raise ValueError("No se encontraron categorías en la base de datos")
+
         return producto, categorias
     except Error as e:
-        logger.error(f"Error al obtener producto y categoria: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
-    finally:
-        cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error
+        logger.error(f"Error al obtener producto y categorías: {e}")
+        raise
 
-
-# Modificar categoria
 def actualizar_producto(
     id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK
 ):
     conn = get_db()
     try:
         # Obtener el producto y las categorías
-        producto, categorias = obtener_producto_y_categorias(conn, id_producto)
+        categorias = obtener_producto_y_categorias(conn, id_producto)
 
         # Validar si el id_categoria_FK es válido
-        categoria_ids = [
-            categoria["id_categoria"] for categoria in categorias
-        ]  # Suponiendo que 'id_categoria' es la clave del ID de cada categoría
+        categoria_ids = [categoria.get("id_categoria") for categoria in categorias if "id_categoria" in categoria]
         if id_categoria_FK not in categoria_ids:
             raise ValueError(f"El id_categoria_FK {id_categoria_FK} no es válido")
 
@@ -133,15 +136,20 @@ def actualizar_producto(
                 precio,
                 imagen,
                 id_categoria_FK,
-                producto["id_producto"],
-            ),  # Suponiendo que 'id_producto' es la clave del producto
+                id_producto,
+            ),
         )
         conn.commit()
+
+        # Confirmar el producto actualizado (opcional)
+        cursor.execute("SELECT * FROM Productos WHERE id_producto = %s", (id_producto,))
+        producto_actualizado = cursor.fetchone()
+        return producto_actualizado
     except Error as e:
-        logger.error(f"Error al actualizar producto y categoria: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
+        logger.error(f"Error al actualizar producto y categoría: {e}")
+        return None  # Devolvemos None en caso de error
     finally:
-        cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error
+        cursor.close()
 
 
 # Borrar producto
@@ -156,3 +164,44 @@ def borrar_producto(id):
         return []  # Devolvemos una lista vacía en caso de error
     finally:
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error
+
+
+# Modificar producto
+# def actualizar_producto(
+#     id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK
+# ):
+#     conn = get_db()
+#     try:
+#         # Obtener el producto y las categorías
+#         producto, categorias = obtener_producto_y_categorias(conn, id_producto)
+
+#         # Validar si el id_categoria_FK es válido
+#         categoria_ids = [
+#             categoria["id_categoria"] for categoria in categorias
+#         ]  # Suponiendo que 'id_categoria' es la clave del ID de cada categoría
+#         if id_categoria_FK not in categoria_ids:
+#             raise ValueError(f"El id_categoria_FK {id_categoria_FK} no es válido")
+
+#         # Realizar la actualización
+#         cursor = conn.cursor(dictionary=True)
+#         cursor.execute(
+#             """
+#             UPDATE Productos 
+#             SET nombre_producto = %s, descripcion = %s, precio = %s, imagen = %s, id_categoria_FK = %s
+#             WHERE id_producto = %s
+#             """,
+#             (
+#                 nombre_producto,
+#                 descripcion,
+#                 precio,
+#                 imagen,
+#                 id_categoria_FK,
+#                 id_producto,
+#             ),  # Suponiendo que 'id_producto' es la clave del producto
+#         )
+#         conn.commit()
+#     except Error as e:
+#         logger.error(f"Error al actualizar producto y categoria: {e}")
+#         return []  # Devolvemos una lista vacía en caso de error
+#     finally:
+#         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error

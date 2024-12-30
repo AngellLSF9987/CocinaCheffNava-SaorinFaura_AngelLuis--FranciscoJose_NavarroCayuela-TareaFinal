@@ -141,7 +141,6 @@ def ruta_crear_producto():
 def ruta_editar_producto(id_producto):
     try:
         if request.method == "GET":
-            # Buscar el producto por su ID
             producto = productoDB.obtener_producto_id(id_producto)
             if producto:
                 logger.info(f"PRODUCTO OBTENIDO POR 'ID': {id_producto}")
@@ -151,38 +150,36 @@ def ruta_editar_producto(id_producto):
                 return render_template("error/404.html"), 404
 
         elif request.method == "POST":
-            # Obtener datos del formulario
             nombre_producto = request.form.get("nombre_producto")
             id_categoria_FK = request.form.get("id_categoria_FK")
             descripcion = request.form.get("descripcion")
             precio = request.form.get("precio")
             imagen = request.form.get("imagen")
 
-            # Validar que los campos obligatorios estén presentes
             if not all([nombre_producto, id_categoria_FK, precio]):
-                logger.warning("Datos incompletos para actualizar el producto.", error="Faltan datos obligatorios"), 400
-                return redirect (url_for("producto.mostrar_productos"))
-            
-            # Actualizar el producto en la base de datos
+                logger.warning("Datos incompletos para actualizar el producto.", extra={"error": "Faltan datos obligatorios"})
+                return redirect(url_for("producto.mostrar_productos")), 400
+
             producto_actualizado = productoDB.actualizar_producto(
                 id_producto,
                 nombre_producto,
                 descripcion,
-                precio,
+                float(precio),
                 imagen,
-                id_categoria_FK,
+                int(id_categoria_FK),
             )
             
             if producto_actualizado:
-                logger.info(f"PRODUCTO ACTUALIZADO: {producto_actualizado['nombre_producto']}", success="Producto actualizado exitosamente"), 200
-                return redirect (url_for("producto.mostrar_productos"))
+                logger.info(f"PRODUCTO ACTUALIZADO EXITOSAMENTE: {producto_actualizado['nombre_producto']}", extra={"success": "Producto actualizado"})
+                return redirect(url_for("producto.mostrar_productos"))
             else:
-                logger.error(f"Error al actualizar el producto con ID {id_producto}.", error="Producto no actualizado"), 404
-                return render_template("error/404.html")
+                logger.error(f"Error al actualizar el producto con ID {id_producto}.", extra={"error": "Producto no actualizado"})
+                return render_template("error/404.html"), 404
 
     except Exception as e:
         logger.error(f"Error al ACTUALIZAR PRODUCTO: {e}")
         return render_template("error/500.html"), 500
+
 
 
 @producto.route("/borrar_producto", methods=["GET", "POST"], endpoint="ruta_borrar_producto")

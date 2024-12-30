@@ -14,7 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 def cargar():
     global conexion
-    conexion = setupDB.crear_conexion()
+    conexion = setupDB.get_db()
 
 
 def autenticar_usuario(email, password, conexion):
