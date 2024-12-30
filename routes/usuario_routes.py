@@ -17,7 +17,7 @@ def cargar():
 
 @usuario.route("/ruta_registro_usuario", methods=["GET", "POST"], endpoint="registro")
 def alta_usuarios():
-    """Ruta Alta Clientes - Formulario de Registro."""
+    """Ruta Alta Usuarios - Formulario de Registro."""
     
     try:
         if request.method == "GET":

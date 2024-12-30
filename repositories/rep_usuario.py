@@ -71,7 +71,7 @@ def obtener_rol_usuario_logueado(email, password):
         # Consulta para obtener usuario y su rol
         query = """
                 SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol
-                FROM Usuario u
+                FROM Usuarios u
                 JOIN Roles r ON u.id_rol_FK = r.id_rol
                 WHERE u.email = %s
             """
@@ -99,4 +99,4 @@ def obtener_rol_usuario_logueado(email, password):
         print(f"❌ Error al autenticar al usuario: {e}")
         return None
     finally:
-        cursor.close()  # Cerrar el cursor correctamente
+        cursor.close()

@@ -1,12 +1,12 @@
 from copy import Error
-from database.db_setup import get_db
+import database.db_setup as setupDB
 from logs import logger
-from rep_usuario import crear_usuario
+from repositories.rep_usuario import crear_usuario
 
 
 # Mostrar trabajadores
 def obtener_trabajadores():
-    conn = get_db()
+    conn = setupDB.get_db()
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute("SELECT * FROM Trabajadores")
@@ -20,7 +20,7 @@ def obtener_trabajadores():
 
 # Mostrar trabajadores por id
 def obtener_trabajador_id(id_trabajador):
-    conn = get_db()
+    conn = setupDB.get_db()
     cursor = conn.cursor(dictionary=True)
     try:
         cursor.execute(
@@ -36,7 +36,7 @@ def obtener_trabajador_id(id_trabajador):
 
 # Mostrar trabajadores por DNI
 def obtener_trabajador_dni(dni_trabajador):
-    conn = get_db()
+    conn = setupDB.get_db()
     cursor = conn.cursor(dni_trabajador)
     try:
         cursor.execute(
@@ -51,7 +51,7 @@ def obtener_trabajador_dni(dni_trabajador):
         cursor.close()  # Cerramos el cursor siempre, incluso si ocurre un error     
 
 def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):
-    conn = get_db()
+    conn = setupDB.get_db()
     cursor = conn.cursor()
     try:
         # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)
@@ -77,7 +77,7 @@ def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, te
         cursor.close()
         
 def actualizar_trabajador(id_trabajador, nombre_trabajador=None, apellido1=None, apellido2=None, dni_trabajador=None, telefono=None, direccion=None, email=None, id_usuario_FK=None):
-    conn = get_db()
+    conn = setupDB.get_db()
     cursor = conn.cursor()
     try:
         # Construimos dinámicamente la consulta de actualización

@@ -17,11 +17,317 @@
         "documentation": {}
     },
     {
-        "label": "g",
-        "importPath": "flask",
-        "description": "flask",
+        "label": "database.db_setup",
+        "kind": 6,
         "isExtraImport": true,
-        "detail": "flask",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
         "documentation": {}
     },
     {
@@ -458,37 +764,99 @@
         "documentation": {}
     },
     {
-        "label": "repositories.rep_cliente",
-        "kind": 6,
+        "label": "Config",
+        "importPath": "config.config",
+        "description": "config.config",
         "isExtraImport": true,
-        "importPath": "repositories.rep_cliente",
-        "description": "repositories.rep_cliente",
-        "detail": "repositories.rep_cliente",
+        "detail": "config.config",
         "documentation": {}
     },
     {
-        "label": "obtener_cliente_id",
-        "importPath": "repositories.rep_cliente",
-        "description": "repositories.rep_cliente",
+        "label": "Config",
+        "importPath": "config.config",
+        "description": "config.config",
         "isExtraImport": true,
-        "detail": "repositories.rep_cliente",
+        "detail": "config.config",
         "documentation": {}
     },
     {
-        "label": "repositories.rep_trabajador",
-        "kind": 6,
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
         "isExtraImport": true,
-        "importPath": "repositories.rep_trabajador",
-        "description": "repositories.rep_trabajador",
-        "detail": "repositories.rep_trabajador",
+        "detail": "copy",
         "documentation": {}
     },
     {
-        "label": "obtener_trabajador_id",
-        "importPath": "repositories.rep_trabajador",
-        "description": "repositories.rep_trabajador",
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
         "isExtraImport": true,
-        "detail": "repositories.rep_trabajador",
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
+        "documentation": {}
+    },
+    {
+        "label": "error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
         "documentation": {}
     },
     {
@@ -509,454 +877,11 @@
         "documentation": {}
     },
     {
-        "label": "database.db_setup",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "get_db",
-        "importPath": "database.db_setup",
-        "description": "database.db_setup",
-        "isExtraImport": true,
-        "detail": "database.db_setup",
-        "documentation": {}
-    },
-    {
-        "label": "logging",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "logging",
-        "description": "logging",
-        "detail": "logging",
-        "documentation": {}
-    },
-    {
-        "label": "conexion",
-        "importPath": "routes.clientes_routes",
-        "description": "routes.clientes_routes",
-        "isExtraImport": true,
-        "detail": "routes.clientes_routes",
-        "documentation": {}
-    },
-    {
-        "label": "cliente",
-        "importPath": "routes.clientes_routes",
-        "description": "routes.clientes_routes",
-        "isExtraImport": true,
-        "detail": "routes.clientes_routes",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "logger",
-        "importPath": "logs",
-        "description": "logs",
-        "isExtraImport": true,
-        "detail": "logs",
-        "documentation": {}
-    },
-    {
-        "label": "Config",
-        "importPath": "config.config",
-        "description": "config.config",
-        "isExtraImport": true,
-        "detail": "config.config",
-        "documentation": {}
-    },
-    {
-        "label": "Config",
-        "importPath": "config.config",
-        "description": "config.config",
-        "isExtraImport": true,
-        "detail": "config.config",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "Error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "error",
-        "importPath": "copy",
-        "description": "copy",
-        "isExtraImport": true,
-        "detail": "copy",
-        "documentation": {}
-    },
-    {
-        "label": "rep_usuario",
-        "kind": 6,
-        "isExtraImport": true,
-        "importPath": "rep_usuario",
-        "description": "rep_usuario",
-        "detail": "rep_usuario",
-        "documentation": {}
-    },
-    {
         "label": "crear_usuario",
-        "importPath": "rep_usuario",
-        "description": "rep_usuario",
+        "importPath": "repositories.rep_usuario",
+        "description": "repositories.rep_usuario",
         "isExtraImport": true,
-        "detail": "rep_usuario",
+        "detail": "repositories.rep_usuario",
         "documentation": {}
     },
     {
@@ -986,6 +911,15 @@
         "documentation": {}
     },
     {
+        "label": "repositories.rep_cliente",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_cliente",
+        "description": "repositories.rep_cliente",
+        "detail": "repositories.rep_cliente",
+        "documentation": {}
+    },
+    {
         "label": "repositories.rep_pedido",
         "kind": 6,
         "isExtraImport": true,
@@ -1001,6 +935,15 @@
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
         "detail": "repositories.rep_producto",
+        "documentation": {}
+    },
+    {
+        "label": "repositories.rep_trabajador",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_trabajador",
+        "description": "repositories.rep_trabajador",
+        "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
     {
@@ -1059,6 +1002,14 @@
         "description": "routes.usuario_routes",
         "isExtraImport": true,
         "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
+        "label": "cliente",
+        "importPath": "routes.clientes_routes",
+        "description": "routes.clientes_routes",
+        "isExtraImport": true,
+        "detail": "routes.clientes_routes",
         "documentation": {}
     },
     {
@@ -1133,24 +1084,6 @@
         "description": "config.image_optimizer",
         "peekOfCode": "def optimize_image(image_path, output_path, max_width=800, quality=85):\n    \"\"\"\n    Optimiza una imagen reduciendo su tamaño y calidad.\n    Args:\n        image_path (str): Ruta de la imagen original.\n        output_path (str): Ruta donde se guardará la imagen optimizada.\n        max_width (int, optional): Ancho máximo permitido para la imagen. Por defecto, 800 píxeles.\n        quality (int, optional): Calidad de la imagen optimizada (1-100). Por defecto, 85.\n    \"\"\"\n    try:",
         "detail": "config.image_optimizer",
-        "documentation": {}
-    },
-    {
-        "label": "cargar",
-        "kind": 2,
-        "importPath": "controllers.auth_controller",
-        "description": "controllers.auth_controller",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = setupDB.get_db()\ndef autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol",
-        "detail": "controllers.auth_controller",
-        "documentation": {}
-    },
-    {
-        "label": "autenticar_usuario",
-        "kind": 2,
-        "importPath": "controllers.auth_controller",
-        "description": "controllers.auth_controller",
-        "peekOfCode": "def autenticar_usuario(email, password, conexion):\n    \"\"\"Autentica a un usuario como cliente, trabajador o usuario general.\"\"\"\n    try:\n        # Establecer conexión con la base de datos\n        g.rep_usuario = obtener_usuario_id(conexion)\n        logging.debug(f\"🔍 Intentando autenticar al usuario con email: {email}\")\n        # Llamada al repositorio para obtener el usuario y su rol\n        usuario = g.rep_usuario.autenticar_usuario(email, password, conexion)\n        if usuario:\n            logging.debug(f\"✅ Usuario autenticado: {usuario}\")",
-        "detail": "controllers.auth_controller",
         "documentation": {}
     },
     {
@@ -1509,7 +1442,7 @@
         "kind": 2,
         "importPath": "repositories.rep_cliente",
         "description": "repositories.rep_cliente",
-        "peekOfCode": "def actualizar_cliente(\n    id_cliente, nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el cliente y verificar si el id_usuario_FK es válido\n        usuario = usuarioDB.obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario\n        if not usuario:\n            raise ValueError(f\"El id_usuario_FK {id_usuario_FK} no es válido\")\n        # Realizar la actualización",
+        "peekOfCode": "def actualizar_cliente(\n    id_cliente, nombre_cliente, apellido1, apellido2, dni_cliente, telefono, direccion, email, id_usuario_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el cliente y verificar si el id_usuario_FK es válido\n        usuario = obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario\n        if not usuario:\n            raise ValueError(f\"El id_usuario_FK {id_usuario_FK} no es válido\")\n        # Realizar la actualización",
         "detail": "repositories.rep_cliente",
         "documentation": {}
     },
@@ -1680,7 +1613,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def obtener_trabajadores():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Trabajadores\")\n        clientes = cursor.fetchall()\n        return clientes\n    except Error as e:\n        logger.error(f\"Error al obtener trabajadores: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "peekOfCode": "def obtener_trabajadores():\n    conn = setupDB.get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Trabajadores\")\n        clientes = cursor.fetchall()\n        return clientes\n    except Error as e:\n        logger.error(f\"Error al obtener trabajadores: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1689,7 +1622,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def obtener_trabajador_id(id_trabajador):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE id_trabajador = %s\", (id_trabajador,)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
+        "peekOfCode": "def obtener_trabajador_id(id_trabajador):\n    conn = setupDB.get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE id_trabajador = %s\", (id_trabajador,)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1698,7 +1631,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def obtener_trabajador_dni(dni_trabajador):\n    conn = get_db()\n    cursor = conn.cursor(dni_trabajador)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE dni_trabajador = %s\", (dni_trabajador)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
+        "peekOfCode": "def obtener_trabajador_dni(dni_trabajador):\n    conn = setupDB.get_db()\n    cursor = conn.cursor(dni_trabajador)\n    try:\n        cursor.execute(\n            \"SELECT 1 FROM Trabajadores WHERE dni_trabajador = %s\", (dni_trabajador)\n        )\n        trabajador = cursor.fetchone()\n        return trabajador\n    except Error as e:",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1707,7 +1640,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)\n        id_usuario = crear_usuario(email, rol_trabajador)\n        if not id_usuario:\n            raise ValueError(\"No se pudo crear el usuario para el trabajador.\")\n        # Luego, insertamos al trabajador y asociamos el id_usuario_FK\n        cursor.execute(",
+        "peekOfCode": "def crear_trabajador(nombre_trabajador, apellido1, apellido2, dni_trabajador, telefono, direccion, email, rol_trabajador):\n    conn = setupDB.get_db()\n    cursor = conn.cursor()\n    try:\n        # Primero, creamos el usuario (esto ya se encuentra en el repositorio de usuarios)\n        id_usuario = crear_usuario(email, rol_trabajador)\n        if not id_usuario:\n            raise ValueError(\"No se pudo crear el usuario para el trabajador.\")\n        # Luego, insertamos al trabajador y asociamos el id_usuario_FK\n        cursor.execute(",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1716,7 +1649,7 @@
         "kind": 2,
         "importPath": "repositories.rep_trabajador",
         "description": "repositories.rep_trabajador",
-        "peekOfCode": "def actualizar_trabajador(id_trabajador, nombre_trabajador=None, apellido1=None, apellido2=None, dni_trabajador=None, telefono=None, direccion=None, email=None, id_usuario_FK=None):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Construimos dinámicamente la consulta de actualización\n        campos = []\n        valores = []\n        if nombre_trabajador:\n            campos.append(\"nombre_trabajador = %s\")\n            valores.append(nombre_trabajador)",
+        "peekOfCode": "def actualizar_trabajador(id_trabajador, nombre_trabajador=None, apellido1=None, apellido2=None, dni_trabajador=None, telefono=None, direccion=None, email=None, id_usuario_FK=None):\n    conn = setupDB.get_db()\n    cursor = conn.cursor()\n    try:\n        # Construimos dinámicamente la consulta de actualización\n        campos = []\n        valores = []\n        if nombre_trabajador:\n            campos.append(\"nombre_trabajador = %s\")\n            valores.append(nombre_trabajador)",
         "detail": "repositories.rep_trabajador",
         "documentation": {}
     },
@@ -1752,7 +1685,7 @@
         "kind": 2,
         "importPath": "repositories.rep_usuario",
         "description": "repositories.rep_usuario",
-        "peekOfCode": "def obtener_rol_usuario_logueado(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuario u",
+        "peekOfCode": "def obtener_rol_usuario_logueado(email, password):\n    \"\"\"Autentica a un usuario y devuelve sus datos, incluido su rol, si las credenciales son correctas.\"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    print(f\"🔍 Buscando usuario con email: {email}\")\n    try:\n        # Consulta para obtener usuario y su rol\n        query = \"\"\"\n                SELECT u.id_usuario, u.email, u.contraseña, u.id_rol_FK, r.nombre_rol\n                FROM Usuarios u",
         "detail": "repositories.rep_usuario",
         "documentation": {}
     },
@@ -1797,7 +1730,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return render_template(\"/\")\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def logout():\n    session.clear()\n    flash(\"Has cerrado sesión.\", \"info\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -2319,7 +2252,7 @@
         "kind": 2,
         "importPath": "routes.usuario_routes",
         "description": "routes.usuario_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Usuarios - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol",
         "detail": "routes.usuario_routes",
         "documentation": {}
     },
@@ -2328,7 +2261,7 @@
         "kind": 2,
         "importPath": "routes.usuario_routes",
         "description": "routes.usuario_routes",
-        "peekOfCode": "def alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol\n            es_trabajador = rol_usuario == \"Trabajador\"\n            logger.info(\"Mostrando formulario altas usuarios.\")\n            return render_template('auth/register.html', es_trabajador=es_trabajador), 200\n        if request.method == \"POST\":",
+        "peekOfCode": "def alta_usuarios():\n    \"\"\"Ruta Alta Usuarios - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":\n            # Obtener el rol del usuario logueado\n            rol_usuario = usuarioDB.obtener_rol_usuario_logueado()  # Lógica para obtener el rol\n            es_trabajador = rol_usuario == \"Trabajador\"\n            logger.info(\"Mostrando formulario altas usuarios.\")\n            return render_template('auth/register.html', es_trabajador=es_trabajador), 200\n        if request.method == \"POST\":",
         "detail": "routes.usuario_routes",
         "documentation": {}
     },
@@ -2337,7 +2270,7 @@
         "kind": 5,
         "importPath": "routes.usuario_routes",
         "description": "routes.usuario_routes",
-        "peekOfCode": "usuario = Blueprint(\"usuario\", __name__)\n@usuario.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Clientes - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":",
+        "peekOfCode": "usuario = Blueprint(\"usuario\", __name__)\n@usuario.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@usuario.route(\"/ruta_registro_usuario\", methods=[\"GET\", \"POST\"], endpoint=\"registro\")\ndef alta_usuarios():\n    \"\"\"Ruta Alta Usuarios - Formulario de Registro.\"\"\"\n    try:\n        if request.method == \"GET\":",
         "detail": "routes.usuario_routes",
         "documentation": {}
     },

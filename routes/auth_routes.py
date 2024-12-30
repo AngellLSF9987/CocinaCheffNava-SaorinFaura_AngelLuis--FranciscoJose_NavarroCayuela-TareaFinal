@@ -84,7 +84,7 @@ def login():
 def logout():
     session.clear()
     flash("Has cerrado sesión.", "info")
-    return render_template("/")
+    return redirect(url_for("index"))
 
 
 # Ruta de reset password

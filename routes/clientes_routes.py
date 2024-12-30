@@ -3,8 +3,6 @@ from flask import Blueprint, redirect, render_template, url_for, request
 from database.db_setup import get_db
 from logs import logger
 import repositories.rep_cliente as clienteDB
-import repositories.rep_trabajador as trabajadorDB
-import repositories.rep_usuario as usuarioDB
 
 # Blueprint
 cliente = Blueprint("cliente", __name__)

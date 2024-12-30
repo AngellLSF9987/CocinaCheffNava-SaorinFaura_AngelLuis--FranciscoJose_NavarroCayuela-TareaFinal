@@ -1,7 +1,8 @@
 from copy import Error
 from database.db_setup import get_db
 from logs import logger
-import rep_usuario as usuarioDB
+import repositories.rep_usuario
+from repositories.rep_usuario import obtener_usuario_id
 
 
 
@@ -78,7 +79,7 @@ def actualizar_cliente(
     conn = get_db()
     try:
         # Obtener el cliente y verificar si el id_usuario_FK es válido
-        usuario = usuarioDB.obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario
+        usuario = obtener_usuario_id(conn, id_usuario_FK)  # Esta función debe ser creada o adaptada para obtener el usuario
         if not usuario:
             raise ValueError(f"El id_usuario_FK {id_usuario_FK} no es válido")
 
