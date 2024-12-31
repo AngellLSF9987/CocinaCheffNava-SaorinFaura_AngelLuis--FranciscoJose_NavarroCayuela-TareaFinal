@@ -643,6 +643,14 @@
         "documentation": {}
     },
     {
+        "label": "session",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
         "label": "url_for",
         "importPath": "flask",
         "description": "flask",
@@ -957,6 +965,15 @@
         "documentation": {}
     },
     {
+        "label": "repositories.rep_pedidos_productos",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
         "label": "repositories.rep_categoria",
         "kind": 6,
         "isExtraImport": true,
@@ -1083,6 +1100,23 @@
         "documentation": {}
     },
     {
+        "label": "routes.usuario_routes",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
+        "label": "usuario",
+        "importPath": "routes.usuario_routes",
+        "description": "routes.usuario_routes",
+        "isExtraImport": true,
+        "detail": "routes.usuario_routes",
+        "documentation": {}
+    },
+    {
         "label": "re",
         "kind": 6,
         "isExtraImport": true,
@@ -1122,14 +1156,6 @@
         "description": "database",
         "isExtraImport": true,
         "detail": "database",
-        "documentation": {}
-    },
-    {
-        "label": "usuario",
-        "importPath": "routes.usuario_routes",
-        "description": "routes.usuario_routes",
-        "isExtraImport": true,
-        "detail": "routes.usuario_routes",
         "documentation": {}
     },
     {
@@ -1624,7 +1650,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def validar_claves_foraneas(id_cliente_FK, id_producto_FK, id_carrito_FK):\n    \"\"\"\n    Valida que las claves foráneas existan en las tablas correspondientes.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Validar cliente\n        cursor.execute(\"SELECT 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente_FK,))\n        if not cursor.fetchone():",
+        "peekOfCode": "def validar_claves_foraneas(id_cliente_FK, id_producto_FK):\n    \"\"\"\n    Valida que las claves foráneas existan en las tablas correspondientes.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Validar cliente\n        cursor.execute(\"SELECT 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente_FK,))\n        if not cursor.fetchone():",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1633,7 +1659,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                c.nombre_cliente,",
+        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente y productos asociados.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.fecha_registro AS fecha_pedido,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1642,7 +1668,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados y la información del cliente.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
+        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados y la información del cliente.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.fecha_registro AS fecha_pedido,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1651,7 +1677,16 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
+        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes y Productos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_pedidos_por_cliente",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def obtener_pedidos_por_cliente(id_cliente):\n    \"\"\"\n    Obtiene todos los pedidos de un cliente específico, incluyendo información\n    cruzada con Productos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1660,7 +1695,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, productos, fecha_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Insertar en la tabla Pedidos\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Pedidos (num_pedido, id_cliente_FK, fecha_pedido) \n            VALUES (%s, %s, %s)\n            \"\"\",",
+        "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, productos, fecha_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Insertar en la tabla Pedidos\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Pedidos (num_pedido, id_cliente_FK, fecha_registro) \n            VALUES (%s, %s, %s)\n            \"\"\",",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1669,7 +1704,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos y devuelve los detalles completos del pedido actualizado.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Actualizar el pedido\n        cursor.execute(\n            \"\"\"",
+        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, productos, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido y sus productos asociados en la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Actualizar datos del pedido en la tabla Pedidos\n        cursor.execute(\n            \"\"\"",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1678,7 +1713,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificar si el pedido existe antes de borrarlo\n        cursor.execute(\"SELECT 1 FROM Pedidos WHERE id_pedido = %s\", (id_pedido,))\n        if cursor.fetchone() is None:\n            logger.error(f\"Pedido con id_pedido {id_pedido} no encontrado.\")\n            return {\"status\": \"error\", \"message\": f\"Pedido {id_pedido} no encontrado.\"}  # Mejorar el mensaje de error\n        # Eliminar productos asociados al pedido en Pedidos_Productos",
+        "peekOfCode": "def borrar_pedido(id_pedido):\n    \"\"\"\n    Elimina un pedido y sus productos asociados en la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificar si el pedido existe\n        cursor.execute(\"SELECT 1 FROM Pedidos WHERE id_pedido = %s\", (id_pedido,))\n        if cursor.fetchone() is None:",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1696,7 +1731,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedidos_productos",
         "description": "repositories.rep_pedidos_productos",
-        "peekOfCode": "def agregar_producto_a_pedido(id_pedido, id_producto_FK, cantidad, precio_unitario):\n    \"\"\"\n    Agrega un producto al pedido en la tabla Pedidos_Productos.\n    :param id_pedido: ID del pedido al que se le agregará el producto.\n    :param id_producto_FK: ID del producto a agregar.\n    :param cantidad: Cantidad del producto.\n    :param precio_unitario: Precio unitario del producto.\n    :return: El ID del producto agregado, o None si hubo un error.\n    \"\"\"\n    conn = get_db()",
+        "peekOfCode": "def agregar_producto_a_pedido(id_pedido, id_producto_FK, cantidad_por_producto, precio_unidad):\n    \"\"\"\n    Agrega un producto al pedido en la tabla Pedidos_Productos.\n    :param id_pedido: ID del pedido al que se le agregará el producto.\n    :param id_producto_FK: ID del producto a agregar.\n    :param cantidad_por_producto: Cantidad del producto.\n    :param precio_unidad: Precio unitario del producto.\n    :return: El ID del producto agregado, o None si hubo un error.\n    \"\"\"\n    conn = get_db()",
         "detail": "repositories.rep_pedidos_productos",
         "documentation": {}
     },
@@ -1705,7 +1740,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedidos_productos",
         "description": "repositories.rep_pedidos_productos",
-        "peekOfCode": "def actualizar_producto_pedido(id_pedido, id_producto_FK, cantidad, precio_unitario):\n    \"\"\"\n    Actualiza la cantidad y el precio unitario de un producto en un pedido.\n    :param id_pedido: ID del pedido.\n    :param id_producto_FK: ID del producto a actualizar.\n    :param cantidad: Nueva cantidad del producto.\n    :param precio_unitario: Nuevo precio unitario del producto.\n    :return: True si la actualización fue exitosa, False en caso contrario.\n    \"\"\"\n    conn = get_db()",
+        "peekOfCode": "def actualizar_producto_pedido(id_pedido, id_producto_FK, cantidad_por_producto, precio_unidad):\n    \"\"\"\n    Actualiza la cantidad y el precio unitario de un producto en un pedido.\n    :param id_pedido: ID del pedido.\n    :param id_producto_FK: ID del producto a actualizar.\n    :param cantidad_por_producto: Nueva cantidad del producto.\n    :param precio_unidad: Nuevo precio unitario del producto.\n    :return: True si la actualización fue exitosa, False en caso contrario.\n    \"\"\"\n    conn = get_db()",
         "detail": "repositories.rep_pedidos_productos",
         "documentation": {}
     },
@@ -2299,7 +2334,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def listar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedidos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=pedidos)\n        else:\n            logger.warning(\"No se encontraron pedidos en la base de datos.\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=[]), 404",
+        "peekOfCode": "def listar_pedidos():\n    try:\n        # Obtener el email del usuario autenticado desde la sesión\n        email = session.get('user_email', None)  # Asegúrate de usar 'user_email' en lugar de 'email'\n        # Agregar log para depurar\n        logger.info(f\"Sesion activa para el usuario con email: {email}\")\n        if not email:\n            logger.warning(\"No se ha encontrado un usuario autenticado.\")\n            return render_template(\"error/404.html\"), 404\n        # Obtener la contraseña del formulario (en una implementación real no la debes usar directamente)",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },

@@ -1,11 +1,14 @@
-from flask import Blueprint, render_template, redirect, url_for, request, jsonify
+from flask import Blueprint, render_template, redirect, session, url_for, request, jsonify
 from database.db_setup import get_db
 import repositories.rep_carrito as carritoDB
 import repositories.rep_cliente as clienteDB
+import repositories.rep_usuario as usuarioDB
 import repositories.rep_pedido as pedidoDB
 import repositories.rep_producto as productoDB
 from logs import logger
+import repositories.rep_usuario
 from routes.auth_routes import access_required
+import routes.usuario_routes
 
 # Blueprint
 pedido = Blueprint("pedido", __name__)
@@ -61,19 +64,48 @@ def mostrar_pedidos():
 @access_required('cliente')
 def listar_pedidos():
     try:
-        # Obtener todos los pedidos con sus productos
-        pedidos = pedidoDB.obtener_pedidos()
-        
-        if pedidos:
-            logger.info("OBTENIENDO LISTADO DE TODOS LOS PEDIDOS")
-            return render_template("pedido/pedido_tabla.html", pedidos=pedidos)
-        else:
-            logger.warning("No se encontraron pedidos en la base de datos.")
-            return render_template("pedido/pedido_tabla.html", pedidos=[]), 404
+        # Obtener el email del usuario autenticado desde la sesión
+        email = session.get('user_email', None)  # Asegúrate de usar 'user_email' en lugar de 'email'
 
+        # Agregar log para depurar
+        logger.info(f"Sesion activa para el usuario con email: {email}")
+
+        if not email:
+            logger.warning("No se ha encontrado un usuario autenticado.")
+            return render_template("error/404.html"), 404
+
+        # Obtener la contraseña del formulario (en una implementación real no la debes usar directamente)
+        password = 'password_placeholder'  # Aquí puedes obtener la contraseña de un formulario si es necesario
+
+        # Autenticar al usuario y obtener su id_usuario y rol
+        usuario = usuarioDB.obtener_rol_usuario_logueado(email, password)
+
+        if not usuario or usuario['rol'] != 'cliente':
+            logger.warning(f"El usuario con email {email} no es un cliente o no está autenticado correctamente.")
+            return render_template("error/404.html"), 404
+
+        # Obtener el id_cliente asociado al id_usuario
+        cliente = clienteDB.obtener_cliente_por_id_usuario(usuario["id_usuario"])
+
+        if not cliente:
+            logger.warning(f"No se encontró el cliente asociado al usuario con id {usuario['id_usuario']}.")
+            return render_template("error/404.html"), 404
+
+        id_cliente = cliente["id_cliente"]
+
+        # Obtener los pedidos del cliente
+        pedidos = pedidoDB.obtener_pedidos_por_cliente(id_cliente)
+
+        if pedidos:
+            logger.info(f"OBTENIENDO LISTADO DE PEDIDOS PARA EL CLIENTE {id_cliente}")
+            return render_template("pedido/pedido.html", pedidos=pedidos)
+        else:
+            logger.warning(f"No se encontraron pedidos para el cliente {id_cliente}.")
+            return render_template("error/404.html"), 404
     except Exception as e:
-        logger.error(f"Error al MOSTRAR TODOS LOS PEDIDOS: {e}")
+        logger.error(f"Error al MOSTRAR LOS PEDIDOS DEL CLIENTE: {e}")
         return render_template("error/404.html"), 500
+
 
 
 @pedido.route("/mostrar_pedido_detalle/<int:id_pedido>", methods=["GET"], endpoint="mostrar_pedido_detalle")
@@ -126,9 +158,9 @@ def ruta_crear_pedido():
 
         if request.method == "GET":
             # Si la solicitud es GET, simplemente renderiza el formulario vacío
-            clientes = clienteDB.obtener_clientes(conexion)  # Obtener los clientes
-            productos = productoDB.obtener_productos(conexion)  # Obtener los productos
-            carritos = carritoDB.obtener_carritos(conexion)  # Obtener los carritos
+            clientes = clienteDB.obtener_clientes()  # Obtener los clientes
+            productos = productoDB.obtener_productos()  # Obtener los productos
+            carritos = carritoDB.obtener_carritos()  # Obtener los carritos
             logger.info("SOLICITUD GET - FORMULARIO VACÍO")
             return render_template("pedido/pedido_nuevo.html", clientes=clientes, productos=productos, carritos=carritos)
 

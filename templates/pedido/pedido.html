@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 
-{% block title %}Cocina con Cheff Nava - Mis Pedidos {% endblock %}
+{% block title %}
+  Cocina con Cheff Nava - Mis Pedidos
+{% endblock %}
 
 {% block content %}
   <div class="contact-form">
@@ -8,23 +10,28 @@
       <h1 class="display-6 text-center text-dark mb-4">Mis Pedidos</h1>
 
       <div class="row justify-content-center">
-        {% for pedido in pedidos %}
-          <div class="col-md-4 mb-4">
-            <div class="card shadow-sm">
-              <a href="{{ url_for('pedido.mostrar_pedido_detalle', id_pedido=pedido.id_pedido) }}">
-                <div class="card-body text-center">
-                  <h5 class="card-title">Pedido #{{ pedido.num_pedido }}</h5>
-                  <p class="card-text text-muted">Cantidad: {{ pedido.cantidad }}</p>
-                  <p class="card-text text-muted">Precio Total: {{ pedido.precio_total }} €</p>
-                  <p class="card-text text-muted">Fecha: {{ pedido.fecha_pedido }}</p>
+        {% if pedidos %}
+          {% for pedido in pedidos %}
+            <!-- Mostrar detalles de cada pedido -->
+            <div class="col-md-4 mb-4">
+              <div class="card shadow-sm">
+                <a href="{{ url_for('pedido.mostrar_pedido_detalle', id_pedido=pedido.id_pedido) }}">
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Pedido #{{ pedido.num_pedido }}</h5>
+                    <p class="card-text text-muted">Cantidad: {{ pedido.cantidad }}</p>
+                    <p class="card-text text-muted">Precio Total: {{ pedido.precio_total }} €</p>
+                    <p class="card-text text-muted">Fecha: {{ pedido.fecha_pedido|date('%d/%m/%Y') }}</p>
+                  </div>
+                </a>
+                <div class="card-footer text-center">
+                  <a href="{{ url_for('pedido.mostrar_pedido_detalle', id_pedido=pedido.id_pedido) }}" class="btn btn-primary">Ver Detalles</a>
                 </div>
-              </a>
-              <div class="card-footer text-center">
-                <a href="{{ url_for('pedido.mostrar_pedido_detalle', id_pedido=pedido.id_pedido) }}" class="btn btn-primary">Ver Detalles</a>
               </div>
             </div>
-          </div>
-        {% endfor %}
+          {% endfor %}
+        {% else %}
+          <p>No tienes pedidos registrados.</p>
+        {% endif %}
       </div>
     </div>
   </div>

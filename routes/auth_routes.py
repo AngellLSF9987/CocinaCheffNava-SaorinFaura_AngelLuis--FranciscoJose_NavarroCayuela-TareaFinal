@@ -87,11 +87,16 @@ def login():
                         flash("No se encontró información del trabajador.", "warning")
                         return redirect(url_for("auth.login"))
 
+                # Log para verificar el contenido de la sesión
+                logger.info(f"Usuario autenticado: {email}, Rol: {nombre_rol}, ID Usuario: {id_usuario}")
+                logger.info(f"Contenido de la sesión después de login: {session}")
+
                 # Redirigir al índice
                 return redirect(url_for("index"))
 
             except Exception as e:
                 flash("Hubo un error al procesar tu solicitud.", "danger")
+                logger.error(f"Error al procesar login: {e}")
                 return redirect(url_for("auth.login"))
         else:
             flash("Credenciales incorrectas.", "danger")
