@@ -304,6 +304,7 @@ def crear_tabla_pedidos_productos(cursor):
                                 fecha_registro DATE DEFAULT CURRENT_DATE,
                                 fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                             PRIMARY KEY (id_pedido_FK, id_producto_FK),
+                            UNIQUE(id_pedido_FK, id_producto_FK),  -- Esta línea es redundante, pero la puedes dejar por claridad
                             FOREIGN KEY (id_pedido_FK) REFERENCES Pedidos(id_pedido) ON DELETE CASCADE,
                             FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto) ON DELETE CASCADE
                     );

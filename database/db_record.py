@@ -573,16 +573,22 @@ def insertar_pedidos(cursor):
 
             # Ahora insertar los productos en Pedidos_Productos
             for id_producto_FK, cantidad_por_producto, precio_carrito in carrito_items:
+                # Eliminar espacios extra si los valores son cadenas (en este caso, no parece que lo sean)
+                id_producto_FK = str(id_producto_FK).strip()  # Asegurarse que sea un string sin espacios
+                cantidad_por_producto = int(cantidad_por_producto)  # Convertir a entero
+                precio_carrito = Decimal(str(precio_carrito).strip())  # Convertir a decimal sin espacios extra
+
                 precio_total = (precio_carrito * cantidad_por_producto * Decimal('1.21'))  # Precio total por producto con IVA
 
                 # Verificar si el producto ya está asociado con el pedido
                 cursor.execute(
-                    """SELECT 1 FROM Pedidos_Productos 
+                    """SELECT * FROM Pedidos_Productos 
                     WHERE id_pedido_FK = %s AND id_producto_FK = %s""",
                     (id_pedido, id_producto_FK)
                 )
-                if not cursor.fetchone():
-                    # Insertar el producto en Pedidos_Productos si no existe
+                producto_existente = cursor.fetchone()
+                if not producto_existente:
+                    # Insertar el producto si no existe
                     cursor.execute(
                         """INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad_por_producto, precio_total)
                         VALUES (%s, %s, %s, %s);""",
