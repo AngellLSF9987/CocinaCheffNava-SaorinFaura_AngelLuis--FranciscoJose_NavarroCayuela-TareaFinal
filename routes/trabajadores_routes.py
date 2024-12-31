@@ -15,7 +15,7 @@ def cargar():
     global conexion
     conexion = get_db()
 
-@trabajador.route("/mostrar_trabajadores")
+@trabajador.route("/mostrar_trabajadores", methods=["GET"], endpoint="gestion_trabajadores")
 @access_required
 def mostrar_trabajadores():
     try:

@@ -1246,11 +1246,11 @@
         "documentation": {}
     },
     {
-        "label": "insertar_carritos",
+        "label": "insertar_carrito",
         "kind": 2,
         "importPath": "database.db_record",
         "description": "database.db_record",
-        "peekOfCode": "def insertar_carritos(cursor):\n    # Datos de ejemplo para carritos de compra y productos asociados\n    carritos_prueba = [\n        (1, [(1, 2), (2, 1)]),  # Cliente 1, productos 1 y 2 con cantidades 2 y 1 respectivamente\n        (2, [(3, 5), (4, 3)]),  # Cliente 2, productos 3 y 4 con cantidades 5 y 3 respectivamente\n    ]\n    for id_cliente_FK, productos in carritos_prueba:\n        # Comprobar si ya existe un carrito para este cliente\n        cursor.execute(\"SELECT id_carrito FROM Carrito WHERE id_cliente_FK = %s\", (id_cliente_FK,))\n        carrito_existente = cursor.fetchone()",
+        "peekOfCode": "def insertar_carrito(cursor):\n    # Insertar datos de ejemplo en la tabla Carrito\n    datos_carrito = [\n        (1, 101, 2, 10.50),  # id_cliente_FK, id_producto_FK, cantidad, precio_unitario\n        (2, 102, 1, 20.00),\n        (1, 103, 3, 15.75),\n        (3, 101, 1, 10.50),\n    ]\n    print(f\"Listado Carritos: {datos_carrito}\")\n    logger.info(f\"Listado Carritos: {datos_carrito}\")",
         "detail": "database.db_record",
         "documentation": {}
     },
@@ -1259,7 +1259,16 @@
         "kind": 2,
         "importPath": "database.db_record",
         "description": "database.db_record",
-        "peekOfCode": "def insertar_pedidos(cursor):\n    # Datos de ejemplo para pedidos y productos asociados\n    pedidos_prueba = [\n        (101, 1, 1, [  # Pedido 101, Cliente 1, Carrito 1\n            (1, 2), (2, 1)  # Productos 1 y 2 con cantidades 2 y 1 respectivamente\n        ]),\n        (102, 2, 2, [  # Pedido 102, Cliente 2, Carrito 2\n            (3, 5), (4, 3)  # Productos 3 y 4 con cantidades 5 y 3 respectivamente\n        ]),\n    ]",
+        "peekOfCode": "def insertar_pedidos(cursor):\n    # Insertar datos de ejemplo en la tabla Pedidos\n    datos_pedidos = [\n        (1001, 1, 2, 31.00),  # num_pedido, id_cliente_FK, cantidad, precio_carrito\n        (1002, 2, 1, 20.00),\n        (1003, 1, 3, 47.25),\n        (1004, 3, 1, 10.50),\n    ]\n    print(f\"Listado Pedidos: {datos_pedidos}\")\n    logger.info(f\"Listado Pedidos: {datos_pedidos}\")",
+        "detail": "database.db_record",
+        "documentation": {}
+    },
+    {
+        "label": "insertar_pedidos_productos",
+        "kind": 2,
+        "importPath": "database.db_record",
+        "description": "database.db_record",
+        "peekOfCode": "def insertar_pedidos_productos(cursor):\n    # Insertar datos de ejemplo en la tabla Pedidos_Productos\n    datos_pedidos_productos = [\n        (1001, 101, 2, 10.50),  # id_pedido_FK, id_producto_FK, cantidad, precio_unitario\n        (1002, 102, 1, 20.00),\n        (1003, 103, 3, 15.75),\n        (1004, 101, 1, 10.50),\n    ]\n    print(f\"Listado Pedidos_Productos: {datos_pedidos_productos}\")\n    logger.info(f\"Listado Pedidos_Productos: {datos_pedidos_productos}\")",
         "detail": "database.db_record",
         "documentation": {}
     },
@@ -1322,7 +1331,7 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def crear_tabla_roles(cursor):\n    \"\"\"Crea la tabla Roles.\"\"\"\n    try:\n        mensaje = \"Creando tabla Roles.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Roles (\n                            id_rol INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_rol VARCHAR(255) UNIQUE NOT NULL",
+        "peekOfCode": "def crear_tabla_roles(cursor):\n    \"\"\"Crea la tabla Roles.\"\"\"\n    try:\n        mensaje = \"Creando tabla Roles.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Roles (\n                            id_rol INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_rol VARCHAR(255) UNIQUE NOT NULL,",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -1367,7 +1376,7 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def crear_tabla_productos(cursor):\n    \"\"\"Crea la tabla Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Productos (\n                            id_producto INT AUTO_INCREMENT PRIMARY KEY,\n                            nombre_producto TEXT,",
+        "peekOfCode": "def crear_tabla_productos(cursor):\n    \"\"\"Crea la tabla Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Productos (\n                                id_producto INT AUTO_INCREMENT PRIMARY KEY,\n                                nombre_producto TEXT,",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -1376,7 +1385,7 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def crear_tabla_carrito(cursor):\n    \"\"\"Crea la tabla Carrito.\"\"\"\n    try:\n        mensaje = \"Creando tabla Carrito.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")            \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Carrito (\n                            id_carrito INT AUTO_INCREMENT PRIMARY KEY,\n                            cantidad INT NOT NULL,",
+        "peekOfCode": "def crear_tabla_carrito(cursor):\n    \"\"\"Crea la tabla Carrito.\"\"\"\n    try:\n        mensaje = \"Creando tabla Carrito.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")            \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Carrito (\n                                id_carrito INT AUTO_INCREMENT PRIMARY KEY,\n                                id_cliente_FK INT NOT NULL,",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -1385,16 +1394,16 @@
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def crear_tabla_pedidos(cursor):\n    \"\"\"Crea la tabla Pedidos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Pedidos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\") \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Pedidos (\n                            id_pedido INT AUTO_INCREMENT PRIMARY KEY,\n                            num_pedido INT,",
+        "peekOfCode": "def crear_tabla_pedidos(cursor):\n    \"\"\"Crea la tabla Pedidos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Pedidos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\") \n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Pedidos (\n                                id_pedido INT AUTO_INCREMENT PRIMARY KEY,\n                                num_pedido INT,",
         "detail": "database.db_setup",
         "documentation": {}
     },
     {
-        "label": "crear_tabla_carrito_productos",
+        "label": "crear_tabla_pedidos_productos",
         "kind": 2,
         "importPath": "database.db_setup",
         "description": "database.db_setup",
-        "peekOfCode": "def crear_tabla_carrito_productos(cursor):\n    \"\"\"Crea la tabla Carrito_Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Carrito_Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n            \"\"\"\n            CREATE TABLE IF NOT EXISTS carrito_productos (\n                id_carrito_FK INT NOT NULL,\n                id_producto_FK INT NOT NULL,",
+        "peekOfCode": "def crear_tabla_pedidos_productos(cursor):\n    \"\"\"Crea la tabla Pedidos_Productos.\"\"\"\n    try:\n        mensaje = \"Creando tabla Pedidos_Productos.\"\n        registrar_y_mostrar(mensaje, nivel=\"info\")\n        cursor.execute(\n                \"\"\"\n                CREATE TABLE IF NOT EXISTS Pedidos_Productos (\n                                id_pedido_FK INT NOT NULL,\n                                id_producto_FK INT NOT NULL,",
         "detail": "database.db_setup",
         "documentation": {}
     },
@@ -1574,7 +1583,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
+        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n                SELECT ",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1592,7 +1601,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
+        "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados y la información del cliente.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1601,7 +1610,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, id_carrito_FK, productos, fecha_pedido):\n    \"\"\"\n    Crea un pedido con varios productos.\n    - productos: Lista de diccionarios con id_producto y cantidad.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Insertar en la tabla Pedidos",
+        "peekOfCode": "def crear_pedido_con_productos(num_pedido, id_cliente_FK, productos, fecha_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Insertar en la tabla Pedidos\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Pedidos (num_pedido, id_cliente_FK, fecha_pedido) \n            VALUES (%s, %s, %s)\n            \"\"\",",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1610,7 +1619,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Obtener el valor actual de la cantidad para verificar si ha cambiado",
+        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos y devuelve los detalles completos del pedido actualizado,\n    incluyendo la información del cliente y los productos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1619,7 +1628,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"DELETE FROM Pedidos WHERE id_pedido = %s\",\n            (id_pedido,),\n        )\n        conn.commit()\n    except Error as e:",
+        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificar si el pedido existe antes de borrarlo\n        cursor.execute(\"SELECT 1 FROM Pedidos WHERE id_pedido = %s\", (id_pedido,))\n        if cursor.fetchone() is None:\n            logger.error(f\"Pedido con id_pedido {id_pedido} no encontrado.\")\n            return None  # Si no existe, no hace nada y devuelve None\n        # Si el pedido existe, lo eliminamos",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1844,7 +1853,7 @@
         "kind": 2,
         "importPath": "routes.auth_routes",
         "description": "routes.auth_routes",
-        "peekOfCode": "def logout():\n    session.clear()  # Elimina todos los datos de la sesión\n    flash(\"Has cerrado sesión exitosamente.\", \"success\")\n    return redirect(url_for(\"auth.login\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
+        "peekOfCode": "def logout():\n    session.clear()  # Elimina todos los datos de la sesión\n    flash(\"Has cerrado sesión exitosamente.\", \"success\")\n    return redirect(url_for(\"index\"))\n# Ruta de reset password\n@auth.route(\"/reset_password\", methods=[\"GET\", \"POST\"], endpoint=\"reset_password\")\ndef reset_password():\n    # Lógica para el restablecimiento de la contraseña\n    return render_template(\"auth/reset_password.html\")",
         "detail": "routes.auth_routes",
         "documentation": {}
     },
@@ -2168,16 +2177,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/pedido_template\")\ndef pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required\ndef mostrar_pedidos():\n    try:",
-        "detail": "routes.pedidos_routes",
-        "documentation": {}
-    },
-    {
-        "label": "pedido_template",
-        "kind": 2,
-        "importPath": "routes.pedidos_routes",
-        "description": "routes.pedidos_routes",
-        "peekOfCode": "def pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required('trabajador')\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2222,7 +2222,7 @@
         "kind": 5,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "pedido = Blueprint(\"pedido\", __name__)\n@pedido.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/pedido_template\")\ndef pedido_template():\n    return render_template('pedido/pedido.html')\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required",
+        "peekOfCode": "pedido = Blueprint(\"pedido\", __name__)\n@pedido.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required('trabajador')\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2321,7 +2321,7 @@
         "kind": 2,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\")\n@access_required\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\", methods=[\"GET\"], endpoint=\"gestion_trabajadores\")\n@access_required\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()\n        if trabajador in trabajadores:\n            logger.info(\"REDIRECCIONANDO A LISTADO DE TRABAJADORES DESDE AMDIN\"), 200",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },
@@ -2375,7 +2375,7 @@
         "kind": 5,
         "importPath": "routes.trabajadores_routes",
         "description": "routes.trabajadores_routes",
-        "peekOfCode": "trabajador = Blueprint(\"trabajador\", __name__)\n@trabajador.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\")\n@access_required\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()",
+        "peekOfCode": "trabajador = Blueprint(\"trabajador\", __name__)\n@trabajador.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@trabajador.route(\"/mostrar_trabajadores\", methods=[\"GET\"], endpoint=\"gestion_trabajadores\")\n@access_required\ndef mostrar_trabajadores():\n    try:\n        trabajadores = trabajadorDB.obtener_trabajadores()",
         "detail": "routes.trabajadores_routes",
         "documentation": {}
     },

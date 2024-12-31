@@ -16,12 +16,8 @@ def cargar():
     global conexion
     conexion = get_db()
 
-@pedido.route("/pedido_template")
-def pedido_template():
-    return render_template('pedido/pedido.html')
-
 @pedido.route("/mostrar_pedidos", methods=["GET"], endpoint="mostrar_pedidos")
-@access_required
+@access_required('trabajador')
 def mostrar_pedidos():
     try:
         # Obtener todos los pedidos con sus productos

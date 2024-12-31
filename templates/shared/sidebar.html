@@ -1,31 +1,78 @@
 <!-- sidebar.html (izquierda) -->
 {% block content %}
   <nav class="nav flex-column">
-    <ul>
-      <!-- Ruta ajustada para la lista de productos -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('producto.mostrar_productos') }}">Productos</a>
-      </li>
-
-      <!-- Ruta ajustada para la lista de categorías -->
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('categoria.mostrar_categorias') }}">Categorías</a>
-      </li>
-
-      <!-- Ruta ajustada para la lista de mis pedidos -->
-      {% if user_role == 'cliente' %}
+     <!-- Menú de autenticación -->
+     <ul>
+      {% if session.get('user_role') %}
+        <!-- Usuario autenticado -->
         <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Mis Pedidos</a>
+          <span class="nav-link">Bienvenido, {{ session.get('user_email', 'Usuario') }}</span>
+        </li>                    
+        <li class="nav-item">
+          {% if session.get('id_cliente') %}
+            <a class="nav-link" href="{{ url_for('cliente.perfil_cliente', id_cliente=session.id_cliente) }}">Tu Perfil</a>
+
+                    <!-- Ruta ajustada para la lista de mis pedidos -->
+            <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Mis Pedidos</a>
+          {% elif session.get('id_trabajador') %}
+            <a class="nav-link" href="{{ url_for('trabajador.perfil_trabajador', id_trabajador=session.id_trabajador) }}">Tu Perfil</a>
+            <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Gestión de Pedidos</a>
+          {% else %}
+            <a class="nav-link" href="#">Tu Perfil</a> <!-- Mostrar algo genérico o deshabilitar el enlace -->
+          {% endif %}
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" style="padding-top: 3em;" href="{{ url_for('auth.logout') }}">Logout</a>
+        </li>
+      {% else %}
+        <!-- Usuario no autenticado -->
+        <li class="nav-item">
+          <a class="nav-link" style="padding-top: 3em;" href="{{ url_for('auth.login') }}">Login</a>
         </li>
       {% endif %}
-      
-      <!-- Ruta ajustada para la lista de contacto y servicios -->
+    </ul>
+    <ul>
+      <!-- Enlace de Inicio -->
       <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a>
+        <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Inicio</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a>
-      </li>
+
+      {% set user_role = session.get('user_role', '') %}
+
+      {% if user_role == 'cliente' %}
+        <!-- Opciones para Clientes -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('producto.listar_productos') }}">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('categoria.listar_categorias') }}">Categorías</a>
+        </li>
+      {% elif user_role == 'trabajador' %}
+        <!-- Opciones para Trabajadores -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('producto.mostrar_productos') }}">Gestión de Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('categoria.mostrar_categorias') }}">Gestión de Categorías</a>
+        </li>
+      {% else %}
+        <!-- Opciones para Usuarios no autenticados -->
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('producto.listar_productos') }}">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('categoria.listar_categorias') }}">Categorías</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('extra.servicio') }}">Servicios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('extra.contacto') }}">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('extra.privacidad') }}">Privacidad</a>
+        </li>
+      {% endif %}
     </ul>
   </nav>
 {% endblock %}

@@ -16,13 +16,13 @@ body {
 
 /* El sidebar izquierdo */
 #sidebar-left {
-    background-color: #0f80f1;  /* Color de fondo para el sidebar */
-    color: aliceblue;
-    padding: 10px;
+    background-color: #f1f1f1; /* Color de fondo para el sidebar */
+    color: rgb(244, 247, 250);
+    padding: 10px 25px 10px 0;
     position: sticky;  /* Cambia 'fixed' por 'sticky' para que sea más adaptable */
     top: 0;
     left: 0;
-    width: 200px;
+    width: 180px;
     height: 100vh;  /* Asegura que el sidebar ocupe toda la altura */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;  /* Para asegurarse de que el sidebar esté encima del contenido */
@@ -45,7 +45,7 @@ main {
     height: 100vh;    /* Asegura que ocupe toda la altura de la pantalla */
     background-color: #f1f1f1;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 5px;
     z-index: 1;       /* Asegura que no quede detrás de otros elementos */
 }
 

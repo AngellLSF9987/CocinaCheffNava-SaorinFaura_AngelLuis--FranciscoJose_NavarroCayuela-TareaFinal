@@ -103,7 +103,7 @@ def login():
 def logout():
     session.clear()  # Elimina todos los datos de la sesión
     flash("Has cerrado sesión exitosamente.", "success")
-    return redirect(url_for("auth.login"))
+    return redirect(url_for("index"))
 
 
 # Ruta de reset password

@@ -19,7 +19,9 @@ def validar_claves_foraneas(id_cliente_FK, id_producto_FK, id_carrito_FK):
             raise ValueError(f"Cliente con ID {id_cliente_FK} no encontrado.")
 
         # Validar producto
-        cursor.execute("SELECT 1 FROM Productos WHERE id_producto = %s", (id_producto_FK,))
+        cursor.execute(
+            "SELECT 1 FROM Productos WHERE id_producto = %s", (id_producto_FK,)
+        )
         if not cursor.fetchone():
             raise ValueError(f"Producto con ID {id_producto_FK} no encontrado.")
 
@@ -47,14 +49,15 @@ def obtener_pedidos():
     cursor = conn.cursor(dictionary=True)
     try:
         query = """
-            SELECT 
-                c.nombre_cliente, 
-                c.dni_cliente, 
-                pe.cantidad, 
-                ca.precio_unitario * ca.cantidad AS precio_carrito
-            FROM Pedidos pe
-            INNER JOIN Clientes c ON pe.id_cliente_FK = c.id_cliente
-            INNER JOIN Carrito ca ON pe.id_carrito_FK = ca.id_carrito
+                SELECT 
+                    c.nombre_cliente,
+                    c.dni_cliente,
+                    pp.cantidad,
+                    pp.cantidad * pp.precio_unitario AS precio_total
+                FROM Pedidos p
+                INNER JOIN Clientes c ON p.id_cliente_FK = c.id_cliente
+                INNER JOIN Pedidos_Productos pp ON p.id_pedido = pp.id_pedido_FK
+                INNER JOIN Productos pr ON pp.id_producto_FK = pr.id_producto;
         """
         cursor.execute(query)
         pedidos = cursor.fetchall()
@@ -82,47 +85,66 @@ def obtener_pedido_id(id_pedido):
     cursor = conn.cursor(dictionary=True)
     try:
         query = """
-            SELECT 
-                p.id_pedido,
-                p.num_pedido,
-                c.nombre_cliente,
-                c.dni_cliente,
-                pr.nombre_producto,
-                pr.precio,
-                ca.precio_unitario * ca.cantidad AS precio_carrito,
-                p.cantidad,
-                p.fecha_pedido
-            FROM Pedidos p
-            INNER JOIN Clientes c ON p.id_cliente_FK = c.id_cliente
-            INNER JOIN Productos pr ON p.id_producto_FK = pr.id_producto
-            INNER JOIN Carrito ca ON p.id_carrito_FK = ca.id_carrito
-            WHERE p.id_pedido = %s
+                SELECT 
+                    p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,
+                    c.nombre_cliente, c.apellido1, c.apellido2, c.dni_cliente,
+                    c.telefono, c.direccion, c.email,
+                    pr.nombre_producto, pr.imagen, pr.precio AS precio_unitario,
+                    pp.cantidad, pp.precio_unitario * pp.cantidad AS precio_total
+                FROM Pedidos p
+                INNER JOIN Clientes c ON p.id_cliente_FK = c.id_cliente
+                INNER JOIN Pedidos_Productos pp ON p.id_pedido = pp.id_pedido_FK
+                INNER JOIN Productos pr ON pp.id_producto_FK = pr.id_producto
+                WHERE p.id_pedido = %s;
         """
         cursor.execute(query, (id_pedido,))
-        pedido = cursor.fetchone()
+        resultados = cursor.fetchall()
 
-        # Retornar los datos del pedido como un diccionario
-        return {
-            "id_pedido": pedido["id_pedido"],
-            "num_pedido": pedido["num_pedido"],
-            "nombre_cliente": pedido["nombre_cliente"],
-            "dni_cliente": pedido["dni_cliente"],
-            "nombre_producto": pedido["nombre_producto"],
-            "precio_producto": pedido["precio"],
-            "precio_carrito": pedido["precio_carrito"],
-            "cantidad": pedido["cantidad"],
-            "fecha_pedido": pedido["fecha_pedido"],
+        if not resultados:
+            return None
+
+        # Organizar los resultados en una estructura jerárquica
+        pedido = {
+            "id_pedido": resultados[0]["id_pedido"],
+            "num_pedido": resultados[0]["num_pedido"],
+            "fecha_pedido": resultados[0]["fecha_pedido"],
+            "cliente": {
+                "id_cliente": resultados[0]["id_cliente_FK"],
+                "nombre": resultados[0]["nombre_cliente"],
+                "apellido1": resultados[0]["apellido1"],
+                "apellido2": resultados[0]["apellido2"],
+                "dni": resultados[0]["dni_cliente"],
+                "telefono": resultados[0]["telefono"],
+                "direccion": resultados[0]["direccion"],
+                "email": resultados[0]["email"],
+            },
+            "productos": [],
         }
+
+        for row in resultados:
+            if row["nombre_producto"]:
+                pedido["productos"].append(
+                    {
+                        "nombre_producto": row["nombre_producto"],
+                        "imagen": row["imagen"],
+                        "precio_unitario": row["precio_unitario"],
+                        "cantidad": row["cantidad"],
+                        "precio_total": row["precio_total"],
+                    }
+                )
+
+        return pedido
+
     except Error as e:
         logger.error(f"Error obtener pedido por ID: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
+        return None  # Devolvemos None en caso de error
     finally:
         cursor.close()
 
 
 def obtener_pedido_con_productos():
     """
-    Obtiene todos los pedidos con sus productos asociados.
+    Obtiene todos los pedidos con sus productos asociados y la información del cliente.
     """
     conn = get_db()
     cursor = conn.cursor(dictionary=True)
@@ -130,11 +152,14 @@ def obtener_pedido_con_productos():
         query = """
             SELECT 
                 p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,
-                ca.id_carrito, pr.nombre_producto, pp.cantidad, pp.precio_carrito
+                ca.id_carrito, pr.nombre_producto, pr.imagen, pp.cantidad, pp.precio_carrito,
+                c.nombre_cliente, c.apellido1, c.apellido2, c.dni_cliente, c.telefono, 
+                c.direccion, c.email
             FROM Pedidos p
             LEFT JOIN Carrito ca ON p.id_carrito_FK = ca.id_carrito
             LEFT JOIN Productos pr ON pr.id_producto = ca.id_producto_FK
             LEFT JOIN Pedido_Productos pp ON p.id_pedido = pp.id_pedido_FK
+            LEFT JOIN Clientes c ON p.id_cliente_FK = c.id_cliente
             ORDER BY p.id_pedido;
         """
         cursor.execute(query)
@@ -149,14 +174,26 @@ def obtener_pedido_con_productos():
                     "num_pedido": row["num_pedido"],
                     "id_cliente": row["id_cliente_FK"],
                     "fecha_pedido": row["fecha_pedido"],
+                    "cliente": {
+                        "nombre": row["nombre_cliente"],
+                        "apellido1": row["apellido1"],
+                        "apellido2": row["apellido2"],
+                        "dni": row["dni_cliente"],
+                        "telefono": row["telefono"],
+                        "direccion": row["direccion"],
+                        "email": row["email"],
+                    },
                     "productos": [],
                 }
             if row["nombre_producto"]:
-                pedidos[id_pedido]["productos"].append({
-                    "nombre": row["nombre_producto"],
-                    "cantidad": row["cantidad"],
-                    "precio_carrito": row["precio_carrito"],
-                })
+                pedidos[id_pedido]["productos"].append(
+                    {
+                        "nombre": row["nombre_producto"],
+                        "imagen": row["imagen"],
+                        "cantidad": row["cantidad"],
+                        "precio_carrito": row["precio_carrito"],
+                    }
+                )
 
         return list(pedidos.values())
 
@@ -167,51 +204,49 @@ def obtener_pedido_con_productos():
         cursor.close()
 
 
-def crear_pedido_con_productos(num_pedido, id_cliente_FK, id_carrito_FK, productos, fecha_pedido):
-    """
-    Crea un pedido con varios productos.
-    - productos: Lista de diccionarios con id_producto y cantidad.
-
-    :param conn: Conexión a la base de datos.
-    """
+def crear_pedido_con_productos(num_pedido, id_cliente_FK, productos, fecha_pedido):
     conn = get_db()
-    cursor = conn.cursor(dictionary=True)
+    cursor = conn.cursor()
     try:
         # Insertar en la tabla Pedidos
         cursor.execute(
             """
-            INSERT INTO Pedidos (num_pedido, id_cliente_FK, id_carrito_FK, fecha_pedido) 
-            VALUES (%s, %s, %s, %s)
+            INSERT INTO Pedidos (num_pedido, id_cliente_FK, fecha_pedido) 
+            VALUES (%s, %s, %s)
             """,
-            (num_pedido, id_cliente_FK, id_carrito_FK, fecha_pedido),
+            (num_pedido, id_cliente_FK, fecha_pedido),
         )
-        id_pedido = cursor.lastrowid  # Obtener el ID del pedido recién creado
+        id_pedido = cursor.lastrowid
 
-        # Insertar los productos relacionados en la tabla Pedido_Productos
+        # Insertar los productos en la tabla Pedidos_Productos
         for producto in productos:
-            id_producto_FK = producto["id_producto"]
-            cantidad = producto["cantidad"]
-            precio_carrito = producto["precio_carrito"]
             cursor.execute(
                 """
-                INSERT INTO Pedido_Productos (id_pedido_FK, id_producto_FK, cantidad, precio_carrito) 
+                INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad, precio_unitario) 
                 VALUES (%s, %s, %s, %s)
                 """,
-                (id_pedido, id_producto_FK, cantidad, precio_carrito),
+                (
+                    id_pedido,
+                    producto["id_producto"],
+                    producto["cantidad"],
+                    producto["precio_unitario"],
+                ),
             )
-
         conn.commit()
         return id_pedido
     except Error as e:
-        logger.error(f"Error al CREAR PEDIDO: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
+        logger.error(f"Error al crear pedido: {e}")
+        conn.rollback()
+        return None
     finally:
         cursor.close()
 
 
 def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):
     """
-    Actualiza un pedido en la tabla Pedidos.
+    Actualiza un pedido en la tabla Pedidos y devuelve los detalles completos del pedido actualizado,
+    incluyendo la información del cliente y los productos.
+
     :param id_pedido: ID del pedido a buscar.
     :param conn: Conexión a la base de datos.
     """
@@ -219,7 +254,9 @@ def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_c
     cursor = conn.cursor(dictionary=True)
     try:
         # Obtener el valor actual de la cantidad para verificar si ha cambiado
-        cursor.execute("SELECT cantidad FROM Pedidos WHERE id_pedido = %s", (id_pedido,))
+        cursor.execute(
+            "SELECT cantidad FROM Pedidos WHERE id_pedido = %s", (id_pedido,)
+        )
         resultado = cursor.fetchone()
 
         if resultado:
@@ -238,42 +275,95 @@ def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_c
                 WHERE id_pedido = %s
                 """,
                 (
-                    num_pedido,
-                    id_cliente_FK,
-                    id_producto_FK,
-                    id_carrito_FK,
-                    cantidad,
-                    fecha_pedido,
-                    id_pedido,
+                    num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido, id_pedido,
                 ),
             )
             conn.commit()
-            return resultado
+
+            # Obtener los detalles del pedido actualizado con los datos del cliente y productos
+            query = """
+                SELECT 
+                    p.id_pedido, p.num_pedido, p.fecha_pedido,
+                    c.nombre_cliente, c.apellido1, c.apellido2, c.dni_cliente,
+                    c.telefono, c.direccion, c.email,
+                    pr.nombre_producto, pr.precio AS precio_unitario,
+                    pp.cantidad, pp.precio_unitario * pp.cantidad AS precio_total
+                FROM Pedidos p
+                INNER JOIN Clientes c ON p.id_cliente_FK = c.id_cliente
+                INNER JOIN Pedidos_Productos pp ON p.id_pedido = pp.id_pedido_FK
+                INNER JOIN Productos pr ON pp.id_producto_FK = pr.id_producto
+                WHERE p.id_pedido = %s;
+            """
+            cursor.execute(query, (id_pedido,))
+            resultados = cursor.fetchall()
+
+            if not resultados:
+                return None  # No se encuentra el pedido
+
+            # Organizar los resultados en una estructura jerárquica
+            pedido_actualizado = {
+                "id_pedido": resultados[0]["id_pedido"],
+                "num_pedido": resultados[0]["num_pedido"],
+                "fecha_pedido": resultados[0]["fecha_pedido"],
+                "cliente": {
+                    "id_cliente": resultados[0]["id_cliente_FK"],
+                    "nombre": resultados[0]["nombre_cliente"],
+                    "apellido1": resultados[0]["apellido1"],
+                    "apellido2": resultados[0]["apellido2"],
+                    "dni": resultados[0]["dni_cliente"],
+                    "telefono": resultados[0]["telefono"],
+                    "direccion": resultados[0]["direccion"],
+                    "email": resultados[0]["email"]
+                },
+                "productos": []
+            }
+
+            for row in resultados:
+                if row["nombre_producto"]:
+                    pedido_actualizado["productos"].append({
+                        "nombre_producto": row["nombre_producto"],
+                        "precio_unitario": row["precio_unitario"],
+                        "cantidad": row["cantidad"],
+                        "precio_total": row["precio_total"]
+                    })
+
+            return pedido_actualizado
+
         else:
             print("❌ Pedido no encontrado con id_pedido:", id_pedido)
+            return None
     except Error as e:
         logger.error(f"Error al ACTUALIZAR PEDIDO: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
+        return None  # Devolvemos None en caso de error
     finally:
         cursor.close()
-
 
 def borrar_pedido(id_pedido):
     conn = get_db()
     cursor = conn.cursor()
     try:
+        # Verificar si el pedido existe antes de borrarlo
+        cursor.execute("SELECT 1 FROM Pedidos WHERE id_pedido = %s", (id_pedido,))
+        if cursor.fetchone() is None:
+            logger.error(f"Pedido con id_pedido {id_pedido} no encontrado.")
+            return None  # Si no existe, no hace nada y devuelve None
+
+        # Si el pedido existe, lo eliminamos
         cursor.execute(
             "DELETE FROM Pedidos WHERE id_pedido = %s",
             (id_pedido,),
         )
         conn.commit()
+        return {"status": "success", "message": f"Pedido {id_pedido} borrado correctamente."}
     except Error as e:
         logger.error(f"Error al BORRAR PEDIDO: {e}")
-        return []  # Devolvemos una lista vacía en caso de error
+        return {"status": "error", "message": str(e)}  # Devolver un error detallado
     finally:
         cursor.close()
+
 
 # Generar número de pedido aleatorio
 def generar_numero_pedido():
     import random
+
     return f"PED-{random.randint(1000, 9999)}"  # Número de pedido aleatorio

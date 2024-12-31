@@ -85,7 +85,7 @@ def crear_tablas():
             crear_tabla_productos,
             crear_tabla_carrito,
             crear_tabla_pedidos,
-            crear_tabla_carrito_productos
+            crear_tabla_pedidos_productos
         ]
         for funcion in funciones_creacion:
             funcion(cursor)
@@ -107,7 +107,9 @@ def crear_tabla_roles(cursor):
                 """
                 CREATE TABLE IF NOT EXISTS Roles (
                             id_rol INT AUTO_INCREMENT PRIMARY KEY,
-                            nombre_rol VARCHAR(255) UNIQUE NOT NULL
+                            nombre_rol VARCHAR(255) UNIQUE NOT NULL,
+                            fecha_registro DATE DEFAULT CURRENT_DATE,
+                            fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP                            
                     );
             """
             )
@@ -127,11 +129,11 @@ def crear_tabla_usuarios(cursor):
                             email VARCHAR(255) NOT NULL UNIQUE,
                             contraseña VARCHAR(255) NOT NULL UNIQUE,
                             fecha_registro DATE DEFAULT CURRENT_DATE,
+                            fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                             id_rol_FK INT,
                         
-                            FOREIGN KEY (id_rol_FK) REFERENCES Roles(id_rol)
-                        
-                    );
+                        FOREIGN KEY (id_rol_FK) REFERENCES Roles(id_rol)
+                );
             """
             )
         registrar_y_mostrar("Tabla Usuarios creada exitosamente.", nivel="info")
@@ -154,9 +156,11 @@ def crear_tabla_clientes(cursor):
                             telefono VARCHAR(9) NOT NULL,
                             direccion VARCHAR(255) NOT NULL,
                             email VARCHAR(255) NOT NULL,
+                            fecha_registro DATE DEFAULT CURRENT_DATE,
+                            fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,                            
                             id_usuario_FK INT,
                         
-                            FOREIGN KEY (id_usuario_FK) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
+                        FOREIGN KEY (id_usuario_FK) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE
                     );
             """
             )
@@ -180,9 +184,11 @@ def crear_tabla_trabajadores(cursor):
                             telefono VARCHAR(9) NOT NULL,
                             direccion VARCHAR(255) NOT NULL,
                             email VARCHAR(255) NOT NULL,
+                            fecha_registro DATE DEFAULT CURRENT_DATE,
+                            fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,                            
                             id_usuario_FK INT,
                         
-                            FOREIGN KEY (id_usuario_FK) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE                  
+                        FOREIGN KEY (id_usuario_FK) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE                  
                     );
             """
             )
@@ -201,7 +207,9 @@ def crear_tabla_categorias(cursor):
                             id_categoria INT AUTO_INCREMENT PRIMARY KEY,
                             nombre_categoria VARCHAR(255),
                             descripcion TEXT,
-                            imagen VARCHAR(255)
+                            imagen VARCHAR(255),
+                            fecha_registro DATE DEFAULT CURRENT_DATE,
+                            fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP                            
                     );
             """
             )
@@ -217,13 +225,14 @@ def crear_tabla_productos(cursor):
         cursor.execute(
                 """
                 CREATE TABLE IF NOT EXISTS Productos (
-                            id_producto INT AUTO_INCREMENT PRIMARY KEY,
-                            nombre_producto TEXT,
-                            descripcion TEXT,
-                            precio DECIMAL(10, 2) NOT NULL,
-                            imagen VARCHAR(255),
-                            id_categoria_FK INT,
-                        
+                                id_producto INT AUTO_INCREMENT PRIMARY KEY,
+                                nombre_producto TEXT,
+                                descripcion TEXT,
+                                precio DECIMAL(10, 2) NOT NULL,
+                                imagen VARCHAR(255),
+                                id_categoria_FK INT,
+                                fecha_registro DATE DEFAULT CURRENT_DATE,
+                                fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
                             FOREIGN KEY (id_categoria_FK) REFERENCES Categorias(id_categoria)   
                     );
             """
@@ -241,14 +250,15 @@ def crear_tabla_carrito(cursor):
         cursor.execute(
                 """
                 CREATE TABLE IF NOT EXISTS Carrito (
-                            id_carrito INT AUTO_INCREMENT PRIMARY KEY,
-                            cantidad INT NOT NULL,
-                            precio_unitario DECIMAL(10,2) NOT NULL,
-                            id_producto_FK INT,
-                            id_cliente_FK INT,
-                        
-                            FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto),
-                            FOREIGN KEY (id_cliente_FK) REFERENCES Clientes(id_cliente)
+                                id_carrito INT AUTO_INCREMENT PRIMARY KEY,
+                                id_cliente_FK INT NOT NULL,
+                                id_producto_FK INT NOT NULL,
+                                cantidad INT NOT NULL,
+                                precio_unitario DECIMAL(10, 2) NOT NULL,
+                                fecha_registro DATE DEFAULT CURRENT_DATE,
+                                fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                            FOREIGN KEY (id_cliente_FK) REFERENCES Clientes(id_cliente),
+                            FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto)
                     );
             """
             )
@@ -264,37 +274,42 @@ def crear_tabla_pedidos(cursor):
         cursor.execute(
                 """
                 CREATE TABLE IF NOT EXISTS Pedidos (
-                            id_pedido INT AUTO_INCREMENT PRIMARY KEY,
-                            num_pedido INT,
-                            id_carrito_FK INT,
-                            cantidad INT,
-                            precio_carrito DECIMAL(10,2),
-                            fecha_pedido DATE DEFAULT CURRENT_DATE,
-                            FOREIGN KEY (id_carrito_FK) REFERENCES Carrito(id_carrito)
+                                id_pedido INT AUTO_INCREMENT PRIMARY KEY,
+                                num_pedido INT,
+                                id_cliente_FK INT,
+                                cantidad INT,
+                                precio_carrito DECIMAL(10,2),
+                                fecha_registro DATE DEFAULT CURRENT_DATE,
+                                fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                            FOREIGN KEY (id_cliente_FK) REFERENCES Clientes(id_cliente)
                     );
             """
             )
         registrar_y_mostrar("Tabla Pedidos creada exitosamente.", nivel="info")
     except Exception as e:
         registrar_y_mostrar(f"Error al crear la tabla Pedidos: {e}", nivel="error")
-        
-def crear_tabla_carrito_productos(cursor):
-    """Crea la tabla Carrito_Productos."""
+
+
+def crear_tabla_pedidos_productos(cursor):
+    """Crea la tabla Pedidos_Productos."""
     try:
-        mensaje = "Creando tabla Carrito_Productos."
+        mensaje = "Creando tabla Pedidos_Productos."
         registrar_y_mostrar(mensaje, nivel="info")
         cursor.execute(
-            """
-            CREATE TABLE IF NOT EXISTS carrito_productos (
-                id_carrito_FK INT NOT NULL,
-                id_producto_FK INT NOT NULL,
-                cantidad INT NOT NULL,
-                PRIMARY KEY (id_carrito_FK, id_producto_FK),
-                FOREIGN KEY (id_carrito_FK) REFERENCES Carrito(id_carrito) ON DELETE CASCADE,
-                FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto) ON DELETE CASCADE
-            );
+                """
+                CREATE TABLE IF NOT EXISTS Pedidos_Productos (
+                                id_pedido_FK INT NOT NULL,
+                                id_producto_FK INT NOT NULL,
+                                cantidad INT NOT NULL,
+                                precio_unitario DECIMAL(10, 2) NOT NULL,
+                                fecha_registro DATE DEFAULT CURRENT_DATE,
+                                fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                            PRIMARY KEY (id_pedido_FK, id_producto_FK),
+                            FOREIGN KEY (id_pedido_FK) REFERENCES Pedidos(id_pedido) ON DELETE CASCADE,
+                            FOREIGN KEY (id_producto_FK) REFERENCES Productos(id_producto) ON DELETE CASCADE
+                    );
             """
         )
-        registrar_y_mostrar("Tabla Carrito_Productos creada exitosamente.", nivel="info")
+        registrar_y_mostrar("Tabla Pedidos_Productos creada exitosamente.", nivel="info")
     except Exception as e:
-        registrar_y_mostrar(f"Error al crear la tabla Carrito_Productos: {e}", nivel="error")
+        registrar_y_mostrar(f"Error al crear la tabla Pedidos_Productos: {e}", nivel="error")
