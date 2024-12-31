@@ -175,10 +175,6 @@ def obtener_pedido_id(id_pedido):
 
 
 def obtener_pedidos_por_cliente(id_cliente):
-    """
-    Obtiene todos los pedidos de un cliente específico, incluyendo información
-    cruzada con Productos.
-    """
     conn = get_db()
     cursor = conn.cursor(dictionary=True)
     try:
@@ -198,13 +194,13 @@ def obtener_pedidos_por_cliente(id_cliente):
         cursor.execute(query, (id_cliente,))
         resultados = cursor.fetchall()
 
+        # Si no hay resultados, devolver una lista vacía
         if not resultados:
-            return None
+            return []
 
         pedidos = []
         pedido_actual = None
 
-        # Agrupar los resultados por pedido
         for row in resultados:
             if not pedido_actual or pedido_actual["id_pedido"] != row["id_pedido"]:
                 if pedido_actual:
@@ -240,9 +236,10 @@ def obtener_pedidos_por_cliente(id_cliente):
         return pedidos
     except Error as e:
         logger.error(f"Error al obtener los pedidos del cliente {id_cliente}: {e}")
-        return None
+        return []  # Devolver una lista vacía si hay error
     finally:
         cursor.close()
+
 
 
 def crear_pedido_con_productos(num_pedido, id_cliente_FK, productos, fecha_pedido):

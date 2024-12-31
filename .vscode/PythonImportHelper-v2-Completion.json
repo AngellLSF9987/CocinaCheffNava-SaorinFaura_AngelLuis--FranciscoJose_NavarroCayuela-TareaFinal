@@ -1686,7 +1686,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedidos_por_cliente(id_cliente):\n    \"\"\"\n    Obtiene todos los pedidos de un cliente específico, incluyendo información\n    cruzada con Productos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
+        "peekOfCode": "def obtener_pedidos_por_cliente(id_cliente):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.fecha_registro AS fecha_pedido,\n                c.nombre_cliente, c.apellido1, c.apellido2, c.dni_cliente,\n                c.telefono, c.direccion, c.email,\n                pr.nombre_producto, pr.imagen, pr.precio_unidad,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -2334,7 +2334,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def listar_pedidos():\n    try:\n        # Obtener el email del usuario autenticado desde la sesión\n        email = session.get('user_email', None)  # Asegúrate de usar 'user_email' en lugar de 'email'\n        # Agregar log para depurar\n        logger.info(f\"Sesion activa para el usuario con email: {email}\")\n        if not email:\n            logger.warning(\"No se ha encontrado un usuario autenticado.\")\n            return render_template(\"error/404.html\"), 404\n        # Obtener la contraseña del formulario (en una implementación real no la debes usar directamente)",
+        "peekOfCode": "def listar_pedidos():\n    try:\n        # Obtener el email del usuario autenticado desde la sesión\n        email = session.get('user_email', None)\n        # Agregar log para depurar\n        logger.info(f\"Sesion activa para el usuario con email: {email}\")\n        if not email:\n            logger.warning(\"No se ha encontrado un usuario autenticado.\")\n            return render_template(\"error/404.html\"), 404\n        # Log para verificar el valor exacto del rol",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },

@@ -81,7 +81,7 @@ def obtener_rol_usuario_logueado(email, password):
 
         if usuario:
             # Comparar contraseñas (asegúrate de usar un sistema de hashing en producción)
-            if usuario["contraseña"] == password:
+            if usuario["contraseña"] == password:  # Aquí se recomienda verificar con un sistema de hashing
                 id_usuario = usuario["id_usuario"]
 
                 # Verificar si el usuario es un Cliente o Trabajador
@@ -103,8 +103,7 @@ def obtener_rol_usuario_logueado(email, password):
                 return {
                     "id_usuario": usuario["id_usuario"],
                     "email": usuario["email"],
-                    "rol": usuario["rol"],
-                    "nombre_rol": usuario["nombre_rol"],
+                    "nombre_rol": usuario["nombre_rol"],  # Renombrado a nombre_rol
                 }
             else:
                 return None
@@ -115,4 +114,5 @@ def obtener_rol_usuario_logueado(email, password):
         return None
     finally:
         cursor.close()
+
 

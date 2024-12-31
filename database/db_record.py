@@ -522,6 +522,7 @@ def insertar_carrito(cursor):
         else:
             logger.info(f"⚠️ Carrito para el cliente {id_cliente_FK} y producto {id_producto_FK} ya existe, no se insertó.")
 
+
 def insertar_pedidos(cursor):
     # Insertar datos de ejemplo en la tabla Pedidos
     datos_pedidos = [
@@ -576,7 +577,8 @@ def insertar_pedidos(cursor):
 
                 # Verificar si el producto ya está asociado con el pedido
                 cursor.execute(
-                    """SELECT 1 FROM Pedidos_Productos WHERE id_pedido_FK = %s AND id_producto_FK = %s""",
+                    """SELECT 1 FROM Pedidos_Productos 
+                    WHERE id_pedido_FK = %s AND id_producto_FK = %s""",
                     (id_pedido, id_producto_FK)
                 )
                 if not cursor.fetchone():
@@ -589,7 +591,3 @@ def insertar_pedidos(cursor):
                     logger.info(f"✔️ Producto {id_producto_FK} insertado en el pedido {num_pedido}.")
                 else:
                     logger.info(f"⚠️ Producto {id_producto_FK} ya existe en el pedido {num_pedido}, no se insertó.")
-
-
-
-

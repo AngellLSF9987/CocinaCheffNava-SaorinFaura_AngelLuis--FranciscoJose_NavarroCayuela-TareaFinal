@@ -65,7 +65,7 @@ def mostrar_pedidos():
 def listar_pedidos():
     try:
         # Obtener el email del usuario autenticado desde la sesión
-        email = session.get('user_email', None)  # Asegúrate de usar 'user_email' en lugar de 'email'
+        email = session.get('user_email', None)
 
         # Agregar log para depurar
         logger.info(f"Sesion activa para el usuario con email: {email}")
@@ -74,15 +74,19 @@ def listar_pedidos():
             logger.warning("No se ha encontrado un usuario autenticado.")
             return render_template("error/404.html"), 404
 
+        # Log para verificar el valor exacto del rol
+        logger.info(f"Rol del usuario desde la sesión: {session.get('user_role')}")
+
+        # Verificar si el rol es el esperado
+        if session.get("user_role") != "cliente":
+            logger.warning(f"El usuario con email {email} no tiene el rol de 'cliente'.")
+            return render_template("error/404.html"), 404
+
         # Obtener la contraseña del formulario (en una implementación real no la debes usar directamente)
         password = 'password_placeholder'  # Aquí puedes obtener la contraseña de un formulario si es necesario
 
         # Autenticar al usuario y obtener su id_usuario y rol
         usuario = usuarioDB.obtener_rol_usuario_logueado(email, password)
-
-        if not usuario or usuario['rol'] != 'cliente':
-            logger.warning(f"El usuario con email {email} no es un cliente o no está autenticado correctamente.")
-            return render_template("error/404.html"), 404
 
         # Obtener el id_cliente asociado al id_usuario
         cliente = clienteDB.obtener_cliente_por_id_usuario(usuario["id_usuario"])
@@ -105,7 +109,6 @@ def listar_pedidos():
     except Exception as e:
         logger.error(f"Error al MOSTRAR LOS PEDIDOS DEL CLIENTE: {e}")
         return render_template("error/404.html"), 500
-
 
 
 @pedido.route("/mostrar_pedido_detalle/<int:id_pedido>", methods=["GET"], endpoint="mostrar_pedido_detalle")
