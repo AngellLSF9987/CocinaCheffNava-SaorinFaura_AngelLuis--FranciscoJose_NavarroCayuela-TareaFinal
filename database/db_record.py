@@ -2,6 +2,7 @@
 import database.db_setup as setupDB
 import logging
 from logs import logger
+from decimal import Decimal
 
 logger = logging.getLogger(__name__)
 
@@ -19,9 +20,8 @@ def crear_datos():
         insertar_trabajadores(cursor)
         insertar_categorias(cursor)
         insertar_productos(cursor)
-        # insertar_carrito(cursor)
-        # insertar_pedidos(cursor)
-        # insertar_pedidos_productos(cursor)
+        insertar_carrito(cursor)
+        insertar_pedidos(cursor)
 
         conn.commit()
         # print("✅ Datos iniciales insertados correctamente.")
@@ -476,7 +476,7 @@ def insertar_productos(cursor):
     for (
         nombre_producto,
         descripcion,
-        precio,
+        precio_unidad,
         imagen,
         id_categoria_FK,
     ) in datos_productos:
@@ -486,9 +486,9 @@ def insertar_productos(cursor):
         )
         if not cursor.fetchone():
             cursor.execute(
-                """INSERT INTO Productos (nombre_producto, descripcion, precio, imagen, id_categoria_FK) 
+                """INSERT INTO Productos (nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK) 
                         VALUES (%s, %s, %s, %s, %s);""",
-                (nombre_producto, descripcion, precio, imagen, id_categoria_FK),
+                (nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK),
             )
             # print(f"✔️ Producto '{nombre_producto}' insertado.")
             logger.info(f"✔️ Producto '{nombre_producto}' insertado.")
@@ -557,21 +557,39 @@ def insertar_pedidos(cursor):
                     VALUES (%s, %s, %s);""",
                     (num_pedido, id_cliente_FK, cantidad_productos),
                 )
-                logger.info(f"✔️ Pedido {num_pedido} insertado para el cliente {id_cliente_FK}.")
+                # Obtener el id_pedido de la fila recién insertada
+                cursor.execute("SELECT LAST_INSERT_ID();")
+                id_pedido = cursor.fetchone()[0]
+                logger.info(f"✔️ Pedido {num_pedido} insertado para el cliente {id_cliente_FK} con id_pedido {id_pedido}.")
             else:
                 logger.info(f"⚠️ Pedido {num_pedido} ya existe, no se insertó.")
+                # Si ya existe el pedido, necesitamos obtener el id_pedido
+                cursor.execute(
+                    "SELECT id_pedido FROM Pedidos WHERE num_pedido = %s",
+                    (num_pedido,)
+                )
+                id_pedido = cursor.fetchone()[0]
 
             # Ahora insertar los productos en Pedidos_Productos
             for id_producto_FK, cantidad_por_producto, precio_carrito in carrito_items:
-                precio_total = precio_carrito * cantidad_por_producto * 1.21  # Precio total por producto con IVA
+                precio_total = (precio_carrito * cantidad_por_producto * Decimal('1.21'))  # Precio total por producto con IVA
 
-                # Insertar el producto en Pedidos_Productos
+                # Verificar si el producto ya está asociado con el pedido
                 cursor.execute(
-                    """INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad_por_producto, precio_total)
-                    VALUES ((SELECT id_pedido FROM Pedidos WHERE num_pedido = %s), %s, %s, %s);""",
-                    (num_pedido, id_producto_FK, cantidad_por_producto, precio_total)
+                    """SELECT 1 FROM Pedidos_Productos WHERE id_pedido_FK = %s AND id_producto_FK = %s""",
+                    (id_pedido, id_producto_FK)
                 )
-                logger.info(f"✔️ Producto {id_producto_FK} insertado en el pedido {num_pedido}.")
+                if not cursor.fetchone():
+                    # Insertar el producto en Pedidos_Productos si no existe
+                    cursor.execute(
+                        """INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad_por_producto, precio_total)
+                        VALUES (%s, %s, %s, %s);""",
+                        (id_pedido, id_producto_FK, cantidad_por_producto, precio_total)
+                    )
+                    logger.info(f"✔️ Producto {id_producto_FK} insertado en el pedido {num_pedido}.")
+                else:
+                    logger.info(f"⚠️ Producto {id_producto_FK} ya existe en el pedido {num_pedido}, no se insertó.")
+
 
 
 

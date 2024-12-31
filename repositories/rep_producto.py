@@ -12,7 +12,7 @@ def obtener_productos():
     try:
         cursor.execute(
             """
-            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, 
+            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio_unidad, p.imagen, 
                 c.nombre_categoria 
             FROM Productos p
             INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria
@@ -25,7 +25,7 @@ def obtener_productos():
                 "id_producto": producto["id_producto"],
                 "nombre_producto": producto["nombre_producto"],
                 "descripcion": producto["descripcion"],
-                "precio": producto["precio"],
+                "precio_unidad": producto["precio_unidad"],
                 "imagen": producto["imagen"],
                 "nombre_categoria": producto["nombre_categoria"],
             }
@@ -45,7 +45,7 @@ def obtener_producto_id(id_producto):
     try:
         cursor.execute(
             """
-            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, 
+            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio_unidad, p.imagen, 
                 c.nombre_categoria AS nombre_categoria
             FROM Productos p
             INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria
@@ -67,16 +67,16 @@ def obtener_producto_id(id_producto):
 
 
 # Crear producto
-def crear_producto(nombre, descripcion, precio, imagen, id_categoria_FK):
+def crear_producto(nombre, descripcion, precio_unidad, imagen, id_categoria_FK):
     conn = get_db()
     cursor = conn.cursor()
     try:
         cursor.execute(
             """
-            INSERT INTO Productos (nombre_producto, descripcion, precio, imagen, id_categoria_FK) 
+            INSERT INTO Productos (nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK) 
             VALUES (%s, %s, %s, %s, %s)
             """,
-            (nombre, descripcion, precio, imagen, id_categoria_FK),
+            (nombre, descripcion, precio_unidad, imagen, id_categoria_FK),
         )
         conn.commit()
         logger.info("Producto creado exitosamente.")
@@ -110,7 +110,7 @@ def obtener_producto_y_categorias(conn, id_producto):
         raise
 
 def actualizar_producto(
-    id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK
+    id_producto, nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK
 ):
     conn = get_db()
     try:
@@ -127,14 +127,14 @@ def actualizar_producto(
         cursor.execute(
             """
             UPDATE Productos 
-            SET nombre_producto = %s, descripcion = %s, precio = %s, imagen = %s, id_categoria_FK = %s
+            SET nombre_producto = %s, descripcion = %s, precio_unidad = %s, imagen = %s, id_categoria_FK = %s
             WHERE id_producto = %s
             """,
             (
                 id_producto,
                 nombre_producto,
                 descripcion,
-                precio,
+                precio_unidad,
                 imagen,
                 id_categoria_FK,
             ),

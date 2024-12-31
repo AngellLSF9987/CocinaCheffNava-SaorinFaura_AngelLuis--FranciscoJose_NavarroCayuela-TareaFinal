@@ -162,6 +162,14 @@
         "documentation": {}
     },
     {
+        "label": "get_db",
+        "importPath": "database.db_setup",
+        "description": "database.db_setup",
+        "isExtraImport": true,
+        "detail": "database.db_setup",
+        "documentation": {}
+    },
+    {
         "label": "logging",
         "kind": 6,
         "isExtraImport": true,
@@ -328,6 +336,22 @@
         "description": "logs",
         "isExtraImport": true,
         "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "logger",
+        "importPath": "logs",
+        "description": "logs",
+        "isExtraImport": true,
+        "detail": "logs",
+        "documentation": {}
+    },
+    {
+        "label": "Decimal",
+        "importPath": "decimal",
+        "description": "decimal",
+        "isExtraImport": true,
+        "detail": "decimal",
         "documentation": {}
     },
     {
@@ -825,6 +849,14 @@
         "description": "config.config",
         "isExtraImport": true,
         "detail": "config.config",
+        "documentation": {}
+    },
+    {
+        "label": "Error",
+        "importPath": "copy",
+        "description": "copy",
+        "isExtraImport": true,
+        "detail": "copy",
         "documentation": {}
     },
     {
@@ -1412,7 +1444,7 @@
         "kind": 2,
         "importPath": "repositories.rep_carrito",
         "description": "repositories.rep_carrito",
-        "peekOfCode": "def obtener_carritos():\n    conn = get_db()  # Reutilizamos la conexión gestionada por g\n    cursor = conn.cursor(dictionary=True)  # Usamos dictionary=True para obtener filas como diccionarios (opcional)\n    try:\n        cursor.execute(\"SELECT * FROM Carrito\")\n        carritos = cursor.fetchall()\n        return carritos  # Devolvemos una lista de carritos\n    except Error as e:\n        logger.error(f\"Error al obtener carritos: {e}\")\n        return []  # Devolvemos una lista vacía en caso de error",
+        "peekOfCode": "def obtener_carritos():\n    conn = get_db()  # Reutilizamos la conexión gestionada por g\n    cursor = conn.cursor(dictionary=True)  # Usamos dictionary=True para obtener filas como diccionarios\n    try:\n        cursor.execute(\"\"\"\n            SELECT c.id_carrito, c.id_cliente_FK, c.id_producto_FK, c.cantidad_por_producto, c.precio_carrito, p.nombre AS producto_nombre\n            FROM Carrito c\n            JOIN Productos p ON c.id_producto_FK = p.id_producto\n        \"\"\")\n        carritos = cursor.fetchall()",
         "detail": "repositories.rep_carrito",
         "documentation": {}
     },
@@ -1421,34 +1453,61 @@
         "kind": 2,
         "importPath": "repositories.rep_carrito",
         "description": "repositories.rep_carrito",
-        "peekOfCode": "def obtener_carrito_id(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"SELECT * FROM Carrito WHERE id_carrito = %s\", (id_carrito,))\n        carrito = cursor.fetchone()\n        return carrito  # Si no se encuentra, devolverá None automáticamente\n    except Error as e:\n        logger.error(f\"Error al obtener el carrito con ID {id_carrito}: {e}\")\n        return None  # Indicamos que no se pudo obtener el carrito",
+        "peekOfCode": "def obtener_carrito_id(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"\"\"\n            SELECT c.id_carrito, c.id_cliente_FK, c.id_producto_FK, c.cantidad_por_producto, c.precio_carrito, p.nombre AS producto_nombre\n            FROM Carrito c\n            JOIN Productos p ON c.id_producto_FK = p.id_producto\n            WHERE c.id_carrito = %s\n        \"\"\", (id_carrito,))",
         "detail": "repositories.rep_carrito",
         "documentation": {}
     },
     {
-        "label": "eliminar_item_db",
+        "label": "obtener_total_carrito",
         "kind": 2,
         "importPath": "repositories.rep_carrito",
         "description": "repositories.rep_carrito",
-        "peekOfCode": "def eliminar_item_db(id_item):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        query = \"DELETE FROM Items WHERE id_item = %s\"\n        cursor.execute(query, (id_item,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se eliminó al menos una fila\n    except Error as e:\n        logger.error(f\"Error al eliminar ítem con ID {id_item}: {e}\")",
+        "peekOfCode": "def obtener_total_carrito(id_cliente_FK):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\"\"\"\n            SELECT SUM(c.cantidad_por_producto * c.precio_carrito) AS total_carrito\n            FROM Carrito c\n            WHERE c.id_cliente_FK = %s\n        \"\"\", (id_cliente_FK,))\n        resultado = cursor.fetchone()",
         "detail": "repositories.rep_carrito",
         "documentation": {}
     },
     {
-        "label": "borrar_carrito_db",
+        "label": "agregar_producto_carrito",
         "kind": 2,
         "importPath": "repositories.rep_carrito",
         "description": "repositories.rep_carrito",
-        "peekOfCode": "def borrar_carrito_db(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        query = \"DELETE FROM Carrito WHERE id_carrito = %s\"\n        cursor.execute(query, (id_carrito,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se eliminó el carrito\n    except Error as e:\n        logger.error(f\"Error al borrar el carrito con ID {id_carrito}: {e}\")",
+        "peekOfCode": "def agregar_producto_carrito(id_cliente_FK, id_producto_FK, cantidad_por_producto, precio_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificamos si el producto ya existe en el carrito del cliente\n        cursor.execute(\"\"\"\n            SELECT id_carrito FROM Carrito\n            WHERE id_cliente_FK = %s AND id_producto_FK = %s\n        \"\"\", (id_cliente_FK, id_producto_FK))\n        carrito = cursor.fetchone()",
         "detail": "repositories.rep_carrito",
         "documentation": {}
     },
     {
-        "label": "finalizar_compra_db",
+        "label": "actualizar_cantidad_producto",
         "kind": 2,
         "importPath": "repositories.rep_carrito",
         "description": "repositories.rep_carrito",
-        "peekOfCode": "def finalizar_compra_db(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Actualiza el estado del carrito a 'finalizado'\n        query = \"UPDATE Carrito SET estado = 'finalizado' WHERE id_carrito = %s\"\n        cursor.execute(query, (id_carrito,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se actualizó el estado\n    except Error as e:",
+        "peekOfCode": "def actualizar_cantidad_producto(id_carrito, nueva_cantidad, nuevo_precio_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\"\"\"\n            UPDATE Carrito\n            SET cantidad_por_producto = %s, precio_carrito = %s\n            WHERE id_carrito = %s\n        \"\"\", (nueva_cantidad, nuevo_precio_carrito, id_carrito))\n        conn.commit()",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_producto_carrito",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def eliminar_producto_carrito(id_cliente_FK, id_producto_FK):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\"\"\"\n            DELETE FROM Carrito\n            WHERE id_cliente_FK = %s AND id_producto_FK = %s\n        \"\"\", (id_cliente_FK, id_producto_FK))\n        conn.commit()\n        if cursor.rowcount > 0:",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "vaciar_carrito",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def vaciar_carrito(id_cliente_FK):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\"\"\"\n            DELETE FROM Carrito\n            WHERE id_cliente_FK = %s\n        \"\"\", (id_cliente_FK,))\n        conn.commit()\n        logger.info(f\"✔️ Carrito del cliente {id_cliente_FK} vaciado.\")",
+        "detail": "repositories.rep_carrito",
+        "documentation": {}
+    },
+    {
+        "label": "borrar_carrito",
+        "kind": 2,
+        "importPath": "repositories.rep_carrito",
+        "description": "repositories.rep_carrito",
+        "peekOfCode": "def borrar_carrito(id_carrito):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        query = \"DELETE FROM Carrito WHERE id_carrito = %s\"\n        cursor.execute(query, (id_carrito,))\n        conn.commit()\n        return cursor.rowcount > 0  # Retorna True si se eliminó el carrito\n    except Error as e:\n        logger.error(f\"Error al borrar el carrito con ID {id_carrito}: {e}\")",
         "detail": "repositories.rep_carrito",
         "documentation": {}
     },
@@ -1565,7 +1624,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def validar_claves_foraneas(id_cliente_FK, id_producto_FK, id_carrito_FK):\n    \"\"\"\n    Valida que las claves foráneas existan en las tablas correspondientes.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Validar cliente\n        cursor.execute(\"SELECT 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente_FK,))",
+        "peekOfCode": "def validar_claves_foraneas(id_cliente_FK, id_producto_FK, id_carrito_FK):\n    \"\"\"\n    Valida que las claves foráneas existan en las tablas correspondientes.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Validar cliente\n        cursor.execute(\"SELECT 1 FROM Clientes WHERE id_cliente = %s\", (id_cliente_FK,))\n        if not cursor.fetchone():",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1574,16 +1633,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    :return: Lista de diccionarios con los datos de los pedidos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n                SELECT ",
-        "detail": "repositories.rep_pedido",
-        "documentation": {}
-    },
-    {
-        "label": "obtener_pedido_id",
-        "kind": 2,
-        "importPath": "repositories.rep_pedido",
-        "description": "repositories.rep_pedido",
-        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    :param id_pedido: ID del pedido a buscar.\n    :return: Un diccionario con los datos del pedido o None si no existe.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:",
+        "peekOfCode": "def obtener_pedidos():\n    \"\"\"\n    Obtiene todos los pedidos con información cruzada de cliente, carrito y cantidad de productos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                c.nombre_cliente,",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1593,6 +1643,15 @@
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
         "peekOfCode": "def obtener_pedido_con_productos():\n    \"\"\"\n    Obtiene todos los pedidos con sus productos asociados y la información del cliente.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT \n                p.id_pedido, p.num_pedido, p.id_cliente_FK, p.fecha_pedido,",
+        "detail": "repositories.rep_pedido",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_pedido_id",
+        "kind": 2,
+        "importPath": "repositories.rep_pedido",
+        "description": "repositories.rep_pedido",
+        "peekOfCode": "def obtener_pedido_id(id_pedido):\n    \"\"\"\n    Obtiene los detalles de un pedido específico, incluyendo información\n    cruzada con Clientes, Productos y Carrito.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        query = \"\"\"\n            SELECT ",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1610,7 +1669,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos y devuelve los detalles completos del pedido actualizado,\n    incluyendo la información del cliente y los productos.\n    :param id_pedido: ID del pedido a buscar.\n    :param conn: Conexión a la base de datos.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:",
+        "peekOfCode": "def actualizar_pedido(id_pedido, num_pedido, id_cliente_FK, id_producto_FK, id_carrito_FK, cantidad, fecha_pedido):\n    \"\"\"\n    Actualiza un pedido en la tabla Pedidos y devuelve los detalles completos del pedido actualizado.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        # Actualizar el pedido\n        cursor.execute(\n            \"\"\"",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1619,7 +1678,7 @@
         "kind": 2,
         "importPath": "repositories.rep_pedido",
         "description": "repositories.rep_pedido",
-        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificar si el pedido existe antes de borrarlo\n        cursor.execute(\"SELECT 1 FROM Pedidos WHERE id_pedido = %s\", (id_pedido,))\n        if cursor.fetchone() is None:\n            logger.error(f\"Pedido con id_pedido {id_pedido} no encontrado.\")\n            return None  # Si no existe, no hace nada y devuelve None\n        # Si el pedido existe, lo eliminamos",
+        "peekOfCode": "def borrar_pedido(id_pedido):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        # Verificar si el pedido existe antes de borrarlo\n        cursor.execute(\"SELECT 1 FROM Pedidos WHERE id_pedido = %s\", (id_pedido,))\n        if cursor.fetchone() is None:\n            logger.error(f\"Pedido con id_pedido {id_pedido} no encontrado.\")\n            return {\"status\": \"error\", \"message\": f\"Pedido {id_pedido} no encontrado.\"}  # Mejorar el mensaje de error\n        # Eliminar productos asociados al pedido en Pedidos_Productos",
         "detail": "repositories.rep_pedido",
         "documentation": {}
     },
@@ -1633,11 +1692,56 @@
         "documentation": {}
     },
     {
+        "label": "agregar_producto_a_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "peekOfCode": "def agregar_producto_a_pedido(id_pedido, id_producto_FK, cantidad, precio_unitario):\n    \"\"\"\n    Agrega un producto al pedido en la tabla Pedidos_Productos.\n    :param id_pedido: ID del pedido al que se le agregará el producto.\n    :param id_producto_FK: ID del producto a agregar.\n    :param cantidad: Cantidad del producto.\n    :param precio_unitario: Precio unitario del producto.\n    :return: El ID del producto agregado, o None si hubo un error.\n    \"\"\"\n    conn = get_db()",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
+        "label": "actualizar_producto_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "peekOfCode": "def actualizar_producto_pedido(id_pedido, id_producto_FK, cantidad, precio_unitario):\n    \"\"\"\n    Actualiza la cantidad y el precio unitario de un producto en un pedido.\n    :param id_pedido: ID del pedido.\n    :param id_producto_FK: ID del producto a actualizar.\n    :param cantidad: Nueva cantidad del producto.\n    :param precio_unitario: Nuevo precio unitario del producto.\n    :return: True si la actualización fue exitosa, False en caso contrario.\n    \"\"\"\n    conn = get_db()",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_producto_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "peekOfCode": "def eliminar_producto_pedido(id_pedido, id_producto_FK):\n    \"\"\"\n    Elimina un producto de un pedido.\n    :param id_pedido: ID del pedido.\n    :param id_producto_FK: ID del producto a eliminar.\n    :return: True si la eliminación fue exitosa, False en caso contrario.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    try:",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_productos_por_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "peekOfCode": "def obtener_productos_por_pedido(id_pedido):\n    \"\"\"\n    Obtiene todos los productos asociados a un pedido.\n    :param id_pedido: ID del pedido.\n    :return: Una lista de diccionarios con los productos del pedido.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
+        "label": "eliminar_productos_por_pedido",
+        "kind": 2,
+        "importPath": "repositories.rep_pedidos_productos",
+        "description": "repositories.rep_pedidos_productos",
+        "peekOfCode": "def eliminar_productos_por_pedido(id_pedido):\n    \"\"\"\n    Elimina todos los productos asociados a un pedido.\n    :param id_pedido: ID del pedido.\n    :return: True si la eliminación fue exitosa, False en caso contrario.\n    \"\"\"\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(",
+        "detail": "repositories.rep_pedidos_productos",
+        "documentation": {}
+    },
+    {
         "label": "obtener_productos",
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def obtener_productos():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, \n                c.nombre_categoria \n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
+        "peekOfCode": "def obtener_productos():\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio_unidad, p.imagen, \n                c.nombre_categoria \n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },
@@ -1646,7 +1750,7 @@
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def obtener_producto_id(id_producto):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio, p.imagen, \n                c.nombre_categoria AS nombre_categoria\n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
+        "peekOfCode": "def obtener_producto_id(id_producto):\n    conn = get_db()\n    cursor = conn.cursor(dictionary=True)\n    try:\n        cursor.execute(\n            \"\"\"\n            SELECT p.id_producto, p.nombre_producto, p.descripcion, p.precio_unidad, p.imagen, \n                c.nombre_categoria AS nombre_categoria\n            FROM Productos p\n            INNER JOIN Categorias c ON p.id_categoria_FK = c.id_categoria",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },
@@ -1655,7 +1759,7 @@
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def crear_producto(nombre, descripcion, precio, imagen, id_categoria_FK):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Productos (nombre_producto, descripcion, precio, imagen, id_categoria_FK) \n            VALUES (%s, %s, %s, %s, %s)\n            \"\"\",\n            (nombre, descripcion, precio, imagen, id_categoria_FK),",
+        "peekOfCode": "def crear_producto(nombre, descripcion, precio_unidad, imagen, id_categoria_FK):\n    conn = get_db()\n    cursor = conn.cursor()\n    try:\n        cursor.execute(\n            \"\"\"\n            INSERT INTO Productos (nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK) \n            VALUES (%s, %s, %s, %s, %s)\n            \"\"\",\n            (nombre, descripcion, precio_unidad, imagen, id_categoria_FK),",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },
@@ -1673,7 +1777,7 @@
         "kind": 2,
         "importPath": "repositories.rep_producto",
         "description": "repositories.rep_producto",
-        "peekOfCode": "def actualizar_producto(\n    id_producto, nombre_producto, descripcion, precio, imagen, id_categoria_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el producto y las categorías\n        categorias = obtener_producto_y_categorias(conn, id_producto)\n        # Validar si el id_categoria_FK es válido\n        categoria_ids = [categoria.get(\"id_categoria\") for categoria in categorias if \"id_categoria\" in categoria]\n        if id_categoria_FK not in categoria_ids:",
+        "peekOfCode": "def actualizar_producto(\n    id_producto, nombre_producto, descripcion, precio_unidad, imagen, id_categoria_FK\n):\n    conn = get_db()\n    try:\n        # Obtener el producto y las categorías\n        categorias = obtener_producto_y_categorias(conn, id_producto)\n        # Validar si el id_categoria_FK es válido\n        categoria_ids = [categoria.get(\"id_categoria\") for categoria in categorias if \"id_categoria\" in categoria]\n        if id_categoria_FK not in categoria_ids:",
         "detail": "repositories.rep_producto",
         "documentation": {}
     },

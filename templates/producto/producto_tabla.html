@@ -33,7 +33,7 @@
               <td>{{ producto.id_producto }}</td>
               <td>{{ producto.nombre_producto }}</td>
               <td>{{ producto.descripcion }}</td>
-              <td>{{ producto.precio }}</td>
+              <td>{{ producto.precio_unidad }}</td>
               <td>
                 {% if producto.imagen %}
                   <img src="{{ url_for('static', filename='images/productos/' + producto.imagen) }}" class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" alt="{{ producto.nombre_producto }}" />

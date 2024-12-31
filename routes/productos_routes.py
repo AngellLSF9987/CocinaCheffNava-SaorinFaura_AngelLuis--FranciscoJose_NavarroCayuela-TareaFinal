@@ -89,17 +89,17 @@ def ruta_crear_producto():
             # Obtener datos del formulario
             nombre = request.form.get('nombre')
             descripcion = request.form.get('descripcion')
-            precio = request.form.get('precio')
+            precio_unidad = request.form.get('precio_unidad')
             imagen = request.files.get('imagen')
             id_categoria_FK = request.form.get('id_categoria_FK')
 
             # Validar datos
-            if not (nombre and descripcion and precio and id_categoria_FK):
+            if not (nombre and descripcion and precio_unidad and id_categoria_FK):
                 logger.error("Faltan campos requeridos.", error="Todos los campos son obligatorios."), 404
                 return redirect (url_for("producto.mostrar_productos"))
 
             try:
-                precio = float(precio)
+                precio_unidad = float(precio_unidad)
             except ValueError:
                 logger.error("Precio inválido.", error="El precio debe ser un número."), 400
                 
@@ -126,10 +126,10 @@ def ruta_crear_producto():
                 return redirect (url_for("producto.mostrar_productos"))
 
             logger.info(f"Ruta de la imagen antes del INSERT: {ruta_imagen}")
-            logger.info(f"Llamando a crear_producto con: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}")
+            logger.info(f"Llamando a crear_producto con: {nombre}, {descripcion}, {precio_unidad}, {nombre_imagen}, {id_categoria_FK}")
             # Insertar el producto
-            productoDB.crear_producto(nombre, descripcion, precio, nombre_imagen, id_categoria_FK)
-            logger.info(f"Producto creado: {nombre}, {descripcion}, {precio}, {nombre_imagen}, {id_categoria_FK}"), 200
+            productoDB.crear_producto(nombre, descripcion, precio_unidad, nombre_imagen, id_categoria_FK)
+            logger.info(f"Producto creado: {nombre}, {descripcion}, {precio_unidad}, {nombre_imagen}, {id_categoria_FK}"), 200
 
             return redirect (url_for("producto.mostrar_productos"))
         
@@ -155,11 +155,11 @@ def ruta_editar_producto(id_producto):
         elif request.method == "POST":
             nombre_producto = request.form.get("nombre_producto")
             descripcion = request.form.get("descripcion")
-            precio = request.form.get("precio")
+            precio_unidad = request.form.get("precio_unidad")
             imagen = request.form.get("imagen")
             id_categoria_FK = request.form.get("id_categoria_FK")            
 
-            if not all([nombre_producto, id_categoria_FK, precio]):
+            if not all([nombre_producto, id_categoria_FK, precio_unidad]):
                 logger.warning("Datos incompletos para actualizar el producto.", extra={"error": "Faltan datos obligatorios"})
                 return redirect(url_for("producto.mostrar_productos")), 400
 
@@ -172,7 +172,7 @@ def ruta_editar_producto(id_producto):
                 id_producto,
                 nombre_producto,
                 descripcion,
-                float(precio),
+                float(precio_unidad),
                 imagen,
                 int(id_categoria_FK),
             )
