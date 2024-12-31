@@ -2272,7 +2272,16 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required('trabajador')\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:",
+        "peekOfCode": "def cargar():\n    global conexion\n    conexion = get_db()\ndef obtener_productos_del_formulario(request):\n    \"\"\"\n    Recoge y retorna los productos seleccionados en el formulario.\n    \"\"\"\n    productos = []\n    ids_productos = request.form.getlist(\"id_producto_FK\")\n    cantidades = request.form.getlist(\"cantidad\")",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "obtener_productos_del_formulario",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def obtener_productos_del_formulario(request):\n    \"\"\"\n    Recoge y retorna los productos seleccionados en el formulario.\n    \"\"\"\n    productos = []\n    ids_productos = request.form.getlist(\"id_producto_FK\")\n    cantidades = request.form.getlist(\"cantidad\")\n    precios_carrito = request.form.getlist(\"precio_carrito\")\n    # Asegúrate de que las listas tengan la misma longitud\n    if len(ids_productos) == len(cantidades) == len(precios_carrito):",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2281,7 +2290,25 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedido_con_productos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido.html\", pedidos=pedidos)\n        else:\n            logger.warning(\"No se encontraron pedidos en la base de datos.\")\n            return render_template(\"pedido/pedido.html\", pedidos=[]), 404",
+        "peekOfCode": "def mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedidos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=pedidos)\n        else:\n            logger.warning(\"No se encontraron pedidos en la base de datos.\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=[]), 404",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "listar_pedidos",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def listar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos\n        pedidos = pedidoDB.obtener_pedidos()\n        if pedidos:\n            logger.info(\"OBTENIENDO LISTADO DE TODOS LOS PEDIDOS\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=pedidos)\n        else:\n            logger.warning(\"No se encontraron pedidos en la base de datos.\")\n            return render_template(\"pedido/pedido_tabla.html\", pedidos=[]), 404",
+        "detail": "routes.pedidos_routes",
+        "documentation": {}
+    },
+    {
+        "label": "mostrar_pedido_detalle",
+        "kind": 2,
+        "importPath": "routes.pedidos_routes",
+        "description": "routes.pedidos_routes",
+        "peekOfCode": "def mostrar_pedido_detalle(id_pedido):\n    try:\n        # Obtener el detalle del pedido con los productos asociados\n        detalles_pedido = pedidoDB.obtener_pedido_con_productos()\n        # Filtrar solo el pedido específico\n        pedido_detalle = next((pedido for pedido in detalles_pedido if pedido[\"id_pedido\"] == id_pedido), None)\n        if pedido_detalle:\n            logger.info(f\"Mostrando detalle del pedido {id_pedido}\")\n            return render_template(\"pedido/pedido_detalle.html\", pedido=pedido_detalle)\n        else:",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2290,7 +2317,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def ruta_crear_pedido():\n    try:\n        if request.method == \"POST\":\n            n_pedido = request.form.get(\"num_pedido\")\n            id_carrito_FK = request.form.get(\"id_carrito_FK\")\n            fecha_pedido = request.form.get(\"entrega\")\n            # Recoger los productos seleccionados\n            productos = []\n            cantidad_productos = len(request.form.getlist(\"id_producto_FK\"))  # Contamos el número de productos seleccionados\n            # Recolectar los productos y sus cantidades",
+        "peekOfCode": "def ruta_crear_pedido():\n    try:\n        productos = []  # Inicializar para evitar problemas de acceso\n        if request.method == \"POST\":\n            n_pedido = request.form.get(\"num_pedido\")\n            id_carrito_FK = request.form.get(\"id_carrito_FK\")\n            fecha_pedido = request.form.get(\"fecha_pedido\")\n            # Recoger los productos seleccionados\n            productos = obtener_productos_del_formulario(request)\n            # Ahora `productos` siempre está definido aquí",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2299,7 +2326,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def editar_pedido(id_pedido):\n    try:\n        if request.method == \"GET\":\n            try:\n                pedido = pedidoDB.obtener_pedido_id(id_pedido)\n                if pedido:\n                    try:   \n                        id_carrito = carritoDB.obtener_carritos(id_carrito)\n                        logger.info(\"CARRITO DEL PEDIDO OBTENIDO POR ID\"), 200\n                    except Exception as e:",
+        "peekOfCode": "def editar_pedido(id_pedido):\n    try:\n        if request.method == \"GET\":\n            try:\n                pedido = pedidoDB.obtener_pedido_id(id_pedido)\n                if pedido:\n                    id_carrito = pedido[\"id_carrito_FK\"]\n                    carrito = carritoDB.obtener_carritos(id_carrito)\n                    logger.info(\"CARRITO DEL PEDIDO OBTENIDO POR ID\")\n                    return render_template('pedido/pedido_editar.html', pedido=pedido, carrito=carrito)",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2308,7 +2335,7 @@
         "kind": 2,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "def borrar_pedido():\n    try:\n        id_pedido = request.form.get(\"id_pedido\")\n        pedido = pedidoDB.borrar_pedido(id_pedido)\n        if pedido:\n            logger.info(\"PEDIDO BORRADO\"), jsonify(id_pedido), 200\n            return render_template('pedido/pedido.html')\n        else:\n            logger.warning(\"No se encontraron pedidos para BORRAR en la base de datos.\"), 404\n            return render_template(\"pedido/pedido.html\")                ",
+        "peekOfCode": "def borrar_pedido():\n    try:\n        id_pedido = request.form.get(\"id_pedido\")\n        pedido_borrado = pedidoDB.borrar_pedido(id_pedido)\n        if pedido_borrado:\n            logger.info(\"PEDIDO BORRADO\")\n            return jsonify({\"id_pedido\": id_pedido}), 200\n        else:\n            logger.warning(\"No se encontraron pedidos para BORRAR en la base de datos.\")\n            return render_template(\"pedido/pedido.html\", error=\"No se pudo borrar el pedido.\")",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },
@@ -2317,7 +2344,7 @@
         "kind": 5,
         "importPath": "routes.pedidos_routes",
         "description": "routes.pedidos_routes",
-        "peekOfCode": "pedido = Blueprint(\"pedido\", __name__)\n@pedido.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\n@pedido.route(\"/mostrar_pedidos\", methods=[\"GET\"], endpoint=\"mostrar_pedidos\")\n@access_required('trabajador')\ndef mostrar_pedidos():\n    try:\n        # Obtener todos los pedidos con sus productos",
+        "peekOfCode": "pedido = Blueprint(\"pedido\", __name__)\n@pedido.before_request\ndef cargar():\n    global conexion\n    conexion = get_db()\ndef obtener_productos_del_formulario(request):\n    \"\"\"\n    Recoge y retorna los productos seleccionados en el formulario.\n    \"\"\"\n    productos = []",
         "detail": "routes.pedidos_routes",
         "documentation": {}
     },

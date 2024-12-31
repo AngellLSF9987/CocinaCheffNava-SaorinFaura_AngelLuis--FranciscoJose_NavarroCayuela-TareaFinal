@@ -13,7 +13,7 @@
             <a class="nav-link" href="{{ url_for('cliente.perfil_cliente', id_cliente=session.id_cliente) }}">Tu Perfil</a>
 
                     <!-- Ruta ajustada para la lista de mis pedidos -->
-            <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Mis Pedidos</a>
+            <a class="nav-link" href="{{ url_for('pedido.listar_pedidos') }}">Mis Pedidos</a>
           {% elif session.get('id_trabajador') %}
             <a class="nav-link" href="{{ url_for('trabajador.perfil_trabajador', id_trabajador=session.id_trabajador) }}">Tu Perfil</a>
             <a class="nav-link" href="{{ url_for('pedido.mostrar_pedidos') }}">Gestión de Pedidos</a>

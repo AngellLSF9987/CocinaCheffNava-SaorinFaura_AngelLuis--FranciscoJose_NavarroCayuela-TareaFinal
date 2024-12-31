@@ -5,78 +5,105 @@
 {% endblock %}
 
 {% block content %}
-  <div class="contact-form">
-    <div class="container">
-        <h2>Nuevo Pedido</h2>
-        <!-- Formulario de nuevo pedido -->
-        <form action="{{ url_for('pedido.ruta_crear_pedido') }}" method="post">
-          <!-- Selección de Cliente -->
-          <div class="mb-3">
-            <span>Cliente</span>
-            <label for="id_cliente_FK" class="form-label">Selecciona el Cliente</label>
-            <select class="form-control" id="id_cliente_FK" name="id_cliente_FK" required>
-              <option value="" disabled selected>Selecciona un cliente</option>
-              {% for cliente in clientes %}
-                <option value="{{ cliente['id_cliente'] }}">{{ cliente['nombre_cliente'] }} {{ cliente['apellido1'] }}</option>
-              {% endfor %}
-            </select>
-          </div>
+<div class="contact-form">
+  <div class="container">
+    <h2>Nuevo Pedido</h2>
+    <!-- Formulario de nuevo pedido -->
+    <form action="{{ url_for('pedido.ruta_crear_pedido') }}" method="post">
+      <!-- ID Cliente (Oculto) -->
+      <input type="hidden" id="id_cliente_FK" name="id_cliente_FK" value="{{ cliente['id_cliente'] }}" />
 
-          <!-- Número de Pedido -->
-          <div class="mb-3">
-            <span>Número de Pedido</span>
-            <label for="num_pedido" class="form-label" placeholder="Número de pedido.."></label>
-            <input type="number" class="form-control" id="num_pedido" name="num_pedido" placeholder="Introduce el número de pedido" required />
-          </div>
+      <!-- Información del Cliente -->
+      <div class="mb-3">
+        <label for="nombre_cliente" class="form-label">Nombre del Cliente</label>
+        <input type="text" class="form-control" id="nombre_cliente" name="nombre_cliente" value="{{ cliente['nombre_cliente'] }}" required />
+      </div>
 
-          <!-- Selección de Carrito -->
-          <div class="mb-3">
-            <span>Carrito</span>
-            <label for="id_carrito_FK" class="form-label">Selecciona el Carrito</label>
-            <select class="form-control" id="id_carrito_FK" name="id_carrito_FK" required>
-              <option value="" disabled selected>Selecciona un carrito</option>
-              {% for carrito in carritos %}
-                <option value="{{ carrito['id_carrito'] }}">Carrito #{{ carrito['id_carrito'] }}</option>
-              {% endfor %}
-            </select>
-          </div>
+      <div class="mb-3">
+        <label for="apellido1" class="form-label">Primer Apellido</label>
+        <input type="text" class="form-control" id="apellido1" name="apellido1" value="{{ cliente['apellido1'] }}" required />
+      </div>
 
-          <!-- Productos -->
-          <div class="mb-3">
-            <span>Productos</span>
-            <label for="id_producto_FK" class="form-label">Selecciona un Producto</label>
-            <select class="form-control" id="id_producto_FK" name="id_producto_FK" required>
+      <div class="mb-3">
+        <label for="apellido2" class="form-label">Segundo Apellido</label>
+        <input type="text" class="form-control" id="apellido2" name="apellido2" value="{{ cliente['apellido2'] }}" />
+      </div>
+
+      <div class="mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="telefono" name="telefono" value="{{ cliente['telefono'] }}" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="direccion" class="form-label">Dirección</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" value="{{ cliente['direccion'] }}" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo Electrónico</label>
+        <input type="email" class="form-control" id="email" name="email" value="{{ cliente['email'] }}" required />
+      </div>
+
+      <!-- Número de Pedido -->
+      <div class="mb-3">
+        <label for="num_pedido" class="form-label">Número de Pedido</label>
+        <input type="number" class="form-control" id="num_pedido" name="num_pedido" placeholder="Introduce el número de pedido" required />
+      </div>
+
+      <!-- Productos y Cantidades -->
+      <div class="mb-3">
+        <label for="productos" class="form-label">Productos</label>
+        <div id="productos-container">
+          <div class="producto-item d-flex align-items-center mb-2">
+            <select class="form-control me-2" name="id_producto_FK" required>
               <option value="" disabled selected>Selecciona un producto</option>
               {% for producto in productos %}
-                <option value="{{ producto['id_producto'] }}">{{ producto['nombre_producto'] }}</option>
+              <option value="{{ producto['id_producto'] }}">{{ producto['nombre_producto'] }}</option>
               {% endfor %}
             </select>
+            <input type="number" class="form-control me-2" name="cantidad" placeholder="Cantidad" required />
+            <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto(this)">Eliminar</button>
           </div>
+        </div>
+        <button type="button" class="btn btn-secondary btn-sm mt-2" onclick="agregarProducto()">Añadir Producto</button>
+      </div>
 
-          <!-- Cantidad -->
-          <div class="mb-3">
-            <span>Cantidad</span>
-            <label for="cantidad" class="form-label" placeholder="Cantidad del producto.."></label>
-            <input type="number" class="form-control" id="cantidad" name="cantidad" placeholder="Introduce la cantidad" required />
-          </div>
+      <!-- Botón de Enviar -->
+      <div class="d-flex justify-content-center mt-4">
+        <button type="submit" class="btn btn-danger">Crear Pedido</button>
+      </div>
 
-          <!-- Dirección de Entrega -->
-          <div class="mb-3">
-            <span>Dirección de Entrega</span>
-            <label for="entrega" class="form-label" placeholder="Dirección de entrega.."></label>
-            <input type="text" class="form-control" id="entrega" name="entrega" placeholder="Introduce la dirección de entrega" required />
-          </div>
-
-          <!-- Botón de Enviar -->
-          <div class="d-flex justify-content-center mt-4">
-            <button type="submit" class="btn btn-danger">Crear Pedido</button>
-          </div>
-
-          <!-- Botón Volver -->
-          <div class="d-flex justify-content-center mt-2">
-            <a href="{{ url_for('pedido.mostrar_pedidos') }}" class="btn btn-secondary">Volver</a>
-          </div>
-        </form>
-    </div>
+      <!-- Botón Volver -->
+      <div class="d-flex justify-content-center mt-2">
+        <a href="{{ url_for('pedido.mostrar_pedidos') }}" class="btn btn-secondary">Volver</a>
+      </div>
+    </form>
   </div>
+</div>
+
+<script>
+  // Función para agregar un nuevo producto al formulario
+  function agregarProducto() {
+    const productosContainer = document.getElementById('productos-container');
+    const nuevoProducto = document.createElement('div');
+    nuevoProducto.classList.add('producto-item', 'd-flex', 'align-items-center', 'mb-2');
+
+    nuevoProducto.innerHTML = `
+      <select class="form-control me-2" name="id_producto_FK" required>
+        <option value="" disabled selected>Selecciona un producto</option>
+        {% for producto in productos %}
+        <option value="{{ producto['id_producto'] }}">{{ producto['nombre_producto'] }}</option>
+        {% endfor %}
+      </select>
+      <input type="number" class="form-control me-2" name="cantidad" placeholder="Cantidad" required />
+      <button type="button" class="btn btn-danger btn-sm" onclick="eliminarProducto(this)">Eliminar</button>
+    `;
+    productosContainer.appendChild(nuevoProducto);
+  }
+
+  // Función para eliminar un producto del formulario
+  function eliminarProducto(element) {
+    element.parentElement.remove();
+  }
+</script>
 {% endblock %}
