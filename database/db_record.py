@@ -19,6 +19,9 @@ def crear_datos():
         insertar_trabajadores(cursor)
         insertar_categorias(cursor)
         insertar_productos(cursor)
+        # insertar_carrito(cursor)
+        # insertar_pedidos(cursor)
+        # insertar_pedidos_productos(cursor)
 
         conn.commit()
         # print("✅ Datos iniciales insertados correctamente.")
@@ -496,24 +499,24 @@ def insertar_productos(cursor):
 def insertar_carrito(cursor):
     # Insertar datos de ejemplo en la tabla Carrito
     datos_carrito = [
-        (1, 101, 2, 10.50),  # id_cliente_FK, id_producto_FK, cantidad, precio_unitario
-        (2, 102, 1, 20.00),
-        (1, 103, 3, 15.75),
-        (3, 101, 1, 10.50),
+        (1, 1, 2, 15.99 * 2),  # Cliente 1 compra 2 unidades de Producto 1
+        (2, 2, 1, 9.50 * 1),  # Cliente 1 compra 1 unidad de Producto 2
+        (2, 3, 2, 8.99 * 3), # Cliente 2 compra 3 unidades de Producto 3
+        (1, 4, 1, 9.75 * 1),  # Cliente 3 compra 1 unidad de Producto 1
     ]
     print(f"Listado Carritos: {datos_carrito}")
     logger.info(f"Listado Carritos: {datos_carrito}")
 
-    for id_cliente_FK, id_producto_FK, cantidad, precio_unitario in datos_carrito:
+    for id_cliente_FK, id_producto_FK, cantidad_por_producto, precio_carrito in datos_carrito:
         cursor.execute(
             "SELECT 1 FROM Carrito WHERE id_cliente_FK = %s AND id_producto_FK = %s",
             (id_cliente_FK, id_producto_FK)
         )
         if not cursor.fetchone():
             cursor.execute(
-                """INSERT INTO Carrito (id_cliente_FK, id_producto_FK, cantidad, precio_unitario) 
+                """INSERT INTO Carrito (id_cliente_FK, id_producto_FK, cantidad_por_producto, precio_carrito) 
                 VALUES (%s, %s, %s, %s);""",
-                (id_cliente_FK, id_producto_FK, cantidad, precio_unitario),
+                (id_cliente_FK, id_producto_FK, cantidad_por_producto, precio_carrito),
             )
             logger.info(f"✔️ Carrito para el cliente {id_cliente_FK} y producto {id_producto_FK} insertado.")
         else:
@@ -522,51 +525,53 @@ def insertar_carrito(cursor):
 def insertar_pedidos(cursor):
     # Insertar datos de ejemplo en la tabla Pedidos
     datos_pedidos = [
-        (1001, 1, 2, 31.00),  # num_pedido, id_cliente_FK, cantidad, precio_carrito
-        (1002, 2, 1, 20.00),
-        (1003, 1, 3, 47.25),
-        (1004, 3, 1, 10.50),
+        (1001, 1),  # num_pedido, id_cliente_FK
+        (1002, 2),
+        (1003, 1),
+        (1004, 2),
     ]
     print(f"Listado Pedidos: {datos_pedidos}")
     logger.info(f"Listado Pedidos: {datos_pedidos}")
 
-    for num_pedido, id_cliente_FK, cantidad, precio_carrito in datos_pedidos:
+    for num_pedido, id_cliente_FK in datos_pedidos:
+        # Obtener los datos de carrito para calcular la cantidad y el precio total de productos
         cursor.execute(
-            "SELECT 1 FROM Pedidos WHERE num_pedido = %s",
-            (num_pedido,)
+            """SELECT id_producto_FK, cantidad_por_producto, precio_carrito
+            FROM Carrito
+            WHERE id_cliente_FK = %s;""",
+            (id_cliente_FK,)
         )
-        if not cursor.fetchone():
-            cursor.execute(
-                """INSERT INTO Pedidos (num_pedido, id_cliente_FK, cantidad, precio_carrito) 
-                VALUES (%s, %s, %s, %s);""",
-                (num_pedido, id_cliente_FK, cantidad, precio_carrito),
-            )
-            logger.info(f"✔️ Pedido {num_pedido} insertado para el cliente {id_cliente_FK}.")
-        else:
-            logger.info(f"⚠️ Pedido {num_pedido} ya existe, no se insertó.")
+        carrito_items = cursor.fetchall()
 
-def insertar_pedidos_productos(cursor):
-    # Insertar datos de ejemplo en la tabla Pedidos_Productos
-    datos_pedidos_productos = [
-        (1001, 101, 2, 10.50),  # id_pedido_FK, id_producto_FK, cantidad, precio_unitario
-        (1002, 102, 1, 20.00),
-        (1003, 103, 3, 15.75),
-        (1004, 101, 1, 10.50),
-    ]
-    print(f"Listado Pedidos_Productos: {datos_pedidos_productos}")
-    logger.info(f"Listado Pedidos_Productos: {datos_pedidos_productos}")
+        if carrito_items:
+            cantidad_productos = sum(item[1] for item in carrito_items)  # Suma total de productos
 
-    for id_pedido_FK, id_producto_FK, cantidad, precio_unitario in datos_pedidos_productos:
-        cursor.execute(
-            "SELECT 1 FROM Pedidos_Productos WHERE id_pedido_FK = %s AND id_producto_FK = %s",
-            (id_pedido_FK, id_producto_FK)
-        )
-        if not cursor.fetchone():
+            # Insertar el pedido con la cantidad de productos
             cursor.execute(
-                """INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad, precio_unitario) 
-                VALUES (%s, %s, %s, %s);""",
-                (id_pedido_FK, id_producto_FK, cantidad, precio_unitario),
+                "SELECT 1 FROM Pedidos WHERE num_pedido = %s",
+                (num_pedido,)
             )
-            logger.info(f"✔️ Producto {id_producto_FK} insertado en el pedido {id_pedido_FK}.")
-        else:
-            logger.info(f"⚠️ Producto {id_producto_FK} ya existe en el pedido {id_pedido_FK}, no se insertó.")
+            if not cursor.fetchone():
+                cursor.execute(
+                    """INSERT INTO Pedidos (num_pedido, id_cliente_FK, cantidad_productos) 
+                    VALUES (%s, %s, %s);""",
+                    (num_pedido, id_cliente_FK, cantidad_productos),
+                )
+                logger.info(f"✔️ Pedido {num_pedido} insertado para el cliente {id_cliente_FK}.")
+            else:
+                logger.info(f"⚠️ Pedido {num_pedido} ya existe, no se insertó.")
+
+            # Ahora insertar los productos en Pedidos_Productos
+            for id_producto_FK, cantidad_por_producto, precio_carrito in carrito_items:
+                precio_total = precio_carrito * cantidad_por_producto * 1.21  # Precio total por producto con IVA
+
+                # Insertar el producto en Pedidos_Productos
+                cursor.execute(
+                    """INSERT INTO Pedidos_Productos (id_pedido_FK, id_producto_FK, cantidad_por_producto, precio_total)
+                    VALUES ((SELECT id_pedido FROM Pedidos WHERE num_pedido = %s), %s, %s, %s);""",
+                    (num_pedido, id_producto_FK, cantidad_por_producto, precio_total)
+                )
+                logger.info(f"✔️ Producto {id_producto_FK} insertado en el pedido {num_pedido}.")
+
+
+

@@ -1250,7 +1250,7 @@
         "kind": 2,
         "importPath": "database.db_record",
         "description": "database.db_record",
-        "peekOfCode": "def insertar_carrito(cursor):\n    # Insertar datos de ejemplo en la tabla Carrito\n    datos_carrito = [\n        (1, 101, 2, 10.50),  # id_cliente_FK, id_producto_FK, cantidad, precio_unitario\n        (2, 102, 1, 20.00),\n        (1, 103, 3, 15.75),\n        (3, 101, 1, 10.50),\n    ]\n    print(f\"Listado Carritos: {datos_carrito}\")\n    logger.info(f\"Listado Carritos: {datos_carrito}\")",
+        "peekOfCode": "def insertar_carrito(cursor):\n    # Insertar datos de ejemplo en la tabla Carrito\n    datos_carrito = [\n        (1, 1, 2, 15.99 * 2),  # Cliente 1 compra 2 unidades de Producto 1\n        (2, 2, 1, 9.50 * 1),  # Cliente 1 compra 1 unidad de Producto 2\n        (2, 3, 2, 8.99 * 3), # Cliente 2 compra 3 unidades de Producto 3\n        (1, 4, 1, 9.75 * 1),  # Cliente 3 compra 1 unidad de Producto 1\n    ]\n    print(f\"Listado Carritos: {datos_carrito}\")\n    logger.info(f\"Listado Carritos: {datos_carrito}\")",
         "detail": "database.db_record",
         "documentation": {}
     },
@@ -1259,16 +1259,7 @@
         "kind": 2,
         "importPath": "database.db_record",
         "description": "database.db_record",
-        "peekOfCode": "def insertar_pedidos(cursor):\n    # Insertar datos de ejemplo en la tabla Pedidos\n    datos_pedidos = [\n        (1001, 1, 2, 31.00),  # num_pedido, id_cliente_FK, cantidad, precio_carrito\n        (1002, 2, 1, 20.00),\n        (1003, 1, 3, 47.25),\n        (1004, 3, 1, 10.50),\n    ]\n    print(f\"Listado Pedidos: {datos_pedidos}\")\n    logger.info(f\"Listado Pedidos: {datos_pedidos}\")",
-        "detail": "database.db_record",
-        "documentation": {}
-    },
-    {
-        "label": "insertar_pedidos_productos",
-        "kind": 2,
-        "importPath": "database.db_record",
-        "description": "database.db_record",
-        "peekOfCode": "def insertar_pedidos_productos(cursor):\n    # Insertar datos de ejemplo en la tabla Pedidos_Productos\n    datos_pedidos_productos = [\n        (1001, 101, 2, 10.50),  # id_pedido_FK, id_producto_FK, cantidad, precio_unitario\n        (1002, 102, 1, 20.00),\n        (1003, 103, 3, 15.75),\n        (1004, 101, 1, 10.50),\n    ]\n    print(f\"Listado Pedidos_Productos: {datos_pedidos_productos}\")\n    logger.info(f\"Listado Pedidos_Productos: {datos_pedidos_productos}\")",
+        "peekOfCode": "def insertar_pedidos(cursor):\n    # Insertar datos de ejemplo en la tabla Pedidos\n    datos_pedidos = [\n        (1001, 1),  # num_pedido, id_cliente_FK\n        (1002, 2),\n        (1003, 1),\n        (1004, 2),\n    ]\n    print(f\"Listado Pedidos: {datos_pedidos}\")\n    logger.info(f\"Listado Pedidos: {datos_pedidos}\")",
         "detail": "database.db_record",
         "documentation": {}
     },
